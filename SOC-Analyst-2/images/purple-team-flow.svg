@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380" role="img" aria-labelledby="t d">
+  <title id="t">The purple team cycle: emulate, detect, tune, repeat</title>
+  <desc id="d">A cycle. The red side emulates an attack technique. The blue side checks whether it was detected. If yes, the detection is validated. If no, a gap is found and a new detection is written and tuned. Then the cycle repeats with the next technique. The two sides work together on purpose to improve coverage, which is what makes it purple rather than red versus blue.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .red  { fill: #ffebe9; stroke: #cf222e; stroke-width: 1.6; }
+    .blue { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.6; }
+    .yes  { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.5; }
+    .no   { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.5; }
+    .flow { stroke: #656d76; stroke-width: 1.8; marker-end: url(#a); fill: none; }
+    .arrow{ fill: #656d76; }
+    .h1   { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub  { fill: #656d76; font-size: 11.5px; }
+    .t    { fill: #1f2328; font-size: 12.5px; font-weight: 700; }
+    .d    { fill: #424a53; font-size: 10.5px; }
+    .e    { fill: #656d76; font-size: 10.5px; font-weight: 600; }
+    @media (prefers-color-scheme: dark) {
+      .red  { fill: #3c1618; stroke: #f85149; } .blue { fill: #0c2d6b; stroke: #58a6ff; }
+      .yes  { fill: #0f2f17; stroke: #3fb950; } .no { fill: #4a3808; stroke: #d29922; }
+      .flow { stroke: #8b949e; } .arrow { fill: #8b949e; }
+      .h1   { fill: #e6edf3; } .sub { fill: #8b949e; }
+      .t    { fill: #e6edf3; } .d { fill: #b1bac4; } .e { fill: #8b949e; }
+    }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker></defs>
+  <text class="h1"  x="28" y="32">The purple team cycle</text>
+  <text class="sub" x="28" y="54">Red attacks on purpose. Blue checks. Both improve the detections together.</text>
+
+  <rect class="red" x="60" y="90" width="200" height="66" rx="8"/>
+  <text class="t" x="76" y="116">1. Emulate</text>
+  <text class="d" x="76" y="136">run one ATT&amp;CK technique</text>
+
+  <rect class="blue" x="500" y="90" width="200" height="66" rx="8"/>
+  <text class="t" x="516" y="116">2. Check detection</text>
+  <text class="d" x="516" y="136">did the SIEM fire</text>
+
+  <line class="flow" x1="260" y1="123" x2="498" y2="123"/>
+  <text class="e" x="330" y="114">the attack runs</text>
+
+  <rect class="yes" x="500" y="220" width="200" height="60" rx="8"/>
+  <text class="t" x="516" y="245">Detected</text>
+  <text class="d" x="516" y="264">validated, move on</text>
+
+  <rect class="no" x="60" y="220" width="240" height="60" rx="8"/>
+  <text class="t" x="76" y="245">Not detected: a gap</text>
+  <text class="d" x="76" y="264">write and tune a new detection</text>
+
+  <line class="flow" x1="600" y1="156" x2="600" y2="218"/>
+  <text class="e" x="610" y="192">yes</text>
+  <line class="flow" x1="540" y1="156" x2="300" y2="222"/>
+  <text class="e" x="380" y="182">no</text>
+
+  <line class="flow" x1="160" y1="220" x2="160" y2="158"/>
+  <text class="e" x="170" y="192">redeploy, re-emulate</text>
+
+  <path class="flow" d="M 600 280 C 600 330, 400 330, 260 330" fill="none"/>
+  <line class="flow" x1="160" y1="330" x2="160" y2="282"/>
+  <text class="sub" x="300" y="326">then repeat with the next technique</text>
+
+  <text class="sub" x="28" y="366">31 techniques run this way. 24 detected, 5 gaps closed on the spot, 2 documented as needing data the lab lacks.</text>
+</svg>

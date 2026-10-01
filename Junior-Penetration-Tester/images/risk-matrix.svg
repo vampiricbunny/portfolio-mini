@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 560" width="700" height="560" role="img" aria-labelledby="t d">
+  <title id="t">Risk matrix, findings plotted by likelihood and impact</title>
+  <desc id="d">A five by five grid with likelihood on the horizontal axis and impact on the vertical axis. The upper right is red for critical risk, the lower left is green for low risk. Findings are plotted: PT-01 and PT-02 in the critical corner with high likelihood and high impact; PT-03, PT-04, PT-05 and PT-06 in the high band; PT-07 through PT-11 in the medium band; PT-12 and PT-13 in the low band. Fourteen findings in total.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1   { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub  { fill: #656d76; font-size: 11.5px; }
+    .axis { fill: #424a53; font-size: 11px; font-weight: 600; }
+    .tick { fill: #656d76; font-size: 9.5px; }
+    .g1   { fill: #dafbe1; }
+    .g2   { fill: #d4f4d9; }
+    .y1   { fill: #fff8c5; }
+    .o1   { fill: #ffe0cc; }
+    .r1   { fill: #ffdcd8; }
+    .r2   { fill: #ffc9c2; }
+    .cell { stroke: #ffffff; stroke-width: 2; }
+    .dot  { fill: #1f2328; stroke: #ffffff; stroke-width: 1.5; }
+    .dotc { fill: #cf222e; stroke: #ffffff; stroke-width: 1.5; }
+    .lbl  { fill: #ffffff; font-size: 10px; font-weight: 700; text-anchor: middle; }
+    .key  { fill: #424a53; font-size: 10.5px; }
+    @media (prefers-color-scheme: dark) {
+      .h1   { fill: #e6edf3; }
+      .sub  { fill: #8b949e; }
+      .axis { fill: #b1bac4; }
+      .tick { fill: #8b949e; }
+      .g1   { fill: #12331a; }
+      .g2   { fill: #163d20; }
+      .y1   { fill: #3d2f08; }
+      .o1   { fill: #4a2610; }
+      .r1   { fill: #3c1618; }
+      .r2   { fill: #5c1119; }
+      .cell { stroke: #0d1117; }
+      .dot  { fill: #e6edf3; stroke: #0d1117; }
+      .dotc { fill: #ff7b72; stroke: #0d1117; }
+      .lbl  { fill: #0d1117; }
+      .key  { fill: #b1bac4; }
+    }
+  </style>
+  <text class="h1"  x="28" y="32">Findings by likelihood and impact</text>
+  <text class="sub" x="28" y="54">Upper right is most urgent. Fourteen findings plotted.</text>
+
+  <text class="axis" x="18" y="300" transform="rotate(-90 18 300)">Impact</text>
+  <text class="axis" x="300" y="548">Likelihood</text>
+
+  <!-- grid 5x5, cell 90x80, origin x=90 y=90 -->
+  <!-- row 5 (top, highest impact) -->
+  <rect class="cell g2" x="90"  y="90"  width="90" height="80"/>
+  <rect class="cell y1" x="180" y="90"  width="90" height="80"/>
+  <rect class="cell o1" x="270" y="90"  width="90" height="80"/>
+  <rect class="cell r1" x="360" y="90"  width="90" height="80"/>
+  <rect class="cell r2" x="450" y="90"  width="90" height="80"/>
+  <!-- row 4 -->
+  <rect class="cell g2" x="90"  y="170" width="90" height="80"/>
+  <rect class="cell y1" x="180" y="170" width="90" height="80"/>
+  <rect class="cell o1" x="270" y="170" width="90" height="80"/>
+  <rect class="cell r1" x="360" y="170" width="90" height="80"/>
+  <rect class="cell r1" x="450" y="170" width="90" height="80"/>
+  <!-- row 3 -->
+  <rect class="cell g1" x="90"  y="250" width="90" height="80"/>
+  <rect class="cell g2" x="180" y="250" width="90" height="80"/>
+  <rect class="cell y1" x="270" y="250" width="90" height="80"/>
+  <rect class="cell o1" x="360" y="250" width="90" height="80"/>
+  <rect class="cell o1" x="450" y="250" width="90" height="80"/>
+  <!-- row 2 -->
+  <rect class="cell g1" x="90"  y="330" width="90" height="80"/>
+  <rect class="cell g1" x="180" y="330" width="90" height="80"/>
+  <rect class="cell g2" x="270" y="330" width="90" height="80"/>
+  <rect class="cell y1" x="360" y="330" width="90" height="80"/>
+  <rect class="cell y1" x="450" y="330" width="90" height="80"/>
+  <!-- row 1 (bottom) -->
+  <rect class="cell g1" x="90"  y="410" width="90" height="80"/>
+  <rect class="cell g1" x="180" y="410" width="90" height="80"/>
+  <rect class="cell g1" x="270" y="410" width="90" height="80"/>
+  <rect class="cell g2" x="360" y="410" width="90" height="80"/>
+  <rect class="cell y1" x="450" y="410" width="90" height="80"/>
+
+  <!-- ticks -->
+  <text class="tick" x="120" y="506">Rare</text>
+  <text class="tick" x="205" y="506">Unlikely</text>
+  <text class="tick" x="295" y="506">Possible</text>
+  <text class="tick" x="385" y="506">Likely</text>
+  <text class="tick" x="470" y="506">Certain</text>
+  <text class="tick" x="46" y="454">Low</text>
+  <text class="tick" x="40" y="294">High</text>
+  <text class="tick" x="30" y="134">Severe</text>
+
+  <!-- plotted findings -->
+  <!-- PT-01, PT-02 critical: certain likelihood, severe impact -->
+  <circle class="dotc" cx="495" cy="118" r="13"/>
+  <text class="lbl" x="495" y="122">01</text>
+  <circle class="dotc" cx="460" cy="150" r="13"/>
+  <text class="lbl" x="460" y="154">02</text>
+  <!-- PT-03 high: likely, high impact -->
+  <circle class="dot" cx="400" cy="200" r="12"/>
+  <text class="lbl" x="400" y="204">03</text>
+  <!-- PT-04 high -->
+  <circle class="dot" cx="330" cy="140" r="12"/>
+  <text class="lbl" x="330" y="144">04</text>
+  <!-- PT-05 high -->
+  <circle class="dot" cx="500" cy="210" r="12"/>
+  <text class="lbl" x="500" y="214">05</text>
+  <!-- PT-06 high -->
+  <circle class="dot" cx="460" cy="230" r="12"/>
+  <text class="lbl" x="460" y="234">06</text>
+  <!-- PT-07 medium -->
+  <circle class="dot" cx="320" cy="290" r="12"/>
+  <text class="lbl" x="320" y="294">07</text>
+  <!-- PT-08 medium -->
+  <circle class="dot" cx="400" cy="300" r="12"/>
+  <text class="lbl" x="400" y="304">08</text>
+  <!-- PT-09 medium -->
+  <circle class="dot" cx="290" cy="270" r="12"/>
+  <text class="lbl" x="290" y="274">09</text>
+  <!-- PT-10 medium -->
+  <circle class="dot" cx="300" cy="350" r="12"/>
+  <text class="lbl" x="300" y="354">10</text>
+  <!-- PT-11 medium -->
+  <circle class="dot" cx="470" cy="360" r="12"/>
+  <text class="lbl" x="470" y="364">11</text>
+  <!-- PT-12 low -->
+  <circle class="dot" cx="290" cy="440" r="12"/>
+  <text class="lbl" x="290" y="444">12</text>
+  <!-- PT-13 low -->
+  <circle class="dot" cx="380" cy="440" r="12"/>
+  <text class="lbl" x="380" y="444">13</text>
+
+  <text class="key" x="576" y="120">Critical  2</text>
+  <text class="key" x="576" y="150">High  4</text>
+  <text class="key" x="576" y="180">Medium  5</text>
+  <text class="key" x="576" y="210">Low  2</text>
+  <text class="key" x="576" y="240">Info  1</text>
+  <text class="key" x="576" y="284">PT-14 is</text>
+  <text class="key" x="576" y="300">informational,</text>
+  <text class="key" x="576" y="316">a practice not</text>
+  <text class="key" x="576" y="332">a vuln, so it</text>
+  <text class="key" x="576" y="348">is not plotted.</text>
+</svg>

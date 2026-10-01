@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" width="860" height="520" role="img" aria-labelledby="t d">
+  <title id="t">The attack path, from the internet to the customer database</title>
+  <desc id="d">Eight steps down three network segments. On the perimeter: external recon finds the web app, then a file upload gives code execution on the web server. Crossing into corporate: a flat firewall rule lets the perimeter reach the internal LAN, a tunnel is built, the domain is enumerated with BloodHound, a service account is Kerberoasted, and a certificate template escalates to Domain Admin, followed by a DCSync. Crossing into the server VLAN: lateral movement reaches the customer database. Each step is tagged with its finding. A note gives the timing.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .segp{ fill: #fff1e5; stroke: #e16f24; stroke-width: 1.2; }
+    .segc{ fill: #eaf2ff; stroke: #3b7bdc; stroke-width: 1.2; }
+    .segs{ fill: #fdeef0; stroke: #cf4b5e; stroke-width: 1.2; }
+    .sl { fill: #57606a; font-size: 10px; font-weight: 700; }
+    .step{ fill: #ffffff; stroke: #8c959f; stroke-width: 1.3; }
+    .stepc{ fill: #ffebe9; stroke: #cf222e; stroke-width: 1.6; }
+    .num{ fill: #ffffff; font-size: 11px; font-weight: 700; text-anchor: middle; }
+    .nb { fill: #57606a; }
+    .nbc{ fill: #cf222e; }
+    .st { fill: #1f2328; font-size: 11.5px; font-weight: 700; }
+    .sd { fill: #57606a; font-size: 9.5px; }
+    .fid{ fill: #a40e26; font-size: 9.5px; font-weight: 700; }
+    .flow{ stroke: #cf222e; stroke-width: 2.2; fill: none; marker-end: url(#r); }
+    .ar { fill: #cf222e; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .segp { fill: #3a1e0d; stroke: #e16f24; } .segc { fill: #0d243f; stroke: #4c8bf0; } .segs { fill: #3d1620; stroke: #e5687b; }
+      .sl { fill: #8b949e; } .step { fill: #161b22; stroke: #6e7681; } .stepc { fill: #3d1417; stroke: #f85149; }
+      .st { fill: #e6edf3; } .sd { fill: #8b949e; }
+    }
+  </style>
+  <defs>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="ar"/></marker>
+  </defs>
+  <text class="h1"  x="24" y="30">The attack path</text>
+  <text class="sub" x="24" y="49">Eight steps, from a company name to the customer database, down three segments.</text>
+
+  <!-- perimeter band -->
+  <rect class="segp" x="24" y="64" width="812" height="118" rx="6"/>
+  <text class="sl" x="36" y="82">PERIMETER  172.16.5.0/24</text>
+
+  <rect class="step" x="44" y="92" width="230" height="76" rx="7"/>
+  <circle cx="66" cy="114" r="11" class="nb"/><text class="num" x="66" y="118">1</text>
+  <text class="st" x="84" y="112">External recon</text>
+  <text class="sd" x="84" y="128">OSINT, service and content enum</text>
+  <text class="sd" x="84" y="142">finds the dev web app</text>
+  <text class="fid" x="84" y="160">PT2-18</text>
+
+  <rect class="stepc" x="300" y="92" width="230" height="76" rx="7"/>
+  <circle cx="322" cy="114" r="11" class="nbc"/><text class="num" x="322" y="118">2</text>
+  <text class="st" x="340" y="112">File upload to RCE</text>
+  <text class="sd" x="340" y="128">Script smuggled past the check</text>
+  <text class="sd" x="340" y="142">shell on WWW01, from outside</text>
+  <text class="fid" x="340" y="160">PT2-01  critical</text>
+
+  <!-- corporate band -->
+  <rect class="segc" x="24" y="196" width="812" height="196" rx="6"/>
+  <text class="sl" x="36" y="214">CORPORATE  10.70.10.0/24</text>
+
+  <rect class="stepc" x="44" y="224" width="230" height="72" rx="7"/>
+  <circle cx="66" cy="246" r="11" class="nbc"/><text class="num" x="66" y="250">3</text>
+  <text class="st" x="84" y="244">Cross the boundary</text>
+  <text class="sd" x="84" y="260">Flat rule, perimeter reaches LAN</text>
+  <text class="sd" x="84" y="274">tunnel built through WWW01</text>
+  <text class="fid" x="84" y="290">PT2-03  critical</text>
+
+  <rect class="step" x="300" y="224" width="230" height="72" rx="7"/>
+  <circle cx="322" cy="246" r="11" class="nb"/><text class="num" x="322" y="250">4</text>
+  <text class="st" x="340" y="244">Enumerate the domain</text>
+  <text class="sd" x="340" y="260">SOCKS pivot, first domain user</text>
+  <text class="sd" x="340" y="274">BloodHound maps two paths</text>
+  <text class="fid" x="340" y="290">PT2-13</text>
+
+  <rect class="step" x="556" y="224" width="230" height="72" rx="7"/>
+  <circle cx="578" cy="246" r="11" class="nb"/><text class="num" x="578" y="250">5</text>
+  <text class="st" x="596" y="244">Kerberoast svc_sql</text>
+  <text class="sd" x="596" y="260">Ticket cracked offline</text>
+  <text class="sd" x="596" y="274">a privileged service account</text>
+  <text class="fid" x="596" y="290">PT2-05</text>
+
+  <rect class="stepc" x="300" y="308" width="230" height="72" rx="7"/>
+  <circle cx="322" cy="330" r="11" class="nbc"/><text class="num" x="322" y="334">6</text>
+  <text class="st" x="340" y="328">ADCS ESC1 to Domain Admin</text>
+  <text class="sd" x="340" y="344">Cert issued as the administrator</text>
+  <text class="sd" x="340" y="358">a low-priv user becomes DA</text>
+  <text class="fid" x="340" y="374">PT2-02  critical</text>
+
+  <rect class="stepc" x="556" y="308" width="230" height="72" rx="7"/>
+  <circle cx="578" cy="330" r="11" class="nbc"/><text class="num" x="578" y="334">7</text>
+  <text class="st" x="596" y="328">DCSync</text>
+  <text class="sd" x="596" y="344">Replicate the whole domain,</text>
+  <text class="sd" x="596" y="358">including krbtgt. Then stop</text>
+  <text class="fid" x="596" y="374">PT2-02</text>
+
+  <!-- server vlan band -->
+  <rect class="segs" x="24" y="406" width="812" height="78" rx="6"/>
+  <text class="sl" x="36" y="424">SERVER VLAN  10.70.20.0/24</text>
+
+  <rect class="stepc" x="300" y="432" width="486" height="44" rx="7"/>
+  <circle cx="322" cy="454" r="11" class="nbc"/><text class="num" x="322" y="458">8</text>
+  <text class="st" x="340" y="450">Reach the crown jewels</text>
+  <text class="sd" x="340" y="466">Cross the second flat boundary to SQL01, prove access with one record and a count.  PT2-08</text>
+
+  <!-- flows -->
+  <path class="flow" d="M 274 130 L 298 130"/>
+  <path class="flow" d="M 320 168 C 200 190, 160 200, 159 222"/>
+  <path class="flow" d="M 274 260 L 298 260"/>
+  <path class="flow" d="M 530 260 L 554 260"/>
+  <path class="flow" d="M 596 296 C 500 312, 460 314, 431 306"/>
+  <path class="flow" d="M 530 344 L 554 344"/>
+  <path class="flow" d="M 671 380 C 671 408, 560 412, 545 430"/>
+
+  <text class="foot" x="24" y="504">Time from foothold to Domain Admin: 2h 40m. Total engagement: five days. The exploits are steps 2 and 6. Everything else is misconfiguration.</text>
+</svg>

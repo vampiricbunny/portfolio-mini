@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 650" width="700" height="650" role="img" aria-labelledby="t d">
+  <title id="t">DNS resolution order on a domain-joined Windows client</title>
+  <desc id="d">Vertical flow showing how a Windows client resolves a hostname: application request, client DNS cache, hosts file, the preferred DNS server on the domain controller, then a branch depending on whether that server is authoritative for the zone - answering locally, or forwarding upstream. The answer is finally cached for its TTL.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .card  { fill: #ffffff; stroke: #d0d7de; stroke-width: 1.2; }
+    .start { fill: #ddf4ff; stroke: #54aeff; stroke-width: 1.5; }
+    .dec   { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.5; }
+    .good  { fill: #dafbe1; stroke: #4ac26b; stroke-width: 1.5; }
+    .out   { fill: #ecd8ff; stroke: #a475f9; stroke-width: 1.5; }
+    .lb    { fill: #1f2328; font-size: 13.5px; font-weight: 600; }
+    .sub   { fill: #424a53; font-size: 11.5px; }
+    .ann   { fill: #656d76; font-size: 11.5px; }
+    .code  { fill: #0550ae; font-size: 11.5px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .arrow { stroke: #8c959f; stroke-width: 1.5; fill: none; }
+    .ahead { fill: #8c959f; }
+    .hint  { fill: #656d76; font-size: 11px; font-style: italic; }
+
+    @media (prefers-color-scheme: dark) {
+      .card  { fill: #161b22; stroke: #30363d; }
+      .start { fill: #0c2d6b; stroke: #1f6feb; }
+      .dec   { fill: #272115; stroke: #9e6a03; }
+      .good  { fill: #0f2f17; stroke: #2ea043; }
+      .out   { fill: #3c1e70; stroke: #8957e5; }
+      .lb    { fill: #e6edf3; }
+      .sub   { fill: #b1bac4; }
+      .ann   { fill: #8b949e; }
+      .code  { fill: #79c0ff; }
+      .arrow { stroke: #6e7681; }
+      .ahead { fill: #6e7681; }
+      .hint  { fill: #8b949e; }
+    }
+  </style>
+
+  <text class="lb" x="50" y="34">How a Windows client resolves a name</text>
+
+  <!-- 1 -->
+  <rect class="start" x="50" y="56" width="330" height="54" rx="6"/>
+  <text class="lb" x="70" y="80">Application makes a request</text>
+  <text class="code" x="70" y="99">fileserver.vbunnylab.local</text>
+  <path class="arrow" d="M215 110 V 132"/>
+  <polygon class="ahead" points="215,140 210,129 220,129"/>
+
+  <!-- 2 -->
+  <rect class="card" x="50" y="140" width="330" height="54" rx="6"/>
+  <text class="lb" x="70" y="164">1 - Client DNS cache</text>
+  <text class="sub" x="70" y="183">Already resolved recently? Answer now.</text>
+  <text class="ann" x="404" y="164">Inspect and clear:</text>
+  <text class="code" x="404" y="183">ipconfig /displaydns</text>
+  <path class="arrow" d="M215 194 V 216"/>
+  <polygon class="ahead" points="215,224 210,213 220,213"/>
+
+  <!-- 3 -->
+  <rect class="card" x="50" y="224" width="330" height="54" rx="6"/>
+  <text class="lb" x="70" y="248">2 - hosts file</text>
+  <text class="sub" x="70" y="267">Static overrides win before any query.</text>
+  <text class="ann" x="404" y="248">A stale entry here is a</text>
+  <text class="ann" x="404" y="266">classic cause of "it works</text>
+  <text class="ann" x="404" y="284">on every PC but mine".</text>
+  <path class="arrow" d="M215 278 V 300"/>
+  <polygon class="ahead" points="215,308 210,297 220,297"/>
+
+  <!-- 4 -->
+  <rect class="card" x="50" y="308" width="330" height="54" rx="6"/>
+  <text class="lb" x="70" y="332">3 - Preferred DNS server</text>
+  <text class="sub" x="70" y="351">DC01 - the domain controller</text>
+  <text class="ann" x="404" y="332">Domain members must point</text>
+  <text class="ann" x="404" y="350">at the DC, never at a public</text>
+  <text class="ann" x="404" y="368">resolver, or logon breaks.</text>
+  <path class="arrow" d="M215 362 V 384"/>
+  <polygon class="ahead" points="215,392 210,381 220,381"/>
+
+  <!-- 5 decision -->
+  <rect class="dec" x="50" y="392" width="330" height="54" rx="6"/>
+  <text class="lb" x="70" y="416">4 - Authoritative for this zone?</text>
+  <text class="sub" x="70" y="435">Does DC01 host vbunnylab.local?</text>
+
+  <!-- branch arrows -->
+  <path class="arrow" d="M130 446 V 476 H 130"/>
+  <polygon class="ahead" points="130,484 125,473 135,473"/>
+  <text class="hint" x="86" y="470">yes</text>
+
+  <path class="arrow" d="M300 446 V 476"/>
+  <polygon class="ahead" points="300,484 295,473 305,473"/>
+  <text class="hint" x="308" y="470">no</text>
+
+  <!-- 6a / 6b -->
+  <rect class="good" x="50" y="484" width="160" height="62" rx="6"/>
+  <text class="lb" x="66" y="507">Answer locally</text>
+  <text class="sub" x="66" y="525">From the AD-integrated</text>
+  <text class="sub" x="66" y="540">forward lookup zone.</text>
+
+  <rect class="out" x="230" y="484" width="180" height="62" rx="6"/>
+  <text class="lb" x="246" y="507">Forward upstream</text>
+  <text class="sub" x="246" y="525">Conditional forwarder, then</text>
+  <text class="sub" x="246" y="540">root hints to the internet.</text>
+
+  <path class="arrow" d="M130 546 V 570 H 240"/>
+  <path class="arrow" d="M320 546 V 570 H 240"/>
+  <path class="arrow" d="M240 570 V 586"/>
+  <polygon class="ahead" points="240,594 235,583 245,583"/>
+
+  <!-- 7 -->
+  <rect class="start" x="50" y="594" width="360" height="44" rx="6"/>
+  <text class="lb" x="70" y="613">Response returned and cached</text>
+  <text class="sub" x="70" y="630">Held for the record's TTL - which is why changes appear to lag.</text>
+</svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 340" width="840" height="340" role="img" aria-labelledby="t d">
+  <title id="t">The pivot, from Kali through the web server into the corporate LAN</title>
+  <desc id="d">The attacker's Kali box cannot reach the internal network directly. A tunnelling tool on the compromised web server connects back out to a listener on Kali and opens a SOCKS proxy. Tools on Kali are then routed through that proxy and emerge onto the corporate LAN as though running on the web server. A note explains that a reverse tunnel rides the firewall's outbound allowance rather than fighting it.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .kali { fill: #24292f; stroke: #57606a; stroke-width: 1.4; }
+    .web  { fill: #fff1e5; stroke: #e16f24; stroke-width: 1.5; }
+    .corp { fill: #eaf2ff; stroke: #3b7bdc; stroke-width: 1.3; }
+    .kn { fill: #ffffff; font-size: 13px; font-weight: 700; text-anchor: middle; }
+    .ki { fill: #d0d7de; font-size: 10px; text-anchor: middle; }
+    .n  { fill: #1f2328; font-size: 13px; font-weight: 700; text-anchor: middle; }
+    .i  { fill: #57606a; font-size: 10px; text-anchor: middle; }
+    .fw { fill: #2da44e; stroke: #1a7f37; stroke-width: 1.3; }
+    .fwt{ fill: #ffffff; font-size: 9.5px; font-weight: 700; text-anchor: middle; }
+    .rev { stroke: #8250df; stroke-width: 2.6; fill: none; marker-end: url(#p); }
+    .socks { stroke: #cf222e; stroke-width: 2.6; fill: none; marker-end: url(#r); stroke-dasharray: 7 4; }
+    .ap { fill: #8250df; } .ar { fill: #cf222e; }
+    .lbl{ fill: #57606a; font-size: 10.5px; font-weight: 700; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .web { fill: #3a1e0d; stroke: #e16f24; } .corp { fill: #0d243f; stroke: #4c8bf0; }
+      .n { fill: #e6edf3; } .i { fill: #8b949e; } .lbl { fill: #8b949e; }
+    }
+  </style>
+  <defs>
+    <marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="ap"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="ar"/></marker>
+  </defs>
+  <text class="h1"  x="24" y="30">The pivot</text>
+  <text class="sub" x="24" y="49">One compromised host becomes the bridge into a network Kali cannot reach directly.</text>
+
+  <rect class="kali" x="32" y="120" width="150" height="80" rx="7"/>
+  <text class="kn" x="107" y="156">KALI</text>
+  <text class="ki" x="107" y="176">attacker, outside</text>
+  <text class="ki" x="107" y="190">172.16.5.200</text>
+
+  <rect class="web" x="345" y="120" width="150" height="80" rx="7"/>
+  <text class="n" x="420" y="156">WWW01</text>
+  <text class="i" x="420" y="176">compromised</text>
+  <text class="i" x="420" y="190">tunnel tool runs here</text>
+
+  <rect class="fw" x="258" y="140" width="60" height="40" rx="5"/>
+  <text class="fwt" x="288" y="158">firewall</text>
+  <text class="fwt" x="288" y="171">out ok</text>
+
+  <rect class="corp" x="640" y="96" width="170" height="52" rx="7"/>
+  <text class="n" x="725" y="120">DC01, CA01</text>
+  <text class="i" x="725" y="136">10.70.10.0/24</text>
+  <rect class="corp" x="640" y="172" width="170" height="52" rx="7"/>
+  <text class="n" x="725" y="196">file server, hosts</text>
+  <text class="i" x="725" y="212">reachable through pivot</text>
+
+  <!-- reverse connection out -->
+  <path class="rev" d="M 345 150 C 300 150, 240 150, 184 150"/>
+  <text class="lbl" x="210" y="138" fill="#8250df">1  reverse connect out</text>
+
+  <!-- socks through -->
+  <path class="socks" d="M 182 176 C 260 210, 300 210, 344 186"/>
+  <text class="lbl" x="200" y="228" fill="#a40e26">2  SOCKS proxy up</text>
+  <path class="socks" d="M 495 150 C 560 130, 590 122, 638 122"/>
+  <path class="socks" d="M 495 168 C 560 190, 590 196, 638 196"/>
+  <text class="lbl" x="520" y="250" fill="#a40e26">3  Kali's tools emerge on the corporate LAN</text>
+
+  <text class="foot" x="24" y="316">A reverse tunnel rides the firewall's outbound allowance rather than fighting it, and keeps the tools on Kali instead of on the host.</text>
+</svg>

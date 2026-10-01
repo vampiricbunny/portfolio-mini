@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 540" width="820" height="540" role="img" aria-labelledby="t d">
+  <title id="t">Attack path from network access to Domain Admin</title>
+  <desc id="d">Six steps over 47 minutes. Step one, anonymous enumeration gives a user list, findings PT-05 and PT-06. Step two, a password spray recovers the svc_sql credential, finding PT-01. Step three, Kerberoasting cracks more service passwords, finding PT-02. Step four, local privilege escalation gives SYSTEM on SRV-FILE01. Step five, unconstrained delegation on that server captures the domain controller's ticket, finding PT-04. Step six, DCSync dumps every password hash in the domain, achieving full compromise. A note states that not one step was a software vulnerability, every step was a misconfiguration.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .spine { stroke: #8c959f; stroke-width: 2.5; }
+    .dot   { fill: #ffffff; stroke: #cf222e; stroke-width: 2.5; }
+    .box   { fill: #ffebe9; stroke: #cf222e; stroke-width: 1.4; }
+    .final { fill: #ffd8d3; stroke: #a40e26; stroke-width: 1.8; }
+    .h1    { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub   { fill: #656d76; font-size: 11.5px; }
+    .time  { fill: #0550ae; font-size: 11.5px; font-weight: 600; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .step  { fill: #1f2328; font-size: 13px; font-weight: 700; }
+    .det   { fill: #424a53; font-size: 10.5px; }
+    .find  { fill: #cf222e; font-size: 10.5px; font-weight: 600; }
+    @media (prefers-color-scheme: dark) {
+      .spine { stroke: #6e7681; }
+      .dot   { fill: #0d1117; stroke: #f85149; }
+      .box   { fill: #3c1618; stroke: #f85149; }
+      .final { fill: #5c1119; stroke: #ff7b72; }
+      .h1    { fill: #e6edf3; }
+      .sub   { fill: #8b949e; }
+      .time  { fill: #79c0ff; }
+      .step  { fill: #e6edf3; }
+      .det   { fill: #b1bac4; }
+      .find  { fill: #ff7b72; }
+    }
+  </style>
+  <text class="h1"  x="28" y="32">Attack path  ·  47 minutes to Domain Admin</text>
+  <text class="sub" x="28" y="54">Each step used the access from the one before. Not one was a software exploit.</text>
+
+  <line class="spine" x1="120" y1="80" x2="120" y2="470"/>
+
+  <circle class="dot" cx="120" cy="104" r="7"/>
+  <text class="time" x="30" y="108">00:00</text>
+  <rect class="box" x="150" y="82" width="620" height="46" rx="6"/>
+  <text class="step" x="166" y="104">Anonymous enumeration  ->  full user list</text>
+  <text class="find" x="600" y="120">PT-05, PT-06</text>
+  <text class="det"  x="166" y="120">Null session and anonymous LDAP on the domain controller</text>
+
+  <circle class="dot" cx="120" cy="176" r="7"/>
+  <text class="time" x="30" y="180">00:04</text>
+  <rect class="box" x="150" y="154" width="620" height="46" rx="6"/>
+  <text class="step" x="166" y="176">Password spray  ->  svc_sql credential</text>
+  <text class="find" x="660" y="192">PT-01</text>
+  <text class="det"  x="166" y="192">Autumn2024! guessed. No lockout, so unlimited attempts</text>
+
+  <circle class="dot" cx="120" cy="248" r="7"/>
+  <text class="time" x="30" y="252">00:12</text>
+  <rect class="box" x="150" y="226" width="620" height="46" rx="6"/>
+  <text class="step" x="166" y="248">Kerberoasting  ->  more service passwords</text>
+  <text class="find" x="660" y="264">PT-02</text>
+  <text class="det"  x="166" y="264">Service ticket requested and cracked offline</text>
+
+  <circle class="dot" cx="120" cy="320" r="7"/>
+  <text class="time" x="30" y="324">00:24</text>
+  <rect class="box" x="150" y="298" width="620" height="46" rx="6"/>
+  <text class="step" x="166" y="320">Local escalation  ->  SYSTEM on SRV-FILE01</text>
+  <text class="det"  x="166" y="336">SeImpersonate privilege abused with PrintSpoofer</text>
+
+  <circle class="dot" cx="120" cy="392" r="7"/>
+  <text class="time" x="30" y="396">00:38</text>
+  <rect class="box" x="150" y="370" width="620" height="46" rx="6"/>
+  <text class="step" x="166" y="392">Unconstrained delegation  ->  DC01's ticket</text>
+  <text class="find" x="660" y="408">PT-04</text>
+  <text class="det"  x="166" y="408">Coerced the domain controller, captured its ticket-granting ticket</text>
+
+  <circle class="dot" cx="120" cy="450" r="8"/>
+  <text class="time" x="30" y="454">00:47</text>
+  <rect class="final" x="150" y="430" width="620" height="42" rx="6"/>
+  <text class="step" x="166" y="456">DCSync  ->  every password hash in the domain. Full compromise</text>
+
+  <text class="sub" x="28" y="504">Thirteen of fourteen findings are fixed by configuration or policy alone. The attack needed no patchable vulnerability.</text>
+</svg>

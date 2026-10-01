@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" width="800" height="340" role="img" aria-labelledby="t d">
+  <title id="t">What separates a good alert from noise</title>
+  <desc id="d">A good alert has four properties. Actionable, someone can do something about it, not just a number with no context. Real, the problem actually exists, not a two-second spike. Unique, one problem produces one alert, not forty for one cause. Timed, it fires when action is still useful, not at 3am for a 9am problem. A note states that an alert that is not actionable should not exist, and belongs on a dashboard instead.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .good { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.6; }
+    .bad  { fill: #ffebe9; stroke: #cf222e; stroke-width: 1.3; }
+    .h1   { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub  { fill: #656d76; font-size: 11.5px; }
+    .t    { fill: #1f2328; font-size: 13px; font-weight: 700; }
+    .g    { fill: #1a7f37; font-size: 10.5px; }
+    .b    { fill: #cf222e; font-size: 10.5px; }
+    @media (prefers-color-scheme: dark) {
+      .good { fill: #0f2f17; stroke: #3fb950; } .bad { fill: #3c1618; stroke: #f85149; }
+      .h1   { fill: #e6edf3; } .sub { fill: #8b949e; }
+      .t    { fill: #e6edf3; } .g { fill: #3fb950; } .b { fill: #ff7b72; }
+    }
+  </style>
+  <text class="h1"  x="28" y="30">Anatomy of a good alert</text>
+  <text class="sub" x="28" y="50">Four properties. Miss any one and it becomes noise.</text>
+
+  <rect class="good" x="40" y="72" width="350" height="94" rx="8"/>
+  <text class="t" x="58" y="98">Actionable</text>
+  <text class="g" x="58" y="120">Someone can do something about it.</text>
+  <text class="b" x="58" y="140">Not: "CPU is 86 percent" with no context</text>
+  <text class="b" x="58" y="158">and nothing to do.</text>
+
+  <rect class="good" x="410" y="72" width="350" height="94" rx="8"/>
+  <text class="t" x="428" y="98">Real</text>
+  <text class="g" x="428" y="120">The problem actually exists.</text>
+  <text class="b" x="428" y="140">Not: fires on a two-second spike</text>
+  <text class="b" x="428" y="158">that fixed itself.</text>
+
+  <rect class="good" x="40" y="180" width="350" height="94" rx="8"/>
+  <text class="t" x="58" y="206">Unique</text>
+  <text class="g" x="58" y="228">One problem, one alert.</text>
+  <text class="b" x="58" y="248">Not: 40 alerts for one dead link,</text>
+  <text class="b" x="58" y="266">burying the one that matters.</text>
+
+  <rect class="good" x="410" y="180" width="350" height="94" rx="8"/>
+  <text class="t" x="428" y="206">Timed</text>
+  <text class="g" x="428" y="228">Fires when action is still useful.</text>
+  <text class="b" x="428" y="248">Not: pages at 3am for a problem</text>
+  <text class="b" x="428" y="266">that only matters at 9am.</text>
+
+  <text class="sub" x="28" y="304">An alert that is not actionable should not exist. If the answer to "what do I do" is "nothing," it is a metric.</text>
+  <text class="sub" x="28" y="324">Put it on a dashboard and stop paging people about it.</text>
+</svg>

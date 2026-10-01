@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 380" width="840" height="380" role="img" aria-labelledby="t d">
+  <title id="t">Segmentation as designed and as found</title>
+  <desc id="d">Two pictures side by side. On the left, the intended design, where the perimeter cannot reach the corporate LAN and only named servers reach the server VLAN, with the crossing arrows blocked. On the right, what was found, where a leftover firewall rule lets the perimeter reach corporate and a workstation reaches the server VLAN, so both boundaries are open. A note says the environment had two boundaries meant to hold and neither did.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .cap{ fill: #57606a; font-size: 12px; font-weight: 700; }
+    .segp{ fill: #fff1e5; stroke: #e16f24; stroke-width: 1.3; }
+    .segc{ fill: #eaf2ff; stroke: #3b7bdc; stroke-width: 1.3; }
+    .segs{ fill: #fdeef0; stroke: #cf4b5e; stroke-width: 1.3; }
+    .sl { fill: #57606a; font-size: 10px; font-weight: 700; }
+    .block { stroke: #2da44e; stroke-width: 2.4; fill: none; marker-end: url(#g); }
+    .open  { stroke: #cf222e; stroke-width: 2.4; fill: none; marker-end: url(#r); stroke-dasharray: 6 4; }
+    .ag { fill: #2da44e; } .ar { fill: #cf222e; }
+    .xg { fill: #2da44e; font-size: 15px; font-weight: 700; text-anchor: middle; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .cap { fill: #d0d7de; } .foot { fill: #8b949e; }
+      .segp { fill: #3a1e0d; stroke: #e16f24; } .segc { fill: #0d243f; stroke: #4c8bf0; } .segs { fill: #3d1620; stroke: #e5687b; }
+      .sl { fill: #8b949e; }
+    }
+  </style>
+  <defs>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="ag"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="ar"/></marker>
+  </defs>
+  <text class="h1"  x="24" y="30">Segmentation, intended and actual</text>
+  <text class="sub" x="24" y="49">Correct on the diagram. Flat in practice. That gap is the engagement.</text>
+
+  <!-- left, designed -->
+  <text class="cap" x="40" y="80">As designed</text>
+  <rect class="segp" x="40" y="92" width="330" height="52" rx="6"/>
+  <text class="sl" x="52" y="122">PERIMETER</text>
+  <rect class="segc" x="40" y="176" width="330" height="52" rx="6"/>
+  <text class="sl" x="52" y="206">CORPORATE</text>
+  <rect class="segs" x="40" y="260" width="330" height="52" rx="6"/>
+  <text class="sl" x="52" y="290">SERVER VLAN</text>
+  <line class="block" x1="205" y1="144" x2="205" y2="174"/>
+  <line class="block" x1="205" y1="228" x2="205" y2="258"/>
+  <text class="xg" x="230" y="164">blocked</text>
+  <text class="xg" x="235" y="248">named only</text>
+
+  <!-- right, found -->
+  <text class="cap" x="470" y="80">As found</text>
+  <rect class="segp" x="470" y="92" width="330" height="52" rx="6"/>
+  <text class="sl" x="482" y="122">PERIMETER</text>
+  <rect class="segc" x="470" y="176" width="330" height="52" rx="6"/>
+  <text class="sl" x="482" y="206">CORPORATE</text>
+  <rect class="segs" x="470" y="260" width="330" height="52" rx="6"/>
+  <text class="sl" x="482" y="290">SERVER VLAN</text>
+  <line class="open" x1="635" y1="144" x2="635" y2="174"/>
+  <line class="open" x1="635" y1="228" x2="635" y2="258"/>
+  <text class="foot" x="660" y="164" fill="#a40e26">PT2-03 leftover rule</text>
+  <text class="foot" x="660" y="248" fill="#a40e26">PT2-08 flat to VLAN</text>
+
+  <text class="foot" x="24" y="352">The environment had two boundaries that were supposed to hold, and neither did. Fixing one leaves the other open, so both are reported.</text>
+</svg>

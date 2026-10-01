@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="900" height="540" role="img" aria-labelledby="t d">
+  <title id="t">Phishing triage decision flow</title>
+  <desc id="d">Six ordered steps. Step one, get the original forwarded as an attachment because inline forwarding destroys the headers. Step two, read the headers, noting that a DMARC pass only means the sender controls the domain they claim, so the real question is whether it is the right domain. Step three, extract indicators and defang them. Step four, analyse URLs from an isolated host only. Step five, establish blast radius: who received it, who clicked and who authenticated afterwards. This is the step that decides severity. Step six, contain, with a branch. If nobody clicked, block and purge and the ticket is closed. If credentials were submitted, six actions in order: reset the password, revoke all sessions, remove attacker-registered MFA methods, remove inbox rules, revoke application consents and review sent items. A warning notes that a password reset without a session revoke leaves the attacker signed in.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .step   { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.5; }
+    .key    { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.7; }
+    .ok     { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.5; }
+    .bad    { fill: #ffebe9; stroke: #cf222e; stroke-width: 1.6; }
+    .warn   { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.2; }
+    .flow   { stroke: #656d76; stroke-width: 1.7; marker-end: url(#a); fill: none; }
+    .arrow  { fill: #656d76; }
+    .h1     { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub    { fill: #656d76; font-size: 11.5px; }
+    .num    { fill: #0969da; font-size: 11px; font-weight: 700; }
+    .st     { fill: #1f2328; font-size: 12.5px; font-weight: 600; }
+    .det    { fill: #424a53; font-size: 10.5px; }
+    .edge   { fill: #656d76; font-size: 10.5px; font-weight: 600; }
+    .ordn   { fill: #cf222e; font-size: 10.5px; font-weight: 700; }
+    .ordt   { fill: #1f2328; font-size: 10.5px; }
+    .wt     { fill: #9a6700; font-size: 11px; }
+
+    @media (prefers-color-scheme: dark) {
+      .step   { fill: #0c2d6b; stroke: #58a6ff; }
+      .key    { fill: #4a3808; stroke: #d29922; }
+      .ok     { fill: #0f2f17; stroke: #3fb950; }
+      .bad    { fill: #3c1618; stroke: #f85149; }
+      .warn   { fill: #4a3808; stroke: #d29922; }
+      .flow   { stroke: #8b949e; }
+      .arrow  { fill: #8b949e; }
+      .h1     { fill: #e6edf3; }
+      .sub    { fill: #8b949e; }
+      .num    { fill: #58a6ff; }
+      .st     { fill: #e6edf3; }
+      .det    { fill: #b1bac4; }
+      .edge   { fill: #8b949e; }
+      .ordn   { fill: #ff7b72; }
+      .ordt   { fill: #e6edf3; }
+      .wt     { fill: #d29922; }
+    }
+  </style>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/>
+    </marker>
+  </defs>
+
+  <text class="h1"  x="24" y="28">Phishing triage</text>
+  <text class="sub" x="24" y="48">Six steps, in order. The question that decides severity is step five, not step four.</text>
+
+  <!-- 1 -->
+  <rect class="step" x="24" y="66" width="300" height="56" rx="6"/>
+  <text class="num" x="36" y="88">1</text>
+  <text class="st"  x="54" y="90">Get the original</text>
+  <text class="det" x="54" y="110">Forward as attachment. Inline destroys headers</text>
+
+  <line class="flow" x1="174" y1="122" x2="174" y2="140"/>
+
+  <!-- 2 -->
+  <rect class="step" x="24" y="144" width="300" height="72" rx="6"/>
+  <text class="num" x="36" y="166">2</text>
+  <text class="st"  x="54" y="168">Read the headers</text>
+  <text class="det" x="54" y="188">SPF, DKIM, DMARC. Return-Path vs From</text>
+  <text class="det" x="54" y="206">Domain age. Levenshtein against your domains</text>
+
+  <line class="flow" x1="174" y1="216" x2="174" y2="234"/>
+
+  <!-- 3 -->
+  <rect class="step" x="24" y="238" width="300" height="56" rx="6"/>
+  <text class="num" x="36" y="260">3</text>
+  <text class="st"  x="54" y="262">Extract indicators</text>
+  <text class="det" x="54" y="282">Sender, IP, URLs, hashes. Defang everything</text>
+
+  <line class="flow" x1="174" y1="294" x2="174" y2="312"/>
+
+  <!-- 4 -->
+  <rect class="step" x="24" y="316" width="300" height="56" rx="6"/>
+  <text class="num" x="36" y="338">4</text>
+  <text class="st"  x="54" y="340">Analyse the URL</text>
+  <text class="det" x="54" y="360">Isolated host only. Expand redirects, do not load</text>
+
+  <line class="flow" x1="174" y1="372" x2="174" y2="390"/>
+
+  <!-- 5 -->
+  <rect class="key" x="24" y="394" width="300" height="86" rx="6"/>
+  <text class="num" x="36" y="416">5</text>
+  <text class="st"  x="54" y="418">Blast radius</text>
+  <text class="det" x="54" y="438">Who received it  (EmailEvents)</text>
+  <text class="det" x="54" y="456">Who clicked  (UrlClickEvents)</text>
+  <text class="det" x="54" y="474">Who authenticated after  (SigninLogs)</text>
+
+  <!-- branch -->
+  <line class="flow" x1="324" y1="420" x2="392" y2="140"/>
+  <text class="edge" x="330" y="286">no clicks</text>
+  <line class="flow" x1="324" y1="452" x2="392" y2="300"/>
+  <text class="edge" x="330" y="418">clicked</text>
+
+  <!-- contained -->
+  <rect class="ok" x="396" y="96" width="290" height="90" rx="6"/>
+  <text class="st"  x="412" y="120">Contained</text>
+  <text class="det" x="412" y="140">Block sender and domain</text>
+  <text class="det" x="412" y="158">Purge from mailboxes, soft delete</text>
+  <text class="det" x="412" y="176">Close the ticket</text>
+
+  <!-- incident -->
+  <rect class="bad" x="396" y="256" width="480" height="212" rx="6"/>
+  <text class="st"  x="412" y="280">Identity incident.  Do all six, in this order</text>
+
+  <text class="ordn" x="412" y="308">1</text>
+  <text class="ordt" x="432" y="308">Reset the password</text>
+
+  <text class="ordn" x="412" y="332">2</text>
+  <text class="ordt" x="432" y="332">Revoke all sessions and refresh tokens</text>
+
+  <text class="ordn" x="412" y="356">3</text>
+  <text class="ordt" x="432" y="356">Remove MFA methods registered after the click</text>
+
+  <text class="ordn" x="412" y="380">4</text>
+  <text class="ordt" x="432" y="380">Remove inbox rules, export them first as evidence</text>
+
+  <text class="ordn" x="412" y="404">5</text>
+  <text class="ordt" x="432" y="404">Revoke application consents</text>
+
+  <text class="ordn" x="412" y="428">6</text>
+  <text class="ordt" x="432" y="428">Review sent items for what they sent</text>
+
+  <text class="det" x="412" y="454">Then block, purge, and notify the other recipients.</text>
+
+  <!-- side note on step 2 -->
+  <rect class="warn" x="396" y="196" width="480" height="48" rx="6"/>
+  <text class="wt" x="412" y="218">DMARC pass does not mean legitimate. It means the sender controls the domain</text>
+  <text class="wt" x="412" y="236">they claim. vbunny1ab.com passes every check. Check it is the right domain.</text>
+
+  <!-- bottom warning -->
+  <rect class="warn" x="24" y="492" width="852" height="34" rx="6"/>
+  <text class="wt" x="40" y="514">A password reset without a session revoke does nothing. The attacker stays signed in, sometimes for weeks, while the incident looks closed.</text>
+</svg>

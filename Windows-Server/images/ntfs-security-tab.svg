@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 530" width="780" height="530" role="img" aria-labelledby="t d">
+  <title id="t">Advanced Security Settings dialog for an NTFS folder</title>
+  <desc id="d">Schematic of the Advanced Security Settings dialog for the Accounting folder. It shows the owner, a permission entries list containing SYSTEM, Administrators and the DL-Accounting-Modify group with their access levels and whether each is inherited, the Disable inheritance button, and the checkbox to replace permissions on child objects.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .win    { fill: #ffffff; stroke: #8c959f; stroke-width: 1.2; }
+    .title  { fill: #eaeef2; }
+    .strip  { fill: #f6f8fa; }
+    .box    { fill: #fbfcfd; stroke: #d0d7de; stroke-width: 1; }
+    .btn    { fill: #f6f8fa; stroke: #afb8c1; stroke-width: 1; }
+    .btnp   { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.4; }
+    .divide { stroke: #d0d7de; stroke-width: 1; }
+    .tabsel { stroke: #0969da; stroke-width: 2.5; }
+    .chk    { fill: #ffffff; stroke: #57606a; stroke-width: 1.2; }
+    .iconu  { fill: #6e9fd8; }
+    .icong  { fill: #7cb07c; }
+    .icons  { fill: #d8a657; }
+    .wtitle { fill: #1f2328; font-size: 12.5px; font-weight: 600; }
+    .tab    { fill: #424a53; font-size: 11.5px; }
+    .tabon  { fill: #0969da; font-size: 11.5px; font-weight: 600; }
+    .lbl    { fill: #1f2328; font-size: 11.5px; font-weight: 600; }
+    .col    { fill: #424a53; font-size: 11px; font-weight: 600; }
+    .cell   { fill: #1f2328; font-size: 11.5px; }
+    .dim    { fill: #656d76; font-size: 11px; }
+    .warn   { fill: #9a6700; font-size: 11px; font-weight: 600; }
+    .badge  { fill: #8250df; }
+    .bnum   { fill: #ffffff; font-size: 10px; font-weight: 700; }
+    .legend { fill: #424a53; font-size: 11.5px; }
+    .cap    { fill: #656d76; font-size: 11px; font-style: italic; }
+    .hdr    { fill: #1f2328; font-size: 13.5px; font-weight: 600; }
+
+    @media (prefers-color-scheme: dark) {
+      .win    { fill: #161b22; stroke: #484f58; }
+      .title  { fill: #21262d; }
+      .strip  { fill: #0d1117; }
+      .box    { fill: #0d1117; stroke: #30363d; }
+      .btn    { fill: #21262d; stroke: #484f58; }
+      .btnp   { fill: #0c2d6b; stroke: #58a6ff; }
+      .divide { stroke: #30363d; }
+      .tabsel { stroke: #58a6ff; }
+      .chk    { fill: #0d1117; stroke: #8b949e; }
+      .iconu  { fill: #58a6ff; }
+      .icong  { fill: #3fb950; }
+      .wtitle { fill: #e6edf3; }
+      .tab    { fill: #b1bac4; }
+      .tabon  { fill: #58a6ff; }
+      .lbl    { fill: #e6edf3; }
+      .col    { fill: #b1bac4; }
+      .cell   { fill: #e6edf3; }
+      .dim    { fill: #8b949e; }
+      .warn   { fill: #f2cc60; }
+      .badge  { fill: #bc8cff; }
+      .bnum   { fill: #0d1117; }
+      .legend { fill: #b1bac4; }
+      .cap    { fill: #8b949e; }
+      .hdr    { fill: #e6edf3; }
+    }
+  </style>
+
+  <text class="hdr" x="20" y="26">Advanced Security Settings  -  Properties &#8594; Security &#8594; Advanced</text>
+
+  <rect class="win" x="20" y="40" width="740" height="432" rx="5"/>
+  <path class="title" d="M20 45 a5 5 0 0 1 5 -5 h730 a5 5 0 0 1 5 5 v25 h-740 z"/>
+  <text class="wtitle" x="36" y="62">Advanced Security Settings for Accounting</text>
+  <text class="dim" x="726" y="62">&#10005;</text>
+  <line class="divide" x1="20" y1="70" x2="760" y2="70"/>
+
+  <!-- name / owner -->
+  <text class="lbl" x="38" y="96">Name:</text>
+  <text class="cell" x="96" y="96">C:\CompanyData\Accounting</text>
+  <text class="lbl" x="38" y="118">Owner:</text>
+  <text class="cell" x="96" y="118">Administrators (VBUNNYLAB\Administrators)</text>
+  <text class="tabon" x="404" y="118">Change</text>
+
+  <!-- tabs -->
+  <text class="tabon" x="38"  y="150">Permissions</text>
+  <text class="tab"   x="128" y="150">Auditing</text>
+  <text class="tab"   x="200" y="150">Effective Access</text>
+  <line class="tabsel" x1="36" y1="158" x2="112" y2="158"/>
+  <line class="divide" x1="20" y1="158" x2="760" y2="158"/>
+  <circle class="badge" cx="306" cy="146" r="9"/>
+  <text class="bnum" x="306" y="150" text-anchor="middle">3</text>
+
+  <text class="dim" x="38" y="182">For additional information, double-click a permission entry.</text>
+
+  <!-- permission list -->
+  <rect class="box" x="38" y="194" width="704" height="176" rx="3"/>
+  <rect class="strip" x="39" y="195" width="702" height="24"/>
+  <text class="col" x="56"  y="211">Type</text>
+  <text class="col" x="118" y="211">Principal</text>
+  <text class="col" x="376" y="211">Access</text>
+  <text class="col" x="540" y="211">Inherited from</text>
+  <line class="divide" x1="39" y1="219" x2="741" y2="219"/>
+  <line class="divide" x1="110" y1="195" x2="110" y2="370"/>
+  <line class="divide" x1="368" y1="195" x2="368" y2="370"/>
+  <line class="divide" x1="532" y1="195" x2="532" y2="370"/>
+
+  <text class="cell" x="56"  y="243">Allow</text>
+  <rect class="icons" x="118" y="235" width="11" height="9" rx="1.5"/>
+  <text class="cell" x="135" y="243">SYSTEM</text>
+  <text class="cell" x="376" y="243">Full control</text>
+  <text class="dim"  x="540" y="243">None</text>
+
+  <text class="cell" x="56"  y="271">Allow</text>
+  <rect class="iconu" x="118" y="263" width="11" height="9" rx="1.5"/>
+  <text class="cell" x="135" y="271">Administrators</text>
+  <text class="cell" x="376" y="271">Full control</text>
+  <text class="dim"  x="540" y="271">None</text>
+
+  <text class="cell" x="56"  y="299">Allow</text>
+  <rect class="icong" x="118" y="291" width="11" height="9" rx="1.5"/>
+  <text class="cell" x="135" y="299">DL-Accounting-Modify</text>
+  <text class="cell" x="376" y="299">Modify</text>
+  <text class="dim"  x="540" y="299">None</text>
+  <circle class="badge" cx="722" cy="294" r="9"/>
+  <text class="bnum" x="722" y="298" text-anchor="middle">2</text>
+
+  <text class="dim"  x="56"  y="327">Allow</text>
+  <rect class="iconu" x="118" y="319" width="11" height="9" rx="1.5" opacity="0.5"/>
+  <text class="dim"  x="135" y="327">Users  (removed)</text>
+  <text class="dim"  x="376" y="327">Read &amp; execute</text>
+  <text class="dim"  x="540" y="327">C:\CompanyData</text>
+
+  <!-- buttons -->
+  <rect class="btn" x="38" y="384" width="56" height="24" rx="3"/>
+  <text class="cell" x="66" y="400" text-anchor="middle">Add</text>
+  <rect class="btn" x="104" y="384" width="72" height="24" rx="3"/>
+  <text class="cell" x="140" y="400" text-anchor="middle">Remove</text>
+  <rect class="btn" x="186" y="384" width="56" height="24" rx="3"/>
+  <text class="cell" x="214" y="400" text-anchor="middle">View</text>
+
+  <rect class="btnp" x="490" y="384" width="140" height="24" rx="3"/>
+  <text class="cell" x="560" y="400" text-anchor="middle">Disable inheritance</text>
+  <circle class="badge" cx="648" cy="396" r="9"/>
+  <text class="bnum" x="648" y="400" text-anchor="middle">1</text>
+
+  <!-- checkbox -->
+  <rect class="chk" x="38" y="424" width="12" height="12" rx="2"/>
+  <text class="cell" x="58" y="434">Replace all child object permission entries with inheritable entries from this object</text>
+  <text class="warn" x="58" y="454">Destructive - overwrites every ACL below this folder.</text>
+
+  <!-- ===== legend ===== -->
+  <circle class="badge" cx="29" cy="496" r="9"/>
+  <text class="bnum" x="29" y="500" text-anchor="middle">1</text>
+  <text class="legend" x="44" y="500">Choose Convert, not Remove all</text>
+
+  <circle class="badge" cx="256" cy="496" r="9"/>
+  <text class="bnum" x="256" y="500" text-anchor="middle">2</text>
+  <text class="legend" x="271" y="500">Grant the group, not the user</text>
+
+  <circle class="badge" cx="466" cy="496" r="9"/>
+  <text class="bnum" x="466" y="500" text-anchor="middle">3</text>
+  <text class="legend" x="481" y="500">Effective Access answers "why can they open it"</text>
+
+  <text class="cap" x="20" y="522">Schematic illustration of the dialog layout - not a screen capture.</text>
+</svg>

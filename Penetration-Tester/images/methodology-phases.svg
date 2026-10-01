@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 400" width="840" height="400" role="img" aria-labelledby="t d">
+  <title id="t">The phases of the engagement and what each produces</title>
+  <desc id="d">Eight phases in order. Scoping produces authorisation and boundaries. External recon produces the attack surface. Perimeter and web produces the first foothold. Pivoting produces a route inward. Internal enumeration produces the domain attack graph. Active Directory produces Domain Admin. Post-exploitation produces proof of impact. Reporting produces the deliverable. The middle phases loop because every new credential opens new enumeration. A note states that enumeration is where engagements are won.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .box  { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.4; }
+    .loop { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.6; }
+    .rep  { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.4; }
+    .num  { fill: #0550ae; font-size: 12px; font-weight: 700; }
+    .ph   { fill: #1f2328; font-size: 12.5px; font-weight: 700; }
+    .out  { fill: #424a53; font-size: 10px; }
+    .flow { stroke: #656d76; stroke-width: 1.8; marker-end: url(#a); fill: none; }
+    .arrow{ fill: #656d76; }
+    .lt   { fill: #9a6700; font-size: 11px; font-weight: 600; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; }
+      .box { fill: #0c2d6b; stroke: #58a6ff; } .loop { fill: #4a3808; stroke: #d29922; }
+      .rep { fill: #0f2f17; stroke: #3fb950; }
+      .num { fill: #79c0ff; } .ph { fill: #e6edf3; } .out { fill: #b1bac4; }
+      .flow{ stroke: #8b949e; } .arrow { fill: #8b949e; } .lt { fill: #d29922; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker>
+  </defs>
+  <text class="h1"  x="24" y="30">Engagement phases</text>
+  <text class="sub" x="24" y="49">Worked in order, with a loop through the middle four.</text>
+
+  <!-- row 1 -->
+  <rect class="box" x="24"  y="70" width="188" height="62" rx="7"/>
+  <text class="num" x="38" y="92">1</text><text class="ph" x="56" y="92">Scoping</text>
+  <text class="out" x="38" y="112">Authorisation,</text><text class="out" x="38" y="126">boundaries</text>
+
+  <rect class="box" x="228" y="70" width="188" height="62" rx="7"/>
+  <text class="num" x="242" y="92">2</text><text class="ph" x="260" y="92">External recon</text>
+  <text class="out" x="242" y="112">The attack</text><text class="out" x="242" y="126">surface</text>
+
+  <rect class="loop" x="432" y="70" width="188" height="62" rx="7"/>
+  <text class="num" x="446" y="92">3</text><text class="ph" x="464" y="92">Perimeter and web</text>
+  <text class="out" x="446" y="112">The first</text><text class="out" x="446" y="126">foothold</text>
+
+  <rect class="loop" x="636" y="70" width="188" height="62" rx="7"/>
+  <text class="num" x="650" y="92">4</text><text class="ph" x="668" y="92">Pivoting</text>
+  <text class="out" x="650" y="112">A route</text><text class="out" x="650" y="126">inward</text>
+
+  <line class="flow" x1="212" y1="101" x2="226" y2="101"/>
+  <line class="flow" x1="416" y1="101" x2="430" y2="101"/>
+  <line class="flow" x1="620" y1="101" x2="634" y2="101"/>
+
+  <!-- row 2 -->
+  <rect class="loop" x="636" y="184" width="188" height="62" rx="7"/>
+  <text class="num" x="650" y="206">5</text><text class="ph" x="668" y="206">Internal enum</text>
+  <text class="out" x="650" y="226">The domain</text><text class="out" x="650" y="240">attack graph</text>
+
+  <rect class="loop" x="432" y="184" width="188" height="62" rx="7"/>
+  <text class="num" x="446" y="206">6</text><text class="ph" x="464" y="206">Active Directory</text>
+  <text class="out" x="446" y="226">Domain</text><text class="out" x="446" y="240">Admin</text>
+
+  <rect class="box" x="228" y="184" width="188" height="62" rx="7"/>
+  <text class="num" x="242" y="206">7</text><text class="ph" x="260" y="206">Post-exploit</text>
+  <text class="out" x="242" y="226">Proof of</text><text class="out" x="242" y="240">impact</text>
+
+  <rect class="rep" x="24" y="184" width="188" height="62" rx="7"/>
+  <text class="num" x="38" y="206">8</text><text class="ph" x="56" y="206">Reporting</text>
+  <text class="out" x="38" y="226">The</text><text class="out" x="38" y="240">deliverable</text>
+
+  <line class="flow" x1="730" y1="132" x2="730" y2="182"/>
+  <line class="flow" x1="636" y1="215" x2="622" y2="215"/>
+  <line class="flow" x1="432" y1="215" x2="418" y2="215"/>
+  <line class="flow" x1="228" y1="215" x2="214" y2="215"/>
+
+  <text class="lt" x="24" y="300">Enumeration is where engagements are won, not exploitation.</text>
+  <text class="lt" x="24" y="320">The exploits are short. The patient mapping between them is most of the five days.</text>
+  <text class="sub" x="24" y="356">The yellow phases loop. Every credential opens enumeration that was not possible before, and every round suggests the next move.</text>
+</svg>

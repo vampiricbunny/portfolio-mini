@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 320" width="820" height="320" role="img" aria-labelledby="t d">
+  <title id="t">The NOC incident lifecycle and the clocks that run against it</title>
+  <desc id="d">An incident moves through detect, acknowledge, investigate, escalate if needed, resolve, and review. Three clocks run against it. Time to detect runs from when the problem starts to when the alert fires. Time to acknowledge runs from the alert firing to someone owning it. Time to resolve runs from the problem starting to the service being restored. A note says time to resolve is the one the business cares about, and time to detect and acknowledge are the parts the NOC most directly controls.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .box { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.5; }
+    .esc { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.5; }
+    .res { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.5; }
+    .f   { stroke: #656d76; stroke-width: 1.8; marker-end: url(#a); fill: none; }
+    .clock { stroke: #8250df; stroke-width: 1.6; }
+    .arrow { fill: #656d76; }
+    .h1  { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub { fill: #656d76; font-size: 11.5px; }
+    .t   { fill: #1f2328; font-size: 11.5px; font-weight: 700; }
+    .clk { fill: #8250df; font-size: 10.5px; font-weight: 600; }
+    @media (prefers-color-scheme: dark) {
+      .box { fill: #0c2d6b; stroke: #58a6ff; } .esc { fill: #4a3808; stroke: #d29922; }
+      .res { fill: #0f2f17; stroke: #3fb950; }
+      .f   { stroke: #8b949e; } .clock { stroke: #bc8cff; } .arrow { fill: #8b949e; }
+      .h1  { fill: #e6edf3; } .sub { fill: #8b949e; }
+      .t   { fill: #e6edf3; } .clk { fill: #d2a8ff; }
+    }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker></defs>
+  <text class="h1"  x="28" y="30">Incident lifecycle</text>
+  <text class="sub" x="28" y="50">Three clocks run. Two of them are the parts the NOC most directly controls.</text>
+
+  <rect class="box" x="28"  y="90" width="110" height="44" rx="6"/><text class="t" x="52" y="117">Detect</text>
+  <rect class="box" x="164" y="90" width="120" height="44" rx="6"/><text class="t" x="180" y="117">Acknowledge</text>
+  <rect class="box" x="310" y="90" width="120" height="44" rx="6"/><text class="t" x="330" y="117">Investigate</text>
+  <rect class="esc" x="456" y="90" width="110" height="44" rx="6"/><text class="t" x="476" y="117">Escalate</text>
+  <rect class="res" x="592" y="90" width="100" height="44" rx="6"/><text class="t" x="614" y="117">Resolve</text>
+  <rect class="box" x="718" y="90" width="90" height="44" rx="6"/><text class="t" x="738" y="117">Review</text>
+
+  <line class="f" x1="138" y1="112" x2="162" y2="112"/>
+  <line class="f" x1="284" y1="112" x2="308" y2="112"/>
+  <line class="f" x1="430" y1="112" x2="454" y2="112"/>
+  <line class="f" x1="566" y1="112" x2="590" y2="112"/>
+  <line class="f" x1="692" y1="112" x2="716" y2="112"/>
+
+  <!-- MTTD -->
+  <line class="clock" x1="28" y1="160" x2="138" y2="160"/>
+  <text class="clk" x="28" y="178">MTTD</text>
+  <text class="sub" x="28" y="194">problem starts to alert</text>
+
+  <!-- MTTA -->
+  <line class="clock" x1="164" y1="160" x2="284" y2="160"/>
+  <text class="clk" x="164" y="178">MTTA</text>
+  <text class="sub" x="164" y="194">alert to owned</text>
+
+  <!-- MTTR -->
+  <line class="clock" x1="28" y1="228" x2="692" y2="228"/>
+  <text class="clk" x="28" y="246">MTTR</text>
+  <text class="sub" x="28" y="262">problem starts to service restored</text>
+
+  <text class="sub" x="28" y="300">MTTR is what the business cares about: how long users were affected. Good monitoring cuts MTTD. Good alerting and staffing cut MTTA.</text>
+</svg>

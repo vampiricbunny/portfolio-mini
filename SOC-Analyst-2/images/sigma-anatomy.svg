@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 470" width="820" height="470" role="img" aria-labelledby="t d">
+  <title id="t">Anatomy of a Sigma rule, annotated</title>
+  <desc id="d">A Sigma rule broken into its parts. The title is a human-readable name. The id is a permanent UUID that tracks the rule across renames. The tags are the ATT&amp;CK tactic and technique. The logsource says what data the rule needs. The detection block holds the selection, which is the matching logic, and the filter, which removes the known-good version. The condition combines them. The falsepositives section is honesty about noise. The level is severity. Two callouts note that the id is not optional and that a rule with a selection but no filter has never met production traffic.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .code { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.3; }
+    .lead { stroke: #afb8c1; stroke-width: 1.2; stroke-dasharray: 3 3; }
+    .hl   { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.3; }
+    .k    { fill: #cf222e; font-size: 12px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .v    { fill: #1f2328; font-size: 12px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .h1   { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub  { fill: #656d76; font-size: 11.5px; }
+    .s    { fill: #1f2328; font-size: 11px; font-weight: 600; }
+    .n    { fill: #424a53; font-size: 10.5px; }
+    @media (prefers-color-scheme: dark) {
+      .code { fill: #0d1117; stroke: #30363d; } .lead { stroke: #484f58; }
+      .hl   { fill: #4a3808; stroke: #d29922; }
+      .k    { fill: #ff7b72; } .v { fill: #e6edf3; }
+      .h1   { fill: #e6edf3; } .sub { fill: #8b949e; }
+      .s    { fill: #e6edf3; } .n { fill: #b1bac4; }
+    }
+  </style>
+  <text class="h1"  x="28" y="32">Anatomy of a Sigma rule</text>
+  <text class="sub" x="28" y="54">Vendor-neutral. Every field earns its place.</text>
+
+  <rect class="code" x="28" y="72" width="440" height="374" rx="6"/>
+  <text class="k" x="44" y="98">title:</text><text class="v" x="110" y="98">Kerberoasting via RC4</text>
+  <rect class="hl" x="40" y="108" width="420" height="20" rx="3"/>
+  <text class="k" x="44" y="123">id:</text><text class="v" x="110" y="123">7b2d9e14-5a63-4c88...</text>
+  <text class="k" x="44" y="148">status:</text><text class="v" x="130" y="148">stable</text>
+  <text class="k" x="44" y="173">description:</text><text class="v" x="190" y="173">Detects RC4 tickets...</text>
+  <text class="k" x="44" y="198">references:</text>
+  <text class="v" x="60" y="216">- https://attack.mitre.org/...</text>
+  <text class="k" x="44" y="241">tags:</text>
+  <text class="v" x="60" y="259">- attack.credential_access</text>
+  <text class="v" x="60" y="277">- attack.t1558.003</text>
+  <text class="k" x="44" y="302">logsource:</text>
+  <text class="v" x="60" y="320">product: windows</text>
+  <text class="v" x="60" y="338">service: security</text>
+  <text class="k" x="44" y="363">detection:</text>
+  <rect class="hl" x="40" y="373" width="420" height="56" rx="3"/>
+  <text class="v" x="60" y="388">selection:</text>
+  <text class="v" x="76" y="404">EventID: 4769</text>
+  <text class="v" x="60" y="420">filter: (removes known-good)</text>
+
+  <line class="lead" x1="460" y1="118" x2="516" y2="118"/>
+  <text class="s" x="522" y="114">The id is not optional</text>
+  <text class="n" x="522" y="130">A permanent UUID. It tracks the</text>
+  <text class="n" x="522" y="145">rule across renames and rewrites.</text>
+  <text class="n" x="522" y="160">Without it, a renamed rule looks</text>
+  <text class="n" x="522" y="175">new and loses its history.</text>
+
+  <line class="lead" x1="460" y1="250" x2="516" y2="250"/>
+  <text class="s" x="522" y="246">Tags map it to ATT&amp;CK</text>
+  <text class="n" x="522" y="262">This is what generates the</text>
+  <text class="n" x="522" y="277">coverage map in module 06,</text>
+  <text class="n" x="522" y="292">automatically from the rules.</text>
+
+  <line class="lead" x1="460" y1="400" x2="516" y2="400"/>
+  <text class="s" x="522" y="392">selection AND filter</text>
+  <text class="n" x="522" y="408">selection catches the thing.</text>
+  <text class="n" x="522" y="423">filter removes the known-good</text>
+  <text class="n" x="522" y="438">version. A rule with no filter</text>
+  <text class="n" x="522" y="453">has never met production traffic.</text>
+</svg>

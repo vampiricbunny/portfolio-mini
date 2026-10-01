@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 320" width="780" height="320" role="img" aria-labelledby="t d">
+  <title id="t">How SNMP polling works, manager to agent</title>
+  <desc id="d">The monitoring server, called the manager, sends a query to a device, called the agent, asking for a metric by its OID address. The agent looks up the value in its MIB and answers. This repeats on a schedule called the poll interval. A note explains that most network metrics are counters that only go up, so the tool computes a rate from two readings, and that a poll interval too slow misses spikes while one too fast overloads the devices.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .mgr  { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.7; }
+    .agent{ fill: #ddf4ff; stroke: #218bff; stroke-width: 1.6; }
+    .ask  { stroke: #656d76; stroke-width: 2; marker-end: url(#a); fill: none; }
+    .ans  { stroke: #2ea043; stroke-width: 2; marker-end: url(#g); fill: none; }
+    .arrow{ fill: #656d76; } .ag { fill: #2ea043; }
+    .h1   { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub  { fill: #656d76; font-size: 11.5px; }
+    .t    { fill: #1f2328; font-size: 13px; font-weight: 700; }
+    .d    { fill: #424a53; font-size: 10.5px; }
+    .msg  { fill: #1f2328; font-size: 11px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .msg2 { fill: #1a7f37; font-size: 11px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .note { fill: #656d76; font-size: 11px; }
+    @media (prefers-color-scheme: dark) {
+      .mgr  { fill: #4a3808; stroke: #d29922; } .agent { fill: #0c2d6b; stroke: #58a6ff; }
+      .ask  { stroke: #8b949e; } .ans { stroke: #3fb950; }
+      .arrow{ fill: #8b949e; } .ag { fill: #3fb950; }
+      .h1   { fill: #e6edf3; } .sub { fill: #8b949e; }
+      .t    { fill: #e6edf3; } .d { fill: #b1bac4; }
+      .msg  { fill: #e6edf3; } .msg2 { fill: #3fb950; } .note { fill: #8b949e; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="ag"/></marker>
+  </defs>
+  <text class="h1"  x="28" y="30">SNMP polling</text>
+  <text class="sub" x="28" y="50">The manager asks. The agent answers. On a schedule.</text>
+
+  <rect class="mgr" x="60" y="90" width="200" height="90" rx="8"/>
+  <text class="t" x="80" y="128">Manager</text>
+  <text class="d" x="80" y="148">the monitoring server</text>
+  <text class="d" x="80" y="166">NMS01</text>
+
+  <rect class="agent" x="520" y="90" width="200" height="90" rx="8"/>
+  <text class="t" x="540" y="128">Agent</text>
+  <text class="d" x="540" y="148">a device with SNMP on</text>
+  <text class="d" x="540" y="166">CORE-FW</text>
+
+  <line class="ask" x1="260" y1="120" x2="518" y2="120"/>
+  <text class="msg" x="290" y="112">GET  ifHCInOctets  (an OID)</text>
+
+  <line class="ans" x1="518" y1="158" x2="262" y2="158"/>
+  <text class="msg2" x="300" y="176">8,471,610,113 bytes</text>
+
+  <text class="note" x="28" y="228">The MIB maps the human name (ifHCInOctets) to the numeric OID. Poll interval is the schedule, usually 5 minutes.</text>
+  <text class="note" x="28" y="258">Most metrics are counters that only go up, so the tool computes a rate from two readings. Use 64-bit counters on fast links.</text>
+  <text class="note" x="28" y="288">Poll too slow and you miss spikes. Poll too fast and you overload the devices. That trade-off is a Tier 2 judgement.</text>
+</svg>

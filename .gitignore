@@ -1,0 +1,21 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Lab artifacts that should never be published
+*.pfx
+*.cer
+*.key
+*.pem
+credentials.*
+*secrets*
+*.bak
+*.vmdk
+*.vdi
+*.iso

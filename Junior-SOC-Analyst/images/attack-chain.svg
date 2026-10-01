@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 580" width="820" height="580" role="img" aria-labelledby="t d">
+  <title id="t">Attack chain from initial access to credential dumping, with detection times</title>
+  <desc id="d">Seven stages over twelve minutes fifty-one seconds. At 14:02:11 a macro in a Word document spawns encoded PowerShell, alerting in two seconds. At 14:03:41 a registry Run key is written, alerting in five seconds. At 14:05:02 domain discovery runs with no alert, a detection gap. At 14:07:33 a password spray recovers the svc_backup password, alerting in thirty-eight seconds. At 14:11:19 the attacker moves to a second workstation installing PSEXESVC, alerting in seven seconds. At 14:13:44 a Defender exclusion is added, alerting in three seconds but the alert is not worked. At 14:14:58 LSASS is dumped, alerting in four seconds. Seven of nine techniques detected.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .spine { stroke: #8c959f; stroke-width: 2.5; }
+    .box   { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.3; }
+    .hit   { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.5; }
+    .miss  { fill: #ffebe9; stroke: #cf222e; stroke-width: 1.5; }
+    .warn  { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.5; }
+    .dot   { fill: #ffffff; stroke: #8c959f; stroke-width: 2; }
+    .h1    { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub   { fill: #656d76; font-size: 11.5px; }
+    .time  { fill: #0550ae; font-size: 11.5px; font-weight: 600; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .stage { fill: #1f2328; font-size: 13px; font-weight: 600; }
+    .det   { fill: #424a53; font-size: 11px; }
+    .ttp   { fill: #656d76; font-size: 10.5px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .ok    { fill: #1a7f37; font-size: 11px; font-weight: 600; }
+    .bad   { fill: #cf222e; font-size: 11px; font-weight: 600; }
+    .amb   { fill: #9a6700; font-size: 11px; font-weight: 600; }
+    .cap   { fill: #656d76; font-size: 11px; }
+
+    @media (prefers-color-scheme: dark) {
+      .spine { stroke: #6e7681; }
+      .box   { fill: #0d1117; stroke: #30363d; }
+      .hit   { fill: #0f2f17; stroke: #3fb950; }
+      .miss  { fill: #3c1618; stroke: #f85149; }
+      .warn  { fill: #4a3808; stroke: #d29922; }
+      .dot   { fill: #0d1117; stroke: #6e7681; }
+      .h1    { fill: #e6edf3; }
+      .sub   { fill: #8b949e; }
+      .time  { fill: #79c0ff; }
+      .stage { fill: #e6edf3; }
+      .det   { fill: #b1bac4; }
+      .ttp   { fill: #8b949e; }
+      .ok    { fill: #3fb950; }
+      .bad   { fill: #ff7b72; }
+      .amb   { fill: #d29922; }
+      .cap   { fill: #8b949e; }
+    }
+  </style>
+
+  <text class="h1"  x="30" y="32">IR-2026-014  ·  attack chain</text>
+  <text class="sub" x="30" y="52">12 minutes 51 seconds from the document opening to credential dumping. Seven of nine techniques detected.</text>
+
+  <line class="spine" x1="128" y1="86" x2="128" y2="524"/>
+
+  <!-- stage 1 -->
+  <circle class="dot" cx="128" cy="106" r="6"/>
+  <text class="time" x="30" y="110">14:02:11</text>
+  <rect class="hit" x="152" y="80" width="636" height="54" rx="6"/>
+  <text class="stage" x="168" y="102">Macro in Q3-Invoice-Review.docm spawns encoded PowerShell</text>
+  <text class="ttp"   x="168" y="122">T1204.002 · T1059.001</text>
+  <text class="ok"    x="600" y="122">SOC-1008 fired in 2 s</text>
+
+  <!-- stage 2 -->
+  <circle class="dot" cx="128" cy="172" r="6"/>
+  <text class="time" x="30" y="176">14:03:41</text>
+  <rect class="hit" x="152" y="146" width="636" height="54" rx="6"/>
+  <text class="stage" x="168" y="168">Run key OneDriveSync written, pointing at AppData\od.ps1</text>
+  <text class="ttp"   x="168" y="188">T1547.001</text>
+  <text class="ok"    x="600" y="188">SOC-1004 fired in 5 s</text>
+
+  <!-- stage 3 -->
+  <circle class="dot" cx="128" cy="238" r="6"/>
+  <text class="time" x="30" y="242">14:05:02</text>
+  <rect class="miss" x="152" y="212" width="636" height="54" rx="6"/>
+  <text class="stage" x="168" y="234">Domain enumeration: net user, net group, SPN query</text>
+  <text class="ttp"   x="168" y="254">T1087.002 · T1069.002</text>
+  <text class="bad"   x="604" y="254">No rule existed. Gap</text>
+
+  <!-- stage 4 -->
+  <circle class="dot" cx="128" cy="304" r="6"/>
+  <text class="time" x="30" y="308">14:07:33</text>
+  <rect class="hit" x="152" y="278" width="636" height="54" rx="6"/>
+  <text class="stage" x="168" y="300">Spray of 24 accounts. svc_backup falls to Summer2025! in 36 s</text>
+  <text class="ttp"   x="168" y="320">T1110.003</text>
+  <text class="ok"    x="586" y="320">SOC-1001 fired in 38 s</text>
+
+  <!-- stage 5 -->
+  <circle class="dot" cx="128" cy="370" r="6"/>
+  <text class="time" x="30" y="374">14:11:19</text>
+  <rect class="hit" x="152" y="344" width="636" height="54" rx="6"/>
+  <text class="stage" x="168" y="366">Lateral movement to WS11-02 over SMB, PSEXESVC installed</text>
+  <text class="ttp"   x="168" y="386">T1021.002 · T1569.002</text>
+  <text class="ok"    x="600" y="386">SOC-1006 fired in 7 s</text>
+
+  <!-- stage 6 -->
+  <circle class="dot" cx="128" cy="436" r="6"/>
+  <text class="time" x="30" y="440">14:13:44</text>
+  <rect class="warn" x="152" y="410" width="636" height="54" rx="6"/>
+  <text class="stage" x="168" y="432">Defender exclusion added for C:\Users\Public</text>
+  <text class="ttp"   x="168" y="452">T1562.001</text>
+  <text class="amb"   x="540" y="452">Fired in 3 s. Alert not worked</text>
+
+  <!-- stage 7 -->
+  <circle class="dot" cx="128" cy="502" r="6"/>
+  <text class="time" x="30" y="506">14:14:58</text>
+  <rect class="hit" x="152" y="476" width="636" height="54" rx="6"/>
+  <text class="stage" x="168" y="498">LSASS dumped via comsvcs.dll MiniDump to o.bin, 54 MB</text>
+  <text class="ttp"   x="168" y="518">T1003.001</text>
+  <text class="ok"    x="600" y="518">SOC-1007 fired in 4 s</text>
+
+  <text class="cap" x="30" y="556">Stage 1 was the whole incident. Everything after it was downstream. Containment there would have prevented stages 4 to 7.</text>
+</svg>

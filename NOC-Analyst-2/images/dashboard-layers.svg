@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" width="800" height="340" role="img" aria-labelledby="t d">
+  <title id="t">The dashboard layers, from NOC wall to service detail</title>
+  <desc id="d">Three layers of dashboard. The NOC wall is glanceable, for everyone, and answers whether anything is red, with minimal detail. The service overview is for the analyst on shift and shows the golden signals per service. The device detail is for whoever is troubleshooting and shows everything on demand. You drill down by clicking, not by scrolling. Each layer answers one question and hands you to the next.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .l1 { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.7; }
+    .l2 { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.7; }
+    .l3 { fill: #ecd8ff; stroke: #8250df; stroke-width: 1.7; }
+    .f  { stroke: #656d76; stroke-width: 2; marker-end: url(#a); fill: none; }
+    .arrow { fill: #656d76; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .t  { fill: #1f2328; font-size: 13px; font-weight: 700; }
+    .a  { fill: #656d76; font-size: 10.5px; font-weight: 600; }
+    .q  { fill: #1f2328; font-size: 11px; }
+    .d  { fill: #424a53; font-size: 10px; }
+    @media (prefers-color-scheme: dark) {
+      .l1 { fill: #0f2f17; stroke: #3fb950; } .l2 { fill: #0c2d6b; stroke: #58a6ff; }
+      .l3 { fill: #3c1e70; stroke: #bc8cff; }
+      .f  { stroke: #8b949e; } .arrow { fill: #8b949e; }
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; }
+      .t  { fill: #e6edf3; } .a { fill: #8b949e; } .q { fill: #e6edf3; } .d { fill: #b1bac4; }
+    }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker></defs>
+  <text class="h1"  x="28" y="30">Dashboard layers</text>
+  <text class="sub" x="28" y="50">You drill down by clicking, not by scrolling. Each layer answers one question.</text>
+
+  <rect class="l1" x="40" y="80" width="220" height="180" rx="8"/>
+  <text class="a" x="56" y="104">GLANCEABLE, FOR EVERYONE</text>
+  <text class="t" x="56" y="128">NOC wall</text>
+  <text class="q" x="56" y="152">Is anything red?</text>
+  <text class="d" x="56" y="178">Status tiles only.</text>
+  <text class="d" x="56" y="196">Green, amber, red.</text>
+  <text class="d" x="56" y="214">Read from across the room.</text>
+
+  <line class="f" x1="260" y1="170" x2="298" y2="170"/>
+  <text class="a" x="262" y="162">click</text>
+
+  <rect class="l2" x="300" y="80" width="220" height="180" rx="8"/>
+  <text class="a" x="316" y="104">FOR THE ANALYST ON SHIFT</text>
+  <text class="t" x="316" y="128">Service overview</text>
+  <text class="q" x="316" y="152">Which service, how bad?</text>
+  <text class="d" x="316" y="178">The four golden signals</text>
+  <text class="d" x="316" y="196">per service.</text>
+  <text class="d" x="316" y="214">SLA drawn on the graph.</text>
+
+  <line class="f" x1="520" y1="170" x2="558" y2="170"/>
+  <text class="a" x="522" y="162">click</text>
+
+  <rect class="l3" x="560" y="80" width="220" height="180" rx="8"/>
+  <text class="a" x="576" y="104">FOR TROUBLESHOOTING</text>
+  <text class="t" x="576" y="128">Device detail</text>
+  <text class="q" x="576" y="152">What exactly is wrong?</text>
+  <text class="d" x="576" y="178">Everything, on demand.</text>
+  <text class="d" x="576" y="196">The one screen where</text>
+  <text class="d" x="576" y="214">"show everything" is right.</text>
+
+  <text class="sub" x="28" y="300">The test of a dashboard: show it for five seconds, then hide it. Can they tell you whether anything is wrong?</text>
+  <text class="sub" x="28" y="320">The wall must pass that test in one second. The detail screen does not need to, because its job is different.</text>
+</svg>

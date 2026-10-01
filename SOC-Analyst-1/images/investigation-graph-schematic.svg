@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" role="img" aria-labelledby="t d">
+  <title id="t">Sentinel investigation graph, drawn layout</title>
+  <desc id="d">A drawn representation of the investigation graph for incident 0412. At the centre sits the incident node. Connected to it are the host WS11-01, the account vbunny, the IP address 198.51.100.44, the file Q3-Invoice-Review.docm and its SHA256 hash. Expanding the host node reveals two further accounts that logged onto it and three processes. Expanding the account node reveals a second device and recent sign-ins. Nodes already part of the incident are drawn solid, nodes discovered by expanding are drawn dashed. A panel explains that the graph is for scoping rather than proof, that you expand one hop at a time, and that the fastest question it answers is which other machines this account has logged onto. A footer states this is a schematic illustration and not a screen capture.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .canvas { fill: #fbfcfd; stroke: #d0d7de; stroke-width: 1.3; }
+    .inc    { fill: #ffebe9; stroke: #cf222e; stroke-width: 2; }
+    .host   { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.7; }
+    .acct   { fill: #ecd8ff; stroke: #8250df; stroke-width: 1.7; }
+    .ip     { fill: #fff1e5; stroke: #fb8f44; stroke-width: 1.7; }
+    .file   { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.7; }
+    .hash   { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.7; }
+    .disc   { fill: #f6f8fa; stroke: #8c959f; stroke-width: 1.4; stroke-dasharray: 5 3; }
+    .edge   { stroke: #8c959f; stroke-width: 1.6; }
+    .edged  { stroke: #afb8c1; stroke-width: 1.2; stroke-dasharray: 4 3; }
+    .panel  { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1; }
+    .h1     { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub    { fill: #656d76; font-size: 11.5px; }
+    .nt     { fill: #1f2328; font-size: 11px; font-weight: 600; }
+    .nd     { fill: #424a53; font-size: 9.5px; }
+    .inct   { fill: #1f2328; font-size: 12px; font-weight: 700; }
+    .el     { fill: #656d76; font-size: 9.5px; }
+    .ptitle { fill: #1f2328; font-size: 11.5px; font-weight: 600; }
+    .pbody  { fill: #424a53; font-size: 10.5px; }
+    .key    { fill: #424a53; font-size: 10.5px; }
+    .foot   { fill: #656d76; font-size: 10.5px; font-style: italic; }
+
+    @media (prefers-color-scheme: dark) {
+      .canvas { fill: #0d1117; stroke: #30363d; }
+      .inc    { fill: #3c1618; stroke: #f85149; }
+      .host   { fill: #0c2d6b; stroke: #58a6ff; }
+      .acct   { fill: #3c1e70; stroke: #bc8cff; }
+      .ip     { fill: #4a2610; stroke: #db6d28; }
+      .file   { fill: #0f2f17; stroke: #3fb950; }
+      .hash   { fill: #4a3808; stroke: #d29922; }
+      .disc   { fill: #161b22; stroke: #6e7681; }
+      .edge   { stroke: #6e7681; }
+      .edged  { stroke: #484f58; }
+      .panel  { fill: #161b22; stroke: #30363d; }
+      .h1     { fill: #e6edf3; }
+      .sub    { fill: #8b949e; }
+      .nt     { fill: #e6edf3; }
+      .nd     { fill: #b1bac4; }
+      .inct   { fill: #e6edf3; }
+      .el     { fill: #8b949e; }
+      .ptitle { fill: #e6edf3; }
+      .pbody  { fill: #b1bac4; }
+      .key    { fill: #b1bac4; }
+      .foot   { fill: #8b949e; }
+    }
+  </style>
+
+  <text class="h1"  x="24" y="28">Investigation graph  ·  INC-0412</text>
+  <text class="sub" x="24" y="48">Solid nodes are entities on the incident. Dashed nodes were found by expanding one hop.</text>
+
+  <rect class="canvas" x="24" y="64" width="620" height="440" rx="6"/>
+
+  <!-- edges first so nodes sit on top -->
+  <line class="edge" x1="334" y1="284" x2="180" y2="170"/>
+  <line class="edge" x1="334" y1="284" x2="180" y2="400"/>
+  <line class="edge" x1="334" y1="284" x2="500" y2="160"/>
+  <line class="edge" x1="334" y1="284" x2="510" y2="290"/>
+  <line class="edge" x1="334" y1="284" x2="500" y2="410"/>
+
+  <line class="edged" x1="180" y1="170" x2="92"  y2="104"/>
+  <line class="edged" x1="180" y1="170" x2="76"  y2="220"/>
+  <line class="edged" x1="180" y1="170" x2="214" y2="98"/>
+  <line class="edged" x1="180" y1="400" x2="76"  y2="340"/>
+  <line class="edged" x1="180" y1="400" x2="200" y2="470"/>
+
+  <!-- incident -->
+  <rect class="inc" x="272" y="254" width="124" height="60" rx="8"/>
+  <text class="inct" x="288" y="278">INC-0412</text>
+  <text class="nd"   x="288" y="296">High · 3 alerts</text>
+
+  <!-- host -->
+  <rect class="host" x="122" y="142" width="116" height="52" rx="7"/>
+  <text class="nt" x="134" y="164">Host</text>
+  <text class="nd" x="134" y="182">WS11-01</text>
+
+  <!-- account -->
+  <rect class="acct" x="122" y="374" width="116" height="52" rx="7"/>
+  <text class="nt" x="134" y="396">Account</text>
+  <text class="nd" x="134" y="414">vbunny</text>
+
+  <!-- ip -->
+  <rect class="ip" x="446" y="134" width="130" height="52" rx="7"/>
+  <text class="nt" x="458" y="156">IP address</text>
+  <text class="nd" x="458" y="174">198.51.100.44</text>
+
+  <!-- file -->
+  <rect class="file" x="446" y="264" width="130" height="52" rx="7"/>
+  <text class="nt" x="458" y="286">File</text>
+  <text class="nd" x="458" y="304">Q3-Invoice.docm</text>
+
+  <!-- hash -->
+  <rect class="hash" x="446" y="384" width="130" height="52" rx="7"/>
+  <text class="nt" x="458" y="406">SHA256</text>
+  <text class="nd" x="458" y="424">a3f1c8d4...</text>
+
+  <!-- discovered from host -->
+  <rect class="disc" x="40" y="80" width="104" height="44" rx="6"/>
+  <text class="nt" x="50" y="100">Account</text>
+  <text class="nd" x="50" y="116">m.calloway</text>
+
+  <rect class="disc" x="34" y="198" width="104" height="44" rx="6"/>
+  <text class="nt" x="44" y="218">Account</text>
+  <text class="nd" x="44" y="234">vampiricbunny</text>
+
+  <rect class="disc" x="164" y="76" width="112" height="44" rx="6"/>
+  <text class="nt" x="174" y="96">3 processes</text>
+  <text class="nd" x="174" y="112">powershell, winword</text>
+
+  <!-- discovered from account -->
+  <rect class="disc" x="34" y="318" width="104" height="44" rx="6"/>
+  <text class="nt" x="44" y="338">Host</text>
+  <text class="nd" x="44" y="354">WS11-02</text>
+
+  <rect class="disc" x="148" y="450" width="120" height="44" rx="6"/>
+  <text class="nt" x="158" y="470">12 sign-ins</text>
+  <text class="nd" x="158" y="486">last 24 hours</text>
+
+  <!-- edge labels -->
+  <text class="el" x="238" y="212">ran on</text>
+  <text class="el" x="238" y="356">executed as</text>
+  <text class="el" x="404" y="212">connected to</text>
+  <text class="el" x="404" y="282">opened</text>
+  <text class="el" x="404" y="362">hash of</text>
+
+  <!-- panel -->
+  <rect class="panel" x="660" y="64" width="216" height="440" rx="6"/>
+
+  <text class="ptitle" x="676" y="90">Reading it</text>
+  <text class="pbody"  x="676" y="112">Start at the entity you are</text>
+  <text class="pbody"  x="676" y="128">most confident about.</text>
+  <text class="pbody"  x="676" y="150">Expand one hop at a time.</text>
+  <text class="pbody"  x="676" y="166">Expanding everything at</text>
+  <text class="pbody"  x="676" y="182">once is unreadable.</text>
+
+  <text class="ptitle" x="676" y="216">What to ask a node</text>
+  <text class="pbody"  x="676" y="238">Host: accounts that logged</text>
+  <text class="pbody"  x="676" y="254">on, processes, connections</text>
+  <text class="pbody"  x="676" y="276">Account: devices, sign-ins,</text>
+  <text class="pbody"  x="676" y="292">directory changes</text>
+  <text class="pbody"  x="676" y="314">IP: who else contacted it</text>
+  <text class="pbody"  x="676" y="336">Hash: where else it appeared</text>
+
+  <text class="ptitle" x="676" y="372">The fastest question</text>
+  <text class="pbody"  x="676" y="394">Which other machines has</text>
+  <text class="pbody"  x="676" y="410">this account logged onto.</text>
+  <text class="pbody"  x="676" y="432">Two clicks instead of a join,</text>
+  <text class="pbody"  x="676" y="448">and it decides whether this</text>
+  <text class="pbody"  x="676" y="464">is one host or a spread.</text>
+  <text class="pbody"  x="676" y="488">Here it found WS11-02.</text>
+
+  <text class="foot" x="24" y="528">Schematic illustration of the graph layout, not a screen capture.</text>
+  <text class="sub"  x="24" y="548">The graph is for scoping, not for proof. Evidence comes from the queries you run afterwards, and those go in the incident comments.</text>
+</svg>

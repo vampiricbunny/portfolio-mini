@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="800" height="320" role="img" aria-labelledby="t d">
+  <title id="t">Top talkers on a saturated link</title>
+  <desc id="d">A bar chart of the top talkers on the branch link in the last hour. One host, DB01 at 10.60.20.20, sent 38 gigabytes to a branch host on port 445, the file-sharing port, dwarfing everything else. The web server sent 4 gigabytes on port 443. Everything else is under 1 gigabyte. The single dominant bar is the answer: something is doing a large file transfer to the branch and filling the link.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .track { fill: #eaeef2; }
+    .big   { fill: #cf222e; }
+    .mid   { fill: #d4a72c; }
+    .small { fill: #218bff; }
+    .h1    { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub   { fill: #656d76; font-size: 11.5px; }
+    .host  { fill: #1f2328; font-size: 11px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .val   { fill: #1f2328; font-size: 11px; font-weight: 700; }
+    .note  { fill: #cf222e; font-size: 11px; font-weight: 600; }
+    @media (prefers-color-scheme: dark) {
+      .track { fill: #21262d; } .big { fill: #f85149; } .mid { fill: #d29922; } .small { fill: #58a6ff; }
+      .h1    { fill: #e6edf3; } .sub { fill: #8b949e; }
+      .host  { fill: #e6edf3; } .val { fill: #e6edf3; } .note { fill: #ff7b72; }
+    }
+  </style>
+  <text class="h1"  x="28" y="30">Top talkers, branch link, last hour</text>
+  <text class="sub" x="28" y="50">The single dominant bar is the answer.</text>
+
+  <text class="host" x="28" y="90">DB01 to branch  445</text>
+  <rect class="track" x="28" y="98" width="640" height="26" rx="3"/>
+  <rect class="big"   x="28" y="98" width="600" height="26" rx="3"/>
+  <text class="val" x="676" y="116">38 GB</text>
+
+  <text class="host" x="28" y="150">WEB01  443</text>
+  <rect class="track" x="28" y="158" width="640" height="26" rx="3"/>
+  <rect class="mid"   x="28" y="158" width="63" height="26" rx="3"/>
+  <text class="val" x="676" y="176">4 GB</text>
+
+  <text class="host" x="28" y="210">APP01  443</text>
+  <rect class="track" x="28" y="218" width="640" height="26" rx="3"/>
+  <rect class="small" x="28" y="218" width="14" height="26" rx="3"/>
+  <text class="val" x="676" y="236">0.9 GB</text>
+
+  <text class="host" x="28" y="270">everything else</text>
+  <rect class="track" x="28" y="278" width="640" height="26" rx="3"/>
+  <rect class="small" x="28" y="278" width="8" height="26" rx="3"/>
+  <text class="val" x="676" y="296">under 1 GB</text>
+
+  <text class="note" x="28" y="70">One host, 38 GB, on the file-sharing port, to the branch. That is what filled the link.</text>
+</svg>

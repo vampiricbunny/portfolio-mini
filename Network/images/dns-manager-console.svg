@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 500" width="780" height="500" role="img" aria-labelledby="t d">
+  <title id="t">DNS Manager console layout</title>
+  <desc id="d">Schematic of the DNS Manager console on DC01. The left tree shows Forward Lookup Zones containing the _msdcs.vbunnylab.local and vbunnylab.local zones, and Reverse Lookup Zones containing 10.10.10.in-addr.arpa. The right pane lists the records in the selected forward zone: SOA, NS and several Host A records mapping names to addresses in the 10.10.10.0/24 range.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .win    { fill: #ffffff; stroke: #8c959f; stroke-width: 1.2; }
+    .title  { fill: #eaeef2; }
+    .strip  { fill: #f6f8fa; }
+    .divide { stroke: #d0d7de; stroke-width: 1; }
+    .sel    { fill: #cfe8ff; }
+    .icon   { fill: #d8a657; }
+    .iconb  { fill: #6e9fd8; }
+    .icong  { fill: #7cb07c; }
+    .chev   { fill: none; stroke: #656d76; stroke-width: 1.3; }
+    .wtitle { fill: #1f2328; font-size: 12.5px; font-weight: 600; }
+    .menu   { fill: #424a53; font-size: 11.5px; }
+    .tree   { fill: #1f2328; font-size: 11.5px; }
+    .treesel{ fill: #0a3069; font-size: 11.5px; font-weight: 600; }
+    .col    { fill: #424a53; font-size: 11px; font-weight: 600; }
+    .cell   { fill: #1f2328; font-size: 11.5px; }
+    .mono   { fill: #0550ae; font-size: 11.5px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .dim    { fill: #656d76; font-size: 11px; }
+    .badge  { fill: #8250df; }
+    .bnum   { fill: #ffffff; font-size: 10px; font-weight: 700; }
+    .legend { fill: #424a53; font-size: 11.5px; }
+    .cap    { fill: #656d76; font-size: 11px; font-style: italic; }
+    .hdr    { fill: #1f2328; font-size: 13.5px; font-weight: 600; }
+
+    @media (prefers-color-scheme: dark) {
+      .win    { fill: #161b22; stroke: #484f58; }
+      .title  { fill: #21262d; }
+      .strip  { fill: #0d1117; }
+      .divide { stroke: #30363d; }
+      .sel    { fill: #163a63; }
+      .iconb  { fill: #58a6ff; }
+      .icong  { fill: #3fb950; }
+      .chev   { stroke: #8b949e; }
+      .wtitle { fill: #e6edf3; }
+      .menu   { fill: #b1bac4; }
+      .tree   { fill: #e6edf3; }
+      .treesel{ fill: #cae8ff; }
+      .col    { fill: #b1bac4; }
+      .cell   { fill: #e6edf3; }
+      .mono   { fill: #79c0ff; }
+      .dim    { fill: #8b949e; }
+      .badge  { fill: #bc8cff; }
+      .bnum   { fill: #0d1117; }
+      .legend { fill: #b1bac4; }
+      .cap    { fill: #8b949e; }
+      .hdr    { fill: #e6edf3; }
+    }
+  </style>
+
+  <text class="hdr" x="20" y="26">DNS Manager  -  dnsmgmt.msc</text>
+
+  <rect class="win" x="20" y="40" width="740" height="404" rx="5"/>
+  <path class="title" d="M20 45 a5 5 0 0 1 5 -5 h730 a5 5 0 0 1 5 5 v25 h-740 z"/>
+  <text class="wtitle" x="36" y="62">DNS Manager</text>
+  <text class="dim" x="700" y="62">_  []  X</text>
+  <line class="divide" x1="20" y1="70" x2="760" y2="70"/>
+
+  <text class="menu" x="36"  y="88">File</text>
+  <text class="menu" x="74"  y="88">Action</text>
+  <text class="menu" x="130" y="88">View</text>
+  <text class="menu" x="176" y="88">Help</text>
+  <line class="divide" x1="20" y1="96" x2="760" y2="96"/>
+  <rect class="strip" x="21" y="97" width="738" height="24"/>
+  <line class="divide" x1="20" y1="121" x2="760" y2="121"/>
+  <line class="divide" x1="272" y1="121" x2="272" y2="444"/>
+
+  <!-- ===== tree ===== -->
+  <rect class="sel" x="21" y="220" width="250" height="20"/>
+
+  <path class="chev" d="M32 138 l5 4 l-5 4"/>
+  <rect class="iconb" x="42" y="137" width="11" height="9" rx="1.5"/>
+  <text class="tree" x="59" y="146">DNS</text>
+
+  <path class="chev" d="M46 160 l5 4 l-5 4"/>
+  <rect class="iconb" x="56" y="159" width="11" height="9" rx="1.5"/>
+  <text class="tree" x="73" y="168">DC01</text>
+
+  <path class="chev" d="M60 182 l5 4 l-5 4"/>
+  <rect class="icon" x="70" y="181" width="11" height="9" rx="1.5"/>
+  <text class="tree" x="87" y="190">Forward Lookup Zones</text>
+  <circle class="badge" cx="250" cy="186" r="9"/>
+  <text class="bnum" x="250" y="190" text-anchor="middle">1</text>
+
+  <rect class="icong" x="84" y="203" width="11" height="9" rx="1.5"/>
+  <text class="tree" x="101" y="212">_msdcs.vbunnylab.local</text>
+  <circle class="badge" cx="250" cy="208" r="9"/>
+  <text class="bnum" x="250" y="212" text-anchor="middle">2</text>
+
+  <rect class="icong" x="84" y="225" width="11" height="9" rx="1.5"/>
+  <text class="treesel" x="101" y="234">vbunnylab.local</text>
+
+  <path class="chev" d="M60 248 l5 4 l-5 4"/>
+  <rect class="icon" x="70" y="247" width="11" height="9" rx="1.5"/>
+  <text class="tree" x="87" y="256">Reverse Lookup Zones</text>
+
+  <rect class="icong" x="84" y="269" width="11" height="9" rx="1.5"/>
+  <text class="tree" x="101" y="278">10.10.10.in-addr.arpa</text>
+
+  <rect class="icon" x="70" y="291" width="11" height="9" rx="1.5"/>
+  <text class="tree" x="87" y="300">Trust Points</text>
+
+  <rect class="icon" x="70" y="313" width="11" height="9" rx="1.5"/>
+  <text class="tree" x="87" y="322">Conditional Forwarders</text>
+
+  <!-- ===== record list ===== -->
+  <rect class="strip" x="273" y="122" width="486" height="24"/>
+  <text class="col" x="288" y="138">Name</text>
+  <text class="col" x="432" y="138">Type</text>
+  <text class="col" x="592" y="138">Data</text>
+  <line class="divide" x1="272" y1="146" x2="760" y2="146"/>
+  <line class="divide" x1="424" y1="122" x2="424" y2="444"/>
+  <line class="divide" x1="584" y1="122" x2="584" y2="444"/>
+
+  <circle class="badge" cx="740" cy="138" r="9"/>
+  <text class="bnum" x="740" y="142" text-anchor="middle">3</text>
+
+  <text class="dim"  x="288" y="170">(same as parent folder)</text>
+  <text class="cell" x="432" y="170">Start of Authority</text>
+  <text class="mono" x="592" y="170">[12], dc01.</text>
+
+  <text class="dim"  x="288" y="196">(same as parent folder)</text>
+  <text class="cell" x="432" y="196">Name Server (NS)</text>
+  <text class="mono" x="592" y="196">dc01.vbunnylab</text>
+
+  <text class="cell" x="288" y="222">dc01</text>
+  <text class="cell" x="432" y="222">Host (A)</text>
+  <text class="mono" x="592" y="222">10.10.10.10</text>
+
+  <text class="cell" x="288" y="248">fileserver</text>
+  <text class="cell" x="432" y="248">Host (A)</text>
+  <text class="mono" x="592" y="248">10.10.10.20</text>
+
+  <text class="cell" x="288" y="274">ws11-01</text>
+  <text class="cell" x="432" y="274">Host (A)</text>
+  <text class="mono" x="592" y="274">10.10.10.50</text>
+
+  <text class="cell" x="288" y="300">intranet</text>
+  <text class="cell" x="432" y="300">Alias (CNAME)</text>
+  <text class="mono" x="592" y="300">fileserver</text>
+
+  <!-- ===== legend ===== -->
+  <circle class="badge" cx="29" cy="466" r="9"/>
+  <text class="bnum" x="29" y="470" text-anchor="middle">1</text>
+  <text class="legend" x="44" y="470">Forward zones - name to address</text>
+
+  <circle class="badge" cx="268" cy="466" r="9"/>
+  <text class="bnum" x="268" y="470" text-anchor="middle">2</text>
+  <text class="legend" x="283" y="470">SRV records live here - how clients find a DC</text>
+
+  <circle class="badge" cx="606" cy="466" r="9"/>
+  <text class="bnum" x="606" y="470" text-anchor="middle">3</text>
+  <text class="legend" x="621" y="470">Zone records</text>
+
+  <text class="cap" x="20" y="492">Schematic illustration of the console layout - not a screen capture.</text>
+</svg>

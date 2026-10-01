@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 580" width="720" height="580" role="img" aria-labelledby="t d">
+  <title id="t">Active Directory OU structure for vbunnylab.local</title>
+  <desc id="d">Tree diagram showing the vbunnylab.local domain root, its four built-in containers (Builtin, Computers, Domain Controllers, Users) and a custom VBunnyLab organisational unit containing Accounting, HR, IT, Servers and Workstations sub-OUs.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .card   { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
+    .root   { fill: #ddf4ff; stroke: #54aeff; stroke-width: 1.5; }
+    .panel  { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1; }
+    .label  { fill: #1f2328; font-size: 13px; }
+    .rootlb { fill: #0a3069; font-size: 15px; font-weight: 600; }
+    .meta   { fill: #656d76; font-size: 11px; }
+    .ptitle { fill: #1f2328; font-size: 12px; font-weight: 600; }
+    .pbody  { fill: #424a53; font-size: 11.5px; }
+    .conn   { stroke: #afb8c1; stroke-width: 1.2; fill: none; }
+    .accB   { fill: #0969da; }
+    .accP   { fill: #8250df; }
+    .accG   { fill: #1a7f37; }
+
+    @media (prefers-color-scheme: dark) {
+      .card   { fill: #161b22; stroke: #30363d; }
+      .root   { fill: #0c2d6b; stroke: #1f6feb; }
+      .panel  { fill: #0d1117; stroke: #30363d; }
+      .label  { fill: #e6edf3; }
+      .rootlb { fill: #cae8ff; }
+      .meta   { fill: #8b949e; }
+      .ptitle { fill: #e6edf3; }
+      .pbody  { fill: #b1bac4; }
+      .conn   { stroke: #484f58; }
+      .accB   { fill: #58a6ff; }
+      .accP   { fill: #bc8cff; }
+      .accG   { fill: #3fb950; }
+    }
+  </style>
+
+  <!-- ===== root ===== -->
+  <rect class="root" x="30" y="28" width="300" height="42" rx="6"/>
+  <text class="rootlb" x="48" y="54">vbunnylab.local</text>
+  <text class="meta" x="188" y="54">forest root domain</text>
+
+  <!-- ===== connectors: root to level 1 ===== -->
+  <path class="conn" d="M48 70 V 294"/>
+  <path class="conn" d="M48 110 H 76"/>
+  <path class="conn" d="M48 156 H 76"/>
+  <path class="conn" d="M48 202 H 76"/>
+  <path class="conn" d="M48 248 H 76"/>
+  <path class="conn" d="M48 294 H 76"/>
+
+  <!-- ===== level 1: built-in containers ===== -->
+  <rect class="card" x="76" y="92" width="254" height="36" rx="5"/>
+  <rect class="accB" x="76" y="92" width="3.5" height="36" rx="1.5"/>
+  <text class="label" x="92" y="115">Builtin</text>
+  <text class="meta" x="248" y="115">system</text>
+
+  <rect class="card" x="76" y="138" width="254" height="36" rx="5"/>
+  <rect class="accB" x="76" y="138" width="3.5" height="36" rx="1.5"/>
+  <text class="label" x="92" y="161">Computers</text>
+  <text class="meta" x="248" y="161">system</text>
+
+  <rect class="card" x="76" y="184" width="254" height="36" rx="5"/>
+  <rect class="accB" x="76" y="184" width="3.5" height="36" rx="1.5"/>
+  <text class="label" x="92" y="207">Domain Controllers</text>
+  <text class="meta" x="248" y="207">system</text>
+
+  <rect class="card" x="76" y="230" width="254" height="36" rx="5"/>
+  <rect class="accB" x="76" y="230" width="3.5" height="36" rx="1.5"/>
+  <text class="label" x="92" y="253">Users</text>
+  <text class="meta" x="248" y="253">system</text>
+
+  <!-- custom top-level OU -->
+  <rect class="card" x="76" y="276" width="254" height="36" rx="5"/>
+  <rect class="accP" x="76" y="276" width="3.5" height="36" rx="1.5"/>
+  <text class="label" x="92" y="299">OU=VBunnyLab</text>
+  <text class="meta" x="256" y="299">custom</text>
+
+  <!-- ===== connectors: VBunnyLab to level 2 ===== -->
+  <path class="conn" d="M94 312 V 524"/>
+  <path class="conn" d="M94 340 H 122"/>
+  <path class="conn" d="M94 386 H 122"/>
+  <path class="conn" d="M94 432 H 122"/>
+  <path class="conn" d="M94 478 H 122"/>
+  <path class="conn" d="M94 524 H 122"/>
+
+  <!-- ===== level 2: departmental + device OUs ===== -->
+  <rect class="card" x="122" y="322" width="208" height="36" rx="5"/>
+  <rect class="accG" x="122" y="322" width="3.5" height="36" rx="1.5"/>
+  <text class="label" x="138" y="345">OU=Accounting</text>
+
+  <rect class="card" x="122" y="368" width="208" height="36" rx="5"/>
+  <rect class="accG" x="122" y="368" width="3.5" height="36" rx="1.5"/>
+  <text class="label" x="138" y="391">OU=HR</text>
+
+  <rect class="card" x="122" y="414" width="208" height="36" rx="5"/>
+  <rect class="accG" x="122" y="414" width="3.5" height="36" rx="1.5"/>
+  <text class="label" x="138" y="437">OU=IT</text>
+
+  <rect class="card" x="122" y="460" width="208" height="36" rx="5"/>
+  <rect class="accP" x="122" y="460" width="3.5" height="36" rx="1.5"/>
+  <text class="label" x="138" y="483">OU=Servers</text>
+
+  <rect class="card" x="122" y="506" width="208" height="36" rx="5"/>
+  <rect class="accP" x="122" y="506" width="3.5" height="36" rx="1.5"/>
+  <text class="label" x="138" y="529">OU=Workstations</text>
+
+  <!-- ===== side panel ===== -->
+  <rect class="panel" x="382" y="92" width="308" height="450" rx="8"/>
+
+  <text class="ptitle" x="404" y="122">Why this layout</text>
+
+  <text class="pbody" x="404" y="148">User objects never stay in the built-in</text>
+  <text class="pbody" x="404" y="165">Users container. That container cannot</text>
+  <text class="pbody" x="404" y="182">have a GPO linked to it, so anything</text>
+  <text class="pbody" x="404" y="199">left there is unmanaged.</text>
+
+  <text class="ptitle" x="404" y="235">Separation of people and devices</text>
+
+  <text class="pbody" x="404" y="261">Accounting, HR and IT hold user</text>
+  <text class="pbody" x="404" y="278">accounts. Servers and Workstations</text>
+  <text class="pbody" x="404" y="295">hold computer accounts. Policy in the</text>
+  <text class="pbody" x="404" y="312">User half of a GPO applies to the first</text>
+  <text class="pbody" x="404" y="329">set; the Computer half to the second.</text>
+
+  <text class="ptitle" x="404" y="365">One parent OU</text>
+
+  <text class="pbody" x="404" y="391">Everything custom sits under a single</text>
+  <text class="pbody" x="404" y="408">VBunnyLab OU. A baseline policy links</text>
+  <text class="pbody" x="404" y="425">once at that level and inherits down,</text>
+  <text class="pbody" x="404" y="442">instead of being linked five times.</text>
+
+  <text class="ptitle" x="404" y="478">Delegation boundary</text>
+
+  <text class="pbody" x="404" y="504">Helpdesk gets reset-password rights on</text>
+  <text class="pbody" x="404" y="521">the department OUs only - never on</text>
+  <text class="pbody" x="404" y="538">Domain Controllers.</text>
+
+  <!-- ===== legend ===== -->
+  <rect class="accB" x="382" y="46" width="10" height="10" rx="2"/>
+  <text class="meta" x="398" y="55">built-in container</text>
+  <rect class="accP" x="500" y="46" width="10" height="10" rx="2"/>
+  <text class="meta" x="516" y="55">structural OU</text>
+  <rect class="accG" x="608" y="46" width="10" height="10" rx="2"/>
+  <text class="meta" x="624" y="55">user OU</text>
+</svg>

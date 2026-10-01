@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" width="800" height="340" role="img" aria-labelledby="t d">
+  <title id="t">Alert severity and routing</title>
+  <desc id="d">An alert fires and is routed by severity. Critical means users are affected now and action is needed now, so it pages someone and wakes them. Warning means a problem is developing and action is needed soon, so it becomes a ticket for the next business hour. Info means it is worth knowing but needs no action, so it goes to a dashboard or a daily digest. A note states that severity is only useful if it changes routing, otherwise it is decoration.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .alert { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.5; }
+    .crit  { fill: #ffebe9; stroke: #cf222e; stroke-width: 1.6; }
+    .warn  { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.5; }
+    .info  { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.4; }
+    .f     { stroke: #656d76; stroke-width: 1.8; marker-end: url(#a); fill: none; }
+    .arrow { fill: #656d76; }
+    .h1    { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub   { fill: #656d76; font-size: 11.5px; }
+    .t     { fill: #1f2328; font-size: 13px; font-weight: 700; }
+    .d     { fill: #424a53; font-size: 10.5px; }
+    .r     { fill: #1f2328; font-size: 12px; font-weight: 700; }
+    .e     { fill: #656d76; font-size: 10.5px; font-weight: 600; }
+    @media (prefers-color-scheme: dark) {
+      .alert { fill: #0d1117; stroke: #30363d; } .crit { fill: #3c1618; stroke: #f85149; }
+      .warn  { fill: #4a3808; stroke: #d29922; } .info { fill: #0c2d6b; stroke: #58a6ff; }
+      .f     { stroke: #8b949e; } .arrow { fill: #8b949e; }
+      .h1    { fill: #e6edf3; } .sub { fill: #8b949e; }
+      .t     { fill: #e6edf3; } .d { fill: #b1bac4; } .r { fill: #e6edf3; } .e { fill: #8b949e; }
+    }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker></defs>
+  <text class="h1"  x="28" y="30">Alert routing by severity</text>
+  <text class="sub" x="28" y="50">Not every alert deserves a phone call at 3am.</text>
+
+  <rect class="alert" x="40" y="130" width="150" height="70" rx="8"/>
+  <text class="t" x="60" y="160">Alert fires</text>
+  <text class="d" x="60" y="180">routed by severity</text>
+
+  <line class="f" x1="190" y1="150" x2="300" y2="100"/>
+  <line class="f" x1="190" y1="165" x2="300" y2="180"/>
+  <line class="f" x1="190" y1="185" x2="300" y2="262"/>
+
+  <rect class="crit" x="304" y="72" width="230" height="60" rx="7"/>
+  <text class="t" x="320" y="96">Critical</text>
+  <text class="d" x="320" y="116">users affected now, act now</text>
+  <line class="f" x1="534" y1="102" x2="580" y2="102"/>
+  <text class="r" x="588" y="100">Page</text>
+  <text class="e" x="588" y="118">wake someone</text>
+
+  <rect class="warn" x="304" y="152" width="230" height="60" rx="7"/>
+  <text class="t" x="320" y="176">Warning</text>
+  <text class="d" x="320" y="196">developing, act soon</text>
+  <line class="f" x1="534" y1="182" x2="580" y2="182"/>
+  <text class="r" x="588" y="180">Ticket</text>
+  <text class="e" x="588" y="198">next business hour</text>
+
+  <rect class="info" x="304" y="232" width="230" height="60" rx="7"/>
+  <text class="t" x="320" y="256">Info</text>
+  <text class="d" x="320" y="276">worth knowing, no action</text>
+  <line class="f" x1="534" y1="262" x2="580" y2="262"/>
+  <text class="r" x="588" y="260">Digest</text>
+  <text class="e" x="588" y="278">dashboard or daily</text>
+
+  <text class="sub" x="28" y="322">Severity is only useful if it changes routing. If everything pages, severity is decoration and the pager gets ignored.</text>
+</svg>

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" width="860" height="480" role="img" aria-labelledby="t d">
+  <title id="t">Detection program health dashboard, drawn layout</title>
+  <desc id="d">A drawn dashboard for the SOC lead with six tiles. Coverage by tactic shows the heatmap. Detections as code shows 100 percent, trending up. Regression status shows 24 of 24 rules still firing. False positive rate trends down. Hunts this quarter shows six hunts and what they produced. Open gaps shows three, prioritised. A footer states this is a schematic illustration and not a screen capture, and that the regression status tile is the one most dashboards lack, because it answers whether the detections still work rather than whether they exist.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .win  { fill: #ffffff; stroke: #d0d7de; stroke-width: 1.3; }
+    .bar  { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1; }
+    .tile { fill: #fbfcfd; stroke: #d0d7de; stroke-width: 1.2; }
+    .big  { fill: #2ea043; font-size: 30px; font-weight: 700; }
+    .bigr { fill: #cf222e; font-size: 30px; font-weight: 700; }
+    .track{ fill: #eaeef2; } .fill { fill: #2ea043; } .fillr { fill: #cf222e; }
+    .h1   { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub  { fill: #656d76; font-size: 11px; }
+    .tt   { fill: #656d76; font-size: 10px; font-weight: 700; letter-spacing: 0.3px; }
+    .v    { fill: #1f2328; font-size: 11px; }
+    .foot { fill: #656d76; font-size: 10px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .win  { fill: #0d1117; stroke: #30363d; } .bar { fill: #161b22; stroke: #30363d; }
+      .tile { fill: #11161d; stroke: #30363d; }
+      .big  { fill: #3fb950; } .bigr { fill: #f85149; }
+      .track{ fill: #21262d; } .fill { fill: #3fb950; } .fillr { fill: #f85149; }
+      .h1   { fill: #e6edf3; } .sub { fill: #8b949e; } .tt { fill: #8b949e; }
+      .v    { fill: #e6edf3; } .foot { fill: #8b949e; }
+    }
+  </style>
+  <text class="h1"  x="24" y="28">Detection program health</text>
+  <text class="sub" x="24" y="47">One view for the SOC lead. Is the program getting better?</text>
+
+  <rect class="win" x="24" y="60" width="812" height="356" rx="6"/>
+  <rect class="bar" x="24" y="60" width="812" height="26" rx="6"/>
+  <text class="sub" x="38" y="78">SOC-03  ·  Detection Engineering  ·  this quarter</text>
+
+  <!-- tile 1 coverage -->
+  <rect class="tile" x="40" y="100" width="250" height="140" rx="5"/>
+  <text class="tt" x="56" y="120">COVERAGE BY TACTIC</text>
+  <rect class="fill" x="56" y="132" width="200" height="9" rx="2"/>
+  <rect class="fill" x="56" y="147" width="170" height="9" rx="2"/>
+  <rect class="fill" x="56" y="162" width="150" height="9" rx="2"/>
+  <rect class="fillr" x="56" y="177" width="40" height="9" rx="2"/>
+  <rect class="fillr" x="56" y="192" width="16" height="9" rx="2"/>
+  <text class="v" x="56" y="222">11 of 14 tactics covered</text>
+
+  <!-- tile 2 as code -->
+  <rect class="tile" x="306" y="100" width="250" height="140" rx="5"/>
+  <text class="tt" x="322" y="120">DETECTIONS AS CODE</text>
+  <text class="big" x="322" y="176">100%</text>
+  <text class="v" x="322" y="204">24 of 24, all tested</text>
+  <text class="sub" x="322" y="222">up from 0 last quarter</text>
+
+  <!-- tile 3 regression -->
+  <rect class="tile" x="572" y="100" width="248" height="140" rx="5"/>
+  <text class="tt" x="588" y="120">REGRESSION STATUS</text>
+  <text class="big" x="588" y="176">24 / 24</text>
+  <text class="v" x="588" y="204">rules still firing</text>
+  <text class="sub" x="588" y="222">tested weekly by emulation</text>
+
+  <!-- tile 4 false positives -->
+  <rect class="tile" x="40" y="252" width="250" height="140" rx="5"/>
+  <text class="tt" x="56" y="272">FALSE POSITIVE RATE</text>
+  <polyline points="56,340 96,332 136,320 176,300 216,288 256,282"
+            fill="none" stroke="#2ea043" stroke-width="2.5"/>
+  <text class="v" x="56" y="374">trending down</text>
+
+  <!-- tile 5 hunts -->
+  <rect class="tile" x="306" y="252" width="250" height="140" rx="5"/>
+  <text class="tt" x="322" y="272">HUNTS THIS QUARTER</text>
+  <text class="big" x="322" y="322" style="font-size:26px">6</text>
+  <text class="v" x="360" y="312">1 compromise found</text>
+  <text class="v" x="360" y="330">4 detections created</text>
+  <text class="sub" x="322" y="366">1 major gap exposed</text>
+
+  <!-- tile 6 gaps -->
+  <rect class="tile" x="572" y="252" width="248" height="140" rx="5"/>
+  <text class="tt" x="588" y="272">OPEN GAPS</text>
+  <text class="v" x="588" y="296">1  Phishing delivery  (high)</text>
+  <text class="v" x="588" y="318">2  Exfiltration  (high)</text>
+  <text class="v" x="588" y="340">3  Collection  (medium)</text>
+  <text class="sub" x="588" y="366">all need new data sources</text>
+
+  <text class="foot" x="24" y="444">Schematic illustration of the dashboard layout, not a screen capture.</text>
+  <text class="sub"  x="24" y="466">The regression status tile is the one most dashboards lack. It answers whether the detections still work, not just whether they exist.</text>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="800" height="360" role="img" aria-labelledby="t d">
+  <title id="t">A capacity trend forecasting when a resource runs out</title>
+  <desc id="d">A line chart of disk usage on DB01 over eight weeks, climbing from 40 percent to 72 percent at a steady rate of about 4 percent per week. A dashed forecast line extends the trend forward and crosses the 100 percent ceiling in about seven weeks. A note says "full in 7 weeks" is an action item, not an alert: it is time to add disk on a schedule, in business hours, with no outage, rather than the disk filling at 2am on a Sunday.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .grid { stroke: #eaeef2; stroke-width: 1; }
+    .axis { stroke: #8c959f; stroke-width: 1.3; }
+    .ceil { stroke: #cf222e; stroke-width: 1.5; stroke-dasharray: 5 3; }
+    .line { stroke: #218bff; stroke-width: 2.5; fill: none; }
+    .fore { stroke: #d4a72c; stroke-width: 2.5; stroke-dasharray: 6 4; fill: none; }
+    .dot  { fill: #218bff; }
+    .hit  { fill: #cf222e; }
+    .h1   { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub  { fill: #656d76; font-size: 11.5px; }
+    .lbl  { fill: #656d76; font-size: 10px; }
+    .cl   { fill: #cf222e; font-size: 10.5px; font-weight: 600; }
+    .fl   { fill: #9a6700; font-size: 11px; font-weight: 600; }
+    @media (prefers-color-scheme: dark) {
+      .grid { stroke: #21262d; } .axis { stroke: #6e7681; }
+      .ceil { stroke: #f85149; } .line { stroke: #58a6ff; } .fore { stroke: #d29922; }
+      .dot  { fill: #58a6ff; } .hit { fill: #f85149; }
+      .h1   { fill: #e6edf3; } .sub { fill: #8b949e; } .lbl { fill: #8b949e; }
+      .cl   { fill: #ff7b72; } .fl { fill: #d29922; }
+    }
+  </style>
+  <text class="h1"  x="28" y="30">Capacity forecast: DB01 disk</text>
+  <text class="sub" x="28" y="50">Watch the slope, extend the line, know when it runs out.</text>
+
+  <!-- axes: x from 70 to 740, y from 80 (100%) to 280 (0%) -->
+  <line class="grid" x1="70" y1="80"  x2="740" y2="80"/>
+  <line class="grid" x1="70" y1="130" x2="740" y2="130"/>
+  <line class="grid" x1="70" y1="180" x2="740" y2="180"/>
+  <line class="grid" x1="70" y1="230" x2="740" y2="230"/>
+  <line class="axis" x1="70" y1="280" x2="740" y2="280"/>
+  <line class="axis" x1="70" y1="80"  x2="70"  y2="280"/>
+
+  <text class="lbl" x="40" y="84">100</text>
+  <text class="lbl" x="46" y="184">50</text>
+  <text class="lbl" x="52" y="284">0</text>
+
+  <!-- ceiling -->
+  <line class="ceil" x1="70" y1="80" x2="740" y2="80"/>
+  <text class="cl" x="600" y="74">100 percent ceiling</text>
+
+  <!-- actual: 40% (y=200) week0 to 72% (y=136) week8 -->
+  <!-- weeks map x: week0=70, each week=42px, week8=406 -->
+  <polyline class="line" points="70,200 112,196 154,190 196,182 238,176 280,168 322,158 364,146 406,136"/>
+  <circle class="dot" cx="70" cy="200" r="3"/>
+  <circle class="dot" cx="406" cy="136" r="4"/>
+
+  <!-- forecast from week8 (406,136) continuing +8px/week down to 100% (y=80) -->
+  <polyline class="fore" points="406,136 490,120 574,104 658,88 700,80"/>
+  <circle class="hit" cx="700" cy="80" r="5"/>
+
+  <text class="lbl" x="60"  y="298">8 weeks ago</text>
+  <text class="lbl" x="386" y="298">now</text>
+  <text class="lbl" x="662" y="298">+7 weeks</text>
+
+  <text class="fl" x="470" y="150">forecast: full in ~7 weeks</text>
+
+  <text class="sub" x="28" y="332">"Full in 7 weeks" is an action item, not an alert. Add disk on a schedule, in business hours, with no outage.</text>
+  <text class="sub" x="28" y="350">The alternative is the disk filling at 2am on a Sunday and taking the database down.</text>
+</svg>

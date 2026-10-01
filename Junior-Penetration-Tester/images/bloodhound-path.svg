@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 420" width="820" height="420" role="img" aria-labelledby="t d">
+  <title id="t">Attack path graph from a service account to Domain Admin</title>
+  <desc id="d">A drawn attack-path graph in the style of BloodHound. The svc_sql user node connects, through a member-of edge, to Domain Users. SRV-FILE01 has an edge labelled AllowedToDelegate that reaches DC01. Local SYSTEM on SRV-FILE01 leads to capturing DC01's ticket, which through a DCSync edge reaches the Domain Admins group. The graph shows how one service account, combined with unconstrained delegation, reaches full domain control.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .user  { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.7; }
+    .comp  { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.7; }
+    .group { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.7; }
+    .da    { fill: #ffebe9; stroke: #cf222e; stroke-width: 2; }
+    .edge  { stroke: #8c959f; stroke-width: 2; marker-end: url(#a); fill: none; }
+    .edgec { stroke: #cf222e; stroke-width: 2.2; marker-end: url(#r); fill: none; }
+    .arrow { fill: #8c959f; }
+    .ar    { fill: #cf222e; }
+    .h1    { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub   { fill: #656d76; font-size: 11px; }
+    .nt    { fill: #1f2328; font-size: 11.5px; font-weight: 700; }
+    .nd    { fill: #424a53; font-size: 9.5px; }
+    .el    { fill: #656d76; font-size: 10px; font-weight: 600; }
+    .elc   { fill: #cf222e; font-size: 10px; font-weight: 600; }
+    .foot  { fill: #656d76; font-size: 10px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .user  { fill: #0c2d6b; stroke: #58a6ff; }
+      .comp  { fill: #4a3808; stroke: #d29922; }
+      .group { fill: #0f2f17; stroke: #3fb950; }
+      .da    { fill: #3c1618; stroke: #f85149; }
+      .edge  { stroke: #6e7681; }
+      .edgec { stroke: #f85149; }
+      .arrow { fill: #6e7681; }
+      .ar    { fill: #f85149; }
+      .h1    { fill: #e6edf3; }
+      .sub   { fill: #8b949e; }
+      .nt    { fill: #e6edf3; }
+      .nd    { fill: #b1bac4; }
+      .el    { fill: #8b949e; }
+      .elc   { fill: #ff7b72; }
+      .foot  { fill: #8b949e; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="ar"/></marker>
+  </defs>
+  <text class="h1"  x="28" y="30">Attack path graph  ·  service account to domain</text>
+  <text class="sub" x="28" y="50">The path BloodHound draws from one credential to full control.</text>
+
+  <!-- svc_sql -->
+  <ellipse class="user" cx="110" cy="130" rx="66" ry="34"/>
+  <text class="nt" x="76" y="128">svc_sql</text>
+  <text class="nd" x="76" y="144">domain user</text>
+
+  <!-- domain users -->
+  <ellipse class="group" cx="110" cy="270" rx="66" ry="34"/>
+  <text class="nt" x="70" y="268">Domain Users</text>
+  <text class="nd" x="82" y="284">group</text>
+
+  <line class="edge" x1="110" y1="164" x2="110" y2="234"/>
+  <text class="el" x="120" y="204">MemberOf</text>
+
+  <!-- SRV-FILE01 -->
+  <rect class="comp" x="300" y="96" width="150" height="68" rx="8"/>
+  <text class="nt" x="316" y="124">SRV-FILE01</text>
+  <text class="nd" x="316" y="142">unconstrained</text>
+  <text class="nd" x="316" y="156">delegation</text>
+
+  <line class="edge" x1="176" y1="126" x2="298" y2="128"/>
+  <text class="el" x="196" y="116">local SYSTEM</text>
+
+  <!-- DC01 -->
+  <rect class="comp" x="540" y="96" width="150" height="68" rx="8"/>
+  <text class="nt" x="556" y="124">DC01</text>
+  <text class="nd" x="556" y="142">domain</text>
+  <text class="nd" x="556" y="156">controller</text>
+
+  <line class="edgec" x1="450" y1="130" x2="538" y2="130"/>
+  <text class="elc" x="452" y="120">captures TGT</text>
+
+  <!-- Domain Admins -->
+  <ellipse class="da" cx="600" cy="300" rx="76" ry="38"/>
+  <text class="nt" x="558" y="298">Domain Admins</text>
+  <text class="nd" x="580" y="316">full control</text>
+
+  <line class="edgec" x1="612" y1="164" x2="606" y2="262"/>
+  <text class="elc" x="622" y="216">DCSync</text>
+
+  <text class="foot" x="28" y="374">Drawn illustration of an attack path graph, not a screen capture.</text>
+  <text class="sub"  x="28" y="396">One service account plus one delegation misconfiguration reaches Domain Admin. BloodHound found it in a single query.</text>
+</svg>

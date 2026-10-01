@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="900" height="480" role="img" aria-labelledby="t d">
+  <title id="t">How entity mapping folds separate alerts into one incident</title>
+  <desc id="d">A comparison. Without entity mapping, three alerts from three different rules arrive as three separate incidents with no relationship between them, and an analyst works each one from scratch. With entity mapping, the same three alerts each tag the host WS11-01 and the account vbunny, so Sentinel groups them into a single incident carrying five entities, an investigation graph and one timeline. A note states that entity mapping is the part people skip and the part that matters most.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .alert  { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.3; }
+    .bad    { fill: #ffebe9; stroke: #cf222e; stroke-width: 1.3; }
+    .good   { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.4; }
+    .inc    { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.6; }
+    .ent    { fill: #ecd8ff; stroke: #8250df; stroke-width: 1.3; }
+    .flow   { stroke: #656d76; stroke-width: 1.6; marker-end: url(#a); fill: none; }
+    .tag    { stroke: #8250df; stroke-width: 1.3; stroke-dasharray: 3 3; }
+    .arrow  { fill: #656d76; }
+    .h1     { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub    { fill: #656d76; font-size: 11.5px; }
+    .side   { fill: #1f2328; font-size: 12.5px; font-weight: 600; }
+    .rule   { fill: #1f2328; font-size: 11px; font-weight: 600; }
+    .det    { fill: #424a53; font-size: 10px; }
+    .entt   { fill: #1f2328; font-size: 10px; font-weight: 600; }
+    .badtx  { fill: #cf222e; font-size: 10.5px; font-weight: 600; }
+    .goodtx { fill: #1a7f37; font-size: 10.5px; font-weight: 600; }
+    .note   { fill: #656d76; font-size: 11px; }
+
+    @media (prefers-color-scheme: dark) {
+      .alert  { fill: #0d1117; stroke: #30363d; }
+      .bad    { fill: #3c1618; stroke: #f85149; }
+      .good   { fill: #0f2f17; stroke: #3fb950; }
+      .inc    { fill: #0c2d6b; stroke: #58a6ff; }
+      .ent    { fill: #3c1e70; stroke: #bc8cff; }
+      .flow   { stroke: #8b949e; }
+      .tag    { stroke: #bc8cff; }
+      .arrow  { fill: #8b949e; }
+      .h1     { fill: #e6edf3; }
+      .sub    { fill: #8b949e; }
+      .side   { fill: #e6edf3; }
+      .rule   { fill: #e6edf3; }
+      .det    { fill: #b1bac4; }
+      .entt   { fill: #e6edf3; }
+      .badtx  { fill: #ff7b72; }
+      .goodtx { fill: #3fb950; }
+      .note   { fill: #8b949e; }
+    }
+  </style>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/>
+    </marker>
+  </defs>
+
+  <text class="h1"  x="24" y="28">Entity mapping</text>
+  <text class="sub" x="24" y="48">The same three alerts, with the mapping configured and without it.</text>
+
+  <!-- WITHOUT -->
+  <text class="side"  x="24" y="80">Without entity mapping</text>
+  <text class="badtx" x="200" y="80">3 incidents, no relationship</text>
+
+  <rect class="alert" x="24" y="92" width="180" height="50" rx="5"/>
+  <text class="rule" x="36" y="112">SEN-001  Office spawns shell</text>
+  <text class="det"  x="36" y="130">09:41:14</text>
+
+  <rect class="alert" x="24" y="150" width="180" height="50" rx="5"/>
+  <text class="rule" x="36" y="170">SEN-003  Encoded PowerShell</text>
+  <text class="det"  x="36" y="188">09:41:17</text>
+
+  <rect class="alert" x="24" y="208" width="180" height="50" rx="5"/>
+  <text class="rule" x="36" y="228">SEN-008  Defender exclusion</text>
+  <text class="det"  x="36" y="246">09:44:02</text>
+
+  <line class="flow" x1="204" y1="117" x2="248" y2="117"/>
+  <line class="flow" x1="204" y1="175" x2="248" y2="175"/>
+  <line class="flow" x1="204" y1="233" x2="248" y2="233"/>
+
+  <rect class="bad" x="252" y="92" width="150" height="50" rx="5"/>
+  <text class="rule" x="264" y="112">INC-0412</text>
+  <text class="det"  x="264" y="130">1 alert, 0 entities</text>
+
+  <rect class="bad" x="252" y="150" width="150" height="50" rx="5"/>
+  <text class="rule" x="264" y="170">INC-0413</text>
+  <text class="det"  x="264" y="188">1 alert, 0 entities</text>
+
+  <rect class="bad" x="252" y="208" width="150" height="50" rx="5"/>
+  <text class="rule" x="264" y="228">INC-0414</text>
+  <text class="det"  x="264" y="246">1 alert, 0 entities</text>
+
+  <text class="badtx" x="24" y="282">Three tickets. Three analysts could work them separately and never</text>
+  <text class="badtx" x="24" y="298">notice they are the same intrusion on the same machine.</text>
+
+  <!-- WITH -->
+  <text class="side"   x="470" y="80">With entity mapping</text>
+  <text class="goodtx" x="620" y="80">1 incident, 5 entities</text>
+
+  <rect class="good" x="470" y="92" width="180" height="50" rx="5"/>
+  <text class="rule" x="482" y="112">SEN-001  Office spawns shell</text>
+  <text class="det"  x="482" y="130">Host WS11-01 · Acct vbunny</text>
+
+  <rect class="good" x="470" y="150" width="180" height="50" rx="5"/>
+  <text class="rule" x="482" y="170">SEN-003  Encoded PowerShell</text>
+  <text class="det"  x="482" y="188">Host WS11-01 · Acct vbunny</text>
+
+  <rect class="good" x="470" y="208" width="180" height="50" rx="5"/>
+  <text class="rule" x="482" y="228">SEN-008  Defender exclusion</text>
+  <text class="det"  x="482" y="246">Host WS11-01 · Acct vbunny</text>
+
+  <line class="tag" x1="650" y1="117" x2="700" y2="160"/>
+  <line class="tag" x1="650" y1="175" x2="700" y2="172"/>
+  <line class="tag" x1="650" y1="233" x2="700" y2="184"/>
+
+  <rect class="inc" x="704" y="120" width="172" height="150" rx="6"/>
+  <text class="rule" x="716" y="142">INC-0412</text>
+  <text class="det"  x="716" y="160">3 alerts, grouped</text>
+  <text class="det"  x="716" y="176">5 entities</text>
+  <text class="det"  x="716" y="192">One timeline</text>
+  <text class="det"  x="716" y="208">Investigation graph</text>
+
+  <rect class="ent" x="716" y="220" width="70" height="18" rx="3"/>
+  <text class="entt" x="723" y="233">WS11-01</text>
+  <rect class="ent" x="792" y="220" width="70" height="18" rx="3"/>
+  <text class="entt" x="799" y="233">vbunny</text>
+  <rect class="ent" x="716" y="244" width="146" height="18" rx="3"/>
+  <text class="entt" x="723" y="257">198.51.100.44 · docm · hash</text>
+
+  <text class="goodtx" x="470" y="296">One ticket. The grouping happened because every rule tagged the</text>
+  <text class="goodtx" x="470" y="312">same host and account, so Sentinel knew they were related.</text>
+
+  <!-- how -->
+  <rect class="alert" x="24" y="334" width="852" height="112" rx="6"/>
+  <text class="side" x="40" y="358">How the mapping is configured on a rule</text>
+
+  <text class="rule" x="40" y="384">Entity</text>
+  <text class="rule" x="170" y="384">Identifier</text>
+  <text class="rule" x="320" y="384">Column in the query result</text>
+
+  <text class="det" x="40" y="404">Host</text>
+  <text class="det" x="170" y="404">HostName</text>
+  <text class="det" x="320" y="404">DeviceName</text>
+
+  <text class="det" x="40" y="420">Account</text>
+  <text class="det" x="170" y="420">Name + UPNSuffix</text>
+  <text class="det" x="320" y="420">AccountName, UPNSuffix  (split from AccountUpn)</text>
+
+  <text class="det" x="40" y="436">FileHash</text>
+  <text class="det" x="170" y="436">Algorithm + Value</text>
+  <text class="det" x="320" y="436">"SHA256", SHA256</text>
+
+  <text class="note" x="620" y="404">Grouping set to:</text>
+  <text class="note" x="620" y="420">match on Host and Account,</text>
+  <text class="note" x="620" y="436">5 hour lookback window.</text>
+
+  <text class="sub" x="24" y="470">Entity mapping is the part people skip and the part that matters most. Without it there is no graph, no grouping and no entity page.</text>
+</svg>

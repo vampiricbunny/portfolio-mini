@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" width="720" height="470" role="img" aria-labelledby="t d">
+  <title id="t">Group Policy processing order and precedence (LSDOU)</title>
+  <desc id="d">Five stacked layers showing Group Policy applying in the order Local, Site, Domain, Parent OU, Child OU. Policies process top to bottom, and because later settings overwrite earlier ones, precedence increases in the opposite direction. A side panel lists the exceptions: Enforced, Block Inheritance, security filtering and loopback processing.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .panel  { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1; }
+    .note   { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1; }
+    .l1 { fill: #eaeef2; stroke: #afb8c1; }
+    .l2 { fill: #ddf4ff; stroke: #54aeff; }
+    .l3 { fill: #b6e3ff; stroke: #218bff; }
+    .l4 { fill: #ecd8ff; stroke: #a475f9; }
+    .l5 { fill: #d8b9ff; stroke: #8250df; }
+    .bar { stroke-width: 1.4; }
+    .lb     { fill: #1f2328; font-size: 13.5px; font-weight: 600; }
+    .sub    { fill: #424a53; font-size: 11.5px; }
+    .meta   { fill: #656d76; font-size: 11px; }
+    .axis   { fill: #656d76; font-size: 11.5px; font-weight: 600; }
+    .ptitle { fill: #1f2328; font-size: 12px; font-weight: 600; }
+    .pbody  { fill: #424a53; font-size: 11.5px; }
+    .ntext  { fill: #4d2d00; font-size: 12px; }
+    .arrow  { stroke: #656d76; stroke-width: 1.4; fill: none; }
+    .ahead  { fill: #656d76; }
+
+    @media (prefers-color-scheme: dark) {
+      .panel  { fill: #0d1117; stroke: #30363d; }
+      .note   { fill: #272115; stroke: #9e6a03; }
+      .l1 { fill: #21262d; stroke: #484f58; }
+      .l2 { fill: #0c2d6b; stroke: #1f6feb; }
+      .l3 { fill: #0f3d91; stroke: #388bfd; }
+      .l4 { fill: #3c1e70; stroke: #8957e5; }
+      .l5 { fill: #4f2d8f; stroke: #bc8cff; }
+      .lb     { fill: #e6edf3; }
+      .sub    { fill: #b1bac4; }
+      .meta   { fill: #8b949e; }
+      .axis   { fill: #8b949e; }
+      .ptitle { fill: #e6edf3; }
+      .pbody  { fill: #b1bac4; }
+      .ntext  { fill: #f2cc60; }
+      .arrow  { stroke: #8b949e; }
+      .ahead  { fill: #8b949e; }
+    }
+  </style>
+
+  <text class="lb" x="60" y="42">Group Policy processing order</text>
+  <text class="meta" x="60" y="62">Local → Site → Domain → OU.  Each pass overwrites conflicting settings from the pass before it.</text>
+
+  <!-- ===== processing-order arrow (left, downward) ===== -->
+  <path class="arrow" d="M38 92 V 348"/>
+  <polygon class="ahead" points="38,358 33,346 43,346"/>
+  <text class="axis" transform="rotate(-90 20 225)" x="20" y="225" text-anchor="middle">applied in this order</text>
+
+  <!-- ===== layers ===== -->
+  <rect class="bar l1" x="60" y="90" width="376" height="44" rx="5"/>
+  <text class="lb" x="78" y="110">Local Group Policy</text>
+  <text class="sub" x="78" y="127">On the machine itself - gpedit.msc</text>
+
+  <rect class="bar l2" x="60" y="146" width="376" height="44" rx="5"/>
+  <text class="lb" x="78" y="166">Site</text>
+  <text class="sub" x="78" y="183">Rarely used; tied to AD Sites and Services</text>
+
+  <rect class="bar l3" x="60" y="202" width="376" height="44" rx="5"/>
+  <text class="lb" x="78" y="222">Domain</text>
+  <text class="sub" x="78" y="239">Default Domain Policy - password and lockout</text>
+
+  <rect class="bar l4" x="60" y="258" width="376" height="44" rx="5"/>
+  <text class="lb" x="78" y="278">Parent OU</text>
+  <text class="sub" x="78" y="295">OU=VBunnyLab - the shared baseline</text>
+
+  <rect class="bar l5" x="60" y="314" width="376" height="44" rx="5"/>
+  <text class="lb" x="78" y="334">Child OU</text>
+  <text class="sub" x="78" y="351">OU=Accounting, OU=HR - wins on conflict</text>
+
+  <!-- ===== precedence arrow (right, upward) ===== -->
+  <path class="arrow" d="M456 356 V 100"/>
+  <polygon class="ahead" points="456,90 451,102 461,102"/>
+  <text class="axis" transform="rotate(-90 476 225)" x="476" y="225" text-anchor="middle">precedence increases</text>
+
+  <!-- ===== exceptions panel ===== -->
+  <rect class="panel" x="496" y="90" width="194" height="268" rx="8"/>
+
+  <text class="ptitle" x="514" y="116">Four things that break it</text>
+
+  <text class="ptitle" x="514" y="146">Enforced</text>
+  <text class="pbody" x="514" y="164">Pins a GPO so lower</text>
+  <text class="pbody" x="514" y="180">levels cannot override it.</text>
+
+  <text class="ptitle" x="514" y="208">Block Inheritance</text>
+  <text class="pbody" x="514" y="226">Stops parent GPOs at an</text>
+  <text class="pbody" x="514" y="242">OU - but loses to Enforced.</text>
+
+  <text class="ptitle" x="514" y="270">Security filtering</text>
+  <text class="pbody" x="514" y="288">Needs Read + Apply. No</text>
+  <text class="pbody" x="514" y="304">Apply means no policy.</text>
+
+  <text class="ptitle" x="514" y="332">Loopback</text>
+  <text class="pbody" x="514" y="350">User settings follow the PC.</text>
+
+  <!-- ===== bottom note ===== -->
+  <rect class="note" x="60" y="388" width="630" height="58" rx="6"/>
+  <text class="ntext" x="80" y="412">Troubleshooting order: run gpresult /h report.html on the client first. It shows which GPOs</text>
+  <text class="ntext" x="80" y="432">actually applied, which were filtered out, and why - before you touch a single policy setting.</text>
+</svg>

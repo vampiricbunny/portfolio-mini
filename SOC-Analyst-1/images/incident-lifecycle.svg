@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" width="900" height="460" role="img" aria-labelledby="t d">
+  <title id="t">Incident states and the clocks that run against them</title>
+  <desc id="d">An incident moves from New to Active to one of four closed classifications. While New, the time to acknowledge clock runs. While Active, the time to triage clock runs. The four closed outcomes are True Positive, meaning real and malicious; Benign Positive, meaning real and authorised, where the rule was correct and needs no tuning; False Positive, meaning the detection was wrong and the rule needs work; and Undetermined, which should be rare and usually indicates missing telemetry rather than analyst skill. A warning notes that closing a benign positive as a false positive implies tuning that is not needed and softens the rule set over time.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .new    { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.6; }
+    .act    { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.6; }
+    .tp     { fill: #ffebe9; stroke: #cf222e; stroke-width: 1.5; }
+    .bp     { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.5; }
+    .fp     { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.5; }
+    .un     { fill: #fff1e5; stroke: #fb8f44; stroke-width: 1.5; }
+    .warn   { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.2; }
+    .flow   { stroke: #656d76; stroke-width: 1.8; marker-end: url(#a); fill: none; }
+    .clock  { stroke: #8250df; stroke-width: 1.6; stroke-dasharray: 4 3; }
+    .arrow  { fill: #656d76; }
+    .h1     { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub    { fill: #656d76; font-size: 11.5px; }
+    .st     { fill: #1f2328; font-size: 13px; font-weight: 600; }
+    .det    { fill: #424a53; font-size: 10.5px; }
+    .clk    { fill: #8250df; font-size: 11px; font-weight: 600; }
+    .edge   { fill: #656d76; font-size: 10.5px; }
+    .wt     { fill: #9a6700; font-size: 11px; }
+
+    @media (prefers-color-scheme: dark) {
+      .new    { fill: #4a3808; stroke: #d29922; }
+      .act    { fill: #0c2d6b; stroke: #58a6ff; }
+      .tp     { fill: #3c1618; stroke: #f85149; }
+      .bp     { fill: #0f2f17; stroke: #3fb950; }
+      .fp     { fill: #0d1117; stroke: #30363d; }
+      .un     { fill: #4a2610; stroke: #db6d28; }
+      .warn   { fill: #4a3808; stroke: #d29922; }
+      .flow   { stroke: #8b949e; }
+      .clock  { stroke: #bc8cff; }
+      .arrow  { fill: #8b949e; }
+      .h1     { fill: #e6edf3; }
+      .sub    { fill: #8b949e; }
+      .st     { fill: #e6edf3; }
+      .det    { fill: #b1bac4; }
+      .clk    { fill: #d2a8ff; }
+      .edge   { fill: #8b949e; }
+      .wt     { fill: #d29922; }
+    }
+  </style>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/>
+    </marker>
+  </defs>
+
+  <text class="h1"  x="24" y="28">Incident lifecycle</text>
+  <text class="sub" x="24" y="48">Two clocks run. Acknowledge means somebody owns it, not that work has started.</text>
+
+  <!-- NEW -->
+  <rect class="new" x="24" y="120" width="160" height="80" rx="7"/>
+  <text class="st"  x="40" y="148">New</text>
+  <text class="det" x="40" y="168">Nobody has claimed it</text>
+  <text class="det" x="40" y="186">Invisible in practice</text>
+
+  <line class="clock" x1="24" y1="212" x2="184" y2="212"/>
+  <text class="clk" x="24" y="230">Time to acknowledge</text>
+  <text class="det" x="24" y="246">High target: 30 min</text>
+
+  <line class="flow" x1="184" y1="160" x2="238" y2="160"/>
+  <text class="edge" x="188" y="152">assign</text>
+
+  <!-- ACTIVE -->
+  <rect class="act" x="242" y="120" width="160" height="80" rx="7"/>
+  <text class="st"  x="258" y="148">Active</text>
+  <text class="det" x="258" y="168">Owned and being worked</text>
+  <text class="det" x="258" y="186">Comment as you go</text>
+
+  <line class="clock" x1="242" y1="212" x2="402" y2="212"/>
+  <text class="clk" x="242" y="230">Time to triage</text>
+  <text class="det" x="242" y="246">High target: 1 hour</text>
+
+  <!-- fan out -->
+  <line class="flow" x1="402" y1="136" x2="470" y2="92"/>
+  <line class="flow" x1="402" y1="152" x2="470" y2="170"/>
+  <line class="flow" x1="402" y1="168" x2="470" y2="248"/>
+  <line class="flow" x1="402" y1="184" x2="470" y2="326"/>
+
+  <!-- outcomes -->
+  <rect class="tp" x="474" y="66" width="200" height="56" rx="6"/>
+  <text class="st"  x="488" y="90">True Positive</text>
+  <text class="det" x="488" y="110">Real, and it was malicious</text>
+
+  <rect class="bp" x="474" y="144" width="200" height="56" rx="6"/>
+  <text class="st"  x="488" y="168">Benign Positive</text>
+  <text class="det" x="488" y="188">Real, and it was authorised</text>
+
+  <rect class="fp" x="474" y="222" width="200" height="56" rx="6"/>
+  <text class="st"  x="488" y="246">False Positive</text>
+  <text class="det" x="488" y="266">Did not happen. Tune the rule</text>
+
+  <rect class="un" x="474" y="300" width="200" height="56" rx="6"/>
+  <text class="st"  x="488" y="324">Undetermined</text>
+  <text class="det" x="488" y="344">Could not establish either way</text>
+
+  <!-- side notes -->
+  <text class="det" x="692" y="90">Escalate, or contain and close</text>
+  <text class="det" x="692" y="110">with evidence recorded.</text>
+
+  <text class="det" x="692" y="168">The rule was correct.</text>
+  <text class="det" x="692" y="188">No tuning needed.</text>
+
+  <text class="det" x="692" y="246">The rule was wrong.</text>
+  <text class="det" x="692" y="266">This is a tuning signal.</text>
+
+  <text class="det" x="692" y="324">Should be rare. Usually a</text>
+  <text class="det" x="692" y="344">telemetry gap, not a skill gap.</text>
+
+  <!-- warning -->
+  <rect class="warn" x="24" y="376" width="852" height="56" rx="6"/>
+  <text class="wt" x="40" y="400">Benign positive and false positive are not the same thing. Closing a benign positive as a false positive implies the rule needs</text>
+  <text class="wt" x="40" y="418">tuning when it does not. Over months that softens a rule set for no reason, and the detection stops firing when it should.</text>
+</svg>

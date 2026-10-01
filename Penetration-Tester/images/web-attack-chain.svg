@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 360" width="840" height="360" role="img" aria-labelledby="t d">
+  <title id="t">The web application attack chain, four flaws that compound</title>
+  <desc id="d">Four web flaws worked in order, each worse than the last. SQL injection in search, then an insecure direct object reference exposing other customers' data, then session tokens that never expire, then a file upload that leads to remote code execution. Each is mapped to its OWASP category and finding number. The chain ends in a shell on the web server. A note says the application does not have one flaw, it has a set that compound.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .s1 { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.4; }
+    .s2 { fill: #cfe9ff; stroke: #218bff; stroke-width: 1.4; }
+    .s3 { fill: #ffe8cc; stroke: #e16f24; stroke-width: 1.4; }
+    .s4 { fill: #ffebe9; stroke: #cf222e; stroke-width: 1.7; }
+    .shell { fill: #24292f; stroke: #57606a; stroke-width: 1.4; }
+    .st { fill: #1f2328; font-size: 12.5px; font-weight: 700; }
+    .sd { fill: #424a53; font-size: 10px; }
+    .owasp { fill: #57606a; font-size: 9.5px; font-weight: 700; }
+    .fid { fill: #a40e26; font-size: 10px; font-weight: 700; }
+    .sht { fill: #ffffff; font-size: 12px; font-weight: 700; text-anchor: middle; }
+    .flow{ stroke: #656d76; stroke-width: 2; marker-end: url(#a); fill: none; }
+    .arrow{ fill: #656d76; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .s1 { fill: #0c2d6b; stroke: #58a6ff; } .s2 { fill: #10387f; stroke: #58a6ff; }
+      .s3 { fill: #3a1e0d; stroke: #e16f24; } .s4 { fill: #3d1417; stroke: #f85149; }
+      .st { fill: #e6edf3; } .sd { fill: #b1bac4; } .owasp { fill: #8b949e; } .fid { fill: #ff7b72; }
+      .flow{ stroke: #8b949e; } .arrow { fill: #8b949e; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker>
+  </defs>
+  <text class="h1"  x="24" y="30">The web attack chain</text>
+  <text class="sub" x="24" y="49">Four flaws, worked in order, each one worse than the last.</text>
+
+  <rect class="s1" x="24"  y="86" width="180" height="120" rx="8"/>
+  <text class="owasp" x="40" y="108">A03 INJECTION</text>
+  <text class="st" x="40" y="130">1  SQL injection</text>
+  <text class="sd" x="40" y="152">Product search drops</text>
+  <text class="sd" x="40" y="166">input into a query</text>
+  <text class="sd" x="40" y="180">Reads the customer table</text>
+  <text class="fid" x="40" y="200">PT2-07</text>
+
+  <rect class="s2" x="228" y="86" width="180" height="120" rx="8"/>
+  <text class="owasp" x="244" y="108">A01 ACCESS CONTROL</text>
+  <text class="st" x="244" y="130">2  IDOR</text>
+  <text class="sd" x="244" y="152">Change the order number</text>
+  <text class="sd" x="244" y="166">in the address bar</text>
+  <text class="sd" x="244" y="180">Read any customer's data</text>
+  <text class="fid" x="244" y="200">PT2-06</text>
+
+  <rect class="s3" x="432" y="86" width="180" height="120" rx="8"/>
+  <text class="owasp" x="448" y="108">A07 AUTH FAILURE</text>
+  <text class="st" x="448" y="130">3  Immortal tokens</text>
+  <text class="sd" x="448" y="152">Sessions never expire</text>
+  <text class="sd" x="448" y="166">and survive logout</text>
+  <text class="sd" x="448" y="180">Stolen tokens keep working</text>
+  <text class="fid" x="448" y="200">PT2-11</text>
+
+  <rect class="s4" x="636" y="86" width="180" height="120" rx="8"/>
+  <text class="owasp" x="652" y="108">A05 MISCONFIG</text>
+  <text class="st" x="652" y="130">4  Upload to RCE</text>
+  <text class="sd" x="652" y="152">Handler checks the label,</text>
+  <text class="sd" x="652" y="166">not the file</text>
+  <text class="sd" x="652" y="180">Runs the attacker's code</text>
+  <text class="fid" x="652" y="200">PT2-01</text>
+
+  <line class="flow" x1="204" y1="146" x2="226" y2="146"/>
+  <line class="flow" x1="408" y1="146" x2="430" y2="146"/>
+  <line class="flow" x1="612" y1="146" x2="634" y2="146"/>
+
+  <rect class="shell" x="636" y="246" width="180" height="52" rx="8"/>
+  <text class="sht" x="726" y="270">Shell on WWW01</text>
+  <text class="sht" x="726" y="288" font-size="10" fill="#d0d7de">the foothold, from outside</text>
+  <line class="flow" x1="726" y1="206" x2="726" y2="244"/>
+
+  <text class="foot" x="24" y="330">The application does not have one flaw. It has a set of them that compound, and one good decision, a limited database user, kept flaw 1 from being a second RCE.</text>
+</svg>

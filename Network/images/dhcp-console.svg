@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 500" width="780" height="500" role="img" aria-labelledby="t d">
+  <title id="t">DHCP console layout</title>
+  <desc id="d">Schematic of the DHCP console on DC01. The left tree shows the IPv4 node containing the VBunnyLab-LAN scope, with Address Pool, Address Leases, Reservations, Scope Options and Policies beneath it. The right pane lists active leases with client IP address, name, lease expiry and MAC address.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .win    { fill: #ffffff; stroke: #8c959f; stroke-width: 1.2; }
+    .title  { fill: #eaeef2; }
+    .strip  { fill: #f6f8fa; }
+    .divide { stroke: #d0d7de; stroke-width: 1; }
+    .sel    { fill: #cfe8ff; }
+    .icon   { fill: #d8a657; }
+    .iconb  { fill: #6e9fd8; }
+    .icong  { fill: #7cb07c; }
+    .dot    { fill: #2da44e; }
+    .chev   { fill: none; stroke: #656d76; stroke-width: 1.3; }
+    .wtitle { fill: #1f2328; font-size: 12.5px; font-weight: 600; }
+    .menu   { fill: #424a53; font-size: 11.5px; }
+    .tree   { fill: #1f2328; font-size: 11.5px; }
+    .treesel{ fill: #0a3069; font-size: 11.5px; font-weight: 600; }
+    .col    { fill: #424a53; font-size: 11px; font-weight: 600; }
+    .cell   { fill: #1f2328; font-size: 11.5px; }
+    .mono   { fill: #0550ae; font-size: 11px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .dim    { fill: #656d76; font-size: 11px; }
+    .badge  { fill: #8250df; }
+    .bnum   { fill: #ffffff; font-size: 10px; font-weight: 700; }
+    .legend { fill: #424a53; font-size: 11.5px; }
+    .cap    { fill: #656d76; font-size: 11px; font-style: italic; }
+    .hdr    { fill: #1f2328; font-size: 13.5px; font-weight: 600; }
+
+    @media (prefers-color-scheme: dark) {
+      .win    { fill: #161b22; stroke: #484f58; }
+      .title  { fill: #21262d; }
+      .strip  { fill: #0d1117; }
+      .divide { stroke: #30363d; }
+      .sel    { fill: #163a63; }
+      .iconb  { fill: #58a6ff; }
+      .icong  { fill: #3fb950; }
+      .dot    { fill: #3fb950; }
+      .chev   { stroke: #8b949e; }
+      .wtitle { fill: #e6edf3; }
+      .menu   { fill: #b1bac4; }
+      .tree   { fill: #e6edf3; }
+      .treesel{ fill: #cae8ff; }
+      .col    { fill: #b1bac4; }
+      .cell   { fill: #e6edf3; }
+      .mono   { fill: #79c0ff; }
+      .dim    { fill: #8b949e; }
+      .badge  { fill: #bc8cff; }
+      .bnum   { fill: #0d1117; }
+      .legend { fill: #b1bac4; }
+      .cap    { fill: #8b949e; }
+      .hdr    { fill: #e6edf3; }
+    }
+  </style>
+
+  <text class="hdr" x="20" y="26">DHCP  -  dhcpmgmt.msc</text>
+
+  <rect class="win" x="20" y="40" width="740" height="404" rx="5"/>
+  <path class="title" d="M20 45 a5 5 0 0 1 5 -5 h730 a5 5 0 0 1 5 5 v25 h-740 z"/>
+  <text class="wtitle" x="36" y="62">DHCP</text>
+  <text class="dim" x="700" y="62">_  []  X</text>
+  <line class="divide" x1="20" y1="70" x2="760" y2="70"/>
+
+  <text class="menu" x="36"  y="88">File</text>
+  <text class="menu" x="74"  y="88">Action</text>
+  <text class="menu" x="130" y="88">View</text>
+  <text class="menu" x="176" y="88">Help</text>
+  <line class="divide" x1="20" y1="96" x2="760" y2="96"/>
+  <rect class="strip" x="21" y="97" width="738" height="24"/>
+  <line class="divide" x1="20" y1="121" x2="760" y2="121"/>
+  <line class="divide" x1="286" y1="121" x2="286" y2="444"/>
+
+  <!-- ===== tree ===== -->
+  <rect class="sel" x="21" y="242" width="264" height="20"/>
+
+  <path class="chev" d="M32 138 l5 4 l-5 4"/>
+  <rect class="iconb" x="42" y="137" width="11" height="9" rx="1.5"/>
+  <text class="tree" x="59" y="146">DHCP</text>
+
+  <path class="chev" d="M46 160 l5 4 l-5 4"/>
+  <rect class="iconb" x="56" y="159" width="11" height="9" rx="1.5"/>
+  <text class="tree" x="73" y="168">dc01.vbunnylab.local</text>
+
+  <path class="chev" d="M60 182 l5 4 l-5 4"/>
+  <circle class="dot" cx="76" cy="186" r="5"/>
+  <text class="tree" x="87" y="190">IPv4</text>
+  <circle class="badge" cx="264" cy="186" r="9"/>
+  <text class="bnum" x="264" y="190" text-anchor="middle">1</text>
+
+  <path class="chev" d="M74 204 l5 4 l-5 4"/>
+  <rect class="icong" x="84" y="203" width="11" height="9" rx="1.5"/>
+  <text class="tree" x="101" y="212">Scope [10.10.10.0] VBunnyLab-LAN</text>
+
+  <rect class="icon" x="98" y="225" width="11" height="9" rx="1.5"/>
+  <text class="tree" x="115" y="234">Address Pool</text>
+
+  <rect class="icon" x="98" y="247" width="11" height="9" rx="1.5"/>
+  <text class="treesel" x="115" y="256">Address Leases</text>
+  <circle class="badge" cx="264" cy="252" r="9"/>
+  <text class="bnum" x="264" y="256" text-anchor="middle">2</text>
+
+  <rect class="icon" x="98" y="269" width="11" height="9" rx="1.5"/>
+  <text class="tree" x="115" y="278">Reservations</text>
+  <circle class="badge" cx="264" cy="274" r="9"/>
+  <text class="bnum" x="264" y="278" text-anchor="middle">3</text>
+
+  <rect class="icon" x="98" y="291" width="11" height="9" rx="1.5"/>
+  <text class="tree" x="115" y="300">Scope Options</text>
+
+  <rect class="icon" x="98" y="313" width="11" height="9" rx="1.5"/>
+  <text class="tree" x="115" y="322">Policies</text>
+
+  <rect class="icon" x="84" y="335" width="11" height="9" rx="1.5"/>
+  <text class="tree" x="101" y="344">Server Options</text>
+
+  <rect class="icon" x="84" y="357" width="11" height="9" rx="1.5"/>
+  <text class="tree" x="101" y="366">Filters</text>
+
+  <!-- ===== lease list ===== -->
+  <rect class="strip" x="287" y="122" width="472" height="24"/>
+  <text class="col" x="300" y="138">Client IP</text>
+  <text class="col" x="400" y="138">Name</text>
+  <text class="col" x="510" y="138">Lease Expires</text>
+  <text class="col" x="646" y="138">MAC Address</text>
+  <line class="divide" x1="286" y1="146" x2="760" y2="146"/>
+  <line class="divide" x1="392" y1="122" x2="392" y2="444"/>
+  <line class="divide" x1="502" y1="122" x2="502" y2="444"/>
+  <line class="divide" x1="638" y1="122" x2="638" y2="444"/>
+
+  <text class="mono" x="300" y="172">10.10.10.50</text>
+  <text class="cell" x="400" y="172">ws11-01</text>
+  <text class="dim"  x="510" y="172">22/09 14:10</text>
+  <text class="mono" x="646" y="172">00155D8A3C02</text>
+
+  <text class="mono" x="300" y="200">10.10.10.51</text>
+  <text class="cell" x="400" y="200">ws11-02</text>
+  <text class="dim"  x="510" y="200">22/09 15:42</text>
+  <text class="mono" x="646" y="200">00155D8A3C03</text>
+
+  <text class="mono" x="300" y="228">10.10.10.60</text>
+  <text class="cell" x="400" y="228">hp-accounting</text>
+  <text class="dim"  x="510" y="228">Reservation</text>
+  <text class="mono" x="646" y="228">00155D8A3C01</text>
+
+  <text class="mono" x="300" y="256">10.10.10.52</text>
+  <text class="cell" x="400" y="256">ws11-03</text>
+  <text class="dim"  x="510" y="256">22/09 16:05</text>
+  <text class="mono" x="646" y="256">00155D8A3C04</text>
+
+  <!-- ===== legend ===== -->
+  <circle class="badge" cx="29" cy="466" r="9"/>
+  <text class="bnum" x="29" y="470" text-anchor="middle">1</text>
+  <text class="legend" x="44" y="470">Green dot = authorised in AD</text>
+
+  <circle class="badge" cx="242" cy="466" r="9"/>
+  <text class="bnum" x="242" y="470" text-anchor="middle">2</text>
+  <text class="legend" x="257" y="470">Leases tie an IP to a MAC and a time</text>
+
+  <circle class="badge" cx="526" cy="466" r="9"/>
+  <text class="bnum" x="526" y="470" text-anchor="middle">3</text>
+  <text class="legend" x="541" y="470">Reservations - fixed addresses</text>
+
+  <text class="cap" x="20" y="492">Schematic illustration of the console layout - not a screen capture.</text>
+</svg>

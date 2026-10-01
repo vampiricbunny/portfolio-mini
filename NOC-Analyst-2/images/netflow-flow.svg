@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300" role="img" aria-labelledby="t d">
+  <title id="t">How NetFlow captures who is talking to whom</title>
+  <desc id="d">A router watching traffic records a summary of each conversation: source, destination, port, protocol and bytes. It exports these flow records to a collector, ntopng, which turns them into top talkers and traffic breakdowns. The example shows that host 10.60.20.10 sent 40 gigabytes to an external host. A note explains that flow captures only the summary, not the packet contents, which is usually enough to find what filled a link.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .rtr  { fill: #fff1e5; stroke: #fb8f44; stroke-width: 1.6; }
+    .coll { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.6; }
+    .rec  { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.3; }
+    .f    { stroke: #656d76; stroke-width: 1.8; marker-end: url(#a); fill: none; }
+    .arrow{ fill: #656d76; }
+    .h1   { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub  { fill: #656d76; font-size: 11.5px; }
+    .t    { fill: #1f2328; font-size: 13px; font-weight: 700; }
+    .d    { fill: #424a53; font-size: 10.5px; }
+    .m    { fill: #0550ae; font-size: 10px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .lbl  { fill: #656d76; font-size: 10px; font-weight: 600; }
+    @media (prefers-color-scheme: dark) {
+      .rtr  { fill: #4a2610; stroke: #db6d28; } .coll { fill: #0f2f17; stroke: #3fb950; }
+      .rec  { fill: #0d1117; stroke: #30363d; }
+      .f    { stroke: #8b949e; } .arrow { fill: #8b949e; }
+      .h1   { fill: #e6edf3; } .sub { fill: #8b949e; }
+      .t    { fill: #e6edf3; } .d { fill: #b1bac4; } .m { fill: #79c0ff; } .lbl { fill: #8b949e; }
+    }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker></defs>
+  <text class="h1"  x="28" y="30">How flow analysis works</text>
+  <text class="sub" x="28" y="50">Utilisation says how much. Flow says who and what.</text>
+
+  <rect class="rtr" x="40" y="90" width="180" height="80" rx="8"/>
+  <text class="t" x="60" y="122">Router</text>
+  <text class="d" x="60" y="142">watches traffic,</text>
+  <text class="d" x="60" y="158">records each flow</text>
+
+  <line class="f" x1="220" y1="130" x2="300" y2="130"/>
+  <text class="lbl" x="228" y="122">exports</text>
+
+  <rect class="rec" x="304" y="86" width="270" height="88" rx="7"/>
+  <text class="d" x="320" y="108">a flow record:</text>
+  <text class="m" x="320" y="130">src 10.60.20.10</text>
+  <text class="m" x="320" y="148">dst 203.0.113.5  port 443</text>
+  <text class="m" x="320" y="166">40 GB</text>
+
+  <line class="f" x1="574" y1="130" x2="620" y2="130"/>
+
+  <rect class="coll" x="624" y="90" width="150" height="80" rx="8"/>
+  <text class="t" x="640" y="122">ntopng</text>
+  <text class="d" x="640" y="142">top talkers,</text>
+  <text class="d" x="640" y="158">breakdowns</text>
+
+  <text class="sub" x="28" y="222">Flow captures the summary, not the packet contents. You learn two hosts exchanged 40 GB on port 443, not what was in it.</text>
+  <text class="sub" x="28" y="242">That is usually enough for a NOC: the job is to find what filled the link, not to read the traffic.</text>
+  <text class="sub" x="28" y="278">You watch utilisation continuously, and reach for flow when utilisation says something is wrong.</text>
+</svg>

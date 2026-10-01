@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 560" width="940" height="560" role="img" aria-labelledby="t d">
+  <title id="t">Microsoft Sentinel data architecture from source to analyst</title>
+  <desc id="d">Four source groups feed a Log Analytics workspace. On-premises Proxmox hosts DC01, FS01 and two Windows 11 workstations are connected through Azure Arc and the Azure Monitor Agent, filtered by a data collection rule using nine XPath expressions. Microsoft 365 and Defender XDR connectors feed device, email and Office audit tables at no ingestion cost. Entra ID feeds sign-in and audit logs, which are charged. The OPNsense firewall feeds Syslog. The workspace holds the tables, Sentinel runs twelve analytics rules over them, incidents are created with entity mapping, and Logic App playbooks enrich and respond. A cost panel shows the custom data collection rule cutting volume from 7.2 gigabytes per day to 0.58, a 92 percent reduction.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .zone   { fill: none; stroke: #afb8c1; stroke-width: 1.3; stroke-dasharray: 6 4; }
+    .onprem { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.5; }
+    .free   { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.5; }
+    .paid   { fill: #fff1e5; stroke: #fb8f44; stroke-width: 1.5; }
+    .dcr    { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.6; }
+    .ws     { fill: #ecd8ff; stroke: #8250df; stroke-width: 1.8; }
+    .rule   { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.4; }
+    .inc    { fill: #ffebe9; stroke: #cf222e; stroke-width: 1.6; }
+    .panel  { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1; }
+    .flow   { stroke: #656d76; stroke-width: 1.8; marker-end: url(#a); fill: none; }
+    .arrow  { fill: #656d76; }
+    .h1     { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub    { fill: #656d76; font-size: 11.5px; }
+    .zt     { fill: #656d76; font-size: 10.5px; font-weight: 600; letter-spacing: 0.3px; }
+    .name   { fill: #1f2328; font-size: 12px; font-weight: 600; }
+    .det    { fill: #424a53; font-size: 10px; }
+    .tbl    { fill: #0550ae; font-size: 9.5px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .cost   { fill: #1a7f37; font-size: 10px; font-weight: 600; }
+    .costp  { fill: #bc4c00; font-size: 10px; font-weight: 600; }
+    .ptitle { fill: #1f2328; font-size: 11.5px; font-weight: 600; }
+    .pbody  { fill: #424a53; font-size: 10.5px; }
+    .big    { fill: #1a7f37; font-size: 15px; font-weight: 700; }
+
+    @media (prefers-color-scheme: dark) {
+      .zone   { stroke: #484f58; }
+      .onprem { fill: #0f2f17; stroke: #3fb950; }
+      .free   { fill: #0c2d6b; stroke: #58a6ff; }
+      .paid   { fill: #4a2610; stroke: #db6d28; }
+      .dcr    { fill: #4a3808; stroke: #d29922; }
+      .ws     { fill: #3c1e70; stroke: #bc8cff; }
+      .rule   { fill: #0d1117; stroke: #30363d; }
+      .inc    { fill: #3c1618; stroke: #f85149; }
+      .panel  { fill: #0d1117; stroke: #30363d; }
+      .flow   { stroke: #8b949e; }
+      .arrow  { fill: #8b949e; }
+      .h1     { fill: #e6edf3; }
+      .sub    { fill: #8b949e; }
+      .zt     { fill: #8b949e; }
+      .name   { fill: #e6edf3; }
+      .det    { fill: #b1bac4; }
+      .tbl    { fill: #79c0ff; }
+      .cost   { fill: #3fb950; }
+      .costp  { fill: #db6d28; }
+      .ptitle { fill: #e6edf3; }
+      .pbody  { fill: #b1bac4; }
+      .big    { fill: #3fb950; }
+    }
+  </style>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/>
+    </marker>
+  </defs>
+
+  <text class="h1"  x="24" y="28">Sentinel data architecture</text>
+  <text class="sub" x="24" y="48">Sentinel bills on data ingested. Every arrow here is a cost decision.</text>
+
+  <!-- ON PREM ZONE -->
+  <rect class="zone" x="24" y="66" width="250" height="180" rx="8"/>
+  <text class="zt" x="36" y="86">ON PREMISES  ·  PROXMOX LAB</text>
+
+  <rect class="onprem" x="38" y="96" width="222" height="60" rx="6"/>
+  <text class="name" x="50" y="116">DC01 · FS01 · WS11-01 · WS11-02</text>
+  <text class="det"  x="50" y="133">Azure Arc connected</text>
+  <text class="det"  x="50" y="148">Azure Monitor Agent</text>
+
+  <rect class="dcr" x="38" y="168" width="222" height="62" rx="6"/>
+  <text class="name" x="50" y="188">Data Collection Rule</text>
+  <text class="det"  x="50" y="205">9 XPath filters, applied at</text>
+  <text class="det"  x="50" y="220">the agent before shipping</text>
+
+  <line class="flow" x1="149" y1="156" x2="149" y2="164"/>
+
+  <!-- CLOUD SOURCES ZONE -->
+  <rect class="zone" x="24" y="262" width="250" height="256" rx="8"/>
+  <text class="zt" x="36" y="282">CLOUD SOURCES</text>
+
+  <rect class="free" x="38" y="292" width="222" height="66" rx="6"/>
+  <text class="name" x="50" y="312">Defender XDR</text>
+  <text class="tbl"  x="50" y="329">DeviceProcessEvents</text>
+  <text class="tbl"  x="50" y="343">DeviceNetworkEvents, AlertInfo</text>
+  <text class="cost" x="196" y="312">FREE</text>
+
+  <rect class="free" x="38" y="368" width="222" height="60" rx="6"/>
+  <text class="name" x="50" y="388">Microsoft 365</text>
+  <text class="tbl"  x="50" y="405">OfficeActivity, EmailEvents</text>
+  <text class="tbl"  x="50" y="419">EmailUrlInfo</text>
+  <text class="cost" x="196" y="388">FREE</text>
+
+  <rect class="paid" x="38" y="438" width="222" height="66" rx="6"/>
+  <text class="name" x="50" y="458">Entra ID</text>
+  <text class="tbl"  x="50" y="475">SigninLogs, AuditLogs</text>
+  <text class="tbl"  x="50" y="489">AADNonInteractiveUserSignInLogs</text>
+  <text class="costp" x="192" y="458">PAID</text>
+
+  <!-- arrows into workspace -->
+  <line class="flow" x1="260" y1="199" x2="336" y2="250"/>
+  <line class="flow" x1="260" y1="325" x2="336" y2="285"/>
+  <line class="flow" x1="260" y1="398" x2="336" y2="300"/>
+  <line class="flow" x1="260" y1="471" x2="336" y2="315"/>
+
+  <!-- WORKSPACE -->
+  <rect class="ws" x="340" y="226" width="224" height="140" rx="7"/>
+  <text class="name" x="356" y="250">law-vbunnylab-soc</text>
+  <text class="det"  x="356" y="268">Log Analytics workspace</text>
+  <text class="det"  x="356" y="286">90 day analytics retention</text>
+  <text class="det"  x="356" y="304">East US</text>
+  <text class="tbl"  x="356" y="326">0.58 GB/day billable</text>
+  <text class="cost" x="356" y="348">4.80 USD / month</text>
+
+  <!-- to analytics -->
+  <line class="flow" x1="564" y1="264" x2="622" y2="200"/>
+  <line class="flow" x1="564" y1="330" x2="622" y2="392"/>
+
+  <!-- ANALYTICS -->
+  <rect class="rule" x="626" y="140" width="176" height="120" rx="6"/>
+  <text class="name" x="640" y="164">Analytics rules</text>
+  <text class="det"  x="640" y="182">2 near-real-time</text>
+  <text class="det"  x="640" y="198">9 scheduled</text>
+  <text class="det"  x="640" y="214">1 Fusion correlation</text>
+  <text class="det"  x="640" y="236">Entity mapping on</text>
+  <text class="det"  x="640" y="250">every rule</text>
+
+  <line class="flow" x1="714" y1="260" x2="714" y2="300"/>
+
+  <!-- INCIDENTS -->
+  <rect class="inc" x="626" y="304" width="176" height="86" rx="6"/>
+  <text class="name" x="640" y="328">Incidents</text>
+  <text class="det"  x="640" y="346">Alerts grouped by entity</text>
+  <text class="det"  x="640" y="362">Investigation graph</text>
+  <text class="det"  x="640" y="378">Tasks and comments</text>
+
+  <!-- PLAYBOOKS -->
+  <rect class="rule" x="626" y="404" width="176" height="96" rx="6"/>
+  <text class="name" x="640" y="428">Logic App playbooks</text>
+  <text class="det"  x="640" y="446">4 enrichment, automatic</text>
+  <text class="det"  x="640" y="462">2 destructive, approval</text>
+  <text class="det"  x="640" y="484">Managed identity, no</text>
+  <text class="det"  x="640" y="498">stored credentials</text>
+
+  <line class="flow" x1="714" y1="390" x2="714" y2="400"/>
+
+  <!-- COST PANEL -->
+  <rect class="panel" x="820" y="140" width="96" height="176" rx="6"/>
+  <text class="ptitle" x="832" y="162">Cost</text>
+  <text class="pbody"  x="832" y="184">Common preset</text>
+  <text class="pbody"  x="832" y="199">7.2 GB/day</text>
+  <text class="costp"  x="832" y="216">61 USD/mo</text>
+  <text class="pbody"  x="832" y="240">Custom DCR</text>
+  <text class="pbody"  x="832" y="255">0.58 GB/day</text>
+  <text class="cost"   x="832" y="272">4.80 USD/mo</text>
+  <text class="big"    x="832" y="298">92% cut</text>
+
+  <rect class="panel" x="820" y="328" width="96" height="172" rx="6"/>
+  <text class="ptitle" x="832" y="350">Filter at</text>
+  <text class="ptitle" x="832" y="366">the agent</text>
+  <text class="pbody"  x="832" y="390">Filtering in a</text>
+  <text class="pbody"  x="832" y="405">KQL query</text>
+  <text class="pbody"  x="832" y="420">means you</text>
+  <text class="pbody"  x="832" y="435">already paid</text>
+  <text class="pbody"  x="832" y="450">to ingest it.</text>
+  <text class="pbody"  x="832" y="474">No detection</text>
+  <text class="pbody"  x="832" y="489">was lost.</text>
+
+  <text class="sub" x="24" y="542">Every event ID in the data collection rule maps to a detection in 03-Analytics-Rules.md. Nothing is collected speculatively.</text>
+</svg>

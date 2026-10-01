@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 360" width="820" height="360" role="img" aria-labelledby="t d">
+  <title id="t">The ESC1 certificate abuse, step by step</title>
+  <desc id="d">A low-privileged user exploits a misconfigured certificate template. The template has three dangerous settings together: low-privileged users may enrol, the certificate allows client authentication, and the requester may specify the subject. The user requests a certificate naming a domain administrator as the subject. The certificate authority issues it. The user authenticates with the certificate as the domain administrator. A note explains that everything looks legitimate, which is why it is often missed.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .user{ fill: #ddf4ff; stroke: #218bff; stroke-width: 1.4; }
+    .tmpl{ fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.5; }
+    .ca  { fill: #eaeef2; stroke: #8c959f; stroke-width: 1.4; }
+    .da  { fill: #ffebe9; stroke: #cf222e; stroke-width: 1.7; }
+    .n  { fill: #1f2328; font-size: 12px; font-weight: 700; text-anchor: middle; }
+    .set{ fill: #9a6700; font-size: 10px; }
+    .st { fill: #1f2328; font-size: 11px; font-weight: 700; }
+    .sd { fill: #424a53; font-size: 10px; }
+    .flow{ stroke: #656d76; stroke-width: 2; marker-end: url(#a); fill: none; }
+    .flowr{ stroke: #cf222e; stroke-width: 2.2; marker-end: url(#r); fill: none; }
+    .arrow{ fill: #656d76; } .ar { fill: #cf222e; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .user { fill: #0c2d6b; stroke: #58a6ff; } .tmpl { fill: #4a3808; stroke: #d29922; }
+      .ca { fill: #21262d; stroke: #6e7681; } .da { fill: #3d1417; stroke: #f85149; }
+      .n { fill: #e6edf3; } .set { fill: #d29922; } .st { fill: #e6edf3; } .sd { fill: #b1bac4; }
+      .flow{ stroke: #8b949e; } .arrow { fill: #8b949e; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="ar"/></marker>
+  </defs>
+  <text class="h1"  x="24" y="30">AD CS ESC1</text>
+  <text class="sub" x="24" y="49">Three template settings that, together, are a straight line to Domain Admin.</text>
+
+  <!-- the template with its three settings -->
+  <rect class="tmpl" x="290" y="70" width="240" height="110" rx="8"/>
+  <text class="n" x="410" y="92">Vulnerable template</text>
+  <text class="set" x="306" y="116">low-priv users may enrol</text>
+  <text class="set" x="306" y="136">allows client authentication</text>
+  <text class="set" x="306" y="156">requester supplies the subject</text>
+
+  <!-- user -->
+  <rect class="user" x="40" y="210" width="180" height="80" rx="8"/>
+  <text class="n" x="130" y="240">Low-priv user</text>
+  <text class="sd" x="55" y="262">"Issue me a cert, and</text>
+  <text class="sd" x="55" y="278">the subject is the DA"</text>
+
+  <!-- CA -->
+  <rect class="ca" x="320" y="210" width="180" height="80" rx="8"/>
+  <text class="n" x="410" y="240">CA01</text>
+  <text class="sd" x="335" y="262">Does what the template</text>
+  <text class="sd" x="335" y="278">allows. Issues the cert</text>
+
+  <!-- DA -->
+  <rect class="da" x="600" y="210" width="180" height="80" rx="8"/>
+  <text class="n" x="690" y="240">Domain Admin</text>
+  <text class="sd" x="615" y="262">Authenticate with the</text>
+  <text class="sd" x="615" y="278">cert as the DA. PT2-02</text>
+
+  <line class="flow" x1="220" y1="250" x2="318" y2="250"/>
+  <text class="st" x="238" y="242">1 request</text>
+  <line class="flow" x1="410" y1="180" x2="410" y2="208"/>
+  <text class="st" x="418" y="200">reads template</text>
+  <line class="flowr" x1="500" y1="250" x2="598" y2="250"/>
+  <text class="st" x="516" y="242" fill="#a40e26">2 use</text>
+
+  <text class="foot" x="24" y="326">Everything looks legitimate. A certificate was requested and issued through the normal process, so a signature tool sees nothing.</text>
+  <text class="foot" x="24" y="346">Fix: remove requester-supplied subjects, restrict enrolment, require approval, and turn on issuance auditing. An afternoon.</text>
+</svg>

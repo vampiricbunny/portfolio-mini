@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 430" width="780" height="430" role="img" aria-labelledby="t d">
+  <title id="t">How share and NTFS permissions combine into effective access</title>
+  <desc id="d">Network access passes through two gates in series - the share permission, then the NTFS permission - and the effective access is whichever of the two is more restrictive. A bypass path shows that a user signed in locally at the console is evaluated against NTFS only, because the share is never involved. A worked table gives three combinations and their outcomes.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .user  { fill: #ddf4ff; stroke: #54aeff; stroke-width: 1.6; }
+    .gate  { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.6; }
+    .res   { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.6; }
+    .panel { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1; }
+    .row   { fill: none; stroke: #d0d7de; stroke-width: 1; }
+    .lb    { fill: #1f2328; font-size: 13.5px; font-weight: 600; }
+    .sub   { fill: #424a53; font-size: 11px; }
+    .th    { fill: #1f2328; font-size: 11.5px; font-weight: 600; }
+    .td    { fill: #424a53; font-size: 12px; }
+    .win   { fill: #1a7f37; font-size: 12px; font-weight: 600; }
+    .meta  { fill: #656d76; font-size: 11.5px; }
+    .arrow { stroke: #8c959f; stroke-width: 1.8; fill: none; }
+    .ahead { fill: #8c959f; }
+    .byp   { stroke: #8250df; stroke-width: 1.6; fill: none; stroke-dasharray: 5 4; }
+    .bhead { fill: #8250df; }
+    .btext { fill: #8250df; font-size: 11.5px; font-weight: 600; }
+
+    @media (prefers-color-scheme: dark) {
+      .user  { fill: #0c2d6b; stroke: #1f6feb; }
+      .gate  { fill: #272115; stroke: #9e6a03; }
+      .res   { fill: #0f2f17; stroke: #2ea043; }
+      .panel { fill: #0d1117; stroke: #30363d; }
+      .row   { stroke: #30363d; }
+      .lb    { fill: #e6edf3; }
+      .sub   { fill: #b1bac4; }
+      .th    { fill: #e6edf3; }
+      .td    { fill: #b1bac4; }
+      .win   { fill: #3fb950; }
+      .meta  { fill: #8b949e; }
+      .arrow { stroke: #6e7681; }
+      .ahead { fill: #6e7681; }
+      .byp   { stroke: #bc8cff; }
+      .bhead { fill: #bc8cff; }
+      .btext { fill: #bc8cff; }
+    }
+  </style>
+
+  <text class="lb" x="30" y="32">Effective permissions = the more restrictive of share and NTFS</text>
+  <text class="meta" x="30" y="52">Two gates in series. Access has to pass both.</text>
+
+  <!-- user -->
+  <rect class="user" x="30" y="92" width="140" height="62" rx="6"/>
+  <text class="lb"  x="48" y="118">ballen</text>
+  <text class="sub" x="48" y="137">GG-Accounting-Staff</text>
+
+  <path class="arrow" d="M170 123 H 202"/>
+  <polygon class="ahead" points="212,123 199,117 199,129"/>
+
+  <!-- gate 1 -->
+  <rect class="gate" x="212" y="92" width="168" height="62" rx="6"/>
+  <text class="lb"  x="230" y="116">Share permission</text>
+  <text class="sub" x="230" y="134">\\FILE01\CompanyData</text>
+  <text class="sub" x="230" y="148">network access only</text>
+
+  <path class="arrow" d="M380 123 H 412"/>
+  <polygon class="ahead" points="422,123 409,117 409,129"/>
+
+  <!-- gate 2 -->
+  <rect class="gate" x="422" y="92" width="168" height="62" rx="6"/>
+  <text class="lb"  x="440" y="116">NTFS permission</text>
+  <text class="sub" x="440" y="134">the ACL on the folder</text>
+  <text class="sub" x="440" y="148">local and network</text>
+
+  <path class="arrow" d="M590 123 H 622"/>
+  <polygon class="ahead" points="632,123 619,117 619,129"/>
+
+  <!-- result -->
+  <rect class="res" x="632" y="92" width="120" height="62" rx="6"/>
+  <text class="lb"  x="650" y="118">Effective</text>
+  <text class="sub" x="650" y="137">access granted</text>
+
+  <!-- local bypass -->
+  <path class="byp" d="M100 154 V 226 H 506 V 160"/>
+  <polygon class="bhead" points="506,150 501,163 511,163"/>
+  <text class="btext" x="152" y="216">signed in locally - the share is not involved</text>
+
+  <!-- worked examples -->
+  <rect class="panel" x="30" y="242" width="722" height="164" rx="8"/>
+
+  <text class="th" x="54"  y="272">Share permission</text>
+  <text class="th" x="250" y="272">NTFS permission</text>
+  <text class="th" x="446" y="272">Effective over network</text>
+  <text class="th" x="620" y="272">Effective locally</text>
+  <line class="row" x1="54" y1="284" x2="728" y2="284"/>
+
+  <text class="td"  x="54"  y="310">Full Control</text>
+  <text class="td"  x="250" y="310">Read</text>
+  <text class="win" x="446" y="310">Read</text>
+  <text class="td"  x="620" y="310">Read</text>
+  <line class="row" x1="54" y1="322" x2="728" y2="322"/>
+
+  <text class="td"  x="54"  y="348">Read</text>
+  <text class="td"  x="250" y="348">Full Control</text>
+  <text class="win" x="446" y="348">Read</text>
+  <text class="td"  x="620" y="348">Full Control</text>
+  <line class="row" x1="54" y1="360" x2="728" y2="360"/>
+
+  <text class="td"  x="54"  y="386">Change</text>
+  <text class="td"  x="250" y="386">Modify</text>
+  <text class="win" x="446" y="386">Modify</text>
+  <text class="td"  x="620" y="386">Modify</text>
+</svg>

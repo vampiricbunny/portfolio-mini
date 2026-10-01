@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 400" width="820" height="400" role="img" aria-labelledby="t d">
+  <title id="t">MITRE ATT&amp;CK coverage heatmap across tactics</title>
+  <desc id="d">A bar for each of the twelve ATT&amp;CK tactics used, coloured by coverage strength. Execution, Persistence, Defense Evasion and Credential Access are strong. Lateral Movement is good. Initial Access, Privilege Escalation and Command and Control are partial. Discovery and Impact are weak. Collection and Exfiltration have no coverage at all, because the lab has no data source for them. The three gaps are stated plainly.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .strong { fill: #2ea043; } .good { fill: #7dc98f; } .partial { fill: #d4a72c; }
+    .weak { fill: #e0885a; } .none { fill: #cf222e; }
+    .track { fill: #eaeef2; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .lbl{ fill: #1f2328; font-size: 11px; }
+    .cnt{ fill: #656d76; font-size: 10px; }
+    .k  { fill: #424a53; font-size: 10px; }
+    @media (prefers-color-scheme: dark) {
+      .strong { fill: #3fb950; } .good { fill: #2d7d3f; } .partial { fill: #d29922; }
+      .weak { fill: #b5651d; } .none { fill: #f85149; }
+      .track { fill: #21262d; }
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; }
+      .lbl { fill: #e6edf3; } .cnt { fill: #8b949e; } .k { fill: #b1bac4; }
+    }
+  </style>
+  <text class="h1"  x="28" y="30">ATT&amp;CK coverage by tactic</text>
+  <text class="sub" x="28" y="50">Measured honestly. Three tactics have weak or no coverage, and it is stated.</text>
+
+  <!-- rows: label at x=28, track from x=210 width 460, bar scaled -->
+  <!-- Execution 5 strong -->
+  <text class="lbl" x="28" y="74">Execution</text>
+  <rect class="track" x="210" y="64" width="460" height="14" rx="3"/>
+  <rect class="strong" x="210" y="64" width="440" height="14" rx="3"/>
+  <text class="cnt" x="678" y="75">5  strong</text>
+
+  <text class="lbl" x="28" y="98">Persistence</text>
+  <rect class="track" x="210" y="88" width="460" height="14" rx="3"/>
+  <rect class="strong" x="210" y="88" width="380" height="14" rx="3"/>
+  <text class="cnt" x="678" y="99">4  strong</text>
+
+  <text class="lbl" x="28" y="122">Defense Evasion</text>
+  <rect class="track" x="210" y="112" width="460" height="14" rx="3"/>
+  <rect class="strong" x="210" y="112" width="380" height="14" rx="3"/>
+  <text class="cnt" x="678" y="123">4  strong</text>
+
+  <text class="lbl" x="28" y="146">Credential Access</text>
+  <rect class="track" x="210" y="136" width="460" height="14" rx="3"/>
+  <rect class="strong" x="210" y="136" width="380" height="14" rx="3"/>
+  <text class="cnt" x="678" y="147">4  strong</text>
+
+  <text class="lbl" x="28" y="170">Lateral Movement</text>
+  <rect class="track" x="210" y="160" width="460" height="14" rx="3"/>
+  <rect class="good" x="210" y="160" width="300" height="14" rx="3"/>
+  <text class="cnt" x="678" y="171">3  good</text>
+
+  <text class="lbl" x="28" y="194">Initial Access</text>
+  <rect class="track" x="210" y="184" width="460" height="14" rx="3"/>
+  <rect class="partial" x="210" y="184" width="200" height="14" rx="3"/>
+  <text class="cnt" x="678" y="195">2  partial</text>
+
+  <text class="lbl" x="28" y="218">Privilege Escalation</text>
+  <rect class="track" x="210" y="208" width="460" height="14" rx="3"/>
+  <rect class="partial" x="210" y="208" width="200" height="14" rx="3"/>
+  <text class="cnt" x="678" y="219">2  partial</text>
+
+  <text class="lbl" x="28" y="242">Command and Control</text>
+  <rect class="track" x="210" y="232" width="460" height="14" rx="3"/>
+  <rect class="partial" x="210" y="232" width="200" height="14" rx="3"/>
+  <text class="cnt" x="678" y="243">2  partial</text>
+
+  <text class="lbl" x="28" y="266">Discovery</text>
+  <rect class="track" x="210" y="256" width="460" height="14" rx="3"/>
+  <rect class="weak" x="210" y="256" width="100" height="14" rx="3"/>
+  <text class="cnt" x="678" y="267">1  weak</text>
+
+  <text class="lbl" x="28" y="290">Impact</text>
+  <rect class="track" x="210" y="280" width="460" height="14" rx="3"/>
+  <rect class="weak" x="210" y="280" width="100" height="14" rx="3"/>
+  <text class="cnt" x="678" y="291">1  weak</text>
+
+  <text class="lbl" x="28" y="314">Collection</text>
+  <rect class="track" x="210" y="304" width="460" height="14" rx="3"/>
+  <rect class="none" x="210" y="304" width="24" height="14" rx="3"/>
+  <text class="cnt" x="678" y="315">0  none</text>
+
+  <text class="lbl" x="28" y="338">Exfiltration</text>
+  <rect class="track" x="210" y="328" width="460" height="14" rx="3"/>
+  <rect class="none" x="210" y="328" width="24" height="14" rx="3"/>
+  <text class="cnt" x="678" y="339">0  none</text>
+
+  <text class="k" x="28" y="374">Collection and Exfiltration have no coverage because the lab has no data source. Discovery is inherently hard. All three</text>
+  <text class="k" x="28" y="390">are documented in module 06 with what each would need, rather than hidden.</text>
+</svg>

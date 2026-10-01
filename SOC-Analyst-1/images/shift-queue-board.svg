@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500" role="img" aria-labelledby="t d">
+  <title id="t">Shift queue prioritisation and state</title>
+  <desc id="d">The working order for a shift queue, which is not strictly by severity. First, anything escalated to you from another tier. Second, High and Critical unassigned, newest first. Third, any severity on a host or account that already has an open incident, which is the line people get wrong. Fourth, High and Critical assigned to you, oldest first. Fifth, Medium unassigned. Sixth, Low and review feeds, batched once a shift. A worked example shows a Medium alert on a host that already has a High open being promoted above other High alerts. Three warning states are listed: an unassigned High older than one hour means the queue is not being worked, many incidents on one owner means redistribute, and Active with no update in eight hours is the worst state an incident can be in because it looks worked and is not.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .lane   { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.3; }
+    .top    { fill: #ffebe9; stroke: #cf222e; stroke-width: 1.5; }
+    .key    { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.8; }
+    .mid    { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.4; }
+    .low    { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.4; }
+    .warn   { fill: #fff1e5; stroke: #fb8f44; stroke-width: 1.3; }
+    .chipH  { fill: #ffebe9; stroke: #cf222e; stroke-width: 1; }
+    .chipM  { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1; }
+    .h1     { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub    { fill: #656d76; font-size: 11.5px; }
+    .num    { fill: #0969da; font-size: 12px; font-weight: 700; }
+    .st     { fill: #1f2328; font-size: 12px; font-weight: 600; }
+    .det    { fill: #424a53; font-size: 10.5px; }
+    .lbl    { fill: #1f2328; font-size: 12.5px; font-weight: 600; }
+    .chiptx { fill: #1f2328; font-size: 9px; font-weight: 600; }
+    .wt     { fill: #bc4c00; font-size: 10.5px; }
+    .wh     { fill: #bc4c00; font-size: 11.5px; font-weight: 600; }
+    .flag   { fill: #cf222e; font-size: 10.5px; font-weight: 600; }
+
+    @media (prefers-color-scheme: dark) {
+      .lane   { fill: #0d1117; stroke: #30363d; }
+      .top    { fill: #3c1618; stroke: #f85149; }
+      .key    { fill: #4a3808; stroke: #d29922; }
+      .mid    { fill: #0c2d6b; stroke: #58a6ff; }
+      .low    { fill: #0f2f17; stroke: #3fb950; }
+      .warn   { fill: #4a2610; stroke: #db6d28; }
+      .chipH  { fill: #3c1618; stroke: #f85149; }
+      .chipM  { fill: #4a3808; stroke: #d29922; }
+      .h1     { fill: #e6edf3; }
+      .sub    { fill: #8b949e; }
+      .num    { fill: #58a6ff; }
+      .st     { fill: #e6edf3; }
+      .det    { fill: #b1bac4; }
+      .lbl    { fill: #e6edf3; }
+      .chiptx { fill: #e6edf3; }
+      .wt     { fill: #db6d28; }
+      .wh     { fill: #db6d28; }
+      .flag   { fill: #ff7b72; }
+    }
+  </style>
+
+  <text class="h1"  x="24" y="28">Working the queue</text>
+  <text class="sub" x="24" y="48">Not strictly by severity. Severity says how bad a thing is. It does not say what it enables next.</text>
+
+  <text class="lbl" x="24" y="80">Order</text>
+
+  <rect class="top" x="24" y="90" width="420" height="42" rx="5"/>
+  <text class="num" x="38" y="116">1</text>
+  <text class="st"  x="60" y="110">Escalated to you from another tier</text>
+  <text class="det" x="60" y="126">Somebody is waiting on you specifically</text>
+
+  <rect class="top" x="24" y="138" width="420" height="42" rx="5"/>
+  <text class="num" x="38" y="164">2</text>
+  <text class="st"  x="60" y="158">High and Critical, unassigned, newest first</text>
+  <text class="det" x="60" y="174">Newest, because the attack is still in progress</text>
+
+  <rect class="key" x="24" y="186" width="420" height="52" rx="5"/>
+  <text class="num" x="38" y="212">3</text>
+  <text class="st"  x="60" y="206">Any severity, on a host or account already open</text>
+  <text class="det" x="60" y="222">The line people get wrong. A Medium on a machine with a</text>
+  <text class="det" x="60" y="236">High open is probably the next stage of the same intrusion</text>
+
+  <rect class="mid" x="24" y="244" width="420" height="42" rx="5"/>
+  <text class="num" x="38" y="270">4</text>
+  <text class="st"  x="60" y="264">High and Critical, assigned to you, oldest first</text>
+  <text class="det" x="60" y="280">Oldest, because the SLA clock is running</text>
+
+  <rect class="mid" x="24" y="292" width="420" height="34" rx="5"/>
+  <text class="num" x="38" y="314">5</text>
+  <text class="st"  x="60" y="314">Medium, unassigned</text>
+
+  <rect class="low" x="24" y="332" width="420" height="34" rx="5"/>
+  <text class="num" x="38" y="354">6</text>
+  <text class="st"  x="60" y="354">Low and review feeds, batched once a shift</text>
+
+  <!-- worked example -->
+  <text class="lbl" x="470" y="80">Why line 3 matters</text>
+
+  <rect class="lane" x="470" y="90" width="406" height="130" rx="6"/>
+  <rect class="chipH" x="484" y="104" width="34" height="15" rx="3"/>
+  <text class="chiptx" x="490" y="115">High</text>
+  <text class="det" x="528" y="116">INC-0412  WS11-01  Office spawned shell</text>
+  <text class="det" x="528" y="132">Active, owned</text>
+
+  <rect class="chipM" x="484" y="146" width="46" height="15" rx="3"/>
+  <text class="chiptx" x="488" y="157">Medium</text>
+  <text class="det" x="540" y="158">INC-0417  WS11-01  Defender exclusion added</text>
+  <text class="flag" x="540" y="176">Same host. Promote above other Highs.</text>
+  <text class="det" x="540" y="194">This is the step immediately before credential theft.</text>
+  <text class="det" x="484" y="212">In IR-2026-014 this exact alert waited 71 seconds and the attacker used the exclusion.</text>
+
+  <!-- warning states -->
+  <text class="lbl" x="470" y="250">Queue warning states</text>
+
+  <rect class="warn" x="470" y="260" width="406" height="46" rx="5"/>
+  <text class="wh" x="484" y="280">Unassigned High older than 1 hour</text>
+  <text class="wt" x="484" y="298">The queue is not being worked. Claim it or escalate.</text>
+
+  <rect class="warn" x="470" y="314" width="406" height="46" rx="5"/>
+  <text class="wh" x="484" y="334">Many incidents on one owner</text>
+  <text class="wt" x="484" y="352">Somebody is drowning. Redistribute before they miss one.</text>
+
+  <rect class="warn" x="470" y="368" width="406" height="62" rx="5"/>
+  <text class="wh" x="484" y="388">Active with no update in 8 hours</text>
+  <text class="wt" x="484" y="406">The worst state an incident can be in. It looks like it is being</text>
+  <text class="wt" x="484" y="422">worked and it is not. Comment, or put it back to New.</text>
+
+  <text class="sub" x="24" y="386">Sentinel handles most of line 3 automatically when</text>
+  <text class="sub" x="24" y="404">entity mapping is configured on every rule, because</text>
+  <text class="sub" x="24" y="422">alerts on the same host group into one incident.</text>
+
+  <text class="sub" x="24" y="472">Run the queue health query at the start of every shift. Three things to look for are listed on the right.</text>
+</svg>

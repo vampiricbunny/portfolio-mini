@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 400" width="840" height="400" role="img" aria-labelledby="t d">
+  <title id="t">Recon fans out from the company name to the targets worth attacking</title>
+  <desc id="d">Reconnaissance expands from a single fact. From the company name to domains, from domains to hosts, from hosts to services, and from services to the ones ranked worth attacking. The dev web app and the VPN are highlighted as the two candidate ways in. A note says recon is quiet and slow and decides the whole engagement.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .l0 { fill: #24292f; stroke: #57606a; stroke-width: 1.4; }
+    .l1 { fill: #eaeef2; stroke: #8c959f; stroke-width: 1.3; }
+    .l2 { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.3; }
+    .hot{ fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.8; }
+    .t0 { fill: #ffffff; font-size: 12px; font-weight: 700; text-anchor: middle; }
+    .t  { fill: #1f2328; font-size: 11px; font-weight: 600; text-anchor: middle; }
+    .ti { fill: #57606a; font-size: 9px; text-anchor: middle; }
+    .lnk{ stroke: #8c959f; stroke-width: 1.4; fill: none; }
+    .cap{ fill: #57606a; font-size: 10px; font-weight: 700; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .l1 { fill: #21262d; stroke: #6e7681; } .l2 { fill: #0c2d6b; stroke: #58a6ff; }
+      .hot{ fill: #4a3808; stroke: #d29922; }
+      .t { fill: #e6edf3; } .ti { fill: #8b949e; } .cap { fill: #8b949e; } .lnk { stroke: #6e7681; }
+    }
+  </style>
+  <text class="h1"  x="24" y="30">The recon surface</text>
+  <text class="sub" x="24" y="49">From one fact, the company name, to a ranked list of doors.</text>
+
+  <text class="cap" x="70"  y="80">NAME</text>
+  <text class="cap" x="250" y="80">DOMAINS</text>
+  <text class="cap" x="450" y="80">HOSTS</text>
+  <text class="cap" x="670" y="80">SERVICES, RANKED</text>
+
+  <!-- name -->
+  <rect class="l0" x="24" y="180" width="110" height="46" rx="6"/>
+  <text class="t0" x="79" y="208">Harbor</text>
+
+  <!-- domains -->
+  <rect class="l1" x="196" y="120" width="140" height="40" rx="6"/>
+  <text class="t" x="266" y="145">shop.harbor</text>
+  <rect class="l1" x="196" y="184" width="140" height="40" rx="6"/>
+  <text class="t" x="266" y="209">dev-shop.harbor</text>
+  <rect class="l1" x="196" y="248" width="140" height="40" rx="6"/>
+  <text class="t" x="266" y="273">vpn.harbor</text>
+
+  <!-- hosts -->
+  <rect class="l2" x="396" y="120" width="150" height="40" rx="6"/>
+  <text class="t" x="471" y="138">WWW01</text><text class="ti" x="471" y="152">172.16.5.20</text>
+  <rect class="l2" x="396" y="184" width="150" height="40" rx="6"/>
+  <text class="t" x="471" y="202">VPN01</text><text class="ti" x="471" y="216">172.16.5.10</text>
+  <rect class="l2" x="396" y="248" width="150" height="40" rx="6"/>
+  <text class="t" x="471" y="266">MAIL01</text><text class="ti" x="471" y="280">172.16.5.30</text>
+
+  <!-- services ranked -->
+  <rect class="hot" x="606" y="104" width="210" height="44" rx="6"/>
+  <text class="t" x="711" y="122">1  dev web app, old build</text><text class="ti" x="711" y="138">writable uploads, way in</text>
+  <rect class="hot" x="606" y="160" width="210" height="44" rx="6"/>
+  <text class="t" x="711" y="178">2  VPN, no MFA</text><text class="ti" x="711" y="194">candidate reused credential</text>
+  <rect class="l1" x="606" y="216" width="210" height="40" rx="6"/>
+  <text class="t" x="711" y="234">3  staff webmail</text><text class="ti" x="711" y="248">indexed by accident</text>
+  <rect class="l1" x="606" y="268" width="210" height="40" rx="6"/>
+  <text class="t" x="711" y="286">4  production storefront</text><text class="ti" x="711" y="300">more current</text>
+
+  <!-- links -->
+  <path class="lnk" d="M 134 200 C 165 180, 170 140, 196 140"/>
+  <path class="lnk" d="M 134 203 C 165 203, 170 204, 196 204"/>
+  <path class="lnk" d="M 134 206 C 165 240, 170 268, 196 268"/>
+  <path class="lnk" d="M 336 140 L 396 140"/>
+  <path class="lnk" d="M 336 204 L 396 204"/>
+  <path class="lnk" d="M 336 268 L 396 268"/>
+  <path class="lnk" d="M 546 140 C 576 130, 580 126, 606 126"/>
+  <path class="lnk" d="M 546 204 C 576 194, 580 182, 606 182"/>
+  <path class="lnk" d="M 546 268 C 576 250, 580 236, 606 236"/>
+
+  <text class="foot" x="24" y="360">Recon is quiet, slow and unglamorous, and it decides the entire engagement. The two candidate doors here came from passive search.</text>
+</svg>

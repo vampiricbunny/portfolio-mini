@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" role="img" aria-labelledby="t d">
+  <title id="t">MITRE ATT&amp;CK technique coverage achieved in the lab</title>
+  <desc id="d">Nine tactic columns showing which techniques were detected. Initial Access has one technique, spearphishing attachment, not detected. Execution has three, all detected. Persistence has four with three detected, the miss being startup folder persistence which was closed afterwards. Privilege Escalation, Defense Evasion, Credential Access, Lateral Movement and Command and Control are fully covered. Discovery has two techniques, neither detected. Overall fifteen of nineteen techniques detected, seventy-nine percent.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .col  { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.2; }
+    .hit  { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.3; }
+    .miss { fill: #ffebe9; stroke: #cf222e; stroke-width: 1.3; }
+    .late { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.3; }
+    .h1   { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub  { fill: #656d76; font-size: 11.5px; }
+    .tac  { fill: #1f2328; font-size: 11px; font-weight: 600; }
+    .cnt  { fill: #656d76; font-size: 10px; }
+    .tt   { fill: #1f2328; font-size: 9.5px; }
+    .tid  { fill: #424a53; font-size: 9px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .key  { fill: #424a53; font-size: 11px; }
+    .cap  { fill: #656d76; font-size: 11px; }
+
+    @media (prefers-color-scheme: dark) {
+      .col  { fill: #0d1117; stroke: #30363d; }
+      .hit  { fill: #0f2f17; stroke: #3fb950; }
+      .miss { fill: #3c1618; stroke: #f85149; }
+      .late { fill: #4a3808; stroke: #d29922; }
+      .h1   { fill: #e6edf3; }
+      .sub  { fill: #8b949e; }
+      .tac  { fill: #e6edf3; }
+      .cnt  { fill: #8b949e; }
+      .tt   { fill: #e6edf3; }
+      .tid  { fill: #b1bac4; }
+      .key  { fill: #b1bac4; }
+      .cap  { fill: #8b949e; }
+    }
+  </style>
+
+  <text class="h1"  x="30" y="32">ATT&amp;CK coverage  ·  15 of 19 techniques detected</text>
+  <text class="sub" x="30" y="52">Strong where behaviour is rare and distinctive. Nothing where it looks like normal administration.</text>
+
+  <!-- Initial Access -->
+  <rect class="col" x="30" y="72" width="92" height="270" rx="6"/>
+  <text class="tac" x="38" y="92">Initial</text>
+  <text class="tac" x="38" y="106">Access</text>
+  <text class="cnt" x="38" y="122">0 of 1</text>
+  <rect class="miss" x="38" y="130" width="76" height="52" rx="4"/>
+  <text class="tt"  x="44" y="146">Phishing</text>
+  <text class="tt"  x="44" y="158">attachment</text>
+  <text class="tid" x="44" y="174">T1566.001</text>
+
+  <!-- Execution -->
+  <rect class="col" x="128" y="72" width="92" height="270" rx="6"/>
+  <text class="tac" x="136" y="92">Execution</text>
+  <text class="cnt" x="136" y="122">3 of 3</text>
+  <rect class="hit" x="136" y="130" width="76" height="34" rx="4"/>
+  <text class="tt"  x="142" y="146">PowerShell</text>
+  <text class="tid" x="142" y="158">T1059.001</text>
+  <rect class="hit" x="136" y="170" width="76" height="34" rx="4"/>
+  <text class="tt"  x="142" y="186">User exec</text>
+  <text class="tid" x="142" y="198">T1204.002</text>
+  <rect class="hit" x="136" y="210" width="76" height="34" rx="4"/>
+  <text class="tt"  x="142" y="226">Parent chain</text>
+  <text class="tid" x="142" y="238">T1059</text>
+
+  <!-- Persistence -->
+  <rect class="col" x="226" y="72" width="92" height="270" rx="6"/>
+  <text class="tac" x="234" y="92">Persistence</text>
+  <text class="cnt" x="234" y="122">3 of 4</text>
+  <rect class="hit" x="234" y="130" width="76" height="34" rx="4"/>
+  <text class="tt"  x="240" y="146">Run key</text>
+  <text class="tid" x="240" y="158">T1547.001</text>
+  <rect class="hit" x="234" y="170" width="76" height="34" rx="4"/>
+  <text class="tt"  x="240" y="186">Sched task</text>
+  <text class="tid" x="240" y="198">T1053.005</text>
+  <rect class="hit" x="234" y="210" width="76" height="34" rx="4"/>
+  <text class="tt"  x="240" y="226">New service</text>
+  <text class="tid" x="240" y="238">T1543.003</text>
+  <rect class="late" x="234" y="250" width="76" height="34" rx="4"/>
+  <text class="tt"  x="240" y="266">Startup dir</text>
+  <text class="tid" x="240" y="278">T1547.001</text>
+
+  <!-- Priv Esc -->
+  <rect class="col" x="324" y="72" width="92" height="270" rx="6"/>
+  <text class="tac" x="332" y="92">Privilege</text>
+  <text class="tac" x="332" y="106">Escalation</text>
+  <text class="cnt" x="332" y="122">1 of 1</text>
+  <rect class="hit" x="332" y="130" width="76" height="52" rx="4"/>
+  <text class="tt"  x="338" y="146">Priv group</text>
+  <text class="tt"  x="338" y="158">change</text>
+  <text class="tid" x="338" y="174">T1098</text>
+
+  <!-- Defense Evasion -->
+  <rect class="col" x="422" y="72" width="92" height="270" rx="6"/>
+  <text class="tac" x="430" y="92">Defense</text>
+  <text class="tac" x="430" y="106">Evasion</text>
+  <text class="cnt" x="430" y="122">3 of 3</text>
+  <rect class="hit" x="430" y="130" width="76" height="34" rx="4"/>
+  <text class="tt"  x="436" y="146">Disable AV</text>
+  <text class="tid" x="436" y="158">T1562.001</text>
+  <rect class="hit" x="430" y="170" width="76" height="34" rx="4"/>
+  <text class="tt"  x="436" y="186">Obfuscation</text>
+  <text class="tid" x="436" y="198">T1027</text>
+  <rect class="hit" x="430" y="210" width="76" height="34" rx="4"/>
+  <text class="tt"  x="436" y="226">Clear logs</text>
+  <text class="tid" x="436" y="238">T1070.001</text>
+
+  <!-- Credential Access -->
+  <rect class="col" x="520" y="72" width="92" height="270" rx="6"/>
+  <text class="tac" x="528" y="92">Credential</text>
+  <text class="tac" x="528" y="106">Access</text>
+  <text class="cnt" x="528" y="122">3 of 3</text>
+  <rect class="hit" x="528" y="130" width="76" height="34" rx="4"/>
+  <text class="tt"  x="534" y="146">LSASS dump</text>
+  <text class="tid" x="534" y="158">T1003.001</text>
+  <rect class="hit" x="528" y="170" width="76" height="34" rx="4"/>
+  <text class="tt"  x="534" y="186">Spraying</text>
+  <text class="tid" x="534" y="198">T1110.003</text>
+  <rect class="hit" x="528" y="210" width="76" height="34" rx="4"/>
+  <text class="tt"  x="534" y="226">Kerberoast</text>
+  <text class="tid" x="534" y="238">T1558.003</text>
+
+  <!-- Discovery -->
+  <rect class="col" x="618" y="72" width="92" height="270" rx="6"/>
+  <text class="tac" x="626" y="92">Discovery</text>
+  <text class="cnt" x="626" y="122">0 of 2</text>
+  <rect class="miss" x="626" y="130" width="76" height="34" rx="4"/>
+  <text class="tt"  x="632" y="146">Account enum</text>
+  <text class="tid" x="632" y="158">T1087.002</text>
+  <rect class="miss" x="626" y="170" width="76" height="34" rx="4"/>
+  <text class="tt"  x="632" y="186">Group enum</text>
+  <text class="tid" x="632" y="198">T1069.002</text>
+
+  <!-- Lateral + C2 -->
+  <rect class="col" x="716" y="72" width="134" height="270" rx="6"/>
+  <text class="tac" x="724" y="92">Lateral  ·  C2</text>
+  <text class="cnt" x="724" y="122">2 of 2</text>
+  <rect class="hit" x="724" y="130" width="118" height="34" rx="4"/>
+  <text class="tt"  x="730" y="146">SMB admin shares</text>
+  <text class="tid" x="730" y="158">T1021.002</text>
+  <rect class="hit" x="724" y="170" width="118" height="34" rx="4"/>
+  <text class="tt"  x="730" y="186">Ingress tool transfer</text>
+  <text class="tid" x="730" y="198">T1105</text>
+
+  <!-- key -->
+  <rect class="hit"  x="30" y="360" width="16" height="14" rx="3"/>
+  <text class="key"  x="54" y="372">detected</text>
+  <rect class="miss" x="134" y="360" width="16" height="14" rx="3"/>
+  <text class="key"  x="158" y="372">gap, open</text>
+  <rect class="late" x="244" y="360" width="16" height="14" rx="3"/>
+  <text class="key"  x="268" y="372">gap found by testing, rule added afterwards</text>
+
+  <text class="cap" x="30" y="402">The two open gaps are delivery, which needs mail telemetry rather than a rule, and discovery, which looks identical to</text>
+  <text class="cap" x="30" y="420">helpdesk work. A volume-based discovery rule is drafted but not yet validated, so it is not counted here.</text>
+</svg>

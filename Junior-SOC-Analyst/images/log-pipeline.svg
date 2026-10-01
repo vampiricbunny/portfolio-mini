@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 340" width="820" height="340" role="img" aria-labelledby="t d">
+  <title id="t">Telemetry pipeline from Windows endpoint to analyst</title>
+  <desc id="d">Three log sources on a Windows endpoint feed the Wazuh agent: Sysmon operational, Windows Security with advanced audit policy, and PowerShell operational with script block logging. The agent ships events over port 1514 to the Wazuh manager, which decodes them and evaluates rules. Alerts go to the indexer and then the dashboard where the analyst works the queue. A note records the measured volume of 180 events per second across five agents.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .ep    { fill: none; stroke: #afb8c1; stroke-width: 1.4; stroke-dasharray: 6 4; }
+    .src   { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.5; }
+    .agent { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.6; }
+    .mgr   { fill: #ecd8ff; stroke: #8250df; stroke-width: 1.6; }
+    .idx   { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.6; }
+    .anl   { fill: #fff1e5; stroke: #fb8f44; stroke-width: 1.6; }
+    .flow  { stroke: #656d76; stroke-width: 2; marker-end: url(#a); }
+    .h1    { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub   { fill: #656d76; font-size: 11.5px; }
+    .name  { fill: #1f2328; font-size: 12.5px; font-weight: 600; }
+    .det   { fill: #424a53; font-size: 10.5px; }
+    .ev    { fill: #0550ae; font-size: 10.5px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .lbl   { fill: #656d76; font-size: 10.5px; }
+    .cap   { fill: #656d76; font-size: 11px; }
+    .arrow { fill: #656d76; }
+
+    @media (prefers-color-scheme: dark) {
+      .ep    { stroke: #484f58; }
+      .src   { fill: #0f2f17; stroke: #3fb950; }
+      .agent { fill: #0c2d6b; stroke: #58a6ff; }
+      .mgr   { fill: #3c1e70; stroke: #bc8cff; }
+      .idx   { fill: #4a3808; stroke: #d29922; }
+      .anl   { fill: #4a2610; stroke: #db6d28; }
+      .flow  { stroke: #8b949e; }
+      .h1    { fill: #e6edf3; }
+      .sub   { fill: #8b949e; }
+      .name  { fill: #e6edf3; }
+      .det   { fill: #b1bac4; }
+      .ev    { fill: #79c0ff; }
+      .lbl   { fill: #8b949e; }
+      .cap   { fill: #8b949e; }
+      .arrow { fill: #8b949e; }
+    }
+  </style>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/>
+    </marker>
+  </defs>
+
+  <text class="h1"  x="30" y="32">Telemetry pipeline</text>
+  <text class="sub" x="30" y="52">Three sources, one agent, one manager. A break at any layer looks the same from the dashboard: nothing happening.</text>
+
+  <!-- endpoint boundary -->
+  <rect class="ep" x="30" y="74" width="246" height="214" rx="10"/>
+  <text class="lbl" x="42" y="94">Windows endpoint</text>
+
+  <rect class="src" x="44" y="104" width="218" height="52" rx="6"/>
+  <text class="name" x="56" y="124">Sysmon</text>
+  <text class="ev"   x="56" y="142">1 3 7 8 10 11 12 13 15 22 23</text>
+
+  <rect class="src" x="44" y="164" width="218" height="52" rx="6"/>
+  <text class="name" x="56" y="184">Windows Security</text>
+  <text class="ev"   x="56" y="202">4624 4625 4688 4698 4769 4732</text>
+
+  <rect class="src" x="44" y="224" width="218" height="52" rx="6"/>
+  <text class="name" x="56" y="244">PowerShell operational</text>
+  <text class="ev"   x="56" y="262">4103 4104 (deobfuscated)</text>
+
+  <!-- agent -->
+  <line class="flow" x1="276" y1="130" x2="326" y2="176"/>
+  <line class="flow" x1="276" y1="190" x2="326" y2="188"/>
+  <line class="flow" x1="276" y1="250" x2="326" y2="200"/>
+
+  <rect class="agent" x="330" y="146" width="132" height="76" rx="7"/>
+  <text class="name" x="344" y="170">Wazuh agent</text>
+  <text class="det"  x="344" y="188">Filters 5156 at</text>
+  <text class="det"  x="344" y="204">source: 60% of</text>
+  <text class="det"  x="344" y="220">raw volume</text>
+
+  <!-- manager -->
+  <line class="flow" x1="462" y1="184" x2="506" y2="184"/>
+  <text class="ev"  x="466" y="176">1514</text>
+
+  <rect class="mgr" x="510" y="140" width="136" height="88" rx="7"/>
+  <text class="name" x="524" y="164">Wazuh manager</text>
+  <text class="det"  x="524" y="182">Decoders</text>
+  <text class="det"  x="524" y="198">Rules 100101+</text>
+  <text class="det"  x="524" y="214">MITRE mapping</text>
+
+  <!-- indexer -->
+  <line class="flow" x1="646" y1="166" x2="690" y2="140"/>
+  <rect class="idx" x="694" y="106" width="100" height="62" rx="7"/>
+  <text class="name" x="706" y="130">Indexer</text>
+  <text class="det"  x="706" y="148">30 day retention</text>
+
+  <!-- analyst -->
+  <line class="flow" x1="646" y1="204" x2="690" y2="228"/>
+  <rect class="anl" x="694" y="196" width="100" height="62" rx="7"/>
+  <text class="name" x="706" y="220">Analyst</text>
+  <text class="det"  x="706" y="238">Alert queue</text>
+
+  <text class="cap" x="30" y="312">Measured at rest: 180 events per second across 5 agents, roughly 4.5 GB per day. Sysmon is 53 percent of it.</text>
+</svg>

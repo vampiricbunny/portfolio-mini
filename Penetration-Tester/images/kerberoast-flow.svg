@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 320" width="820" height="320" role="img" aria-labelledby="t d">
+  <title id="t">How Kerberoasting turns a service ticket into a password</title>
+  <desc id="d">Four steps. A domain user requests a service ticket for an account that has a service principal name. The domain controller returns the ticket, encrypted with the service account's password hash. The ticket is taken offline. It is cracked against a wordlist, revealing the password. A note says the request itself is normal traffic, which is what makes the technique quiet, but requesting a ticket for a service from a host that never uses it is still a catchable pattern.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .box{ fill: #ddf4ff; stroke: #218bff; stroke-width: 1.4; }
+    .off{ fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.5; }
+    .crack{ fill: #ffebe9; stroke: #cf222e; stroke-width: 1.5; }
+    .num{ fill: #0550ae; font-size: 12px; font-weight: 700; }
+    .st { fill: #1f2328; font-size: 12px; font-weight: 700; }
+    .sd { fill: #424a53; font-size: 10px; }
+    .flow{ stroke: #656d76; stroke-width: 2; marker-end: url(#a); fill: none; }
+    .arrow{ fill: #656d76; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .box { fill: #0c2d6b; stroke: #58a6ff; } .off { fill: #4a3808; stroke: #d29922; } .crack { fill: #3d1417; stroke: #f85149; }
+      .num { fill: #79c0ff; } .st { fill: #e6edf3; } .sd { fill: #b1bac4; }
+      .flow{ stroke: #8b949e; } .arrow { fill: #8b949e; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker>
+  </defs>
+  <text class="h1"  x="24" y="30">Kerberoasting</text>
+  <text class="sub" x="24" y="49">A normal Kerberos feature, turned into an offline password crack.</text>
+
+  <rect class="box" x="24"  y="90" width="180" height="96" rx="8"/>
+  <text class="num" x="40" y="114">1</text><text class="st" x="58" y="114">Request a ticket</text>
+  <text class="sd" x="40" y="138">Any domain user asks</text>
+  <text class="sd" x="40" y="154">for a service ticket for</text>
+  <text class="sd" x="40" y="170">svc_sql, which has an SPN</text>
+
+  <rect class="box" x="228" y="90" width="180" height="96" rx="8"/>
+  <text class="num" x="244" y="114">2</text><text class="st" x="262" y="114">DC returns it</text>
+  <text class="sd" x="244" y="138">The ticket is encrypted</text>
+  <text class="sd" x="244" y="154">with the service account's</text>
+  <text class="sd" x="244" y="170">password hash</text>
+
+  <rect class="off" x="432" y="90" width="180" height="96" rx="8"/>
+  <text class="num" x="448" y="114">3</text><text class="st" x="466" y="114">Take it offline</text>
+  <text class="sd" x="448" y="138">Nothing further touches</text>
+  <text class="sd" x="448" y="154">the domain. The crack</text>
+  <text class="sd" x="448" y="170">happens on Kali</text>
+
+  <rect class="crack" x="636" y="90" width="180" height="96" rx="8"/>
+  <text class="num" x="652" y="114">4</text><text class="st" x="670" y="114">Crack it</text>
+  <text class="sd" x="652" y="138">A wordlist reveals the</text>
+  <text class="sd" x="652" y="154">password: a season and</text>
+  <text class="sd" x="652" y="170">a year. PT2-05</text>
+
+  <line class="flow" x1="204" y1="138" x2="226" y2="138"/>
+  <line class="flow" x1="408" y1="138" x2="430" y2="138"/>
+  <line class="flow" x1="612" y1="138" x2="634" y2="138"/>
+
+  <text class="foot" x="24" y="236">The request is normal traffic, which is what makes the technique quiet. Steps 3 and 4 happen where no detection can reach.</text>
+  <text class="foot" x="24" y="256">But a workstation requesting a ticket for a database service it never talks to is a sharp pattern, and Harbor's SOC caught it in 22 seconds.</text>
+  <text class="foot" x="24" y="276">Fix: long random passwords or group-managed service accounts, and remove service principal names that are not needed.</text>
+</svg>

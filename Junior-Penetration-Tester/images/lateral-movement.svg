@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 420" width="820" height="420" role="img" aria-labelledby="t d">
+  <title id="t">Lateral movement methods and the artefacts each one leaves</title>
+  <desc id="d">Five methods of moving between machines, with how loud each is. PsExec creates a service on port 445 and leaves event 7045, the loudest. WMI spawns a process on port 135 and leaves a wmiprvse parent process, quieter. WinRM is remote PowerShell on port 5985 and leaves script block logs, clean if WinRM is already used. Pass the hash uses any method with a hash instead of a password. Scheduled task creation leaves event 4698. A note states that three of the five are caught cleanly by the detection rules from the SOC projects.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .row   { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.3; }
+    .loud  { fill: #ffebe9; stroke: #cf222e; stroke-width: 1.3; }
+    .mid   { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.3; }
+    .quiet { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.3; }
+    .h1    { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub   { fill: #656d76; font-size: 11.5px; }
+    .hdr   { fill: #656d76; font-size: 10px; font-weight: 700; letter-spacing: 0.4px; }
+    .m     { fill: #1f2328; font-size: 13px; font-weight: 700; }
+    .d     { fill: #424a53; font-size: 10.5px; }
+    .ev    { fill: #0550ae; font-size: 10px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .loudt { fill: #cf222e; font-size: 10.5px; font-weight: 600; }
+    .midt  { fill: #9a6700; font-size: 10.5px; font-weight: 600; }
+    .quiett{ fill: #1a7f37; font-size: 10.5px; font-weight: 600; }
+    .note  { fill: #656d76; font-size: 11px; }
+    @media (prefers-color-scheme: dark) {
+      .row   { fill: #0d1117; stroke: #30363d; }
+      .loud  { fill: #3c1618; stroke: #f85149; }
+      .mid   { fill: #4a3808; stroke: #d29922; }
+      .quiet { fill: #0f2f17; stroke: #3fb950; }
+      .h1    { fill: #e6edf3; }
+      .sub   { fill: #8b949e; }
+      .hdr   { fill: #8b949e; }
+      .m     { fill: #e6edf3; }
+      .d     { fill: #b1bac4; }
+      .ev    { fill: #79c0ff; }
+      .loudt { fill: #ff7b72; }
+      .midt  { fill: #d29922; }
+      .quiett{ fill: #3fb950; }
+      .note  { fill: #8b949e; }
+    }
+  </style>
+  <text class="h1"  x="28" y="32">Lateral movement  ·  method and noise</text>
+  <text class="sub" x="28" y="54">What each leaves behind is what the defender looks for. Pick the quiet one on a red team.</text>
+
+  <text class="hdr" x="44"  y="82">METHOD</text>
+  <text class="hdr" x="230" y="82">PORT</text>
+  <text class="hdr" x="310" y="82">HOW IT RUNS</text>
+  <text class="hdr" x="560" y="82">LEAVES BEHIND</text>
+
+  <!-- PsExec -->
+  <rect class="loud" x="28" y="92" width="764" height="52" rx="6"/>
+  <text class="m"     x="44" y="114">PsExec</text>
+  <text class="loudt" x="44" y="132">loudest</text>
+  <text class="ev"    x="230" y="122">445</text>
+  <text class="d"     x="310" y="122">Creates and starts a Windows service</text>
+  <text class="ev"    x="560" y="116">event 7045, new service</text>
+  <text class="loudt" x="560" y="134">caught by SOC-01 rule 100603</text>
+
+  <!-- WMI -->
+  <rect class="mid" x="28" y="150" width="764" height="52" rx="6"/>
+  <text class="m"    x="44" y="172">WMI</text>
+  <text class="midt" x="44" y="190">quieter</text>
+  <text class="ev"   x="230" y="180">135</text>
+  <text class="d"    x="310" y="180">Spawns a process via WMI</text>
+  <text class="ev"   x="560" y="174">wmiprvse.exe parent</text>
+  <text class="midt" x="560" y="192">caught only if that parent is watched</text>
+
+  <!-- WinRM -->
+  <rect class="quiet" x="28" y="208" width="764" height="52" rx="6"/>
+  <text class="m"      x="44" y="230">WinRM</text>
+  <text class="quiett" x="44" y="248">cleanest</text>
+  <text class="ev"     x="230" y="238">5985</text>
+  <text class="d"      x="310" y="238">Remote PowerShell session</text>
+  <text class="ev"     x="560" y="232">script block logs (4104)</text>
+  <text class="quiett" x="560" y="250">caught if logging is on</text>
+
+  <!-- Pass the hash -->
+  <rect class="row" x="28" y="266" width="764" height="52" rx="6"/>
+  <text class="m"   x="44" y="288">Pass the hash</text>
+  <text class="ev"  x="230" y="296">445</text>
+  <text class="d"   x="310" y="296">Any method above, with a hash not a password</text>
+  <text class="d"   x="560" y="296">logon type 3, unusual source</text>
+
+  <!-- Scheduled task -->
+  <rect class="row" x="28" y="324" width="764" height="52" rx="6"/>
+  <text class="m"   x="44" y="346">Scheduled task</text>
+  <text class="ev"  x="230" y="354">445</text>
+  <text class="d"   x="310" y="354">Creates a task that runs your command</text>
+  <text class="ev"  x="560" y="354">event 4698, task created</text>
+
+  <text class="note" x="28" y="404">Three of five are caught cleanly by the rules from SOC-01. A tester who knows this picks quietly. A defender who knows this covers the quiet ones too.</text>
+</svg>

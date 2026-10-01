@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="800" height="380" role="img" aria-labelledby="t d">
+  <title id="t">The detection and hunting maturity model, five levels</title>
+  <desc id="d">Five ascending levels. Level 0 initial, relies on automated alerts only, no hunting. Level 1 minimal, follows threat intel with some data collection. Level 2 procedural, follows others' hunt procedures. Level 3 innovative, creates its own hunt procedures. Level 4 leading, automates the hunts it has created. This program sits at level 3 moving toward 4, because it creates its own hunts and turns them into detections, but the hunt-to-detection handoff is still manual and there is no out-of-hours coverage.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .l  { stroke-width: 1.4; }
+    .l0 { fill: #eaeef2; stroke: #afb8c1; }
+    .l1 { fill: #dbeafe; stroke: #218bff; }
+    .l2 { fill: #c7e4ff; stroke: #218bff; }
+    .l3 { fill: #dafbe1; stroke: #2ea043; }
+    .l4 { fill: #b7f0c4; stroke: #2ea043; }
+    .here { fill: none; stroke: #cf222e; stroke-width: 2.5; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .n  { fill: #1f2328; font-size: 12px; font-weight: 700; }
+    .t  { fill: #1f2328; font-size: 12px; font-weight: 700; }
+    .d  { fill: #424a53; font-size: 10.5px; }
+    .heretx { fill: #cf222e; font-size: 11.5px; font-weight: 700; }
+    @media (prefers-color-scheme: dark) {
+      .l0 { fill: #21262d; stroke: #6e7681; }
+      .l1 { fill: #0c2d6b; stroke: #58a6ff; } .l2 { fill: #133b7d; stroke: #58a6ff; }
+      .l3 { fill: #0f2f17; stroke: #3fb950; } .l4 { fill: #163d20; stroke: #3fb950; }
+      .here { stroke: #f85149; }
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; }
+      .n { fill: #e6edf3; } .t { fill: #e6edf3; } .d { fill: #b1bac4; }
+      .heretx { fill: #ff7b72; }
+    }
+  </style>
+  <text class="h1"  x="28" y="30">Detection and hunting maturity</text>
+  <text class="sub" x="28" y="50">Where the program sits, honestly.</text>
+
+  <!-- ascending steps -->
+  <rect class="l l0" x="40"  y="292" width="150" height="48" rx="6"/>
+  <text class="n" x="56" y="312">Level 0</text>
+  <text class="d" x="56" y="330">Initial</text>
+
+  <rect class="l l1" x="196" y="248" width="150" height="92" rx="6"/>
+  <text class="n" x="212" y="268">Level 1</text>
+  <text class="d" x="212" y="286">Minimal</text>
+  <text class="d" x="212" y="302">follows intel</text>
+
+  <rect class="l l2" x="352" y="204" width="150" height="136" rx="6"/>
+  <text class="n" x="368" y="224">Level 2</text>
+  <text class="d" x="368" y="242">Procedural</text>
+  <text class="d" x="368" y="258">borrows hunts</text>
+
+  <rect class="l l3" x="508" y="150" width="150" height="190" rx="6"/>
+  <rect class="here" x="508" y="150" width="150" height="190" rx="6"/>
+  <text class="n" x="524" y="170">Level 3</text>
+  <text class="d" x="524" y="188">Innovative</text>
+  <text class="d" x="524" y="204">creates its own</text>
+  <text class="d" x="524" y="220">hunts</text>
+  <text class="heretx" x="524" y="248">this program,</text>
+  <text class="heretx" x="524" y="264">moving to 4</text>
+
+  <rect class="l l4" x="664" y="106" width="130" height="234" rx="6"/>
+  <text class="n" x="680" y="126">Level 4</text>
+  <text class="d" x="680" y="144">Leading</text>
+  <text class="d" x="680" y="160">automates its</text>
+  <text class="d" x="680" y="176">own hunts</text>
+
+  <text class="sub" x="28" y="366">Level 3: it creates its own hunts and turns them into detections. Not yet 4, because hunt-to-detection is still manual.</text>
+</svg>

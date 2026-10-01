@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="760" height="440" role="img" aria-labelledby="t d">
+  <title id="t">The pyramid of pain, indicators ranked by how hard they are for an attacker to change</title>
+  <desc id="d">A pyramid with six levels. From the bottom, easiest for the attacker to change: hashes, one byte and it is new; IP addresses, changed hourly; domain names, must register new ones; host and network artefacts, must change behaviour; tools, must find new software; and at the top, hardest, tactics and techniques, they must relearn how they operate. A note states that blocking a hash inconveniences an attacker for a minute, but detecting their technique breaks their whole method, which is why detections should aim high on the pyramid.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .l1 { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.3; }
+    .l2 { fill: #d4f4d9; stroke: #2ea043; stroke-width: 1.3; }
+    .l3 { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.3; }
+    .l4 { fill: #ffe8cc; stroke: #d4a72c; stroke-width: 1.3; }
+    .l5 { fill: #ffdcd8; stroke: #cf222e; stroke-width: 1.3; }
+    .l6 { fill: #ffc9c2; stroke: #cf222e; stroke-width: 1.5; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .t  { fill: #1f2328; font-size: 13px; font-weight: 700; }
+    .d  { fill: #424a53; font-size: 10.5px; }
+    .side { fill: #656d76; font-size: 11px; font-weight: 600; }
+    @media (prefers-color-scheme: dark) {
+      .l1 { fill: #12331a; stroke: #3fb950; } .l2 { fill: #163d20; stroke: #3fb950; }
+      .l3 { fill: #3d2f08; stroke: #d29922; } .l4 { fill: #4a2610; stroke: #d29922; }
+      .l5 { fill: #3c1618; stroke: #f85149; } .l6 { fill: #5c1119; stroke: #f85149; }
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; }
+      .t  { fill: #e6edf3; } .d { fill: #b1bac4; } .side { fill: #8b949e; }
+    }
+  </style>
+  <text class="h1"  x="28" y="32">The pyramid of pain</text>
+  <text class="sub" x="28" y="54">Ranked by how much it hurts the attacker when you detect it. Aim high.</text>
+
+  <!-- pyramid layers, narrow at top -->
+  <polygon class="l6" points="330,74 430,74 410,122 350,122"/>
+  <text class="t" x="342" y="104">Techniques</text>
+
+  <polygon class="l5" points="308,126 452,126 432,174 328,174"/>
+  <text class="t" x="352" y="156">Tools</text>
+
+  <polygon class="l4" points="286,178 474,178 454,226 306,226"/>
+  <text class="t" x="312" y="208">Host / network artefacts</text>
+
+  <polygon class="l3" points="264,230 496,230 476,278 284,278"/>
+  <text class="t" x="330" y="260">Domain names</text>
+
+  <polygon class="l2" points="242,282 518,282 498,330 262,330"/>
+  <text class="t" x="332" y="312">IP addresses</text>
+
+  <polygon class="l1" points="220,334 540,334 520,382 240,382"/>
+  <text class="t" x="356" y="364">Hashes</text>
+
+  <text class="side" x="560" y="102">hardest to change</text>
+  <text class="d"    x="560" y="120">must relearn how</text>
+  <text class="d"    x="560" y="136">they operate</text>
+
+  <text class="side" x="560" y="360">easiest to change</text>
+  <text class="d"    x="560" y="378">one byte, new hash</text>
+
+  <text class="sub" x="28" y="414">Blocking a hash inconveniences an attacker for a minute. Detecting their technique breaks their whole method. Every</text>
+  <text class="sub" x="28" y="432">detection in this project aims at behaviour over indicators wherever it can.</text>
+</svg>

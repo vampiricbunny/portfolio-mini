@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 560" width="790" height="560" role="img" aria-labelledby="t d">
+  <title id="t">SOC lab network topology on Proxmox VE</title>
+  <desc id="d">A single Proxmox VE host running OPNsense as FW01 with four VLAN segments. VLAN 10 CORP on 10.20.10.0/24 holds DC01, FS01 and two Windows 11 workstations. VLAN 20 SOC on 10.20.20.0/24 holds SIEM01 running Wazuh. VLAN 99 RED on 10.20.99.0/24 holds the attacker KALI01, which can reach CORP but not SOC. VLAN 30 MGMT holds the firewall management interface and is unreachable from user space.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .host  { fill: none; stroke: #afb8c1; stroke-width: 1.4; stroke-dasharray: 6 4; }
+    .fw    { fill: #fff1e5; stroke: #fb8f44; stroke-width: 1.6; }
+    .rail  { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.2; }
+    .railr { fill: #fff0ee; stroke: #ff8182; stroke-width: 1.2; }
+    .dc    { fill: #ecd8ff; stroke: #8250df; stroke-width: 1.5; }
+    .srv   { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.5; }
+    .cli   { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.5; }
+    .siem  { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.5; }
+    .atk   { fill: #ffebe9; stroke: #cf222e; stroke-width: 1.5; }
+    .link  { stroke: #656d76; stroke-width: 2; }
+    .h1    { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub   { fill: #656d76; font-size: 11.5px; }
+    .vlan  { fill: #1f2328; font-size: 12.5px; font-weight: 600; }
+    .name  { fill: #1f2328; font-size: 13px; font-weight: 600; }
+    .os    { fill: #424a53; font-size: 10.5px; }
+    .ip    { fill: #0550ae; font-size: 11px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .note  { fill: #656d76; font-size: 11px; }
+    .deny  { fill: #cf222e; font-size: 11px; font-weight: 600; }
+
+    @media (prefers-color-scheme: dark) {
+      .host  { stroke: #484f58; }
+      .fw    { fill: #4a2610; stroke: #db6d28; }
+      .rail  { fill: #0d1117; stroke: #30363d; }
+      .railr { fill: #3c1618; stroke: #f85149; }
+      .dc    { fill: #3c1e70; stroke: #bc8cff; }
+      .srv   { fill: #0c2d6b; stroke: #58a6ff; }
+      .cli   { fill: #0f2f17; stroke: #3fb950; }
+      .siem  { fill: #4a3808; stroke: #d29922; }
+      .atk   { fill: #4a1116; stroke: #f85149; }
+      .link  { stroke: #8b949e; }
+      .h1    { fill: #e6edf3; }
+      .sub   { fill: #8b949e; }
+      .vlan  { fill: #e6edf3; }
+      .name  { fill: #e6edf3; }
+      .os    { fill: #b1bac4; }
+      .ip    { fill: #79c0ff; }
+      .note  { fill: #8b949e; }
+      .deny  { fill: #ff7b72; }
+    }
+  </style>
+
+  <text class="h1"  x="36" y="34">SOC-01 lab  ·  Proxmox VE, VLAN segmented</text>
+  <text class="sub" x="36" y="54">vmbr1 is VLAN aware with no physical port, so lab traffic never reaches the house network.</text>
+
+  <rect class="host" x="36" y="76" width="710" height="448" rx="10"/>
+
+  <!-- firewall -->
+  <rect class="fw" x="56" y="96" width="124" height="408" rx="7"/>
+  <text class="name" x="72" y="126">FW01</text>
+  <text class="os"   x="72" y="144">OPNsense 24.7</text>
+  <text class="os"   x="72" y="160">Suricata IDS</text>
+  <text class="note" x="72" y="186">One interface</text>
+  <text class="note" x="72" y="202">per VLAN.</text>
+  <text class="note" x="72" y="218">Default deny,</text>
+  <text class="note" x="72" y="234">logged.</text>
+
+  <line class="link" x1="180" y1="158" x2="204" y2="158"/>
+  <line class="link" x1="180" y1="279" x2="204" y2="279"/>
+  <line class="link" x1="180" y1="381" x2="204" y2="381"/>
+  <line class="link" x1="180" y1="472" x2="204" y2="472"/>
+
+  <!-- VLAN 10 CORP -->
+  <rect class="rail" x="204" y="96" width="526" height="124" rx="8"/>
+  <text class="vlan" x="218" y="118">VLAN 10  ·  CORP</text>
+  <text class="ip"   x="352" y="118">10.20.10.0/24</text>
+
+  <rect class="dc"  x="218" y="134" width="120" height="74" rx="6"/>
+  <text class="name" x="230" y="156">DC01</text>
+  <text class="os"   x="230" y="174">AD DS · DNS</text>
+  <text class="ip"   x="230" y="194">10.20.10.10</text>
+
+  <rect class="srv" x="346" y="134" width="120" height="74" rx="6"/>
+  <text class="name" x="358" y="156">FS01</text>
+  <text class="os"   x="358" y="174">File server</text>
+  <text class="ip"   x="358" y="194">10.20.10.20</text>
+
+  <rect class="cli" x="474" y="134" width="120" height="74" rx="6"/>
+  <text class="name" x="486" y="156">WS11-01</text>
+  <text class="os"   x="486" y="174">Windows 11</text>
+  <text class="ip"   x="486" y="194">DHCP</text>
+
+  <rect class="cli" x="602" y="134" width="120" height="74" rx="6"/>
+  <text class="name" x="614" y="156">WS11-02</text>
+  <text class="os"   x="614" y="174">Windows 11</text>
+  <text class="ip"   x="614" y="194">DHCP</text>
+
+  <!-- VLAN 20 SOC -->
+  <rect class="rail" x="204" y="236" width="526" height="86" rx="8"/>
+  <text class="vlan" x="218" y="258">VLAN 20  ·  SOC</text>
+  <text class="ip"   x="338" y="258">10.20.20.0/24</text>
+
+  <rect class="siem" x="218" y="270" width="176" height="40" rx="6"/>
+  <text class="name" x="230" y="288">SIEM01</text>
+  <text class="ip"   x="230" y="304">10.20.20.10</text>
+
+  <text class="note" x="410" y="284">Wazuh manager, indexer, dashboard.</text>
+  <text class="note" x="410" y="302">Agents reach it on 1514 and 1515 only.</text>
+
+  <!-- VLAN 99 RED -->
+  <rect class="railr" x="204" y="338" width="526" height="86" rx="8"/>
+  <text class="vlan" x="218" y="360">VLAN 99  ·  RED</text>
+  <text class="ip"   x="338" y="360">10.20.99.0/24</text>
+
+  <rect class="atk" x="218" y="372" width="176" height="40" rx="6"/>
+  <text class="name" x="230" y="390">KALI01</text>
+  <text class="ip"   x="230" y="406">10.20.99.10</text>
+
+  <text class="deny" x="410" y="386">RED to CORP: allowed.  CORP to RED: blocked, logged.</text>
+  <text class="deny" x="410" y="404">RED to SOC: blocked. The attacker cannot reach the evidence.</text>
+
+  <!-- VLAN 30 MGMT -->
+  <rect class="rail" x="204" y="440" width="526" height="64" rx="8"/>
+  <text class="vlan" x="218" y="462">VLAN 30  ·  MGMT</text>
+  <text class="ip"   x="342" y="462">10.20.30.0/24</text>
+  <text class="note" x="218" y="486">Firewall management only. Unreachable from CORP and from RED.</text>
+</svg>

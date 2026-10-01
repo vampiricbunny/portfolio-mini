@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="800" height="380" role="img" aria-labelledby="t d">
+  <title id="t">Troubleshooting from the wire up, the layered method</title>
+  <desc id="d">Network problems are diagnosed bottom-up through four layers. Physical: is the link up, cable, port, interface status. Network: can packets get there, ping, traceroute, routing. Transport: is the port open, is there loss or latency. Application: does the service respond correctly. You work up from the physical layer and stop at the first failure, because each layer that works rules out everything below it. A note says work bottom-up and stop at the first failure, since checking the application when the link is down is wasted time.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .l1 { fill: #ffebe9; stroke: #cf222e; stroke-width: 1.5; }
+    .l2 { fill: #fff1e5; stroke: #fb8f44; stroke-width: 1.5; }
+    .l3 { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.5; }
+    .l4 { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.5; }
+    .up { stroke: #8250df; stroke-width: 2.5; marker-end: url(#a); fill: none; }
+    .arrow { fill: #8250df; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .n  { fill: #656d76; font-size: 11px; font-weight: 700; }
+    .t  { fill: #1f2328; font-size: 13px; font-weight: 700; }
+    .d  { fill: #424a53; font-size: 10.5px; }
+    .tool { fill: #0550ae; font-size: 10px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    @media (prefers-color-scheme: dark) {
+      .l1 { fill: #3c1618; stroke: #f85149; } .l2 { fill: #4a2610; stroke: #db6d28; }
+      .l3 { fill: #4a3808; stroke: #d29922; } .l4 { fill: #0f2f17; stroke: #3fb950; }
+      .up { stroke: #bc8cff; } .arrow { fill: #bc8cff; }
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .n { fill: #8b949e; }
+      .t  { fill: #e6edf3; } .d { fill: #b1bac4; } .tool { fill: #79c0ff; }
+    }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker></defs>
+  <text class="h1"  x="28" y="30">Troubleshoot from the wire up</text>
+  <text class="sub" x="28" y="50">Work bottom-up. Stop at the first failure. Each working layer rules out everything below it.</text>
+
+  <line class="up" x1="60" y1="330" x2="60" y2="80"/>
+  <text class="n" x="24" y="200" transform="rotate(-90 24 200)">check upward</text>
+
+  <rect class="l1" x="100" y="290" width="640" height="54" rx="7"/>
+  <text class="t" x="120" y="314">1. Physical</text>
+  <text class="d" x="120" y="332">Is the link up? Cable, port, interface status</text>
+  <text class="tool" x="560" y="322">interface counters</text>
+
+  <rect class="l2" x="100" y="222" width="640" height="54" rx="7"/>
+  <text class="t" x="120" y="246">2. Network</text>
+  <text class="d" x="120" y="264">Can packets get there? Routing</text>
+  <text class="tool" x="560" y="254">ping, traceroute</text>
+
+  <rect class="l3" x="100" y="154" width="640" height="54" rx="7"/>
+  <text class="t" x="120" y="178">3. Transport</text>
+  <text class="d" x="120" y="196">Is the port open? Loss or latency?</text>
+  <text class="tool" x="560" y="186">nc, mtr</text>
+
+  <rect class="l4" x="100" y="86" width="640" height="54" rx="7"/>
+  <text class="t" x="120" y="110">4. Application</text>
+  <text class="d" x="120" y="128">Does the service respond correctly?</text>
+  <text class="tool" x="560" y="118">curl, logs</text>
+
+  <text class="sub" x="28" y="368">If the link is down, nothing above it matters. Checking the application first is wasted time. "What changed" resolves more than any tool.</text>
+</svg>

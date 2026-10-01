@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 460" width="820" height="460" role="img" aria-labelledby="t d">
+  <title id="t">Findings plotted by likelihood and impact</title>
+  <desc id="d">A three by three risk matrix. The horizontal axis is likelihood, low to high. The vertical axis is impact, low to high. Cells are coloured from green at the low-low corner to red at the high-high corner. The three critical findings, the web RCE, the certificate abuse and the perimeter segmentation, sit in the top-right red cell. High findings sit in the orange cells. Medium findings sit in the amber cells. Low findings sit in the green cells. A note explains that the reddest findings are also the cheapest to fix.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .green { fill: #d5f0dc; stroke: #2ea043; stroke-width: 1; }
+    .amber { fill: #fdf1c8; stroke: #d4a72c; stroke-width: 1; }
+    .orange{ fill: #ffe0cc; stroke: #e16f24; stroke-width: 1; }
+    .red   { fill: #ffd4d0; stroke: #cf222e; stroke-width: 1; }
+    .zl { fill: #57606a; font-size: 10px; font-weight: 700; }
+    .axis { fill: #424a53; font-size: 12px; font-weight: 700; }
+    .chip { fill: #24292f; }
+    .chipr{ fill: #cf222e; }
+    .chipo{ fill: #e16f24; }
+    .chipa{ fill: #9a6700; }
+    .chipg{ fill: #1a7f37; }
+    .cl { fill: #ffffff; font-size: 10px; font-weight: 700; text-anchor: middle; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; } .zl { fill: #8b949e; } .axis { fill: #b1bac4; }
+      .green { fill: #0f2f17; stroke: #2ea043; } .amber { fill: #3a2f08; stroke: #d4a72c; }
+      .orange{ fill: #3a1e0d; stroke: #e16f24; } .red { fill: #3d1417; stroke: #cf222e; }
+    }
+  </style>
+  <text class="h1"  x="24" y="30">Risk matrix</text>
+  <text class="sub" x="24" y="49">Nineteen findings by likelihood and impact. The reddest are also the cheapest to fix.</text>
+
+  <!-- y axis label -->
+  <text class="axis" x="30" y="250" transform="rotate(-90 30 250)" text-anchor="middle">IMPACT</text>
+  <!-- x axis label -->
+  <text class="axis" x="450" y="440" text-anchor="middle">LIKELIHOOD</text>
+
+  <!-- grid, 3x3, origin x=90 y=80, cell 230x108 -->
+  <!-- row impact HIGH (top) -->
+  <rect class="orange" x="90"  y="80"  width="230" height="108"/>
+  <rect class="red"    x="320" y="80"  width="230" height="108"/>
+  <rect class="red"    x="550" y="80"  width="230" height="108"/>
+  <!-- row impact MED -->
+  <rect class="amber"  x="90"  y="188" width="230" height="108"/>
+  <rect class="orange" x="320" y="188" width="230" height="108"/>
+  <rect class="red"    x="550" y="188" width="230" height="108"/>
+  <!-- row impact LOW -->
+  <rect class="green"  x="90"  y="296" width="230" height="108"/>
+  <rect class="amber"  x="320" y="296" width="230" height="108"/>
+  <rect class="orange" x="550" y="296" width="230" height="108"/>
+
+  <!-- zone tick labels -->
+  <text class="zl" x="70" y="138" text-anchor="end">High</text>
+  <text class="zl" x="70" y="246" text-anchor="end">Med</text>
+  <text class="zl" x="70" y="354" text-anchor="end">Low</text>
+  <text class="zl" x="205" y="420" text-anchor="middle">Low</text>
+  <text class="zl" x="435" y="420" text-anchor="middle">Medium</text>
+  <text class="zl" x="665" y="420" text-anchor="middle">High</text>
+
+  <!-- chips. helper positions -->
+  <!-- top-right red: criticals 01 02 03 -->
+  <rect class="chipr" x="576" y="100" width="42" height="22" rx="4"/><text class="cl" x="597" y="115">01</text>
+  <rect class="chipr" x="626" y="100" width="42" height="22" rx="4"/><text class="cl" x="647" y="115">02</text>
+  <rect class="chipr" x="676" y="100" width="42" height="22" rx="4"/><text class="cl" x="697" y="115">03</text>
+
+  <!-- top-middle red: high impact med likelihood: 06 08 09 -->
+  <rect class="chipo" x="346" y="100" width="42" height="22" rx="4"/><text class="cl" x="367" y="115">06</text>
+  <rect class="chipo" x="396" y="100" width="42" height="22" rx="4"/><text class="cl" x="417" y="115">08</text>
+  <rect class="chipo" x="446" y="100" width="42" height="22" rx="4"/><text class="cl" x="467" y="115">09</text>
+
+  <!-- mid-right red: med impact high likelihood: 04 05 07 -->
+  <rect class="chipo" x="576" y="208" width="42" height="22" rx="4"/><text class="cl" x="597" y="223">04</text>
+  <rect class="chipo" x="626" y="208" width="42" height="22" rx="4"/><text class="cl" x="647" y="223">05</text>
+  <rect class="chipo" x="676" y="208" width="42" height="22" rx="4"/><text class="cl" x="697" y="223">07</text>
+
+  <!-- mid-middle orange: med med: 10 12 13 14 16 -->
+  <rect class="chipa" x="346" y="208" width="42" height="22" rx="4"/><text class="cl" x="367" y="223">10</text>
+  <rect class="chipa" x="396" y="208" width="42" height="22" rx="4"/><text class="cl" x="417" y="223">12</text>
+  <rect class="chipa" x="446" y="208" width="42" height="22" rx="4"/><text class="cl" x="467" y="223">13</text>
+  <rect class="chipa" x="346" y="238" width="42" height="22" rx="4"/><text class="cl" x="367" y="253">14</text>
+  <rect class="chipa" x="396" y="238" width="42" height="22" rx="4"/><text class="cl" x="417" y="253">16</text>
+
+  <!-- mid-left amber: med impact low likelihood: 11 15 -->
+  <rect class="chipa" x="116" y="208" width="42" height="22" rx="4"/><text class="cl" x="137" y="223">11</text>
+  <rect class="chipa" x="166" y="208" width="42" height="22" rx="4"/><text class="cl" x="187" y="223">15</text>
+
+  <!-- bottom-middle amber: low impact med likelihood: 17 -->
+  <rect class="chipg" x="346" y="316" width="42" height="22" rx="4"/><text class="cl" x="367" y="331">17</text>
+
+  <!-- bottom-left green: low low: 18 -->
+  <rect class="chipg" x="116" y="316" width="42" height="22" rx="4"/><text class="cl" x="137" y="331">18</text>
+
+  <text class="foot" x="24" y="454">Numbers are finding IDs (PT2-nn). The three in the top-right red cell are the criticals, and closing the two boundary findings, 03 and 08, is an afternoon.</text>
+</svg>

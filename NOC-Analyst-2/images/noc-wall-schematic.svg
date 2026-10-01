@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 500" width="860" height="500" role="img" aria-labelledby="t d">
+  <title id="t">NOC wall dashboard, drawn layout</title>
+  <desc id="d">A drawn representation of a NOC wall dashboard. A row of large status tiles, one per critical service and device, coloured green for fine, amber for degraded and red for down. WEB01, DB01, APP01, the core firewall and the core switch are green. The branch link is amber. A service is red. Below, two large counters show current incidents and alerts firing, and a strip shows core link bandwidth. The design is glanceable from across the room, with colour and size doing the work rather than text. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .win  { fill: #0d1117; stroke: #30363d; stroke-width: 1.3; }
+    .green{ fill: #1a7f37; stroke: #2ea043; stroke-width: 1.4; }
+    .amber{ fill: #9a6700; stroke: #d4a72c; stroke-width: 1.4; }
+    .red  { fill: #a40e26; stroke: #cf222e; stroke-width: 1.6; }
+    .panel{ fill: #161b22; stroke: #30363d; stroke-width: 1.2; }
+    .tile { fill: #e6edf3; font-size: 15px; font-weight: 700; text-anchor: middle; }
+    .st   { fill: #e6edf3; font-size: 10.5px; text-anchor: middle; opacity: 0.85; }
+    .h1   { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub  { fill: #656d76; font-size: 11px; }
+    .cnt  { fill: #e6edf3; font-size: 40px; font-weight: 700; text-anchor: middle; }
+    .cntr { fill: #ff7b72; font-size: 40px; font-weight: 700; text-anchor: middle; }
+    .clbl { fill: #8b949e; font-size: 11px; text-anchor: middle; }
+    .foot { fill: #656d76; font-size: 10.5px; font-style: italic; }
+    .bw   { fill: #58a6ff; }
+    .bwt  { fill: #21262d; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+    }
+  </style>
+  <text class="h1"  x="24" y="28">NOC wall</text>
+  <text class="sub" x="24" y="47">Glanceable from across the room. Colour and size do the work, not text.</text>
+
+  <!-- the wall is dark, as NOC walls are -->
+  <rect class="win" x="24" y="60" width="812" height="380" rx="6"/>
+
+  <!-- status tiles row -->
+  <rect class="green" x="44"  y="80" width="118" height="90" rx="6"/>
+  <text class="tile" x="103" y="120">WEB01</text><text class="st" x="103" y="142">up</text>
+  <rect class="green" x="176" y="80" width="118" height="90" rx="6"/>
+  <text class="tile" x="235" y="120">DB01</text><text class="st" x="235" y="142">up</text>
+  <rect class="green" x="308" y="80" width="118" height="90" rx="6"/>
+  <text class="tile" x="367" y="120">APP01</text><text class="st" x="367" y="142">up</text>
+  <rect class="green" x="440" y="80" width="118" height="90" rx="6"/>
+  <text class="tile" x="499" y="120">CORE-FW</text><text class="st" x="499" y="142">up</text>
+  <rect class="green" x="572" y="80" width="118" height="90" rx="6"/>
+  <text class="tile" x="631" y="120">SW-CORE</text><text class="st" x="631" y="142">up</text>
+  <rect class="amber" x="704" y="80" width="112" height="90" rx="6"/>
+  <text class="tile" x="760" y="120">BR-LINK</text><text class="st" x="760" y="142">degraded</text>
+
+  <rect class="green" x="44"  y="182" width="118" height="90" rx="6"/>
+  <text class="tile" x="103" y="222">DNS</text><text class="st" x="103" y="244">up</text>
+  <rect class="green" x="176" y="182" width="118" height="90" rx="6"/>
+  <text class="tile" x="235" y="222">MAIL</text><text class="st" x="235" y="244">up</text>
+  <rect class="red"   x="308" y="182" width="118" height="90" rx="6"/>
+  <text class="tile" x="367" y="222">API</text><text class="st" x="367" y="244">DOWN</text>
+  <rect class="green" x="440" y="182" width="118" height="90" rx="6"/>
+  <text class="tile" x="499" y="222">VPN</text><text class="st" x="499" y="244">up</text>
+  <rect class="green" x="572" y="182" width="118" height="90" rx="6"/>
+  <text class="tile" x="631" y="222">FILE</text><text class="st" x="631" y="244">up</text>
+  <rect class="green" x="704" y="182" width="112" height="90" rx="6"/>
+  <text class="tile" x="760" y="222">PRINT</text><text class="st" x="760" y="244">up</text>
+
+  <!-- counters -->
+  <rect class="panel" x="44" y="286" width="200" height="130" rx="6"/>
+  <text class="cntr" x="144" y="360">1</text>
+  <text class="clbl" x="144" y="392">incidents open</text>
+
+  <rect class="panel" x="256" y="286" width="200" height="130" rx="6"/>
+  <text class="cnt" x="356" y="360">3</text>
+  <text class="clbl" x="356" y="392">alerts firing</text>
+
+  <!-- bandwidth strip -->
+  <rect class="panel" x="468" y="286" width="348" height="130" rx="6"/>
+  <text class="clbl" x="642" y="310">core link bandwidth</text>
+  <rect class="bwt" x="488" y="326" width="308" height="16" rx="3"/>
+  <rect class="bw"  x="488" y="326" width="150" height="16" rx="3"/>
+  <text class="st" x="642" y="366">48 percent in</text>
+  <rect class="bwt" x="488" y="378" width="308" height="16" rx="3"/>
+  <rect class="bw"  x="488" y="378" width="95" height="16" rx="3"/>
+  <text class="st" x="642" y="414">30 percent out</text>
+
+  <text class="foot" x="24" y="466">Schematic illustration of a NOC wall dashboard, not a screen capture.</text>
+  <text class="sub"  x="24" y="488">One red tile draws the eye instantly. That is the whole design: a problem is impossible to miss, everything else recedes.</text>
+</svg>

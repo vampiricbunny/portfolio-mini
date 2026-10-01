@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520" role="img" aria-labelledby="t d">
+  <title id="t">SOAR playbook trigger and action flow</title>
+  <desc id="d">Two playbook patterns. The enrichment pattern runs automatically: an incident is created, an automation rule fires the Logic App, the Logic App reads entities, queries threat intelligence and internal history, and posts a comment. It changes nothing, so no approval is needed. The destructive pattern requires approval: an incident is created, the Logic App gathers context and posts an approval card to Teams with two buttons, and only on approval does it disable the account and revoke refresh tokens. If rejected or timed out after thirty minutes it comments that no action was taken. A panel records the incident where the approval gate was missing, an impossible travel alert disabled the administrator account and locked the analyst out of the tenant, recovered using the break-glass account.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .trig   { fill: #ffebe9; stroke: #cf222e; stroke-width: 1.5; }
+    .la     { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.5; }
+    .act    { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.4; }
+    .appr   { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.8; }
+    .dest   { fill: #ffd8d3; stroke: #a40e26; stroke-width: 1.7; }
+    .safe   { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.5; }
+    .panel  { fill: #fff1e5; stroke: #fb8f44; stroke-width: 1.3; }
+    .flow   { stroke: #656d76; stroke-width: 1.7; marker-end: url(#a); fill: none; }
+    .arrow  { fill: #656d76; }
+    .h1     { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub    { fill: #656d76; font-size: 11.5px; }
+    .lane   { fill: #1f2328; font-size: 12.5px; font-weight: 600; }
+    .st     { fill: #1f2328; font-size: 11.5px; font-weight: 600; }
+    .det    { fill: #424a53; font-size: 10px; }
+    .edge   { fill: #656d76; font-size: 10px; font-weight: 600; }
+    .tag    { fill: #1a7f37; font-size: 10.5px; font-weight: 600; }
+    .tagr   { fill: #cf222e; font-size: 10.5px; font-weight: 600; }
+    .ptitle { fill: #bc4c00; font-size: 11.5px; font-weight: 600; }
+    .pbody  { fill: #424a53; font-size: 10.5px; }
+
+    @media (prefers-color-scheme: dark) {
+      .trig   { fill: #3c1618; stroke: #f85149; }
+      .la     { fill: #0c2d6b; stroke: #58a6ff; }
+      .act    { fill: #0d1117; stroke: #30363d; }
+      .appr   { fill: #4a3808; stroke: #d29922; }
+      .dest   { fill: #5c1119; stroke: #ff7b72; }
+      .safe   { fill: #0f2f17; stroke: #3fb950; }
+      .panel  { fill: #4a2610; stroke: #db6d28; }
+      .flow   { stroke: #8b949e; }
+      .arrow  { fill: #8b949e; }
+      .h1     { fill: #e6edf3; }
+      .sub    { fill: #8b949e; }
+      .lane   { fill: #e6edf3; }
+      .st     { fill: #e6edf3; }
+      .det    { fill: #b1bac4; }
+      .edge   { fill: #8b949e; }
+      .tag    { fill: #3fb950; }
+      .tagr   { fill: #ff7b72; }
+      .ptitle { fill: #db6d28; }
+      .pbody  { fill: #b1bac4; }
+    }
+  </style>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/>
+    </marker>
+  </defs>
+
+  <text class="h1"  x="24" y="28">SOAR playbook patterns</text>
+  <text class="sub" x="24" y="48">Automate the gathering. Keep the deciding.</text>
+
+  <!-- ENRICHMENT LANE -->
+  <text class="lane" x="24" y="80">Enrichment  ·  runs automatically</text>
+  <text class="tag"  x="272" y="80">changes nothing, no approval</text>
+
+  <rect class="trig" x="24" y="92" width="130" height="54" rx="6"/>
+  <text class="st"  x="36" y="114">Incident created</text>
+  <text class="det" x="36" y="132">Automation rule fires</text>
+
+  <line class="flow" x1="154" y1="119" x2="186" y2="119"/>
+
+  <rect class="la" x="190" y="92" width="130" height="54" rx="6"/>
+  <text class="st"  x="202" y="114">Logic App</text>
+  <text class="det" x="202" y="132">Managed identity</text>
+
+  <line class="flow" x1="320" y1="119" x2="352" y2="119"/>
+
+  <rect class="act" x="356" y="92" width="150" height="54" rx="6"/>
+  <text class="st"  x="368" y="114">Read entities</text>
+  <text class="det" x="368" y="132">IPs, hosts, accounts</text>
+
+  <line class="flow" x1="506" y1="119" x2="538" y2="119"/>
+
+  <rect class="act" x="542" y="86" width="164" height="66" rx="6"/>
+  <text class="st"  x="554" y="108">Query and enrich</text>
+  <text class="det" x="554" y="126">TI table, VirusTotal</text>
+  <text class="det" x="554" y="142">Internal 90 day history</text>
+
+  <line class="flow" x1="706" y1="119" x2="738" y2="119"/>
+
+  <rect class="safe" x="742" y="92" width="134" height="54" rx="6"/>
+  <text class="st"  x="754" y="114">Post comment</text>
+  <text class="det" x="754" y="132">Within 30 seconds</text>
+
+  <!-- DESTRUCTIVE LANE -->
+  <text class="lane" x="24" y="192">Destructive  ·  requires approval</text>
+  <text class="tagr" x="262" y="192">stops someone working if it is wrong</text>
+
+  <rect class="trig" x="24" y="212" width="130" height="54" rx="6"/>
+  <text class="st"  x="36" y="234">Incident created</text>
+  <text class="det" x="36" y="252">Tagged identity risk</text>
+
+  <line class="flow" x1="154" y1="239" x2="186" y2="239"/>
+
+  <rect class="la" x="190" y="206" width="130" height="66" rx="6"/>
+  <text class="st"  x="202" y="228">Gather context</text>
+  <text class="det" x="202" y="246">24h sign-ins, countries</text>
+  <text class="det" x="202" y="262">apps, failure count</text>
+
+  <line class="flow" x1="320" y1="239" x2="352" y2="239"/>
+
+  <rect class="appr" x="356" y="206" width="180" height="78" rx="6"/>
+  <text class="st"  x="368" y="228">Approval card to Teams</text>
+  <text class="det" x="368" y="248">Context, and two buttons</text>
+  <text class="det" x="368" y="264">Timeout 30 minutes</text>
+  <text class="det" x="368" y="280">Privileged accounts excluded</text>
+
+  <line class="flow" x1="536" y1="222" x2="590" y2="200"/>
+  <text class="edge" x="544" y="196">approved</text>
+  <line class="flow" x1="536" y1="258" x2="590" y2="300"/>
+  <text class="edge" x="540" y="288">rejected</text>
+
+  <rect class="dest" x="594" y="162" width="282" height="72" rx="6"/>
+  <text class="st"  x="606" y="184">Disable account  AND  revoke tokens</text>
+  <text class="det" x="606" y="204">Disabling alone is not containment. An existing</text>
+  <text class="det" x="606" y="220">refresh token keeps working until it expires.</text>
+
+  <rect class="act" x="594" y="282" width="282" height="54" rx="6"/>
+  <text class="st"  x="606" y="304">Comment: no action taken</text>
+  <text class="det" x="606" y="324">Records who declined and why</text>
+
+  <!-- INCIDENT PANEL -->
+  <rect class="panel" x="24" y="360" width="852" height="136" rx="6"/>
+  <text class="ptitle" x="40" y="384">The one that went wrong</text>
+  <text class="pbody"  x="40" y="406">PB-04 shipped without the approval gate. An impossible travel alert fired on vampiricbunny, my own admin account, because</text>
+  <text class="pbody"  x="40" y="424">I had connected through a VPN. An automation rule tagged it on severity alone. The playbook disabled the account and</text>
+  <text class="pbody"  x="40" y="442">revoked every token. I was locked out of the tenant that the recovery tooling lived in.</text>
+
+  <text class="pbody"  x="40" y="470">Recovered with the break-glass account, which existed and was excluded from conditional access. That is the entire reason</text>
+  <text class="pbody"  x="40" y="488">break-glass accounts exist. Fix: approval gate, privileged account exclusion list, and a tag that needs two correlated alerts.</text>
+</svg>

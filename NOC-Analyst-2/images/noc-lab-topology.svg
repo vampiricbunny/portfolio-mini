@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 480" width="840" height="480" role="img" aria-labelledby="t d">
+  <title id="t">The NOC lab network, multiple subnets behind a monitored core</title>
+  <desc id="d">A network across four subnets. A core firewall router and core switch sit in the core subnet. A management subnet holds the monitoring server NMS01, kept separate so it can still see when a monitored segment fails. A servers subnet holds a web server, a database server and a Windows application server. A branch subnet holds a branch router across a slower link that can be shaped to add latency and packet loss. Everything is polled by the monitoring server over SNMP.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .zone { fill: none; stroke: #afb8c1; stroke-width: 1.3; stroke-dasharray: 6 4; }
+    .core { fill: #fff1e5; stroke: #fb8f44; stroke-width: 1.6; }
+    .nms  { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.7; }
+    .srv  { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.5; }
+    .win  { fill: #ecd8ff; stroke: #8250df; stroke-width: 1.5; }
+    .br   { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.5; }
+    .link { stroke: #656d76; stroke-width: 2; }
+    .slow { stroke: #d4a72c; stroke-width: 2.5; stroke-dasharray: 5 3; }
+    .poll { stroke: #8250df; stroke-width: 1.4; stroke-dasharray: 3 3; }
+    .h1   { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub  { fill: #656d76; font-size: 11.5px; }
+    .zt   { fill: #656d76; font-size: 10.5px; font-weight: 700; letter-spacing: 0.3px; }
+    .name { fill: #1f2328; font-size: 12px; font-weight: 700; }
+    .role { fill: #424a53; font-size: 10px; }
+    .ip   { fill: #0550ae; font-size: 10.5px; font-weight: 600; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .lt   { fill: #9a6700; font-size: 10px; font-weight: 600; }
+    .pt   { fill: #8250df; font-size: 10px; font-weight: 600; }
+    @media (prefers-color-scheme: dark) {
+      .zone { stroke: #484f58; }
+      .core { fill: #4a2610; stroke: #db6d28; } .nms { fill: #4a3808; stroke: #d29922; }
+      .srv  { fill: #0c2d6b; stroke: #58a6ff; } .win { fill: #3c1e70; stroke: #bc8cff; }
+      .br   { fill: #0f2f17; stroke: #3fb950; }
+      .link { stroke: #8b949e; } .slow { stroke: #d29922; } .poll { stroke: #bc8cff; }
+      .h1   { fill: #e6edf3; } .sub { fill: #8b949e; } .zt { fill: #8b949e; }
+      .name { fill: #e6edf3; } .role { fill: #b1bac4; } .ip { fill: #79c0ff; }
+      .lt   { fill: #d29922; } .pt { fill: #d2a8ff; }
+    }
+  </style>
+  <text class="h1"  x="28" y="30">NOC-02 lab  ·  noclab.local</text>
+  <text class="sub" x="28" y="50">Four subnets. The monitor is kept separate so it can see when a segment fails.</text>
+
+  <!-- Core zone -->
+  <rect class="zone" x="300" y="70" width="240" height="120" rx="8"/>
+  <text class="zt" x="314" y="88">CORE  10.60.0.0/24</text>
+  <rect class="core" x="316" y="98" width="94" height="76" rx="6"/>
+  <text class="name" x="328" y="120">CORE-FW</text>
+  <text class="role" x="328" y="137">Router/FW</text>
+  <text class="ip"   x="328" y="160">10.60.0.1</text>
+  <rect class="core" x="430" y="98" width="94" height="76" rx="6"/>
+  <text class="name" x="442" y="120">SW-CORE</text>
+  <text class="role" x="442" y="137">Switch</text>
+  <text class="ip"   x="442" y="160">10.60.0.2</text>
+
+  <!-- Management zone -->
+  <rect class="zone" x="28" y="70" width="240" height="120" rx="8"/>
+  <text class="zt" x="42" y="88">MANAGEMENT  10.60.10.0/24</text>
+  <rect class="nms" x="70" y="100" width="156" height="72" rx="6"/>
+  <text class="name" x="86" y="124">NMS01</text>
+  <text class="role" x="86" y="142">Monitoring server</text>
+  <text class="ip"   x="86" y="162">10.60.10.10</text>
+
+  <line class="link" x1="268" y1="130" x2="300" y2="130"/>
+
+  <!-- Servers zone -->
+  <rect class="zone" x="300" y="230" width="512" height="120" rx="8"/>
+  <text class="zt" x="314" y="248">SERVERS  10.60.20.0/24</text>
+  <rect class="srv" x="316" y="258" width="150" height="76" rx="6"/>
+  <text class="name" x="328" y="280">WEB01</text>
+  <text class="role" x="328" y="297">Web server</text>
+  <text class="ip"   x="328" y="320">10.60.20.10</text>
+  <rect class="srv" x="482" y="258" width="150" height="76" rx="6"/>
+  <text class="name" x="494" y="280">DB01</text>
+  <text class="role" x="494" y="297">Database</text>
+  <text class="ip"   x="494" y="320">10.60.20.20</text>
+  <rect class="win" x="648" y="258" width="150" height="76" rx="6"/>
+  <text class="name" x="660" y="280">APP01</text>
+  <text class="role" x="660" y="297">Windows app</text>
+  <text class="ip"   x="660" y="320">10.60.20.30</text>
+
+  <line class="link" x1="430" y1="190" x2="430" y2="230"/>
+
+  <!-- Branch zone -->
+  <rect class="zone" x="572" y="70" width="240" height="120" rx="8"/>
+  <text class="zt" x="586" y="88">BRANCH  10.60.30.0/24</text>
+  <rect class="br" x="620" y="100" width="156" height="72" rx="6"/>
+  <text class="name" x="636" y="124">BR-RTR</text>
+  <text class="role" x="636" y="142">Branch router</text>
+  <text class="ip"   x="636" y="162">10.60.30.1</text>
+
+  <line class="slow" x1="540" y1="130" x2="572" y2="130"/>
+  <text class="lt" x="536" y="118">slow link</text>
+  <text class="lt" x="530" y="210">shaped: latency + loss on demand</text>
+
+  <!-- polling arrows from NMS -->
+  <path class="poll" d="M 226 150 C 280 200, 300 250, 340 258" fill="none"/>
+  <path class="poll" d="M 226 120 C 280 110, 300 110, 316 120" fill="none"/>
+  <text class="pt" x="240" y="230">SNMP polling</text>
+
+  <text class="sub" x="28" y="400">The branch link is shaped with traffic control to add latency and packet loss on demand, so the troubleshooting</text>
+  <text class="sub" x="28" y="418">cases in module 07 have real symptoms to diagnose.</text>
+  <text class="sub" x="28" y="452">Management on its own subnet: a monitor that shares a segment with what it watches goes blind exactly when that segment breaks.</text>
+</svg>

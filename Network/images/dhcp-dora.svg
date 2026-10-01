@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 500" width="740" height="500" role="img" aria-labelledby="t d">
+  <title id="t">DHCP DORA lease process</title>
+  <desc id="d">Sequence diagram between a DHCP client and the DHCP server on DC01 showing the four DORA messages: Discover broadcast from the client, Offer from the server, Request broadcast from the client, and Acknowledge from the server, followed by the lease renewal timers.</desc>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .lane   { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.2; }
+    .client { fill: #ddf4ff; stroke: #54aeff; stroke-width: 1.5; }
+    .server { fill: #ecd8ff; stroke: #a475f9; stroke-width: 1.5; }
+    .note   { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1; }
+    .life   { stroke: #afb8c1; stroke-width: 1.2; stroke-dasharray: 4 4; }
+    .msg    { stroke: #0969da; stroke-width: 1.8; fill: none; }
+    .mhead  { fill: #0969da; }
+    .msg2   { stroke: #8250df; stroke-width: 1.8; fill: none; }
+    .mhead2 { fill: #8250df; }
+    .hdr    { fill: #1f2328; font-size: 13.5px; font-weight: 600; }
+    .step   { fill: #1f2328; font-size: 12.5px; font-weight: 600; }
+    .sub    { fill: #424a53; font-size: 11px; }
+    .code   { fill: #0550ae; font-size: 10.5px; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .ntext  { fill: #4d2d00; font-size: 11.5px; }
+
+    @media (prefers-color-scheme: dark) {
+      .lane   { fill: #0d1117; stroke: #30363d; }
+      .client { fill: #0c2d6b; stroke: #1f6feb; }
+      .server { fill: #3c1e70; stroke: #8957e5; }
+      .note   { fill: #272115; stroke: #9e6a03; }
+      .life   { stroke: #484f58; }
+      .msg    { stroke: #58a6ff; }
+      .mhead  { fill: #58a6ff; }
+      .msg2   { stroke: #bc8cff; }
+      .mhead2 { fill: #bc8cff; }
+      .hdr    { fill: #e6edf3; }
+      .step   { fill: #e6edf3; }
+      .sub    { fill: #b1bac4; }
+      .code   { fill: #79c0ff; }
+      .ntext  { fill: #f2cc60; }
+    }
+  </style>
+
+  <text class="hdr" x="40" y="32">DHCP lease negotiation - DORA</text>
+
+  <!-- lifelines -->
+  <line class="life" x1="150" y1="104" x2="150" y2="410"/>
+  <line class="life" x1="590" y1="104" x2="590" y2="410"/>
+
+  <!-- actors -->
+  <rect class="client" x="60" y="52" width="180" height="46" rx="6"/>
+  <text class="step" x="80" y="74">Client</text>
+  <text class="sub" x="80" y="90">No address yet - 0.0.0.0</text>
+
+  <rect class="server" x="500" y="52" width="180" height="46" rx="6"/>
+  <text class="step" x="520" y="74">DHCP Server</text>
+  <text class="sub" x="520" y="90">DC01 - scope 10.10.10.0/24</text>
+
+  <!-- D -->
+  <path class="msg" d="M150 140 H 578"/>
+  <polygon class="mhead" points="590,140 576,134 576,146"/>
+  <text class="step" x="168" y="133">D - Discover</text>
+  <text class="sub" x="270" y="133">broadcast, UDP 68 → 67</text>
+  <text class="code" x="168" y="157">src 0.0.0.0  dst 255.255.255.255</text>
+
+  <!-- O -->
+  <path class="msg2" d="M590 212 H 162"/>
+  <polygon class="mhead2" points="150,212 164,206 164,218"/>
+  <text class="step" x="168" y="205">O - Offer</text>
+  <text class="sub" x="250" y="205">server proposes an address</text>
+  <text class="code" x="168" y="229">offers 10.10.10.55 /24  gw 10.10.10.1</text>
+
+  <!-- R -->
+  <path class="msg" d="M150 284 H 578"/>
+  <polygon class="mhead" points="590,284 576,278 576,290"/>
+  <text class="step" x="168" y="277">R - Request</text>
+  <text class="sub" x="270" y="277">still broadcast - on purpose</text>
+  <text class="code" x="168" y="301">tells other servers to withdraw their offers</text>
+
+  <!-- A -->
+  <path class="msg2" d="M590 356 H 162"/>
+  <polygon class="mhead2" points="150,356 164,350 164,362"/>
+  <text class="step" x="168" y="349">A - Acknowledge</text>
+  <text class="sub" x="292" y="349">lease committed</text>
+  <text class="code" x="168" y="373">+ DNS servers, domain suffix, lease time</text>
+
+  <!-- note -->
+  <rect class="note" x="60" y="420" width="620" height="60" rx="6"/>
+  <text class="ntext" x="80" y="443">Renewal: the client tries to renew at 50% of the lease (T1) directly with the issuing server, and</text>
+  <text class="ntext" x="80" y="462">broadcasts to any server at 87.5% (T2). A 169.254.x.x address means no ACK ever arrived.</text>
+</svg>
