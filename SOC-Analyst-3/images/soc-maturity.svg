@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-labelledby="t d">
+  <title id="t">The SOC maturity model</title>
+  <desc id="d">Five rising steps of SOC maturity. Level one, initial, ad hoc and reactive. Level two, managed, documented processes. Level three, defined, measured and proactive. Level four, quantitative, data-driven and automated. Level five, optimising, continuous improvement. This lab is marked at level three moving to four. A note states the honest gaps: no round-the-clock coverage and no in-house reverse engineering.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .r1 { fill: #eaeef2; stroke: #8c959f; stroke-width: 1.4; }
+    .r2 { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.4; }
+    .r3 { fill: #fff8c5; stroke: #d4a72c; stroke-width: 2; }
+    .r4 { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.4; }
+    .r5 { fill: #b7f0c4; stroke: #2ea043; stroke-width: 1.4; }
+    .lv { fill: #1f2328; font-size: 12.5px; font-weight: 700; }
+    .d  { fill: #424a53; font-size: 10.5px; }
+    .here{ fill: #9a6700; font-size: 11px; font-weight: 700; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .r1 { fill: #21262d; stroke: #6e7681; } .r2 { fill: #0c2d6b; stroke: #58a6ff; } .r3 { fill: #4a3808; stroke: #d29922; }
+      .r4 { fill: #0f2f17; stroke: #3fb950; } .r5 { fill: #163d20; stroke: #3fb950; }
+      .lv { fill: #e6edf3; } .d { fill: #b1bac4; } .here { fill: #d29922; }
+    }
+  </style>
+  <text class="h1"  x="24" y="30">SOC maturity</text>
+  <text class="sub" x="24" y="49">This lab runs at Level 3, measured and proactive, moving toward Level 4.</text>
+
+  <rect class="r1" x="40"  y="286" width="300" height="40" rx="6"/>
+  <text class="lv" x="56" y="305">Level 1  Initial</text><text class="d" x="56" y="320">Ad hoc, reactive, nothing written down</text>
+
+  <rect class="r2" x="110" y="238" width="300" height="40" rx="6"/>
+  <text class="lv" x="126" y="257">Level 2  Managed</text><text class="d" x="126" y="272">Documented processes, consistent</text>
+
+  <rect class="r3" x="180" y="190" width="300" height="40" rx="6"/>
+  <text class="lv" x="196" y="209">Level 3  Defined</text><text class="d" x="196" y="224">Measured and proactive, hunts and purple team</text>
+
+  <rect class="r4" x="250" y="142" width="300" height="40" rx="6"/>
+  <text class="lv" x="266" y="161">Level 4  Quantitative</text><text class="d" x="266" y="176">Data-driven, automated, metrics-led</text>
+
+  <rect class="r5" x="320" y="94" width="300" height="40" rx="6"/>
+  <text class="lv" x="336" y="113">Level 5  Optimising</text><text class="d" x="336" y="128">Continuous improvement by design</text>
+
+  <text class="here" x="496" y="214">this lab, moving up</text>
+  <path d="M 486 210 L 556 186" stroke="#d4a72c" stroke-width="2" fill="none" marker-end="url(#y)"/>
+  <defs>
+    <marker id="y" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#d4a72c"/></marker>
+  </defs>
+
+  <text class="foot" x="24" y="356">Honest gaps that cap it below Level 4: no round-the-clock coverage, because it is one person, and no in-house reverse engineering.</text>
+</svg>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 470" width="820" height="470" role="img" aria-labelledby="t d">
+  <title id="t">The public status page during the outage, schematic</title>
+  <desc id="d">A drawn public status page. A banner shows a partial outage in progress. A list of services shows most operational in green and one, core connectivity, degraded in amber. Below, an incident updates feed shows timestamped plain-language entries: investigating, identified, a fix in progress, and monitoring. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .app { fill: #ffffff; stroke: #d0d7de; stroke-width: 1.3; }
+    .bar { fill: #1f2937; }
+    .h1 { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11px; }
+    .appt{ fill: #ffffff; font-size: 13px; font-weight: 700; }
+    .banner{ fill: #fff4e5; stroke: #e16f24; stroke-width: 1.4; }
+    .bannert{ fill: #9a5700; font-size: 13px; font-weight: 700; }
+    .svc{ fill: #f6f8fa; stroke: #e1e4e8; stroke-width: 1; }
+    .svct{ fill: #1f2328; font-size: 11px; font-weight: 600; }
+    .up { fill: #2ea043; } .deg { fill: #e16f24; }
+    .pill{ fill: #ffffff; font-size: 9px; font-weight: 700; text-anchor: middle; }
+    .feedt{ fill: #1f2328; font-size: 11px; font-weight: 700; }
+    .time{ fill: #57606a; font-size: 9.5px; font-weight: 700; }
+    .msg { fill: #424a53; font-size: 10px; }
+    .dot { fill: #0a6ed1; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .app { fill: #0d1117; stroke: #30363d; } .svc { fill: #161b22; stroke: #30363d; } .svct { fill: #e6edf3; }
+      .banner { fill: #3a1e0d; stroke: #e16f24; } .bannert { fill: #f0a868; }
+      .feedt { fill: #e6edf3; } .time { fill: #8b949e; } .msg { fill: #b1bac4; }
+    }
+  </style>
+  <text class="h1"  x="20" y="26">Status page, during the outage</text>
+  <text class="sub" x="20" y="44">Tell people early, plainly, and often. An outage nobody is told about is twice as damaging.</text>
+
+  <rect class="app" x="20" y="58" width="780" height="384" rx="6"/>
+  <rect class="bar" x="20" y="58" width="780" height="30" rx="6"/>
+  <text class="appt" x="36" y="79">noclab status</text>
+
+  <!-- banner -->
+  <rect class="banner" x="36" y="100" width="748" height="40" rx="5"/>
+  <text class="bannert" x="52" y="125">Partial outage in progress. We are on it. Next update in 15 minutes.</text>
+
+  <!-- services -->
+  <text class="svct" x="36" y="166" font-weight="700">Services</text>
+  <rect class="svc" x="36" y="176" width="360" height="30" rx="4"/><text class="svct" x="48" y="195">Internet access</text>
+  <rect class="up" x="330" y="182" width="56" height="18" rx="4"/><text class="pill" x="358" y="194">UP</text>
+  <rect class="svc" x="36" y="210" width="360" height="30" rx="4"/><text class="svct" x="48" y="229">Core connectivity</text>
+  <rect class="deg" x="310" y="216" width="76" height="18" rx="4"/><text class="pill" x="348" y="228">DEGRADED</text>
+  <rect class="svc" x="36" y="244" width="360" height="30" rx="4"/><text class="svct" x="48" y="263">Email</text>
+  <rect class="up" x="330" y="250" width="56" height="18" rx="4"/><text class="pill" x="358" y="262">UP</text>
+  <rect class="svc" x="36" y="278" width="360" height="30" rx="4"/><text class="svct" x="48" y="297">File shares</text>
+  <rect class="up" x="330" y="284" width="56" height="18" rx="4"/><text class="pill" x="358" y="296">UP</text>
+
+  <!-- updates feed -->
+  <text class="feedt" x="420" y="166">Incident updates</text>
+  <circle class="dot" cx="430" cy="186" r="4"/><text class="time" x="444" y="190">09:20  Monitoring</text>
+  <text class="msg" x="444" y="206">Failover holding. Watching before we close.</text>
+  <circle class="dot" cx="430" cy="226" r="4"/><text class="time" x="444" y="230">09:15  Fix in progress</text>
+  <text class="msg" x="444" y="246">Forcing the redundant path over now.</text>
+  <circle class="dot" cx="430" cy="266" r="4"/><text class="time" x="444" y="270">09:06  Identified</text>
+  <text class="msg" x="444" y="286">A core uplink is degraded. Cause found.</text>
+  <circle class="dot" cx="430" cy="306" r="4"/><text class="time" x="444" y="310">09:03  Investigating</text>
+  <text class="msg" x="444" y="326">We are seeing packet loss on core links.</text>
+
+  <text class="sub" x="36" y="360" font-size="10">Plain language, no jargon. A user wants to know it is being handled and when to check back, nothing more.</text>
+  <text class="sub" x="36" y="380" font-size="10">The same feed reassures the help desk, so they are not drowning in tickets asking what is going on.</text>
+
+  <text class="foot" x="20" y="462">Schematic illustration of a status page, not a screen capture.</text>
+</svg>

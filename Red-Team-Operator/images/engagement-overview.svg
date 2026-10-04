@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 340" width="840" height="340" role="img" aria-labelledby="t d">
+  <title id="t">An objective-based engagement</title>
+  <desc id="d">A contrast between a penetration test and a red team operation. The penetration test asks what is broken and reports findings. The red team operation sets an objective, emulates an adversary to reach it quietly, and measures when the defence detects it. The red team path runs through initial access, foothold, the objective, and a detection point, ending in a detection improvement plan. A note states the difference is the goal.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .pt { fill: #eaeef2; stroke: #8c959f; stroke-width: 1.4; }
+    .rt { fill: #ffe0de; stroke: #cf222e; stroke-width: 1.5; }
+    .obj{ fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.6; }
+    .out{ fill: #dafbe1; stroke: #2ea043; stroke-width: 1.4; }
+    .lbl{ fill: #57606a; font-size: 11px; font-weight: 700; }
+    .nm { fill: #1f2328; font-size: 11.5px; font-weight: 700; }
+    .d  { fill: #424a53; font-size: 10px; }
+    .flow{ stroke: #cf222e; stroke-width: 2; fill: none; marker-end: url(#a); }
+    .flowg{ stroke: #8c959f; stroke-width: 2; fill: none; marker-end: url(#g); }
+    .ar { fill: #cf222e; } .ag { fill: #8c959f; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; } .lbl { fill: #8b949e; }
+      .pt { fill: #21262d; stroke: #6e7681; } .rt { fill: #3d1417; stroke: #f85149; }
+      .obj{ fill: #4a3808; stroke: #d29922; } .out { fill: #0f2f17; stroke: #3fb950; }
+      .nm { fill: #e6edf3; } .d { fill: #b1bac4; } .flowg { stroke: #6e7681; } .ag { fill: #6e7681; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="ar"/></marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="ag"/></marker>
+  </defs>
+  <text class="h1"  x="24" y="30">Objective-based, not vulnerability-based</text>
+  <text class="sub" x="24" y="49">A pentest asks what is broken. A red team asks whether you can catch an adversary in time.</text>
+
+  <!-- pentest row -->
+  <text class="lbl" x="24" y="86">PENTEST</text>
+  <rect class="pt" x="110" y="72" width="200" height="40" rx="6"/>
+  <text class="nm" x="124" y="90">Scan for vulnerabilities</text><text class="d" x="124" y="104">find everything broken</text>
+  <rect class="pt" x="360" y="72" width="200" height="40" rx="6"/>
+  <text class="nm" x="374" y="90">Report findings</text><text class="d" x="374" y="104">a list, scored</text>
+  <line class="flowg" x1="310" y1="92" x2="358" y2="92"/>
+
+  <!-- red team row -->
+  <text class="lbl" x="24" y="176">RED TEAM</text>
+  <rect class="obj" x="24" y="200" width="150" height="56" rx="6"/>
+  <text class="nm" x="38" y="224">Set an objective</text><text class="d" x="38" y="240">reach the crown jewels</text>
+  <rect class="rt" x="196" y="200" width="130" height="56" rx="6"/>
+  <text class="nm" x="210" y="224">Initial access</text><text class="d" x="210" y="240">quiet foothold</text>
+  <rect class="rt" x="348" y="200" width="130" height="56" rx="6"/>
+  <text class="nm" x="362" y="224">Reach objective</text><text class="d" x="362" y="240">low and slow</text>
+  <rect class="rt" x="500" y="200" width="130" height="56" rx="6"/>
+  <text class="nm" x="514" y="224">Detection point</text><text class="d" x="514" y="240">when did blue see</text>
+  <rect class="out" x="652" y="200" width="162" height="56" rx="6"/>
+  <text class="nm" x="666" y="224">Improvement plan</text><text class="d" x="666" y="240">close the gaps</text>
+
+  <line class="flow" x1="174" y1="228" x2="194" y2="228"/>
+  <line class="flow" x1="326" y1="228" x2="346" y2="228"/>
+  <line class="flow" x1="478" y1="228" x2="498" y2="228"/>
+  <line class="flow" x1="630" y1="228" x2="650" y2="228"/>
+
+  <text class="foot" x="24" y="300">The pentest output is a list of holes. The red team output is a sharper defence: here is how far an adversary got, here is when you caught them,</text>
+  <text class="foot" x="24" y="318">and here is how to catch the next one sooner. Same skills underneath, a completely different question.</text>
+</svg>

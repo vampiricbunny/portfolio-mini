@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380" role="img" aria-labelledby="t d">
+  <title id="t">Service-level objectives and the error budget</title>
+  <desc id="d">Three linked ideas. The SLI, what you measure, here availability. The SLO, the target you promise, 99.9 percent. The error budget, the amount you are allowed to break the promise, which is 0.1 percent or about 43 minutes a month. A budget bar below shows 22 minutes spent at the outage and 21 remaining. A note says the budget turns reliability from an argument into a number.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .sli { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.5; }
+    .slo { fill: #e7defb; stroke: #8250df; stroke-width: 1.5; }
+    .budget{ fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.5; }
+    .nm { fill: #1f2328; font-size: 13px; font-weight: 700; }
+    .d  { fill: #424a53; font-size: 10.5px; }
+    .big{ fill: #1f2328; font-size: 20px; font-weight: 700; }
+    .flow{ stroke: #656d76; stroke-width: 2; fill: none; marker-end: url(#a); }
+    .arrow{ fill: #656d76; }
+    .track{ fill: #eaeef2; stroke: #d0d7de; stroke-width: 1; }
+    .spent{ fill: #cf222e; }
+    .left { fill: #2ea043; }
+    .bl { fill: #ffffff; font-size: 11px; font-weight: 700; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .sli { fill: #0c2d6b; stroke: #58a6ff; } .slo { fill: #2a1a4d; stroke: #a371f7; } .budget { fill: #4a3808; stroke: #d29922; }
+      .nm { fill: #e6edf3; } .d { fill: #b1bac4; } .big { fill: #e6edf3; }
+      .flow{ stroke: #8b949e; } .arrow { fill: #8b949e; } .track { fill: #21262d; stroke: #30363d; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker>
+  </defs>
+  <text class="h1"  x="24" y="30">SLO and error budget</text>
+  <text class="sub" x="24" y="49">Reliability as a promise and a budget, agreed in advance.</text>
+
+  <rect class="sli" x="24"  y="84" width="230" height="96" rx="8"/>
+  <text class="nm" x="44" y="112">SLI</text><text class="d" x="86" y="112">what you measure</text>
+  <text class="d"  x="44" y="140">Availability of the</text>
+  <text class="d"  x="44" y="156">core network</text>
+
+  <rect class="slo" x="294" y="84" width="230" height="96" rx="8"/>
+  <text class="nm" x="314" y="112">SLO</text><text class="d" x="358" y="112">the promise</text>
+  <text class="big" x="314" y="150">99.9 pct</text>
+  <text class="d"  x="314" y="170">the target you commit to</text>
+
+  <rect class="budget" x="564" y="84" width="232" height="96" rx="8"/>
+  <text class="nm" x="584" y="112">Error budget</text>
+  <text class="big" x="584" y="150">43 min</text>
+  <text class="d"  x="584" y="170">the 0.1 pct you may spend a month</text>
+
+  <line class="flow" x1="254" y1="132" x2="292" y2="132"/>
+  <line class="flow" x1="524" y1="132" x2="562" y2="132"/>
+
+  <!-- budget bar -->
+  <text class="nm" x="24" y="226">This month's budget</text>
+  <rect class="track" x="24" y="240" width="772" height="40" rx="6"/>
+  <rect class="spent" x="25" y="241" width="394" height="38" rx="6"/>
+  <rect class="left"  x="420" y="241" width="375" height="38" rx="6"/>
+  <text class="bl" x="120" y="265">spent 22 min, at the outage</text>
+  <text class="bl" x="520" y="265">remaining 21 min</text>
+
+  <text class="foot" x="24" y="320">The budget turns reliability from an argument into a number. Budget left means you can ship changes. Budget spent means slow down and stabilise.</text>
+  <text class="foot" x="24" y="340">The outage spent half of it in one event. That is not a failure. That is exactly what the budget is for.</text>
+</svg>

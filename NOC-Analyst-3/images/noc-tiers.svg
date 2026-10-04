@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 360" width="840" height="360" role="img" aria-labelledby="t d">
+  <title id="t">What changes between the NOC tiers</title>
+  <desc id="d">Three rising tiers and leadership above. Tier 1 junior watches the board and escalates. Tier 2 builds the monitoring and tunes the noise. Tier 3 commands outages and owns reliability. Above them, leadership, which the Tier 3 reports to in uptime and cost. Responsibilities widen at each step. A note says each level owns more of the outcome.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .t1 { fill: #eaeef2; stroke: #8c959f; stroke-width: 1.4; }
+    .t2 { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.4; }
+    .t3 { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.8; }
+    .lead{ fill: #dafbe1; stroke: #2ea043; stroke-width: 1.5; }
+    .lv { fill: #0550ae; font-size: 12px; font-weight: 700; }
+    .nm { fill: #1f2328; font-size: 13px; font-weight: 700; }
+    .d  { fill: #424a53; font-size: 10.5px; }
+    .flow{ stroke: #656d76; stroke-width: 1.8; fill: none; marker-end: url(#a); }
+    .arrow{ fill: #656d76; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .t1 { fill: #21262d; stroke: #6e7681; } .t2 { fill: #0c2d6b; stroke: #58a6ff; }
+      .t3 { fill: #4a3808; stroke: #d29922; } .lead { fill: #0f2f17; stroke: #3fb950; }
+      .lv { fill: #79c0ff; } .nm { fill: #e6edf3; } .d { fill: #b1bac4; }
+      .flow{ stroke: #8b949e; } .arrow { fill: #8b949e; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker>
+  </defs>
+  <text class="h1"  x="24" y="30">Climbing the NOC ladder</text>
+  <text class="sub" x="24" y="49">Each level owns more of the outcome. This project is the top rung and the handoff to leadership.</text>
+
+  <rect class="t1" x="28"  y="214" width="180" height="96" rx="7"/>
+  <text class="lv" x="44" y="238">Tier 1</text>
+  <text class="nm" x="44" y="258">Junior</text>
+  <text class="d"  x="44" y="278">Watches the board.</text>
+  <text class="d"  x="44" y="294">Escalates.</text>
+
+  <rect class="t2" x="224" y="162" width="180" height="148" rx="7"/>
+  <text class="lv" x="240" y="186">Tier 2</text>
+  <text class="nm" x="240" y="206">Monitoring and tuning</text>
+  <text class="d"  x="240" y="228">Builds the dashboards.</text>
+  <text class="d"  x="240" y="246">Tunes the noise out.</text>
+  <text class="d"  x="240" y="264">Finds root cause.</text>
+
+  <rect class="t3" x="420" y="96" width="180" height="214" rx="7"/>
+  <text class="lv" x="436" y="120">Tier 3</text>
+  <text class="nm" x="436" y="140">This project</text>
+  <text class="d"  x="436" y="162">Commands outages.</text>
+  <text class="d"  x="436" y="180">Owns the SLOs and</text>
+  <text class="d"  x="436" y="196">the error budget.</text>
+  <text class="d"  x="436" y="214">Builds the network</text>
+  <text class="d"  x="436" y="230">from one source.</text>
+  <text class="d"  x="436" y="250">Reports to the board.</text>
+
+  <rect class="lead" x="616" y="96" width="196" height="76" rx="7"/>
+  <text class="nm" x="632" y="124">Leadership</text>
+  <text class="d"  x="632" y="146">Needs uptime and cost,</text>
+  <text class="d"  x="632" y="162">not counters.</text>
+
+  <line class="flow" x1="208" y1="262" x2="222" y2="236"/>
+  <line class="flow" x1="404" y1="236" x2="418" y2="203"/>
+  <line class="flow" x1="600" y1="134" x2="614" y2="134"/>
+
+  <text class="foot" x="24" y="340">A junior watches one board. A Tier 3 runs the reliability of the whole network, and answers to the people who pay for it.</text>
+</svg>

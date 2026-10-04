@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 540" width="820" height="540" role="img" aria-labelledby="t d">
+  <title id="t">A SOAR playbook in the Logic Apps designer, schematic</title>
+  <desc id="d">A drawn representation of the Logic Apps designer for the containment playbook. A vertical flow of connected step cards: a trigger when a high-severity incident is created, enrich the entities with intel, a condition on whether the verdict is malicious, then a human approval step, and only after approval the two destructive actions, isolate the device and disable the account, followed by notify the channel. Numbered callouts mark the enrichment, the approval gate, and the destructive actions behind it. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .app { fill: #eef1f5; stroke: #c3ccd6; stroke-width: 1.3; }
+    .bar { fill: #0a6ed1; }
+    .h1 { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11px; }
+    .appt{ fill: #ffffff; font-size: 12px; font-weight: 700; }
+    .trig{ fill: #d1e7ff; stroke: #0a6ed1; stroke-width: 1.5; }
+    .step{ fill: #ffffff; stroke: #8c959f; stroke-width: 1.3; }
+    .cond{ fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.5; }
+    .appr{ fill: #e7defb; stroke: #8250df; stroke-width: 1.8; }
+    .dest{ fill: #ffe0de; stroke: #cf222e; stroke-width: 1.6; }
+    .notif{ fill: #dafbe1; stroke: #2ea043; stroke-width: 1.4; }
+    .ic { fill: #0a6ed1; font-size: 11px; font-weight: 700; }
+    .nm { fill: #1f2328; font-size: 12px; font-weight: 700; }
+    .d  { fill: #57606a; font-size: 10px; }
+    .flow{ stroke: #57606a; stroke-width: 2; fill: none; marker-end: url(#a); }
+    .arrow{ fill: #57606a; }
+    .cnum{ fill: #ffffff; font-size: 11px; font-weight: 700; text-anchor: middle; }
+    .cc  { fill: #cf222e; stroke: #ffffff; stroke-width: 1.2; }
+    .clbl{ fill: #a40e26; font-size: 10px; font-weight: 700; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; } .clbl { fill: #ff7b72; }
+      .app { fill: #161b22; stroke: #30363d; }
+      .trig { fill: #0c2d6b; stroke: #58a6ff; } .step { fill: #0d1117; stroke: #6e7681; }
+      .cond { fill: #4a3808; stroke: #d29922; } .appr { fill: #2a1a4d; stroke: #a371f7; }
+      .dest { fill: #3d1417; stroke: #f85149; } .notif { fill: #0f2f17; stroke: #3fb950; }
+      .ic { fill: #58a6ff; } .nm { fill: #e6edf3; } .d { fill: #8b949e; }
+      .flow{ stroke: #8b949e; } .arrow { fill: #8b949e; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker>
+  </defs>
+  <text class="h1"  x="20" y="26">Logic Apps, the containment playbook</text>
+  <text class="sub" x="20" y="44">Automation gathers evidence and proposes action. A human still decides the destructive part.</text>
+
+  <rect class="app" x="20" y="58" width="500" height="466" rx="6"/>
+  <rect class="bar" x="20" y="58" width="500" height="26" rx="6"/>
+  <text class="appt" x="36" y="76">Logic Apps designer  &gt;  SOAR-Contain</text>
+
+  <!-- vertical flow -->
+  <rect class="trig" x="150" y="98" width="240" height="46" rx="6"/>
+  <text class="ic" x="166" y="117">Trigger</text><text class="d" x="166" y="134">When a SEV-high incident is created</text>
+
+  <rect class="step" x="150" y="166" width="240" height="46" rx="6"/>
+  <text class="nm" x="166" y="185">Enrich entities</text><text class="d" x="166" y="202">Look up host, user, IP in OpenCTI</text>
+
+  <rect class="cond" x="150" y="234" width="240" height="46" rx="6"/>
+  <text class="nm" x="166" y="253">Condition</text><text class="d" x="166" y="270">Is the verdict malicious?</text>
+
+  <rect class="appr" x="150" y="302" width="240" height="46" rx="6"/>
+  <text class="nm" x="166" y="321">Human approval</text><text class="d" x="166" y="338">Post to analyst, wait for yes</text>
+
+  <rect class="dest" x="64" y="370" width="190" height="46" rx="6"/>
+  <text class="nm" x="80" y="389">Isolate device</text><text class="d" x="80" y="406">Defender action</text>
+  <rect class="dest" x="286" y="370" width="190" height="46" rx="6"/>
+  <text class="nm" x="302" y="389">Disable account</text><text class="d" x="302" y="406">Entra action</text>
+
+  <rect class="notif" x="150" y="438" width="240" height="46" rx="6"/>
+  <text class="nm" x="166" y="457">Notify</text><text class="d" x="166" y="474">Post outcome to the SOC channel</text>
+
+  <line class="flow" x1="270" y1="144" x2="270" y2="164"/>
+  <line class="flow" x1="270" y1="212" x2="270" y2="232"/>
+  <line class="flow" x1="270" y1="280" x2="270" y2="300"/>
+  <line class="flow" x1="230" y1="348" x2="180" y2="368"/>
+  <line class="flow" x1="310" y1="348" x2="360" y2="368"/>
+  <line class="flow" x1="159" y1="416" x2="230" y2="436"/>
+  <line class="flow" x1="381" y1="416" x2="310" y2="436"/>
+
+  <!-- callouts + side notes -->
+  <circle class="cc" cx="400" cy="189" r="11"/><text class="cnum" x="400" y="193">1</text>
+  <circle class="cc" cx="400" cy="325" r="11"/><text class="cnum" x="400" y="329">2</text>
+  <circle class="cc" cx="476" cy="393" r="11"/><text class="cnum" x="476" y="397">3</text>
+
+  <text class="clbl" x="548" y="190">1  Enrichment is</text>
+  <text class="clbl" x="548" y="206">fully automatic.</text>
+  <text class="clbl" x="548" y="222">No risk, so no</text>
+  <text class="clbl" x="548" y="238">approval needed.</text>
+
+  <text class="clbl" x="548" y="320">2  The gate. Nothing</text>
+  <text class="clbl" x="548" y="336">destructive runs</text>
+  <text class="clbl" x="548" y="352">until a person</text>
+  <text class="clbl" x="548" y="368">clicks approve.</text>
+
+  <text class="clbl" x="548" y="408">3  Both destructive</text>
+  <text class="clbl" x="548" y="424">actions sit behind</text>
+  <text class="clbl" x="548" y="440">the gate, never</text>
+  <text class="clbl" x="548" y="456">before it.</text>
+
+  <text class="foot" x="20" y="516">Schematic illustration of the Logic Apps designer, not a screen capture. A SOC that automates judgement makes confident mistakes at machine speed.</text>
+</svg>

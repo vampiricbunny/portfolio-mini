@@ -102,6 +102,22 @@ Where the role stops working the queue and starts building it. Detections writte
 
 The two files worth your time: the [hunt case files](SOC-Analyst-2/04-Hunt-Case-Files.md) for how I work an open problem, and [detection coverage](SOC-Analyst-2/06-Detection-Coverage.md) for whether I can be honest about gaps.
 
+### [SOC-04 - Senior SOC Analyst and Incident Command](SOC-Analyst-3/)
+
+**Target role: SOC Analyst III / Tier 3 / SOC Lead**
+
+The top of the SOC ladder. Where you stop working incidents one at a time and run the function that handles all of them. A major incident commanded end to end, a purple team program, detection strategy, threat-intelligence-driven priorities, and reporting to leadership. Built as one illustrated README, heavy on drawn console schematics of the real tools so a non-technical reader can see the work.
+
+| | |
+| --- | --- |
+| Capstone | A pre-ransomware intrusion commanded as incident commander, no data lost |
+| Mean time to detect / respond | 6 minutes / 38 minutes |
+| Purple team | 16 techniques emulated, coverage 9 to 16 of 16 |
+| Tooling shown | Sentinel, Defender XDR, OpenCTI, Logic Apps SOAR, ATT&CK Navigator |
+| Audience | Written for leadership, with a metrics dashboard and maturity model |
+
+Everything is in one [illustrated README](SOC-Analyst-3/) with 16 diagrams, 8 of them drawn consoles of the actual tools. The two to look at: the [Sentinel incident graph](SOC-Analyst-3/images/sentinel-incident.svg) for how a whole intrusion is read at once, and the [ATT&CK coverage heatmap](SOC-Analyst-3/images/attack-navigator.svg) for what the purple team found and fixed.
+
 ### [NOC-02 - Network Monitoring and Performance Engineering](NOC-Analyst-2/)
 
 **Target role: Network Operations Analyst II / Tier 2 NOC**
@@ -117,6 +133,22 @@ Availability and performance, not security. Building the monitoring, tuning the 
 | Automation | 3 runbooks automated, an hour of toil a day removed |
 
 The two files worth your time: [alerting and noise reduction](NOC-Analyst-2/04-Alerting-and-Noise-Reduction.md) for the core Tier 2 skill, and [troubleshooting playbooks](NOC-Analyst-2/07-Troubleshooting-Playbooks.md) for how I find root cause.
+
+### [NOC-03 - Network Reliability Engineering and Incident Command](NOC-Analyst-3/)
+
+**Target role: NOC Analyst III / Tier 3 / Network Reliability Lead**
+
+The top of the NOC ladder. Where you stop watching the board, stop just building the monitoring, and run the reliability of the whole network. A major outage commanded end to end, service-level objectives and an error budget, the network built from a single source of truth so config drift cannot recur, and uptime reported to leadership in money. One illustrated README, heavy on drawn consoles of the real tools.
+
+| | |
+| --- | --- |
+| Capstone | A partial outage commanded as incident commander, restored in 22 minutes |
+| Reliability | 99.9 percent SLO with an error budget, burn-rate alerting |
+| Network as code | NetBox source of truth, Ansible deploy, config drift eliminated |
+| Tooling shown | LibreNMS, Prometheus, Grafana, Alertmanager, NetBox, Ansible |
+| Audience | Written for leadership, with an availability trend and maturity model |
+
+Everything is in one [illustrated README](NOC-Analyst-3/) with 16 diagrams, 8 of them drawn consoles of the actual tools. The two to look at: the [Grafana SLO dashboard](NOC-Analyst-3/images/grafana-slo-dashboard.svg) for thinking in objectives not uptime, and the [Ansible run](NOC-Analyst-3/images/ansible-run.svg) where zero changes proves drift is dead.
 
 ---
 
@@ -152,6 +184,64 @@ The step up from PT-01. This one starts from nothing on the outside, with a comp
 | Retest | Fixes verified, two found incomplete and corrected |
 
 The deliverable is the [findings report](Penetration-Tester/10-Findings-Report.md), written with an executive summary a board can read. The [web application test](Penetration-Tester/04-Web-Application-Testing.md) and the [ADCS attack path](Penetration-Tester/07-Active-Directory-Attack-Path.md) are the technical depth, and [detection and OPSEC](Penetration-Tester/09-Detection-and-OPSEC.md) grades the whole attack against my own SOC detections.
+
+### [PT-03 - Red Team Operation and Adversary Emulation](Red-Team-Operator/)
+
+**Target role: Senior Penetration Tester / Red Team Operator / Red Team Lead**
+
+The top of the offensive ladder, and the capstone that ties the whole portfolio together. An authorised red team operation emulating a ransomware affiliate against the same lab the SOC projects defend, scored against the blue-team detections I built myself. Nothing weaponised: methodology at report level, with the C2 and beacon work drawn as real Kali terminal windows.
+
+| | |
+| --- | --- |
+| Objective | Reach the crown jewels quietly and measure the defence |
+| Result | Objective reached, caught at credential access, no impact |
+| Detection | 10 of 14 techniques detected, dwell time 2 days 7 hours |
+| The point | The 4 gaps became 4 new detections, dwell time falling each exercise |
+| Tie-in | Red team scored against the blue team from SOC-01, SOC-03 and SOC-04 |
+
+Everything is in one [illustrated README](Red-Team-Operator/) with 17 diagrams, including Kali terminal consoles for the [C2 operator](Red-Team-Operator/images/c2-dashboard.svg) and [beacon](Red-Team-Operator/images/beacon-console.svg) work. The one to look at is the [detection scorecard](Red-Team-Operator/images/detection-scorecard.svg): red and blue side by side, proving this was a purple team exercise that made the defence better.
+
+---
+
+### [GRC-01 - Governance, Risk and Compliance Program](GRC-Analyst/)
+
+**Target role: GRC Analyst / Security Governance, Risk and Compliance**
+
+The business side of security. The role that proves, to an auditor, an insurer or a board, that the organisation manages its risk on purpose and can show the evidence. Built around the ASD Essential Eight, NIST CSF, ISO 27001 and the CIS Controls.
+
+| | |
+| --- | --- |
+| Risk | A scored register and heat map, owners and treatments |
+| Compliance | Essential Eight maturity assessment, honest about the gaps |
+| Governance | A control crosswalk across four frameworks, and a reviewed policy set |
+| Third-party | Vendor risk rated by access and evidence |
+| Audience | A board, with a posture dashboard and compliance trend |
+
+One [illustrated README](GRC-Analyst/) with 8 realistic artefacts rendered as images: the [risk register](GRC-Analyst/images/risk-register.png), the [Essential Eight assessment](GRC-Analyst/images/essential-eight.png) and a [leadership posture dashboard](GRC-Analyst/images/compliance-dashboard.png) are the ones to look at.
+
+---
+
+## IT Support, Tier 1 to Tier 3
+
+The service desk ladder, one project per tier. Each is an illustrated README with realistic images of the actual tools.
+
+### [HD-01 - Service Desk, Tier 1](Help-Desk-1/)
+
+**Target role: Help Desk Analyst / Service Desk / IT Support Tier 1**
+
+First contact. Working the queue by priority and SLA, account resets and unlocks done securely, remote support with etiquette, and knowledge base articles that prevent the next ticket. Images include a [ticket queue](Help-Desk-1/images/ticket-queue.png) and a [remote support session](Help-Desk-1/images/remote-session.png).
+
+### [HD-02 - Desktop Support, Tier 2](Help-Desk-2/)
+
+**Target role: Desktop Support / Deskside Support / IT Support Tier 2**
+
+The escalation tier. Managing the fleet with [Intune](Help-Desk-2/images/intune-devices.png), deploying software at scale with [PDQ](Help-Desk-2/images/pdq-deploy.png), Microsoft 365 administration, Group Policy, and escalations finished with a runbook so they become Tier 1 fixes.
+
+### [HD-03 - Systems Support, Tier 3](Help-Desk-3/)
+
+**Target role: Senior IT Support / Systems Administrator / Escalation Engineer**
+
+The tier that stops the tickets happening. [PowerShell automation](Help-Desk-3/images/powershell-automation.png) of onboarding and offboarding, Active Directory and server ownership, RMM and patch compliance, documentation that outlives the person, and [recurring problems traced and eliminated](Help-Desk-3/images/recurring-problem.png).
 
 ---
 

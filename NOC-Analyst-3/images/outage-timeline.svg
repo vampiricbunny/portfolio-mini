@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 340" width="860" height="340" role="img" aria-labelledby="t d">
+  <title id="t">The outage timeline, detection to recovery</title>
+  <desc id="d">A horizontal timeline of the capstone outage with three phase bands: detect, restore and review. Markers show the uplink degrading at time zero, monitoring alerting at three minutes, acknowledged at five, major incident declared at six, failover forced manually at fifteen, and service restored at twenty-two minutes. A note gives the measures and states the restore came before the diagnosis.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .detect{ fill: #fff1e5; stroke: #e16f24; stroke-width: 1.3; }
+    .restore{ fill: #ddf4ff; stroke: #218bff; stroke-width: 1.3; }
+    .review{ fill: #dafbe1; stroke: #2ea043; stroke-width: 1.3; }
+    .pl { fill: #57606a; font-size: 10.5px; font-weight: 700; }
+    .axis{ stroke: #8c959f; stroke-width: 2; }
+    .mk { fill: #0d1117; stroke: #ffffff; stroke-width: 1.4; }
+    .mkr{ fill: #cf222e; stroke: #ffffff; stroke-width: 1.4; }
+    .mt { fill: #1f2328; font-size: 10px; font-weight: 700; text-anchor: middle; }
+    .mtime{ fill: #57606a; font-size: 9.5px; text-anchor: middle; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; } .pl { fill: #8b949e; }
+      .detect { fill: #3a1e0d; stroke: #e16f24; } .restore { fill: #0c2d6b; stroke: #58a6ff; } .review { fill: #0f2f17; stroke: #3fb950; }
+      .mk { fill: #e6edf3; stroke: #0d1117; } .mt { fill: #e6edf3; } .mtime { fill: #8b949e; } .axis { stroke: #6e7681; }
+    }
+  </style>
+  <text class="h1"  x="24" y="30">Capstone outage, detect to restore</text>
+  <text class="sub" x="24" y="49">Twenty-two minutes of partial degradation. Restore first, diagnose second.</text>
+
+  <rect class="detect"  x="40"  y="76" width="150" height="40" rx="5"/><text class="pl" x="60" y="101">DETECT</text>
+  <rect class="restore" x="190" y="76" width="420" height="40" rx="5"/><text class="pl" x="360" y="101">RESTORE</text>
+  <rect class="review"  x="610" y="76" width="210" height="40" rx="5"/><text class="pl" x="690" y="101">REVIEW</text>
+
+  <line class="axis" x1="40" y1="190" x2="820" y2="190"/>
+
+  <circle class="mk"  cx="60"  cy="190" r="7"/>
+  <text class="mt" x="60" y="222">Uplink degrades</text><text class="mtime" x="60" y="238">T+0</text>
+
+  <circle class="mkr" cx="170" cy="190" r="7"/>
+  <text class="mt" x="170" y="222">Monitoring alert</text><text class="mtime" x="170" y="238">T+3 min</text>
+
+  <circle class="mk"  cx="250" cy="190" r="7"/>
+  <text class="mt" x="250" y="160">Acknowledged</text><text class="mtime" x="250" y="146">T+5 min</text>
+
+  <circle class="mkr" cx="330" cy="190" r="7"/>
+  <text class="mt" x="330" y="222">Declared major</text><text class="mtime" x="330" y="238">T+6 min</text>
+
+  <circle class="mkr" cx="520" cy="190" r="7"/>
+  <text class="mt" x="520" y="160">Failover forced</text><text class="mtime" x="520" y="146">T+15 min</text>
+
+  <circle class="mk"  cx="770" cy="190" r="7"/>
+  <text class="mt" x="770" y="222">Restored</text><text class="mtime" x="770" y="238">T+22 min</text>
+
+  <text class="foot" x="24" y="290">Detected in 3 minutes, restored in 22. Half the month's error budget, spent in one event, knowingly.</text>
+  <text class="foot" x="24" y="310">The decision that mattered: force the failover to stop the bleeding, then diagnose the config drift afterward.</text>
+</svg>

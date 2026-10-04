@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 400" width="840" height="400" role="img" aria-labelledby="t d">
+  <title id="t">The detection scorecard for the operation</title>
+  <desc id="d">A grouped bar chart by attack phase, showing techniques used versus techniques detected. Initial access two used one detected, execution three used two detected, credential access three used three detected, lateral movement four used three detected, collection two used one detected. A total shows ten of fourteen detected. A note says the four undetected became new detections, so the next adversary is caught sooner.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .axis{ stroke: #8c959f; stroke-width: 1.4; }
+    .grid{ stroke: #e1e4e8; stroke-width: 1; }
+    .used{ fill: #cf4b5e; }
+    .det { fill: #2ea043; }
+    .lbl{ fill: #57606a; font-size: 10px; text-anchor: middle; }
+    .vl { fill: #ffffff; font-size: 10px; font-weight: 700; text-anchor: middle; }
+    .leg{ fill: #1f2328; font-size: 11px; font-weight: 600; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .grid { stroke: #30363d; } .axis { stroke: #6e7681; } .lbl { fill: #8b949e; } .leg { fill: #e6edf3; }
+    }
+  </style>
+  <text class="h1"  x="24" y="30">Detection scorecard</text>
+  <text class="sub" x="24" y="49">Techniques used versus detected, by phase. Ten of fourteen caught.</text>
+
+  <!-- plot area x 70..780 y 90..300, baseline 300 -->
+  <line class="grid" x1="70" y1="110" x2="780" y2="110"/>
+  <line class="grid" x1="70" y1="158" x2="780" y2="158"/>
+  <line class="grid" x1="70" y1="206" x2="780" y2="206"/>
+  <line class="grid" x1="70" y1="254" x2="780" y2="254"/>
+  <line class="axis" x1="70" y1="90" x2="70" y2="300"/>
+  <line class="axis" x1="70" y1="300" x2="780" y2="300"/>
+  <text class="lbl" x="56" y="302" text-anchor="end">0</text>
+  <text class="lbl" x="56" y="254" text-anchor="end">1</text>
+  <text class="lbl" x="56" y="206" text-anchor="end">2</text>
+  <text class="lbl" x="56" y="158" text-anchor="end">3</text>
+  <text class="lbl" x="56" y="110" text-anchor="end">4</text>
+
+  <!-- groups: each phase has used + det bars. scale 48px per unit from y=300 -->
+  <!-- Initial access: used2(y=204) det1(y=252) center 150 -->
+  <rect class="used" x="110" y="204" width="34" height="96"/><text class="vl" x="127" y="222">2</text>
+  <rect class="det"  x="148" y="252" width="34" height="48"/><text class="vl" x="165" y="270">1</text>
+  <text class="lbl" x="146" y="318">Initial</text>
+
+  <!-- Execution: used3(y=156) det2(y=204) center 270 -->
+  <rect class="used" x="246" y="156" width="34" height="144"/><text class="vl" x="263" y="174">3</text>
+  <rect class="det"  x="284" y="204" width="34" height="96"/><text class="vl" x="301" y="222">2</text>
+  <text class="lbl" x="282" y="318">Execution</text>
+
+  <!-- Cred access: used3 det3 center 390 -->
+  <rect class="used" x="366" y="156" width="34" height="144"/><text class="vl" x="383" y="174">3</text>
+  <rect class="det"  x="404" y="156" width="34" height="144"/><text class="vl" x="421" y="174">3</text>
+  <text class="lbl" x="402" y="318">Cred access</text>
+
+  <!-- Lateral: used4 det3 center 510 -->
+  <rect class="used" x="486" y="108" width="34" height="192"/><text class="vl" x="503" y="126">4</text>
+  <rect class="det"  x="524" y="156" width="34" height="144"/><text class="vl" x="541" y="174">3</text>
+  <text class="lbl" x="522" y="318">Lateral</text>
+
+  <!-- Collection: used2 det1 center 630 -->
+  <rect class="used" x="606" y="204" width="34" height="96"/><text class="vl" x="623" y="222">2</text>
+  <rect class="det"  x="644" y="252" width="34" height="48"/><text class="vl" x="661" y="270">1</text>
+  <text class="lbl" x="642" y="318">Collection</text>
+
+  <!-- total callout -->
+  <text class="leg" x="710" y="150">Total</text>
+  <text class="h1"  x="710" y="180">10 / 14</text>
+  <text class="sub" x="710" y="200">detected</text>
+
+  <rect class="used" x="120" y="344" width="16" height="14"/><text class="leg" x="142" y="356">Used</text>
+  <rect class="det"  x="220" y="344" width="16" height="14"/><text class="leg" x="242" y="356">Detected</text>
+  <text class="foot" x="340" y="356">The four undetected became new detections. Next time, the adversary is caught sooner.</text>
+</svg>

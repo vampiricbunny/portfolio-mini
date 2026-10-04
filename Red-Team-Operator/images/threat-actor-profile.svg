@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 380" width="840" height="380" role="img" aria-labelledby="t d">
+  <title id="t">The emulated threat actor profile</title>
+  <desc id="d">A profile card for the emulated adversary, a financially motivated ransomware affiliate. It lists the motivation, the targets, the typical initial access, the tooling style, and the objective. On the right, the actor's known techniques are grouped by ATT&amp;CK tactic. A note says the emulation follows documented threat intelligence so the detection results mean something.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .card{ fill: #fdeef0; stroke: #cf4b5e; stroke-width: 1.5; }
+    .panel{ fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.2; }
+    .nm { fill: #a40e26; font-size: 15px; font-weight: 700; }
+    .lbl{ fill: #57606a; font-size: 10px; font-weight: 700; }
+    .val{ fill: #1f2328; font-size: 11px; }
+    .tac{ fill: #0550ae; font-size: 10.5px; font-weight: 700; }
+    .tt { fill: #424a53; font-size: 10px; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .card { fill: #3d1620; stroke: #e5687b; } .panel { fill: #161b22; stroke: #30363d; }
+      .nm { fill: #ff7b72; } .lbl { fill: #8b949e; } .val { fill: #e6edf3; }
+      .tac { fill: #79c0ff; } .tt { fill: #b1bac4; }
+    }
+  </style>
+  <text class="h1"  x="24" y="30">The emulated adversary</text>
+  <text class="sub" x="24" y="49">The most likely real threat to a small retailer: a ransomware affiliate.</text>
+
+  <!-- profile card -->
+  <rect class="card" x="24" y="72" width="380" height="276" rx="8"/>
+  <text class="nm" x="44" y="104">Ransomware affiliate (emulated)</text>
+  <text class="lbl" x="44" y="134">Motivation</text><text class="val" x="160" y="134">Financial, extortion</text>
+  <text class="lbl" x="44" y="162">Targets</text><text class="val" x="160" y="162">Small retail and finance</text>
+  <text class="lbl" x="44" y="190">Initial access</text><text class="val" x="160" y="190">Phishing, valid accounts</text>
+  <text class="lbl" x="44" y="218">Tooling style</text><text class="val" x="160" y="218">Off-the-shelf C2, living</text>
+  <text class="val" x="160" y="234">off the land</text>
+  <text class="lbl" x="44" y="262">Tempo</text><text class="val" x="160" y="262">Days inside before impact</text>
+  <text class="lbl" x="44" y="290">Objective</text><text class="val" x="160" y="290">Stage ransomware on the</text>
+  <text class="val" x="160" y="306">crown-jewel data</text>
+  <text class="sub" x="44" y="334" font-size="9.5">Profile, not a real named group. Behaviour from intel.</text>
+
+  <!-- technique panel -->
+  <rect class="panel" x="424" y="72" width="392" height="276" rx="8"/>
+  <text class="tac" x="444" y="100">Initial Access</text>
+  <text class="tt"  x="444" y="118">Phishing, Valid Accounts</text>
+  <text class="tac" x="444" y="146">Execution</text>
+  <text class="tt"  x="444" y="164">Command and Script, PowerShell</text>
+  <text class="tac" x="444" y="192">Credential Access</text>
+  <text class="tt"  x="444" y="210">LSASS dump, Kerberoasting</text>
+  <text class="tac" x="444" y="238">Lateral Movement</text>
+  <text class="tt"  x="444" y="256">Remote Services, Pass the Hash</text>
+  <text class="tac" x="444" y="284">Collection and Impact</text>
+  <text class="tt"  x="444" y="302">Staging, exfiltration, encryption</text>
+  <text class="sub" x="444" y="332" font-size="9.5">Each technique mapped to ATT&amp;CK and emulated in order.</text>
+
+  <text class="foot" x="24" y="372">The emulation follows documented threat intelligence, so when a detection fires or fails, the result reflects a real threat, not a made-up one.</text>
+</svg>

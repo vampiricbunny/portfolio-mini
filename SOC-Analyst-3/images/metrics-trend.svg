@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 360" width="820" height="360" role="img" aria-labelledby="t d">
+  <title id="t">Mean time to respond, trending down over four quarters</title>
+  <desc id="d">A line chart over four quarters. Mean time to respond falls from about 95 minutes to 38 minutes while detection coverage, shown as a second rising line, climbs from 56 percent to 100 percent. The two lines crossing tell the whole story: faster response and wider coverage at the same time. A note says the headline is the trend, not any single number.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .axis{ stroke: #8c959f; stroke-width: 1.4; }
+    .grid{ stroke: #e1e4e8; stroke-width: 1; }
+    .mttr{ stroke: #cf222e; stroke-width: 2.6; fill: none; }
+    .cov { stroke: #2ea043; stroke-width: 2.6; fill: none; stroke-dasharray: 6 3; }
+    .dotm{ fill: #cf222e; } .dotc{ fill: #2ea043; }
+    .lbl{ fill: #57606a; font-size: 10.5px; text-anchor: middle; }
+    .vl { fill: #57606a; font-size: 9.5px; }
+    .leg{ fill: #1f2328; font-size: 11px; font-weight: 600; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .grid { stroke: #30363d; } .axis { stroke: #6e7681; } .lbl { fill: #8b949e; } .vl { fill: #8b949e; } .leg { fill: #e6edf3; }
+    }
+  </style>
+  <text class="h1"  x="24" y="30">Response time down, coverage up</text>
+  <text class="sub" x="24" y="49">The trend is the point. Both moved the right way at once.</text>
+
+  <!-- plot area x 90..760, y 80..280 -->
+  <line class="grid" x1="90" y1="100" x2="760" y2="100"/>
+  <line class="grid" x1="90" y1="150" x2="760" y2="150"/>
+  <line class="grid" x1="90" y1="200" x2="760" y2="200"/>
+  <line class="grid" x1="90" y1="250" x2="760" y2="250"/>
+  <line class="axis" x1="90" y1="80" x2="90" y2="280"/>
+  <line class="axis" x1="90" y1="280" x2="760" y2="280"/>
+
+  <!-- x labels, 4 quarters at x=170,350,530,700 -->
+  <text class="lbl" x="170" y="300">Q1</text>
+  <text class="lbl" x="350" y="300">Q2</text>
+  <text class="lbl" x="530" y="300">Q3</text>
+  <text class="lbl" x="700" y="300">Q4</text>
+
+  <!-- MTTR line: Q1 95min(y~104) Q2 72(y~150) Q3 51(y~196) Q4 38(y~224) -->
+  <polyline class="mttr" points="170,106 350,150 530,196 700,224"/>
+  <circle class="dotm" cx="170" cy="106" r="4"/><text class="vl" x="150" y="98">95m</text>
+  <circle class="dotm" cx="350" cy="150" r="4"/><text class="vl" x="332" y="142">72m</text>
+  <circle class="dotm" cx="530" cy="196" r="4"/><text class="vl" x="512" y="188">51m</text>
+  <circle class="dotm" cx="700" cy="224" r="4"/><text class="vl" x="684" y="216">38m</text>
+
+  <!-- Coverage line: Q1 56%(y~250) Q2 74(y~206) Q3 90(y~150) Q4 100(y~110) -->
+  <polyline class="cov" points="170,250 350,206 530,150 700,110"/>
+  <circle class="dotc" cx="170" cy="250" r="4"/><text class="vl" x="176" y="266">56 pct</text>
+  <circle class="dotc" cx="350" cy="206" r="4"/><text class="vl" x="356" y="222">74 pct</text>
+  <circle class="dotc" cx="530" cy="150" r="4"/><text class="vl" x="536" y="166">90 pct</text>
+  <circle class="dotc" cx="700" cy="110" r="4"/><text class="vl" x="700" y="102">100 pct</text>
+
+  <!-- legend -->
+  <line class="mttr" x1="100" y1="326" x2="130" y2="326"/><text class="leg" x="138" y="330">Mean time to respond</text>
+  <line class="cov"  x1="320" y1="326" x2="350" y2="326"/><text class="leg" x="358" y="330">Detection coverage</text>
+
+  <text class="foot" x="470" y="330">A board reads this in one look: risk down, less time exposed.</text>
+</svg>

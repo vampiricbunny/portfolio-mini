@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 440" width="860" height="440" role="img" aria-labelledby="t d">
+  <title id="t">The detection console, what the blue team saw, schematic</title>
+  <desc id="d">A drawn endpoint detection console showing the blue team's view of the red team operation. A list of alerts in time order shows the phishing click logged, suspicious script execution alerted, LSASS access alerted with high confidence, and service creation on lateral movement alerted. Two later stages, data staging and archiving, show as not alerted, found only on hunt. A side panel summarises detected versus missed. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .app { fill: #0f1117; stroke: #2b2f3a; stroke-width: 1.3; }
+    .bar { fill: #1b1f2a; }
+    .panel { fill: #171a22; stroke: #2b2f3a; stroke-width: 1.1; }
+    .h1 { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11px; }
+    .appt{ fill: #ffffff; font-size: 12px; font-weight: 700; }
+    .row{ fill: #141821; stroke: #2b2f3a; stroke-width: 1; }
+    .alert{ fill: #cf222e; } .logged{ fill: #d4a72c; } .miss{ fill: #6e7681; }
+    .pill{ fill: #ffffff; font-size: 8.5px; font-weight: 700; text-anchor: middle; }
+    .et { fill: #e6edf3; font-size: 10.5px; font-weight: 600; }
+    .time{ fill: #8b949e; font-size: 9.5px; }
+    .lbl { fill: #9aa4b2; font-size: 10px; }
+    .val { fill: #e6edf3; font-size: 11px; font-weight: 700; }
+    .good{ fill: #56d364; font-size: 11px; font-weight: 700; }
+    .bad { fill: #ff7b72; font-size: 11px; font-weight: 700; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) { .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; } }
+  </style>
+  <text class="h1"  x="20" y="26">Detection console, the blue team view</text>
+  <text class="sub" x="20" y="44">What fired, and when, as the operation ran. This is the scorecard that matters.</text>
+
+  <rect class="app" x="20" y="58" width="820" height="344" rx="6"/>
+  <rect class="bar" x="20" y="58" width="820" height="28" rx="6"/>
+  <text class="appt" x="36" y="77">Defender XDR  &gt;  Alerts  &gt;  during exercise</text>
+
+  <!-- alert rows -->
+  <rect class="row" x="36" y="100" width="560" height="38" rx="4"/>
+  <rect class="logged" x="48" y="110" width="66" height="18" rx="4"/><text class="pill" x="81" y="123">LOGGED</text>
+  <text class="et" x="128" y="118">Phishing link clicked</text><text class="time" x="128" y="132">day 1, 09:14  recorded, not alerted</text>
+
+  <rect class="row" x="36" y="144" width="560" height="38" rx="4"/>
+  <rect class="alert" x="48" y="154" width="66" height="18" rx="4"/><text class="pill" x="81" y="167">ALERT</text>
+  <text class="et" x="128" y="162">Suspicious script execution</text><text class="time" x="128" y="176">day 1, 09:22  SOC-01 rule fired</text>
+
+  <rect class="row" x="36" y="188" width="560" height="38" rx="4"/>
+  <rect class="alert" x="48" y="198" width="66" height="18" rx="4"/><text class="pill" x="81" y="211">ALERT</text>
+  <text class="et" x="128" y="206">LSASS memory access</text><text class="time" x="128" y="220">day 3, 16:40  high confidence, first strong hit</text>
+
+  <rect class="row" x="36" y="232" width="560" height="38" rx="4"/>
+  <rect class="alert" x="48" y="242" width="66" height="18" rx="4"/><text class="pill" x="81" y="255">ALERT</text>
+  <text class="et" x="128" y="250">Service creation, lateral move</text><text class="time" x="128" y="264">day 3, 18:05  SOC-01 rule fired</text>
+
+  <rect class="row" x="36" y="276" width="560" height="38" rx="4"/>
+  <rect class="miss" x="48" y="286" width="66" height="18" rx="4"/><text class="pill" x="81" y="299">MISSED</text>
+  <text class="et" x="128" y="294">Data staging and archiving</text><text class="time" x="128" y="308">day 4  found only on later hunt</text>
+
+  <!-- side summary -->
+  <rect class="panel" x="612" y="100" width="212" height="214" rx="5"/>
+  <text class="val" x="628" y="126">Operation scorecard</text>
+  <text class="lbl" x="628" y="152">Techniques used</text><text class="val" x="808" y="152" text-anchor="end">14</text>
+  <text class="lbl" x="628" y="178">Detected</text><text class="good" x="808" y="178" text-anchor="end">10</text>
+  <text class="lbl" x="628" y="204">Missed</text><text class="bad" x="808" y="204" text-anchor="end">4</text>
+  <text class="lbl" x="628" y="230">Dwell to first alert</text><text class="val" x="808" y="230" text-anchor="end">2d 7h</text>
+  <text class="lbl" x="628" y="262">Objective reached</text><text class="bad" x="808" y="262" text-anchor="end">yes</text>
+  <text class="lbl" x="628" y="288">Impact caused</text><text class="good" x="808" y="288" text-anchor="end">none</text>
+
+  <text class="foot" x="20" y="430">Schematic illustration of the detection console, not a screen capture. Caught at credential access, well before the database. The four misses became new rules.</text>
+</svg>

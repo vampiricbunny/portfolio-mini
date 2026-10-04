@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 400" width="840" height="400" role="img" aria-labelledby="t d">
+  <title id="t">Evasion techniques paired with their detections</title>
+  <desc id="d">A two-column table. On the left, in red, the evasion technique the operator used. On the right, in green, the detection that beats it. Rows cover living off the land, long sleep with jitter, in-memory execution, and traffic that mimics normal web browsing. Each evasion has a matching detection. A note says an evasion the defence cannot catch is a gap to close, not a trophy.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .eh { fill: #ffe0de; stroke: #cf222e; stroke-width: 1.4; }
+    .dh { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.4; }
+    .erow{ fill: #fdeef0; stroke: #e5aeb5; stroke-width: 1; }
+    .drow{ fill: #eefbf1; stroke: #a7e2b5; stroke-width: 1; }
+    .colh{ font-size: 12px; font-weight: 700; }
+    .et { fill: #a40e26; font-size: 10.5px; font-weight: 600; }
+    .dt { fill: #1a7f37; font-size: 10.5px; font-weight: 600; }
+    .arrow{ fill: #8c959f; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .eh { fill: #3d1417; stroke: #f85149; } .dh { fill: #0f2f17; stroke: #3fb950; }
+      .erow { fill: #2a1416; stroke: #5a2a2e; } .drow { fill: #10251a; stroke: #2a5a38; }
+      .et { fill: #ff9d96; } .dt { fill: #56d364; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker>
+  </defs>
+  <text class="h1"  x="24" y="30">Evasion, paired with detection</text>
+  <text class="sub" x="24" y="49">Not a catalogue of tricks. A map of where the defence was blind, and how to fix it.</text>
+
+  <rect class="eh" x="24"  y="70" width="380" height="30" rx="5"/><text class="colh et" x="40" y="90">Evasion the operator used</text>
+  <rect class="dh" x="436" y="70" width="380" height="30" rx="5"/><text class="colh dt" x="452" y="90">Detection that beats it</text>
+
+  <rect class="erow" x="24"  y="108" width="380" height="54" rx="5"/>
+  <text class="et" x="40" y="130">Living off the land, built-in tools</text><text class="et" x="40" y="148">no files dropped to disk</text>
+  <rect class="drow" x="436" y="108" width="380" height="54" rx="5"/>
+  <text class="dt" x="452" y="130">Behavioural detection on the process</text><text class="dt" x="452" y="148">chain, not file signatures</text>
+
+  <rect class="erow" x="24"  y="170" width="380" height="54" rx="5"/>
+  <text class="et" x="40" y="192">Long sleep with jitter</text><text class="et" x="40" y="210">stay under volume thresholds</text>
+  <rect class="drow" x="436" y="170" width="380" height="54" rx="5"/>
+  <text class="dt" x="452" y="192">Hunt for low-and-slow regular</text><text class="dt" x="452" y="210">connections, the rhythm shows</text>
+
+  <rect class="erow" x="24"  y="232" width="380" height="54" rx="5"/>
+  <text class="et" x="40" y="254">In-memory execution</text><text class="et" x="40" y="272">avoid writing a payload file</text>
+  <rect class="drow" x="436" y="232" width="380" height="54" rx="5"/>
+  <text class="dt" x="452" y="254">Script-block and memory</text><text class="dt" x="452" y="272">telemetry from the endpoint</text>
+
+  <rect class="erow" x="24"  y="294" width="380" height="54" rx="5"/>
+  <text class="et" x="40" y="316">Traffic shaped like web browsing</text><text class="et" x="40" y="334">blend into normal noise</text>
+  <rect class="drow" x="436" y="294" width="380" height="54" rx="5"/>
+  <text class="dt" x="452" y="316">Beaconing to young domains,</text><text class="dt" x="452" y="334">plus the periodic check-in</text>
+
+  <!-- arrows between -->
+  <line x1="408" y1="135" x2="432" y2="135" stroke="#8c959f" stroke-width="1.6" marker-end="url(#a)"/>
+  <line x1="408" y1="197" x2="432" y2="197" stroke="#8c959f" stroke-width="1.6" marker-end="url(#a)"/>
+  <line x1="408" y1="259" x2="432" y2="259" stroke="#8c959f" stroke-width="1.6" marker-end="url(#a)"/>
+  <line x1="408" y1="321" x2="432" y2="321" stroke="#8c959f" stroke-width="1.6" marker-end="url(#a)"/>
+
+  <text class="foot" x="24" y="376">An evasion the blue team cannot yet catch is a gap to close, not a trophy. Every technique that got through became a detection the SOC shipped.</text>
+</svg>

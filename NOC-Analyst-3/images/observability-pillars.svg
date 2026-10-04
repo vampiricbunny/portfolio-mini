@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 360" width="820" height="360" role="img" aria-labelledby="t d">
+  <title id="t">The three pillars of observability</title>
+  <desc id="d">Three pillars side by side. Metrics say something is wrong, numbers over time. Logs say what happened, the events in order. Traces say where the time went, the path of a request across hops. Together they answer not just whether something is down, but why it is slow. A note says NOC-02 built the metrics and this project adds the logs and correlation.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .p1 { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.5; }
+    .p2 { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.5; }
+    .p3 { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.5; }
+    .nm { fill: #1f2328; font-size: 14px; font-weight: 700; text-anchor: middle; }
+    .q  { fill: #424a53; font-size: 11px; text-anchor: middle; font-style: italic; }
+    .d  { fill: #424a53; font-size: 10.5px; }
+    .base{ fill: #30363d; }
+    .baset{ fill: #ffffff; font-size: 12px; font-weight: 700; text-anchor: middle; }
+    .spark{ stroke: #0a6ed1; stroke-width: 2; fill: none; }
+    .logln{ stroke: #9a6700; stroke-width: 2; }
+    .hop{ fill: #2ea043; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .p1 { fill: #0c2d6b; stroke: #58a6ff; } .p2 { fill: #4a3808; stroke: #d29922; } .p3 { fill: #0f2f17; stroke: #3fb950; }
+      .nm { fill: #e6edf3; } .q { fill: #b1bac4; } .d { fill: #b1bac4; } .base { fill: #6e7681; }
+    }
+  </style>
+  <text class="h1"  x="24" y="30">The three pillars of observability</text>
+  <text class="sub" x="24" y="49">Up or down is not enough. A senior function can answer why something is slow.</text>
+
+  <!-- pillar 1 metrics -->
+  <rect class="p1" x="40" y="80" width="220" height="180" rx="8"/>
+  <text class="nm" x="150" y="108">Metrics</text>
+  <text class="q"  x="150" y="128">something is wrong</text>
+  <polyline class="spark" points="70,210 100,196 130,214 160,180 190,200 230,170"/>
+  <text class="d" x="60" y="240">Numbers over time.</text>
+
+  <!-- pillar 2 logs -->
+  <rect class="p2" x="300" y="80" width="220" height="180" rx="8"/>
+  <text class="nm" x="410" y="108">Logs</text>
+  <text class="q"  x="410" y="128">what happened</text>
+  <line class="logln" x1="326" y1="160" x2="494" y2="160"/>
+  <line class="logln" x1="326" y1="180" x2="470" y2="180"/>
+  <line class="logln" x1="326" y1="200" x2="494" y2="200"/>
+  <text class="d" x="320" y="240">The events, in order.</text>
+
+  <!-- pillar 3 traces -->
+  <rect class="p3" x="560" y="80" width="220" height="180" rx="8"/>
+  <text class="nm" x="670" y="108">Traces</text>
+  <text class="q"  x="670" y="128">where the time went</text>
+  <circle class="hop" cx="600" cy="180" r="8"/>
+  <circle class="hop" cx="650" cy="180" r="8"/>
+  <circle class="hop" cx="700" cy="180" r="8"/>
+  <circle class="hop" cx="750" cy="180" r="8"/>
+  <line class="logln" x1="608" y1="180" x2="642" y2="180"/>
+  <line class="logln" x1="658" y1="180" x2="692" y2="180"/>
+  <line class="logln" x1="708" y1="180" x2="742" y2="180"/>
+  <text class="d" x="580" y="240">The path, hop by hop.</text>
+
+  <!-- base -->
+  <rect class="base" x="40" y="280" width="740" height="30" rx="6"/>
+  <text class="baset" x="410" y="300">Together: not just whether it is down, but why it is slow</text>
+
+  <text class="foot" x="24" y="340">NOC-02 built the metrics. This project adds the logs and the correlation, so "the network is slow" gets answered with the exact hop and cause.</text>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 420" width="820" height="420" role="img" aria-labelledby="t d">
+  <title id="t">The Pyramid of Pain</title>
+  <desc id="d">A pyramid of six levels showing how much it hurts an attacker when you detect each kind of indicator. From the bottom: hash values, trivial to change. IP addresses, easy. Domain names, simple. Network and host artefacts, annoying. Tools, challenging. At the top, tactics techniques and procedures, which are tough, because changing them means the attacker must relearn how they operate. A note says a senior SOC spends its effort at the top.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .l1 { fill: #2ea043; } .l2 { fill: #57ab5a; } .l3 { fill: #d4a72c; }
+    .l4 { fill: #e16f24; } .l5 { fill: #cf4b3b; } .l6 { fill: #a40e26; }
+    .lt { fill: #ffffff; font-size: 13px; font-weight: 700; text-anchor: middle; }
+    .pain{ fill: #ffffff; font-size: 10.5px; text-anchor: middle; opacity: 0.92; }
+    .side{ fill: #57606a; font-size: 11px; font-weight: 700; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; } .side { fill: #8b949e; }
+    }
+  </style>
+  <text class="h1"  x="24" y="30">The Pyramid of Pain</text>
+  <text class="sub" x="24" y="49">Not all indicators are equal. The higher you detect, the more it costs the attacker.</text>
+
+  <!-- pyramid levels, each a trapezoid, narrow at top -->
+  <!-- centre x = 410 -->
+  <polygon class="l6" points="340,78 480,78 462,122 358,122"/>
+  <text class="lt" x="410" y="100">TTPs</text><text class="pain" x="410" y="115">tough, they must relearn how they work</text>
+
+  <polygon class="l5" points="358,122 462,122 444,166 376,166"/>
+  <text class="lt" x="410" y="144">Tools</text><text class="pain" x="410" y="159">challenging, rebuild the tool set</text>
+
+  <polygon class="l4" points="376,166 444,166 426,210 394,210"/>
+  <text class="lt" x="410" y="188">Artefacts</text><text class="pain" x="410" y="203">annoying</text>
+
+  <polygon class="l3" points="300,210 520,210 502,254 318,254"/>
+  <text class="lt" x="410" y="232">Domain names</text><text class="pain" x="410" y="248">simple to change</text>
+
+  <polygon class="l2" points="270,254 550,254 532,298 288,298"/>
+  <text class="lt" x="410" y="276">IP addresses</text><text class="pain" x="410" y="292">easy to change</text>
+
+  <polygon class="l1" points="240,298 580,298 562,342 258,342"/>
+  <text class="lt" x="410" y="320">Hash values</text><text class="pain" x="410" y="336">trivial, one rebuild and it is new</text>
+
+  <text class="side" x="600" y="104">spend your time here</text>
+  <text class="side" x="600" y="330">not down here</text>
+
+  <text class="foot" x="24" y="380">A senior SOC detects behaviour, not hashes. Blocking a hash costs the attacker nothing. Detecting their technique costs them everything.</text>
+  <text class="foot" x="24" y="400">This is why the detection priorities from intel target TTPs, the painful top of the pyramid.</text>
+</svg>

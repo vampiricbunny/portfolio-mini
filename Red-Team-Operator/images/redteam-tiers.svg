@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 360" width="840" height="360" role="img" aria-labelledby="t d">
+  <title id="t">What changes at the red team level</title>
+  <desc id="d">Three rising tiers of offensive work. Junior finds vulnerabilities. Pentester chains them to impact. Red team operator emulates an adversary against a defended environment and measures detection. Above them, the defence, which the red team exists to improve. Responsibilities shift from finding bugs to testing the whole defensive program. A note says the measure of success changes from findings to dwell time.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .t1 { fill: #eaeef2; stroke: #8c959f; stroke-width: 1.4; }
+    .t2 { fill: #ffe8cc; stroke: #e16f24; stroke-width: 1.4; }
+    .t3 { fill: #ffe0de; stroke: #cf222e; stroke-width: 1.8; }
+    .def{ fill: #dafbe1; stroke: #2ea043; stroke-width: 1.5; }
+    .lv { fill: #a40e26; font-size: 12px; font-weight: 700; }
+    .nm { fill: #1f2328; font-size: 13px; font-weight: 700; }
+    .d  { fill: #424a53; font-size: 10.5px; }
+    .flow{ stroke: #656d76; stroke-width: 1.8; fill: none; marker-end: url(#a); }
+    .arrow{ fill: #656d76; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .t1 { fill: #21262d; stroke: #6e7681; } .t2 { fill: #3a1e0d; stroke: #e16f24; }
+      .t3 { fill: #3d1417; stroke: #f85149; } .def { fill: #0f2f17; stroke: #3fb950; }
+      .lv { fill: #ff7b72; } .nm { fill: #e6edf3; } .d { fill: #b1bac4; }
+      .flow{ stroke: #8b949e; } .arrow { fill: #8b949e; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker>
+  </defs>
+  <text class="h1"  x="24" y="30">Climbing the offensive ladder</text>
+  <text class="sub" x="24" y="49">The measure of success changes from findings, to impact, to dwell time.</text>
+
+  <rect class="t1" x="28"  y="214" width="180" height="96" rx="7"/>
+  <text class="lv" x="44" y="238">PT-01</text>
+  <text class="nm" x="44" y="258">Junior</text>
+  <text class="d"  x="44" y="278">Finds vulnerabilities.</text>
+  <text class="d"  x="44" y="294">Follows a method.</text>
+
+  <rect class="t2" x="224" y="162" width="180" height="148" rx="7"/>
+  <text class="lv" x="240" y="186">PT-02</text>
+  <text class="nm" x="240" y="206">Pentester</text>
+  <text class="d"  x="240" y="228">Chains them to</text>
+  <text class="d"  x="240" y="246">impact. Full scope.</text>
+  <text class="d"  x="240" y="264">Loud is fine.</text>
+
+  <rect class="t3" x="420" y="96" width="180" height="214" rx="7"/>
+  <text class="lv" x="436" y="120">PT-03</text>
+  <text class="nm" x="436" y="140">This project</text>
+  <text class="d"  x="436" y="162">Emulates an adversary.</text>
+  <text class="d"  x="436" y="180">Stays quiet.</text>
+  <text class="d"  x="436" y="198">Objective-based.</text>
+  <text class="d"  x="436" y="216">Tests the whole</text>
+  <text class="d"  x="436" y="232">defence, and</text>
+  <text class="d"  x="436" y="250">measures detection.</text>
+
+  <rect class="def" x="616" y="96" width="196" height="76" rx="7"/>
+  <text class="nm" x="632" y="124">The defence</text>
+  <text class="d"  x="632" y="146">The red team exists to</text>
+  <text class="d"  x="632" y="162">make it sharper.</text>
+
+  <line class="flow" x1="208" y1="262" x2="222" y2="236"/>
+  <line class="flow" x1="404" y1="236" x2="418" y2="203"/>
+  <line class="flow" x1="600" y1="134" x2="614" y2="134"/>
+
+  <text class="foot" x="24" y="340">A pentester proves a way in exists. A red team finds out whether the defence can see an adversary using it, and how long it takes.</text>
+</svg>

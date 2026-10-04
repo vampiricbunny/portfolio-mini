@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 420" width="840" height="420" role="img" aria-labelledby="t d">
+  <title id="t">The SOC lab environment and tooling</title>
+  <desc id="d">The monitored lab on the left feeds telemetry into the SOC stack on the right. The lab has a domain controller, a file server, two workstations and a mail server. Telemetry flows into Microsoft Sentinel, which is the central SIEM. Defender XDR covers endpoints and identity. OpenCTI supplies threat intelligence. Logic Apps provides SOAR automation. ATT&amp;CK Navigator tracks coverage. A note says the same lab as the earlier SOC projects, now run as a function.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .zone{ fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.3; }
+    .zl { fill: #57606a; font-size: 10.5px; font-weight: 700; }
+    .host{ fill: #ffffff; stroke: #8c959f; stroke-width: 1.2; }
+    .hn { fill: #1f2328; font-size: 10.5px; font-weight: 700; text-anchor: middle; }
+    .siem{ fill: #cfe4ff; stroke: #0a6ed1; stroke-width: 1.6; }
+    .tool{ fill: #ddf4ff; stroke: #218bff; stroke-width: 1.3; }
+    .tn { fill: #1f2328; font-size: 11px; font-weight: 700; text-anchor: middle; }
+    .ti { fill: #57606a; font-size: 9px; text-anchor: middle; }
+    .flow{ stroke: #0a6ed1; stroke-width: 2; fill: none; marker-end: url(#b); }
+    .arrow{ fill: #0a6ed1; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .zone { fill: #161b22; stroke: #30363d; } .zl { fill: #8b949e; }
+      .host { fill: #0d1117; stroke: #6e7681; } .hn { fill: #e6edf3; }
+      .siem { fill: #0c2d6b; stroke: #58a6ff; } .tool { fill: #10263f; stroke: #58a6ff; }
+      .tn { fill: #e6edf3; } .ti { fill: #8b949e; }
+    }
+  </style>
+  <defs>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker>
+  </defs>
+  <text class="h1"  x="24" y="30">The environment and the stack</text>
+  <text class="sub" x="24" y="49">The monitored lab feeds the SOC tooling. Same lab as SOC-01 to SOC-03, now run as a function.</text>
+
+  <!-- monitored lab -->
+  <rect class="zone" x="24" y="70" width="300" height="320" rx="7"/>
+  <text class="zl" x="40" y="92">MONITORED LAB  vbunnylab.local</text>
+  <rect class="host" x="44"  y="106" width="120" height="48" rx="5"/><text class="hn" x="104" y="135">DC01</text>
+  <rect class="host" x="184" y="106" width="120" height="48" rx="5"/><text class="hn" x="244" y="135">SRV-FILE01</text>
+  <rect class="host" x="44"  y="166" width="120" height="48" rx="5"/><text class="hn" x="104" y="195">MAIL01</text>
+  <rect class="host" x="184" y="166" width="120" height="48" rx="5"/><text class="hn" x="244" y="195">SRV-APP01</text>
+  <rect class="host" x="44"  y="226" width="120" height="48" rx="5"/><text class="hn" x="104" y="255">WS-FIN01</text>
+  <rect class="host" x="184" y="226" width="120" height="48" rx="5"/><text class="hn" x="244" y="255">WS-IT01</text>
+  <text class="ti" x="174" y="300">Sysmon, audit policy and agents</text>
+  <text class="ti" x="174" y="316">on every host, from SOC-01</text>
+
+  <!-- SIEM centre -->
+  <rect class="siem" x="372" y="150" width="180" height="70" rx="7"/>
+  <text class="tn" x="462" y="182">Microsoft Sentinel</text>
+  <text class="ti" x="462" y="200">central SIEM, incidents, SOAR</text>
+
+  <!-- tools right -->
+  <rect class="tool" x="604" y="80"  width="210" height="54" rx="6"/>
+  <text class="tn" x="709" y="104">Defender XDR</text><text class="ti" x="709" y="120">endpoint and identity</text>
+  <rect class="tool" x="604" y="144" width="210" height="54" rx="6"/>
+  <text class="tn" x="709" y="168">OpenCTI</text><text class="ti" x="709" y="184">threat intelligence</text>
+  <rect class="tool" x="604" y="208" width="210" height="54" rx="6"/>
+  <text class="tn" x="709" y="232">Logic Apps SOAR</text><text class="ti" x="709" y="248">automation with approval</text>
+  <rect class="tool" x="604" y="272" width="210" height="54" rx="6"/>
+  <text class="tn" x="709" y="296">ATT&amp;CK Navigator</text><text class="ti" x="709" y="312">coverage map</text>
+
+  <!-- flows -->
+  <line class="flow" x1="324" y1="185" x2="370" y2="185"/>
+  <line class="flow" x1="552" y1="170" x2="602" y2="110"/>
+  <line class="flow" x1="552" y1="180" x2="602" y2="171"/>
+  <line class="flow" x1="552" y1="195" x2="602" y2="232"/>
+  <line class="flow" x1="552" y1="205" x2="602" y2="295"/>
+
+  <text class="foot" x="24" y="410">Telemetry flows left to right into Sentinel, which connects out to the tools that investigate, enrich, automate and measure.</text>
+</svg>

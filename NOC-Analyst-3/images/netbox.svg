@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 460" width="860" height="460" role="img" aria-labelledby="t d">
+  <title id="t">NetBox, the source of truth for the network, schematic</title>
+  <desc id="d">A drawn NetBox device page for the standby firewall. A left navigation lists devices, IP address management, racks and connections. The centre shows the device detail: name, role, site, status active, and its interfaces with their intended addresses. A right panel shows the intended configuration and a status banner saying this intended state is what Ansible deploys, so actual always equals intended. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+    .app { fill: #ffffff; stroke: #c3ccd6; stroke-width: 1.3; }
+    .bar { fill: #1b2838; }
+    .nav { fill: #26384d; }
+    .panel { fill: #f3f6f9; stroke: #d0d7de; stroke-width: 1.1; }
+    .h1 { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11px; }
+    .appt{ fill: #ffffff; font-size: 12px; font-weight: 700; }
+    .navi{ fill: #cdd9e5; font-size: 10.5px; }
+    .navs{ fill: #4db6ac; font-size: 10.5px; font-weight: 700; }
+    .lbl { fill: #57606a; font-size: 10px; }
+    .val { fill: #1f2328; font-size: 11px; font-weight: 600; }
+    .active{ fill: #2ea043; }
+    .at { fill: #ffffff; font-size: 9.5px; font-weight: 700; text-anchor: middle; }
+    .row { fill: #ffffff; stroke: #e1e4e8; stroke-width: 1; }
+    .ban { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.3; }
+    .bant{ fill: #1a7f37; font-size: 10.5px; font-weight: 700; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .app { fill: #0d1117; stroke: #30363d; } .panel { fill: #161b22; stroke: #30363d; }
+      .lbl { fill: #8b949e; } .val { fill: #e6edf3; } .row { fill: #0d1117; stroke: #30363d; }
+      .ban { fill: #0f2f17; stroke: #3fb950; } .bant { fill: #56d364; }
+    }
+  </style>
+  <text class="h1"  x="20" y="26">NetBox, the source of truth</text>
+  <text class="sub" x="20" y="44">The intended state of every device. A change happens here first, then deploys.</text>
+
+  <rect class="app" x="20" y="58" width="820" height="372" rx="6"/>
+  <rect class="bar" x="20" y="58" width="820" height="28" rx="6"/>
+  <text class="appt" x="36" y="77">NetBox  &gt;  Devices  &gt;  FW-STANDBY</text>
+
+  <!-- nav -->
+  <rect class="nav" x="20" y="86" width="150" height="344"/>
+  <text class="navs" x="36" y="114">Devices</text>
+  <text class="navi" x="36" y="138">IP addresses</text>
+  <text class="navi" x="36" y="162">Prefixes</text>
+  <text class="navi" x="36" y="186">Racks</text>
+  <text class="navi" x="36" y="210">Connections</text>
+  <text class="navi" x="36" y="234">Config contexts</text>
+  <text class="navi" x="36" y="258">Changelog</text>
+
+  <!-- centre detail -->
+  <text class="lbl" x="186" y="112">Name</text><text class="val" x="186" y="128">FW-STANDBY</text>
+  <text class="lbl" x="340" y="112">Role</text><text class="val" x="340" y="128">Firewall, standby</text>
+  <text class="lbl" x="500" y="112">Status</text>
+  <rect class="active" x="500" y="116" width="62" height="16" rx="3"/><text class="at" x="531" y="128">ACTIVE</text>
+
+  <text class="lbl" x="186" y="158">Interfaces, intended</text>
+  <rect class="row" x="186" y="166" width="376" height="26"/><text class="mono val" x="196" y="184" font-size="10">eth0   10.60.0.3/24   uplink primary</text>
+  <rect class="row" x="186" y="192" width="376" height="26"/><text class="mono val" x="196" y="210" font-size="10">eth1   10.60.0.4/24   uplink standby</text>
+  <rect class="row" x="186" y="218" width="376" height="26"/><text class="mono val" x="196" y="236" font-size="10">vrrp   10.60.0.1      virtual gateway</text>
+  <rect class="row" x="186" y="244" width="376" height="26"/><text class="mono val" x="196" y="262" font-size="10">prio   100            failover priority</text>
+
+  <text class="lbl" x="186" y="300">Changelog</text>
+  <text class="val" x="186" y="320" font-size="10">intended config corrected after INC outage</text>
+  <text class="val" x="186" y="338" font-size="10">now owned by automation, no manual edits</text>
+
+  <!-- right banner -->
+  <rect class="panel" x="582" y="100" width="242" height="170" rx="5"/>
+  <text class="val" x="598" y="124" font-weight="700">Intended config</text>
+  <text class="sub" x="598" y="146" font-size="9.5">This is the single truth. Ansible</text>
+  <text class="sub" x="598" y="160" font-size="9.5">reads it and makes the device</text>
+  <text class="sub" x="598" y="174" font-size="9.5">match. Drift is overwritten.</text>
+  <rect class="ban" x="598" y="190" width="210" height="60" rx="5"/>
+  <text class="bant" x="610" y="212">Actual equals intended</text>
+  <text class="sub" x="610" y="230" font-size="9.5">The config drift that caused</text>
+  <text class="sub" x="610" y="244" font-size="9.5">the outage cannot recur.</text>
+
+  <text class="foot" x="20" y="456">Schematic illustration of NetBox, not a screen capture. A device cannot quietly drift when its config is owned here and enforced by automation.</text>
+</svg>

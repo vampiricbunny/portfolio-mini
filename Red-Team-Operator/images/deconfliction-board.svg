@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 420" width="860" height="420" role="img" aria-labelledby="t d">
+  <title id="t">The red and blue deconfliction board, schematic</title>
+  <desc id="d">A drawn deconfliction board with two columns. The red side logs each action with a timestamp and target. The blue side logs each detection. A middle column confirms whether a blue detection matches a red action, so the blue team can tell the exercise from a real intrusion without the red team tipping its hand. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .board { fill: #0f1420; stroke: #243049; stroke-width: 1.3; }
+    .hdr { fill: #182238; }
+    .h1 { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11px; }
+    .ht { fill: #ffffff; font-size: 12px; font-weight: 700; }
+    .redcol{ fill: #2a1416; stroke: #cf222e; stroke-width: 1.3; }
+    .bluecol{ fill: #10263f; stroke: #0a6ed1; stroke-width: 1.3; }
+    .midcol{ fill: #141c2e; stroke: #243049; stroke-width: 1.3; }
+    .rt { fill: #ff7b72; font-size: 11px; font-weight: 700; }
+    .bt { fill: #58a6ff; font-size: 11px; font-weight: 700; }
+    .mt { fill: #e6edf3; font-size: 11px; font-weight: 700; }
+    .time{ fill: #8b949e; font-size: 9px; }
+    .val{ fill: #e6edf3; font-size: 10px; }
+    .match{ fill: #2ea043; } .unknown{ fill: #d4a72c; }
+    .pill{ fill: #ffffff; font-size: 8.5px; font-weight: 700; text-anchor: middle; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) { .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; } }
+  </style>
+  <text class="h1"  x="20" y="26">Deconfliction board</text>
+  <text class="sub" x="20" y="44">So blue can tell the exercise from a real intrusion, without red tipping its hand.</text>
+
+  <rect class="board" x="20" y="58" width="820" height="320" rx="6"/>
+  <rect class="hdr"   x="20" y="58" width="820" height="30" rx="6"/>
+  <text class="ht" x="36" y="78">Exercise INC-RT-01  deconfliction log</text>
+
+  <!-- red column -->
+  <rect class="redcol" x="36" y="100" width="250" height="262" rx="5"/>
+  <text class="rt" x="52" y="122">RED, actions taken</text>
+  <text class="time" x="52" y="146">day 1 09:22</text><text class="val" x="52" y="160">ran script on WS-FIN01</text>
+  <text class="time" x="52" y="186">day 3 16:40</text><text class="val" x="52" y="200">dumped LSASS on WS-FIN01</text>
+  <text class="time" x="52" y="226">day 3 18:05</text><text class="val" x="52" y="240">lateral to SRV-APP01</text>
+  <text class="time" x="52" y="266">day 4 11:00</text><text class="val" x="52" y="280">staged data on SQL01</text>
+
+  <!-- middle column -->
+  <rect class="midcol" x="300" y="100" width="150" height="262" rx="5"/>
+  <text class="mt" x="316" y="122">Match?</text>
+  <rect class="match" x="330" y="150" width="90" height="18" rx="9"/><text class="pill" x="375" y="163">CONFIRMED</text>
+  <rect class="match" x="330" y="190" width="90" height="18" rx="9"/><text class="pill" x="375" y="203">CONFIRMED</text>
+  <rect class="match" x="330" y="230" width="90" height="18" rx="9"/><text class="pill" x="375" y="243">CONFIRMED</text>
+  <rect class="unknown" x="330" y="270" width="90" height="18" rx="9"/><text class="pill" x="375" y="283">ON HUNT</text>
+
+  <!-- blue column -->
+  <rect class="bluecol" x="464" y="100" width="360" height="262" rx="5"/>
+  <text class="bt" x="480" y="122">BLUE, detections</text>
+  <text class="time" x="480" y="146">day 1 09:22</text><text class="val" x="480" y="160">alert: suspicious script, WS-FIN01</text>
+  <text class="time" x="480" y="186">day 3 16:40</text><text class="val" x="480" y="200">alert: LSASS access, high confidence</text>
+  <text class="time" x="480" y="226">day 3 18:06</text><text class="val" x="480" y="240">alert: service creation, SRV-APP01</text>
+  <text class="time" x="480" y="266">day 6</text><text class="val" x="480" y="280">hunt found staging after the fact</text>
+  <text class="sub" x="480" y="322" font-size="9.5">Each blue detection checked against the red log.</text>
+  <text class="sub" x="480" y="338" font-size="9.5">A match means it is the exercise, stand down.</text>
+
+  <text class="foot" x="20" y="400">Schematic illustration of a deconfliction board, not a screen capture. In the lab, one person keeps both logs, so this independence is simulated.</text>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 440" width="820" height="440" role="img" aria-labelledby="t d">
+  <title id="t">The capacity planning and forecast console, schematic</title>
+  <desc id="d">A drawn capacity planning view. A chart shows core uplink utilisation rising over months, with a solid line for measured usage and a dashed forecast line projecting forward. The forecast crosses the capacity ceiling at a marked date. A side panel lists the forecast for several links with the date each is projected to run out of headroom. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .app { fill: #0d1117; stroke: #30363d; stroke-width: 1.3; }
+    .bar { fill: #161b22; }
+    .panel { fill: #161b22; stroke: #30363d; stroke-width: 1.1; }
+    .h1 { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11px; }
+    .appt{ fill: #e6edf3; font-size: 12px; font-weight: 700; }
+    .grid{ stroke: #30363d; stroke-width: 1; }
+    .ceil{ stroke: #cf222e; stroke-width: 1.6; stroke-dasharray: 6 4; fill: none; }
+    .meas{ stroke: #58a6ff; stroke-width: 2.6; fill: none; }
+    .fcast{ stroke: #d29922; stroke-width: 2.4; stroke-dasharray: 6 3; fill: none; }
+    .axl{ fill: #8b949e; font-size: 9.5px; }
+    .ceilt{ fill: #ff7b72; font-size: 9.5px; font-weight: 700; }
+    .cross{ fill: #cf222e; stroke: #ffffff; stroke-width: 1.4; }
+    .lbl{ fill: #8b949e; font-size: 10px; }
+    .val{ fill: #e6edf3; font-size: 10.5px; font-weight: 600; }
+    .warn{ fill: #e3b341; font-size: 10.5px; font-weight: 700; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) { .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; } }
+  </style>
+  <text class="h1"  x="20" y="26">Capacity planning, see the wall coming</text>
+  <text class="sub" x="20" y="44">Forecast when a link runs out of headroom, and upgrade before it becomes an outage.</text>
+
+  <rect class="app" x="20" y="58" width="800" height="340" rx="6"/>
+  <rect class="bar" x="20" y="58" width="800" height="28" rx="6"/>
+  <text class="appt" x="36" y="77">Capacity  &gt;  Core uplink utilisation</text>
+
+  <!-- chart area x 70..560 y 110..320 -->
+  <rect class="panel" x="36" y="100" width="540" height="276" rx="5"/>
+  <line class="grid" x1="80" y1="140" x2="556" y2="140"/>
+  <line class="grid" x1="80" y1="190" x2="556" y2="190"/>
+  <line class="grid" x1="80" y1="240" x2="556" y2="240"/>
+  <line class="grid" x1="80" y1="290" x2="556" y2="290"/>
+  <text class="axl" x="52" y="144">100</text>
+  <text class="axl" x="58" y="244">50</text>
+  <text class="axl" x="64" y="294">0</text>
+
+  <!-- ceiling at y=140 (100%) -->
+  <line class="ceil" x1="80" y1="140" x2="556" y2="140"/>
+  <text class="ceilt" x="86" y="134">capacity ceiling</text>
+
+  <!-- measured line rising to midway -->
+  <polyline class="meas" points="80,270 160,258 240,242 320,224 400,206"/>
+  <!-- forecast dashed continuing to cross ceiling -->
+  <polyline class="fcast" points="400,206 480,176 540,146"/>
+  <circle class="cross" cx="540" cy="146" r="5"/>
+  <text class="ceilt" x="470" y="168">forecast crosses in ~4 months</text>
+
+  <text class="axl" x="80" y="338">now</text>
+  <text class="axl" x="400" y="338">today</text>
+  <text class="axl" x="520" y="338">+4 mo</text>
+  <text class="sub" x="150" y="360" font-size="9.5">solid = measured   dashed = forecast</text>
+
+  <!-- side panel forecasts -->
+  <rect class="panel" x="588" y="100" width="216" height="276" rx="5"/>
+  <text class="val" x="604" y="126">Forecast to ceiling</text>
+  <text class="lbl" x="604" y="156">Core uplink</text><text class="warn" x="792" y="156" text-anchor="end">4 mo</text>
+  <text class="lbl" x="604" y="186">Internet link</text><text class="val" x="792" y="186" text-anchor="end">11 mo</text>
+  <text class="lbl" x="604" y="216">Core switch</text><text class="val" x="792" y="216" text-anchor="end">14 mo</text>
+  <text class="lbl" x="604" y="246">Access sw 1</text><text class="val" x="792" y="246" text-anchor="end">2 yr+</text>
+  <text class="lbl" x="604" y="276">Access sw 2</text><text class="val" x="792" y="276" text-anchor="end">2 yr+</text>
+  <text class="warn" x="604" y="320">Act on the core uplink</text>
+  <text class="warn" x="604" y="338">now. Budget the upgrade.</text>
+
+  <text class="foot" x="20" y="424">Schematic illustration of a capacity view, not a screen capture. A forecast turns a trend into a date, and a date turns into a budget line before it turns into an outage.</text>
+</svg>

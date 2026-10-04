@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 360" width="860" height="360" role="img" aria-labelledby="t d">
+  <title id="t">The detection engineering pipeline</title>
+  <desc id="d">Five stages in a pipeline. Propose, a new detection idea from intel or an incident. Write, the detection written as code in one source. Test, run it against an emulation to prove it fires. Deploy, push it to both Sentinel and Wazuh from the one source. Measure, track its volume and tune it. An arrow loops measure back to propose. A note says nothing ships without a test and nothing noisy stays without a fix.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .s1 { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.4; }
+    .s2 { fill: #e7defb; stroke: #8250df; stroke-width: 1.4; }
+    .s3 { fill: #fff8c5; stroke: #d4a72c; stroke-width: 1.4; }
+    .s4 { fill: #dafbe1; stroke: #2ea043; stroke-width: 1.4; }
+    .s5 { fill: #ffe8cc; stroke: #e16f24; stroke-width: 1.4; }
+    .num{ fill: #0550ae; font-size: 12px; font-weight: 700; }
+    .nm { fill: #1f2328; font-size: 12.5px; font-weight: 700; }
+    .d  { fill: #424a53; font-size: 10px; }
+    .flow{ stroke: #656d76; stroke-width: 2; fill: none; marker-end: url(#a); }
+    .loop{ stroke: #d4a72c; stroke-width: 2; fill: none; marker-end: url(#y); stroke-dasharray: 5 3; }
+    .arrow{ fill: #656d76; } .ay { fill: #d4a72c; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .s1 { fill: #0c2d6b; stroke: #58a6ff; } .s2 { fill: #2a1a4d; stroke: #a371f7; } .s3 { fill: #4a3808; stroke: #d29922; }
+      .s4 { fill: #0f2f17; stroke: #3fb950; } .s5 { fill: #3a1e0d; stroke: #e16f24; }
+      .num { fill: #79c0ff; } .nm { fill: #e6edf3; } .d { fill: #b1bac4; }
+      .flow{ stroke: #8b949e; } .arrow { fill: #8b949e; } .loop { stroke: #d29922; } .ay { fill: #d29922; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/></marker>
+    <marker id="y" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="ay"/></marker>
+  </defs>
+  <text class="h1"  x="24" y="30">The detection pipeline</text>
+  <text class="sub" x="24" y="49">Detections managed as a program, not written ad hoc when something breaks.</text>
+
+  <rect class="s1" x="24"  y="110" width="150" height="86" rx="8"/>
+  <text class="num" x="40" y="134">1</text><text class="nm" x="58" y="134">Propose</text>
+  <text class="d" x="40" y="158">From intel or</text><text class="d" x="40" y="173">an incident</text>
+
+  <rect class="s2" x="196" y="110" width="150" height="86" rx="8"/>
+  <text class="num" x="212" y="134">2</text><text class="nm" x="230" y="134">Write</text>
+  <text class="d" x="212" y="158">As code, in</text><text class="d" x="212" y="173">one source</text>
+
+  <rect class="s3" x="368" y="110" width="150" height="86" rx="8"/>
+  <text class="num" x="384" y="134">3</text><text class="nm" x="402" y="134">Test</text>
+  <text class="d" x="384" y="158">Prove it fires</text><text class="d" x="384" y="173">on emulation</text>
+
+  <rect class="s4" x="540" y="110" width="150" height="86" rx="8"/>
+  <text class="num" x="556" y="134">4</text><text class="nm" x="574" y="134">Deploy</text>
+  <text class="d" x="556" y="158">To Sentinel and</text><text class="d" x="556" y="173">Wazuh, one push</text>
+
+  <rect class="s5" x="712" y="110" width="124" height="86" rx="8"/>
+  <text class="num" x="728" y="134">5</text><text class="nm" x="746" y="134">Measure</text>
+  <text class="d" x="728" y="158">Volume and</text><text class="d" x="728" y="173">tuning</text>
+
+  <line class="flow" x1="174" y1="153" x2="194" y2="153"/>
+  <line class="flow" x1="346" y1="153" x2="366" y2="153"/>
+  <line class="flow" x1="518" y1="153" x2="538" y2="153"/>
+  <line class="flow" x1="690" y1="153" x2="710" y2="153"/>
+  <path class="loop" d="M 774 196 C 774 250, 99 250, 99 198"/>
+  <text class="d" x="400" y="244" fill="#9a6700">measure feeds the next proposal</text>
+
+  <text class="foot" x="24" y="312">Nothing ships without a test that proves it fires. Nothing noisy stays without a fix. That discipline is what makes it a program.</text>
+</svg>

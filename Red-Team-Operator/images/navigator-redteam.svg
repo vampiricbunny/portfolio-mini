@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 400" width="860" height="400" role="img" aria-labelledby="t d">
+  <title id="t">The ATT&amp;CK coverage of the emulation, schematic</title>
+  <desc id="d">A drawn MITRE ATT&amp;CK Navigator layer for the red team emulation. Columns are tactics: Initial Access, Execution, Credential Access, Lateral Movement, Collection. Each cell is a technique the adversary used, coloured by whether the defence detected it. Green detected, red not detected. Most are green, four are red, marking the gaps the operation found. A legend explains the colours. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .app { fill: #1e1e1e; stroke: #000; stroke-width: 1.2; }
+    .bar { fill: #2d2d2d; }
+    .h1 { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11px; }
+    .appt{ fill: #ffffff; font-size: 12px; font-weight: 700; }
+    .colh{ fill: #3c3c3c; stroke: #555; stroke-width: 1; }
+    .colt{ fill: #ffffff; font-size: 10px; font-weight: 700; text-anchor: middle; }
+    .green{ fill: #2e7d32; stroke: #1b5e20; stroke-width: 0.8; }
+    .red  { fill: #b23030; stroke: #7a1f1f; stroke-width: 0.8; }
+    .cell{ fill: #e8e8e8; font-size: 8.5px; text-anchor: middle; }
+    .lg { fill: #1f2328; font-size: 10.5px; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) { .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; } .lg { fill: #c9d1d9; } }
+  </style>
+  <text class="h1"  x="20" y="26">ATT&amp;CK emulation coverage</text>
+  <text class="sub" x="20" y="44">What the adversary used, and whether the defence detected it. Red cells are the gaps found.</text>
+
+  <rect class="app" x="20" y="58" width="820" height="266" rx="5"/>
+  <rect class="bar" x="20" y="58" width="820" height="26" rx="5"/>
+  <text class="appt" x="36" y="76">ATT&amp;CK Navigator  &gt;  red team emulation layer</text>
+
+  <rect class="colh" x="40"  y="98" width="150" height="24"/><text class="colt" x="115" y="114">Initial Access</text>
+  <rect class="colh" x="200" y="98" width="150" height="24"/><text class="colt" x="275" y="114">Execution</text>
+  <rect class="colh" x="360" y="98" width="150" height="24"/><text class="colt" x="435" y="114">Credential Access</text>
+  <rect class="colh" x="520" y="98" width="150" height="24"/><text class="colt" x="595" y="114">Lateral Movement</text>
+  <rect class="colh" x="680" y="98" width="150" height="24"/><text class="colt" x="755" y="114">Collection</text>
+
+  <!-- Initial Access: Phishing red (logged not alerted), Valid Accounts green -->
+  <rect class="red"   x="40"  y="128" width="150" height="30"/><text class="cell" x="115" y="147">Phishing</text>
+  <rect class="green" x="40"  y="162" width="150" height="30"/><text class="cell" x="115" y="181">Valid Accounts</text>
+
+  <!-- Execution -->
+  <rect class="green" x="200" y="128" width="150" height="30"/><text class="cell" x="275" y="147">Cmd and Script</text>
+  <rect class="green" x="200" y="162" width="150" height="30"/><text class="cell" x="275" y="181">PowerShell</text>
+  <rect class="red"   x="200" y="196" width="150" height="30"/><text class="cell" x="275" y="215">Signed Proxy Exec</text>
+
+  <!-- Credential Access -->
+  <rect class="green" x="360" y="128" width="150" height="30"/><text class="cell" x="435" y="147">LSASS Memory</text>
+  <rect class="green" x="360" y="162" width="150" height="30"/><text class="cell" x="435" y="181">Kerberoasting</text>
+  <rect class="green" x="360" y="196" width="150" height="30"/><text class="cell" x="435" y="215">DCSync</text>
+
+  <!-- Lateral Movement -->
+  <rect class="green" x="520" y="128" width="150" height="30"/><text class="cell" x="595" y="147">Remote Services</text>
+  <rect class="green" x="520" y="162" width="150" height="30"/><text class="cell" x="595" y="181">Pass the Hash</text>
+  <rect class="red"   x="520" y="196" width="150" height="30"/><text class="cell" x="595" y="215">WMI Exec</text>
+  <rect class="green" x="520" y="230" width="150" height="30"/><text class="cell" x="595" y="249">SMB Shares</text>
+
+  <!-- Collection -->
+  <rect class="green" x="680" y="128" width="150" height="30"/><text class="cell" x="755" y="147">Data Staged</text>
+  <rect class="red"   x="680" y="162" width="150" height="30"/><text class="cell" x="755" y="181">Archive Collected</text>
+
+  <!-- legend -->
+  <rect class="green" x="40" y="344" width="18" height="14"/><text class="lg" x="64" y="356">detected by the defence</text>
+  <rect class="red"   x="260" y="344" width="18" height="14"/><text class="lg" x="284" y="356">not detected, a gap the operation found</text>
+
+  <text class="foot" x="20" y="384">Schematic illustration of the ATT&amp;CK Navigator, not a screen capture. The four red cells became four new detections after the exercise.</text>
+</svg>

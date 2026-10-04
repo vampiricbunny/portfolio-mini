@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 340" width="860" height="340" role="img" aria-labelledby="t d">
+  <title id="t">The incident timeline, detection to recovery</title>
+  <desc id="d">A horizontal timeline of the capstone incident with three phase bands: detect, respond and recover. Markers along it show macro execution at time zero, first alert at six minutes, analyst acknowledged at nine minutes, major incident declared at fourteen minutes, hosts contained at thirty-eight minutes, and eradicated and recovered at two hours twenty. A note gives the key measures and states no data was encrypted because it was caught before impact.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .detect{ fill: #fff1e5; stroke: #e16f24; stroke-width: 1.3; }
+    .respond{ fill: #ddf4ff; stroke: #218bff; stroke-width: 1.3; }
+    .recover{ fill: #dafbe1; stroke: #2ea043; stroke-width: 1.3; }
+    .pl { fill: #57606a; font-size: 10.5px; font-weight: 700; }
+    .axis{ stroke: #8c959f; stroke-width: 2; }
+    .mk { fill: #0d1117; stroke: #ffffff; stroke-width: 1.4; }
+    .mkr{ fill: #cf222e; stroke: #ffffff; stroke-width: 1.4; }
+    .mt { fill: #1f2328; font-size: 10px; font-weight: 700; text-anchor: middle; }
+    .mtime{ fill: #57606a; font-size: 9.5px; text-anchor: middle; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; } .pl { fill: #8b949e; }
+      .detect { fill: #3a1e0d; stroke: #e16f24; } .respond { fill: #0c2d6b; stroke: #58a6ff; } .recover { fill: #0f2f17; stroke: #3fb950; }
+      .mk { fill: #e6edf3; stroke: #0d1117; } .mt { fill: #e6edf3; } .mtime { fill: #8b949e; } .axis { stroke: #6e7681; }
+    }
+  </style>
+  <text class="h1"  x="24" y="30">Capstone incident, detect to recover</text>
+  <text class="sub" x="24" y="49">Caught mid-chain, contained before the backups, recovered the same day.</text>
+
+  <!-- phase bands -->
+  <rect class="detect"  x="40"  y="76" width="150" height="40" rx="5"/><text class="pl" x="60" y="101">DETECT</text>
+  <rect class="respond" x="190" y="76" width="360" height="40" rx="5"/><text class="pl" x="330" y="101">RESPOND</text>
+  <rect class="recover" x="550" y="76" width="270" height="40" rx="5"/><text class="pl" x="650" y="101">RECOVER</text>
+
+  <!-- axis -->
+  <line class="axis" x1="40" y1="190" x2="820" y2="190"/>
+
+  <!-- markers -->
+  <circle class="mk"  cx="60"  cy="190" r="7"/>
+  <text class="mt" x="60" y="222">Macro runs</text><text class="mtime" x="60" y="238">T+0</text>
+
+  <circle class="mkr" cx="170" cy="190" r="7"/>
+  <text class="mt" x="170" y="222">First alert</text><text class="mtime" x="170" y="238">T+6 min</text>
+
+  <circle class="mk"  cx="250" cy="190" r="7"/>
+  <text class="mt" x="250" y="160">Acknowledged</text><text class="mtime" x="250" y="146">T+9 min</text>
+
+  <circle class="mkr" cx="340" cy="190" r="7"/>
+  <text class="mt" x="340" y="222">Declared SEV1</text><text class="mtime" x="340" y="238">T+14 min</text>
+
+  <circle class="mkr" cx="520" cy="190" r="7"/>
+  <text class="mt" x="520" y="160">Hosts contained</text><text class="mtime" x="520" y="146">T+38 min</text>
+
+  <circle class="mk"  cx="770" cy="190" r="7"/>
+  <text class="mt" x="770" y="222">Recovered</text><text class="mtime" x="770" y="238">T+2h 20m</text>
+
+  <text class="foot" x="24" y="290">Mean time to detect 6 minutes, to respond 38 minutes. No data encrypted, because containment reached the attacker before the backups did.</text>
+  <text class="foot" x="24" y="310">The single decision that mattered: isolate and protect the backups first, inside the opening forty minutes.</text>
+</svg>

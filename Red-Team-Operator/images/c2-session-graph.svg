@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 420" width="820" height="420" role="img" aria-labelledby="t d">
+  <title id="t">The C2 session graph across the network, schematic</title>
+  <desc id="d">A drawn command-and-control session graph. The team server links through a redirector to the first beacon on the finance workstation. From there a link shows lateral movement to a beacon on the application server, and a pivot deeper toward the database server on the protected segment. Each beacon node shows its host and sleep. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .app { fill: #0c0c14; stroke: #30363d; stroke-width: 1.3; }
+    .bar { fill: #1a1a2e; }
+    .h1 { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11px; }
+    .appt{ fill: #ffffff; font-size: 12px; font-weight: 700; }
+    .edge{ stroke: #ff5faf; stroke-width: 2; fill: none; }
+    .edged{ stroke: #ff5faf; stroke-width: 2; fill: none; stroke-dasharray: 5 3; }
+    .srv { fill: #cf222e; stroke: #ffa198; stroke-width: 1.6; }
+    .redir{ fill: #9a6700; stroke: #e3b341; stroke-width: 1.4; }
+    .bea { fill: #8250df; stroke: #c297ff; stroke-width: 1.4; }
+    .tgt { fill: #1a7f37; stroke: #56d364; stroke-width: 1.4; }
+    .nl { fill: #ffffff; font-size: 10px; font-weight: 700; text-anchor: middle; }
+    .ni { fill: #d0d7de; font-size: 8.5px; text-anchor: middle; }
+    .el { fill: #ff9ecf; font-size: 9px; font-weight: 700; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) { .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; } }
+  </style>
+  <text class="h1"  x="20" y="26">C2 session graph</text>
+  <text class="sub" x="20" y="44">The beacons and how they chain across the network toward the objective.</text>
+
+  <rect class="app" x="20" y="58" width="780" height="310" rx="6"/>
+  <rect class="bar" x="20" y="58" width="780" height="26" rx="6"/>
+  <text class="appt" x="36" y="77">C2  &gt;  Session graph</text>
+
+  <!-- team server -->
+  <rect class="srv" x="60" y="180" width="110" height="54" rx="7"/>
+  <text class="nl" x="115" y="204">Team server</text><text class="ni" x="115" y="220">operator</text>
+  <!-- redirector -->
+  <circle class="redir" cx="250" cy="207" r="30"/><text class="nl" x="250" y="205">redir</text><text class="ni" x="250" y="219">HTTPS</text>
+  <!-- beacon 1 -->
+  <circle class="bea" cx="400" cy="150" r="34"/><text class="nl" x="400" y="148">WS-FIN01</text><text class="ni" x="400" y="162">beacon a1f3</text>
+  <!-- beacon 2 -->
+  <circle class="bea" cx="560" cy="230" r="34"/><text class="nl" x="560" y="228">SRV-APP01</text><text class="ni" x="560" y="242">beacon b7c2</text>
+  <!-- target -->
+  <circle class="tgt" cx="710" cy="300" r="32"/><text class="nl" x="710" y="298">SQL01</text><text class="ni" x="710" y="312">objective</text>
+
+  <line class="edge" x1="170" y1="207" x2="222" y2="207"/>
+  <line class="edge" x1="278" y1="200" x2="368" y2="162"/>
+  <line class="edge" x1="430" y1="172" x2="532" y2="212"/><text class="el" x="452" y="186">lateral</text>
+  <line class="edged" x1="588" y1="255" x2="686" y2="285"/><text class="el" x="600" y="286">pivot</text>
+
+  <text class="foot" x="20" y="396">Schematic illustration of a C2 session graph, not a screen capture. Two beacons chained to reach the objective on the protected segment.</text>
+</svg>

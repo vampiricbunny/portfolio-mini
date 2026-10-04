@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 360" width="820" height="360" role="img" aria-labelledby="t d">
+  <title id="t">Availability holding above target while mean time to restore falls</title>
+  <desc id="d">A line chart over four quarters. Availability stays above the 99.9 percent objective line, drawn as a dashed threshold. A second line shows mean time to restore falling from about 55 minutes to 22 minutes. The two together tell the story: reliability held and recovery got faster. A note says the headline is the trend, not any single number.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11.5px; }
+    .axis{ stroke: #8c959f; stroke-width: 1.4; }
+    .grid{ stroke: #e1e4e8; stroke-width: 1; }
+    .avail{ stroke: #2ea043; stroke-width: 2.6; fill: none; }
+    .mttr { stroke: #cf222e; stroke-width: 2.6; fill: none; }
+    .target{ stroke: #8250df; stroke-width: 1.6; fill: none; stroke-dasharray: 6 4; }
+    .dota{ fill: #2ea043; } .dotm{ fill: #cf222e; }
+    .lbl{ fill: #57606a; font-size: 10.5px; text-anchor: middle; }
+    .vl { fill: #57606a; font-size: 9.5px; }
+    .leg{ fill: #1f2328; font-size: 11px; font-weight: 600; }
+    .tgt{ fill: #8250df; font-size: 9.5px; font-weight: 700; }
+    .foot{ fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .grid { stroke: #30363d; } .axis { stroke: #6e7681; } .lbl { fill: #8b949e; } .vl { fill: #8b949e; } .leg { fill: #e6edf3; }
+    }
+  </style>
+  <text class="h1"  x="24" y="30">Availability held, restore time fell</text>
+  <text class="sub" x="24" y="49">The trend is the point. Reliability above target, recovery faster each quarter.</text>
+
+  <line class="grid" x1="90" y1="100" x2="760" y2="100"/>
+  <line class="grid" x1="90" y1="150" x2="760" y2="150"/>
+  <line class="grid" x1="90" y1="200" x2="760" y2="200"/>
+  <line class="grid" x1="90" y1="250" x2="760" y2="250"/>
+  <line class="axis" x1="90" y1="80" x2="90" y2="280"/>
+  <line class="axis" x1="90" y1="280" x2="760" y2="280"/>
+
+  <text class="lbl" x="170" y="300">Q1</text>
+  <text class="lbl" x="350" y="300">Q2</text>
+  <text class="lbl" x="530" y="300">Q3</text>
+  <text class="lbl" x="700" y="300">Q4</text>
+
+  <!-- target line (99.9%) at y=120 -->
+  <line class="target" x1="90" y1="120" x2="760" y2="120"/>
+  <text class="tgt" x="96" y="114">99.9 pct objective</text>
+
+  <!-- availability line: above target, y around 108..100 -->
+  <polyline class="avail" points="170,112 350,108 530,104 700,100"/>
+  <circle class="dota" cx="170" cy="112" r="4"/><text class="vl" x="150" y="128">99.91</text>
+  <circle class="dota" cx="350" cy="108" r="4"/><text class="vl" x="332" y="124">99.93</text>
+  <circle class="dota" cx="530" cy="104" r="4"/><text class="vl" x="512" y="120">99.95</text>
+  <circle class="dota" cx="700" cy="100" r="4"/><text class="vl" x="684" y="94">99.96</text>
+
+  <!-- MTTR line: falling, y 196..244 -->
+  <polyline class="mttr" points="170,196 350,214 530,232 700,244"/>
+  <circle class="dotm" cx="170" cy="196" r="4"/><text class="vl" x="150" y="188">55m</text>
+  <circle class="dotm" cx="350" cy="214" r="4"/><text class="vl" x="332" y="206">41m</text>
+  <circle class="dotm" cx="530" cy="232" r="4"/><text class="vl" x="512" y="224">30m</text>
+  <circle class="dotm" cx="700" cy="244" r="4"/><text class="vl" x="684" y="260">22m</text>
+
+  <line class="avail" x1="100" y1="326" x2="130" y2="326"/><text class="leg" x="138" y="330">Availability</text>
+  <line class="mttr"  x1="300" y1="326" x2="330" y2="326"/><text class="leg" x="338" y="330">Mean time to restore</text>
+  <text class="foot" x="540" y="330">A board reads this in one look: reliable, improving.</text>
+</svg>
