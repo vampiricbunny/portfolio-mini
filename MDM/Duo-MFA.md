@@ -4,6 +4,10 @@ Deploying Cisco Duo to protect Windows logon, RDP and application access, plus t
 
 MFA is the single highest-value control against credential theft. Passwords get phished, reused and cracked; a second factor makes a stolen password insufficient on its own. That is also precisely why attackers stopped attacking the password and started attacking the *enrollment and recovery process* around the second factor.
 
+![Duo admin panel authentication log](images/duo-admin.png)
+
+*The Duo admin panel: a live authentication log, the global policy, and enrollment coverage across the user base.*
+
 ---
 
 ## What MFA Does and Does Not Stop

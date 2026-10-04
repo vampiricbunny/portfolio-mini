@@ -4,6 +4,10 @@ Identity and access management for Microsoft 365 and Azure. Entra ID (formerly A
 
 The distinction that matters: on-premises AD authenticates against a domain controller you own, on a network you control. Entra ID authenticates over the internet, from anywhere, with no network boundary in front of it. That single difference is why conditional access exists and why identity is now the primary security perimeter.
 
+![Microsoft Entra admin center overview](images/entra-admin-center.png)
+
+*The Entra admin center: directory totals, sign-in trend and Conditional Access posture for the tenant.*
+
 ---
 
 ## What It Provides

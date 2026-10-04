@@ -2,6 +2,10 @@
 
 Common tickets and how I work them. Each one covers the symptom, the questions I ask, the fix, and what goes in the notes.
 
+![A repeatable troubleshooting method](images/troubleshooting-flow.png)
+
+*The loop I run on every issue: define, gather, theorise, test, then resolve, document and kill anything that keeps recurring. Guessing wastes time; a method does not.*
+
 ---
 
 ## How I Work a Ticket

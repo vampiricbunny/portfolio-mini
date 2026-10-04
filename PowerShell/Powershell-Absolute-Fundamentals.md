@@ -4,6 +4,10 @@ PowerShell is the difference between doing something once and doing it to five h
 
 This document covers the language itself. For applied Active Directory automation, see [PowerShell Automation](Powershell-Automation.md).
 
+![Windows PowerShell session running a disk space report](images/powershell-console.png)
+
+*A real working session: a disk space report across every server, formatted output, then exporting the result and alerting on the volumes that are low.*
+
 ---
 
 ## Versions

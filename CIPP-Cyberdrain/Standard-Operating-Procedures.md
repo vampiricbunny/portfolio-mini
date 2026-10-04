@@ -4,6 +4,10 @@ CIPP is an open-source multi-tenant management portal for Microsoft 365. Built f
 
 The problem it solves: without it, managing 30 clients means signing into 30 tenants separately, applying the same change 30 times, and having no way to confirm they all match. CIPP gives you one pane across all of them.
 
+![CIPP multi-tenant partner dashboard](images/cipp-dashboard.png)
+
+*The CIPP partner dashboard: every managed tenant in one view, with baseline standards compliance, drift and security alerts surfaced together.*
+
 ---
 
 ## Hosting

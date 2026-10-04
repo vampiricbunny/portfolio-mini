@@ -4,6 +4,10 @@ How to talk to people about technical problems. Templates, tone, and the securit
 
 Technical skill gets the ticket fixed. Communication decides whether the user feels helped or handled. Both get noticed.
 
+![Service desk communication framework](images/support-communication.png)
+
+*The way I run a support conversation: acknowledge, clarify, set expectations, resolve, follow up, plus how I handle an upset caller and why it shows up in CSAT.*
+
 ---
 
 ## The Basics

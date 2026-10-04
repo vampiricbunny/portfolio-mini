@@ -4,6 +4,10 @@ Cloud-based remote monitoring and management. Atera combines RMM with a PSA, so 
 
 The pricing model is what makes it popular with small MSPs and internal IT teams. Per technician rather than per device, so the endpoint count does not drive the bill.
 
+![Atera RMM console showing managed devices](images/atera-rmm-dashboard.png)
+
+*The Atera console: every managed machine with live status, CPU and memory, pending patches and open alerts in one view.*
+
 ---
 
 ## What an RMM Gives You

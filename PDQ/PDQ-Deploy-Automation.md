@@ -4,6 +4,10 @@ Pushing software, patches and scripts to Windows machines from one console inste
 
 PDQ Deploy is built for Windows-only environments and it is fast to get running. The Package Library covers most common software already packaged and tested, which removes the part of software deployment that usually takes longest.
 
+![PDQ Deploy pushing a package to workstations](images/pdq-deploy.png)
+
+*A live deployment in PDQ Deploy: one package going out to every workstation, with per-target status, errors and a running log.*
+
 ---
 
 ## What It Does

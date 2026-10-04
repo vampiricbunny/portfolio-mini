@@ -6,6 +6,10 @@ RDP is built into Windows and does the job well. It is also one of the most atta
 
 Everything below assumes internal use only.
 
+![Remote Desktop session into a Windows server](images/rdp-session.png)
+
+*A Remote Desktop session into a domain controller: the pinned connection bar up top, Server Manager open on the remote host.*
+
 ---
 
 ## Before You Connect

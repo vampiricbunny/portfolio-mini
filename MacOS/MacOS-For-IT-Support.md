@@ -4,6 +4,10 @@ Supporting Macs from a Windows background. The tools are different, the diagnost
 
 Most Windows knowledge transfers. Activity Monitor is Task Manager. Disk Utility is Disk Management. Console is Event Viewer. What changes is where things live and what the permissions model does.
 
+![macOS System Settings showing device and MDM status](images/macos-settings.png)
+
+*macOS System Settings on a managed Mac: the About pane, software update state, and the MDM enrollment and FileVault status an IT tech checks first.*
+
 ---
 
 ## Windows to macOS

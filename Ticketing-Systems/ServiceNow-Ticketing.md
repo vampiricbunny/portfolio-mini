@@ -6,6 +6,10 @@ ServiceNow does a great deal beyond ticketing. For a service desk it is where ti
 
 One rule underpins the rest. **If it is not in the ticket, it did not happen.**
 
+![ServiceNow incident queue](images/servicenow-queue.png)
+
+*A ServiceNow incident queue: open tickets sorted by priority, with state, assignment and live SLA pressure visible at a glance.*
+
 ---
 
 ## Record Types

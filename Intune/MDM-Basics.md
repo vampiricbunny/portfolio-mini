@@ -4,6 +4,10 @@ What MDM does, where Intune sits, and how devices get enrolled on each platform.
 
 MDM exists to answer one question. Company data is sitting on a device you do not physically control, so how do you set rules for it and take it back when you need to?
 
+![Intune admin center all devices view](images/intune-devices.png)
+
+*The Intune admin center: enrolled devices with owner, platform and compliance state at a glance.*
+
 ---
 
 ## MDM and MAM

@@ -4,6 +4,10 @@ How to structure IT documentation so it is worth having. Written around the IT G
 
 **Scope note.** This covers documentation structure and practice rather than a walkthrough of a specific product's interface. The structure is the transferable part. Every documentation platform does the same job with different menus.
 
+![IT Glue configuration documentation page](images/itglue-doc.png)
+
+*The payoff of good documentation: one configuration record with its linked passwords, documents, flexible assets and related items, so a single lookup shows the whole dependency chain.*
+
 ---
 
 ## Why It Matters

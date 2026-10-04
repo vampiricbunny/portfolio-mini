@@ -2,6 +2,10 @@
 
 Day to day administration from the Microsoft 365 admin center. Users, licences, groups, mailbox permissions, and the tickets that come with them.
 
+![Microsoft 365 admin center home](images/m365-admin-center.png)
+
+*The Microsoft 365 admin center: users, licences, service health and Secure Score on the tenant home.*
+
 ---
 
 ## Which Portal

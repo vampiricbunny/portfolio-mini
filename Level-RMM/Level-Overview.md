@@ -4,6 +4,10 @@ A modern RMM built around automation and browser-based remote control. Cross-pla
 
 Two things set it apart from older RMM platforms. Remote control runs peer to peer in the browser, so no client to install and session traffic does not pass through Level's servers. And automation is the centre of the product rather than something bolted on.
 
+![Level RMM live monitoring dashboard](images/level-rmm-dashboard.png)
+
+*Level's live monitoring: real time endpoint health and a running feed of the automations doing the work.*
+
 ---
 
 ## Platform Coverage

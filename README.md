@@ -51,6 +51,22 @@ Documentation is the part of this job most people skip. I don't - because the ru
 
 Each project is a complete piece of work rather than a guide. A lab built, a problem attacked, the results written up the way the job would expect.
 
+### [IR-01 - Ransomware Incident: Detection to Recovery](Ransomware-Incident-Response/)  (flagship)
+
+**Target role: SOC Analyst / Incident Responder**
+
+The capstone. One ransomware intrusion run end to end and defended as the responder, with the real tool output at every stage from the phishing email to the clean recovery. Detected seven minutes after the first click, contained before it reached the fleet. Built as one deep illustrated README with 20 realistic dark-mode screenshots of the actual systems in operation.
+
+| | |
+| --- | --- |
+| Capstone | A full ransomware kill chain detected and stopped before domain-wide encryption |
+| Mean time to detect / contain | 7 minutes / 31 minutes |
+| Blast radius | 2 of 176 hosts, 0 data lost, 0 ransom paid |
+| Tooling shown | Sentinel, Defender for Endpoint, Sysmon, Logic Apps SOAR, BloodHound, ATT&CK Navigator, Veeam |
+| Screenshots | 20, every stage of the lifecycle |
+
+Everything is in one [illustrated README](Ransomware-Incident-Response/). The three to look at: the [Sentinel incident](Ransomware-Incident-Response/images/siem-incident.png) that correlated nine alerts into one, the [Defender attack story](Ransomware-Incident-Response/images/edr-process-tree.png) tracing the process chain, and the [SOAR containment](Ransomware-Incident-Response/images/soar-containment.png) that isolated the host in 44 seconds.
+
 ### [SOC-01 - Detection and Triage Lab](Junior-SOC-Analyst/)
 
 **Target role: SOC Analyst I**
