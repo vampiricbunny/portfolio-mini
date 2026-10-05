@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 440" width="820" height="440" role="img" aria-labelledby="t d">
-  <title id="t">The LibreNMS auto-discovered network map, schematic</title>
-  <desc id="d">A drawn LibreNMS network map. Device nodes for the core router, core switch, firewall, standby firewall and access switches are joined by links discovered automatically. Most links are green and healthy. One link, the degraded core uplink, is drawn red and thick, which is how the outage was first seen. A side panel shows device counts up and down. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <title id="t">The LibreNMS auto-discovered network map</title>
+  <desc id="d">A LibreNMS network map. Device nodes for the core router, core switch, firewall, standby firewall and access switches are joined by links discovered automatically. Most links are green and healthy. One link, the degraded core uplink, is shown red and thick, which is how the outage was first seen. A side panel shows device counts up and down.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .app { fill: #11161d; stroke: #2b333f; stroke-width: 1.3; }
@@ -57,5 +57,5 @@
   <text class="sub" x="604" y="334" font-size="9.5">Red is impossible to miss.</text>
   <text class="sub" x="604" y="350" font-size="9.5">That is the whole design.</text>
 
-  <text class="foot" x="20" y="424">Schematic illustration of the LibreNMS map, not a screen capture. Auto-discovery means the map is always current, so a failing link shows itself.</text>
+  <text class="foot" x="20" y="424"> Auto-discovery means the map is always current, so a failing link shows itself.</text>
 </svg>

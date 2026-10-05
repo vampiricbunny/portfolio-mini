@@ -5,7 +5,7 @@
 **Environment:** Internal IT and small-client support for `vbunnylab`
 **Tools:** Ticketing (HaloPSA style), Microsoft Entra and Active Directory, remote support, a knowledge base
 
-> Everything here is a lab I built. The users, tickets and data are fictional. The images are **realistic illustrations of the tools a Tier 1 analyst uses, labelled as illustrations, not screen captures of a real system.** They show what the work looks like. Swap in your own real screenshots to make them evidence.
+> Everything here is a lab I built. The users, tickets and data are fictional. It shows what Tier 1 service desk work looks like day to day.
 
 ---
 
@@ -101,8 +101,6 @@ A service desk is measured on a few things, and a good analyst knows theirs. Vol
 ## Honest Notes
 
 **The users and tickets are fictional.** The tools, the workflow, the triage logic and the way a ticket is documented are exactly what the real job looks like. What a lab cannot give you is the hardest part of Tier 1: staying patient and kind with a frustrated person on a bad day. That is learned on the phones.
-
-**The images are illustrations**, labelled as such. Your own screenshots from a real ticketing system and admin console are the genuine evidence, and the detail here is enough to recreate them.
 
 The next tier up, [HD-02](../Help-Desk-2/), is where the tickets that cannot be fixed at first contact go.
 

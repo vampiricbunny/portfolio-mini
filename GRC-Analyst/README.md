@@ -5,7 +5,7 @@
 **Environment:** A governance program built for the same fictional small company the rest of this portfolio models, `vbunnylab`
 **Frameworks:** ASD Essential Eight, NIST Cybersecurity Framework, ISO 27001, CIS Controls
 
-> Everything here is a lab I built. The company, its data and its auditors are fictional. The images are **realistic illustrations of the tools and documents a GRC analyst produces, labelled as illustrations, not screen captures of a real company's system.** They are here so a non-technical reader can see the work, and so a technical reader can see I know what each artefact actually contains. Swap in your own real exports to make them evidence.
+> Everything here is a lab I built. The company, its data and its auditors are fictional. It shows the tools and documents a GRC analyst produces, so a non-technical reader can see the work and a technical reader can see I know what each artefact contains.
 
 ---
 
@@ -108,25 +108,7 @@ The headline a board remembers: the business can now prove its security posture 
 
 **The company and its auditors are fictional.** The frameworks, the scoring method, the control mappings and the structure of every artefact are real and are what a GRC analyst produces. What a lab cannot reproduce is the politics: getting a busy manager to accept a risk, or an executive to fund a control. That negotiation is most of the real job, and no lab teaches it.
 
-**The images are illustrations.** Every one is labelled as such. They show what the real tools and documents contain. Your own exports from a real GRC platform, risk tool or spreadsheet are the genuine evidence, and the detail here is enough to recreate them.
-
 **GRC is only as good as its follow-through.** A register nobody reviews and a policy nobody follows are worse than nothing, because they create false confidence. The schedules and review dates in these artefacts are the part that makes them real, and they are included on purpose.
-
----
-
-## Make These Real
-
-To turn these illustrations into evidence, capture or export the equivalent from a real environment:
-
-```text
-risk-register.png       export from a risk tool or your own tracked spreadsheet
-essential-eight.png     a real maturity self-assessment, scored honestly
-control-mapping.png     your own crosswalk, even in a spreadsheet
-compliance-dashboard.png  a real posture report to leadership
-vendor-risk.png         a completed vendor assessment
-```
-
-The two that matter most are `essential-eight.png`, because an Australian employer knows exactly what it is, and `risk-register.png`, because it is the artefact the whole discipline is built on.
 
 ---
 

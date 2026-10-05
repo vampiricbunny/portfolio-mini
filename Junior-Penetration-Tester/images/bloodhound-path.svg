@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 420" width="820" height="420" role="img" aria-labelledby="t d">
   <title id="t">Attack path graph from a service account to Domain Admin</title>
-  <desc id="d">A drawn attack-path graph in the style of BloodHound. The svc_sql user node connects, through a member-of edge, to Domain Users. SRV-FILE01 has an edge labelled AllowedToDelegate that reaches DC01. Local SYSTEM on SRV-FILE01 leads to capturing DC01's ticket, which through a DCSync edge reaches the Domain Admins group. The graph shows how one service account, combined with unconstrained delegation, reaches full domain control.</desc>
+  <desc id="d">A attack-path graph in the style of BloodHound. The svc_sql user node connects, through a member-of edge, to Domain Users. SRV-FILE01 has an edge labelled AllowedToDelegate that reaches DC01. Local SYSTEM on SRV-FILE01 leads to capturing DC01's ticket, which through a DCSync edge reaches the Domain Admins group. The graph shows how one service account, combined with unconstrained delegation, reaches full domain control.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .user  { fill: #ddf4ff; stroke: #218bff; stroke-width: 1.7; }
@@ -82,6 +82,6 @@
   <line class="edgec" x1="612" y1="164" x2="606" y2="262"/>
   <text class="elc" x="622" y="216">DCSync</text>
 
-  <text class="foot" x="28" y="374">Drawn illustration of an attack path graph, not a screen capture.</text>
+  <text class="foot" x="28" y="374"></text>
   <text class="sub"  x="28" y="396">One service account plus one delegation misconfiguration reaches Domain Admin. BloodHound found it in a single query.</text>
 </svg>

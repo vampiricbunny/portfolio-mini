@@ -5,7 +5,7 @@
 **Environment:** The same self-owned Proxmox lab as [SOC-01](../Junior-SOC-Analyst/), [SOC-02](../SOC-Analyst-1/) and [SOC-03](../SOC-Analyst-2/), `vbunnylab.local`, now run as a SOC
 **Stack:** Microsoft Sentinel, Defender XDR, OpenCTI, Logic Apps SOAR, MITRE ATT&CK Navigator
 
-> Everything in this folder is a lab I own and built. No real company, person or data is involved. The consoles shown are **drawn schematics of the real tools, not screen captures**, each labelled as such. They are here so a non-technical reader can see what the work looks like, and so a technical reader can see I know what each screen actually shows. The real captures to take from the running lab are listed at the end.
+> Everything in this folder is a lab I own and built. No real company, person or data is involved. It shows the consoles and decisions behind running a SOC, so a non-technical reader can see what the work looks like and a technical reader can see I know what each screen shows.
 
 ---
 
@@ -65,7 +65,7 @@ A finance user opened a malicious attachment. The macro ran, the attacker got ha
 
 ### Investigating It In Sentinel
 
-The incident graph is where a senior analyst reads a whole intrusion at once: the entities, how they connect, and the blast radius. This is the Sentinel incident, drawn.
+The incident graph is where a senior analyst reads a whole intrusion at once: the entities, how they connect, and the blast radius.
 
 ![Microsoft Sentinel incident investigation graph](images/sentinel-incident.svg)
 
@@ -208,27 +208,7 @@ The after-action from the capstone incident produced three concrete changes: two
 
 **This is one person in a lab, not a staffed SOC.** The roles in the war-room board are roles I played in sequence, not a team working at once. What transfers is knowing the roles exist, what each one owns, and how the decisions flow between them. The scale is simulated. The method is real.
 
-**The consoles are schematics.** Every tool screen in this folder is drawn, not captured, and labelled that way. They are accurate to what the real tools show, and they exist so a non-technical reader can see the work and a technical reader can see I know the tools. The genuine screenshots to take from the running lab are listed below.
-
 **The incident was authored.** I built the scenario, so I knew the attack. A real major incident is against something nobody scripted. The commander's method, the decisions, the order of containment and the communication are what carry over, and those are the same whether the attack was authored or not.
-
----
-
-## Real Captures To Take From The Running Lab
-
-The schematics above are stand-ins. These are the genuine screenshots worth taking from the live environment, cropped and with any real data blurred, to sit beside each drawing:
-
-```text
-sentinel-incident.png      the real incident graph, entities expanded
-defender-timeline.png      the device timeline for the patient-zero host
-navigator-coverage.png     the ATT&CK Navigator export, before and after
-soar-playbook.png          the Logic Apps designer for the containment flow
-opencti-actor.png          the actor page with linked TTPs and indicators
-metrics-dashboard.png      the live leadership dashboard
-sandbox-report.png         the detonation report from the sandbox
-```
-
-The two that matter most for a portfolio are `navigator-coverage.png`, because the before-and-after heatmap proves the purple team worked, and `metrics-dashboard.png`, because it proves you can speak to leadership, not just to a console.
 
 ---
 

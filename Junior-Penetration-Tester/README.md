@@ -144,7 +144,6 @@ Full detail, evidence and remediation for each is in [08-Findings-Report.md](08-
 | [07-Lateral-Movement.md](07-Lateral-Movement.md) | Pass the hash, WinRM, remote execution, post-exploitation |
 | [08-Findings-Report.md](08-Findings-Report.md) | **The deliverable.** 14 findings, evidence, remediation |
 | [09-Remediation-and-Retest.md](09-Remediation-and-Retest.md) | Fixes applied, and the retest that proves them |
-| [CAPTURE-LIST.md](CAPTURE-LIST.md) | Screenshot checklist |
 
 ---
 

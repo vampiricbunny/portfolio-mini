@@ -41,9 +41,8 @@ Every detection, placed against the tactic it covers.
 
 The standard tool for this. A free web application that renders the ATT&CK matrix as a heatmap you colour by your coverage.
 
-![ATT&CK Navigator coverage layer, drawn layout](images/attack-navigator-schematic.svg)
+![ATT&CK Navigator coverage layer](images/attack-navigator.svg)
 
-*Schematic illustration of the Navigator layout, not a screen capture.*
 
 ### Generating the layer from the rules
 

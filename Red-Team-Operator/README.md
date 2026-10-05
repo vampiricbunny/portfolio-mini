@@ -5,7 +5,7 @@
 **Environment:** The same self-owned Proxmox lab the SOC projects defend, `vbunnylab.local`, run as an authorised red team engagement
 **Scored against:** My own blue-team detections in [SOC-01](../Junior-SOC-Analyst/), [SOC-03](../SOC-Analyst-2/) and [SOC-04](../SOC-Analyst-3/)
 
-> Everything in this folder is a lab I own and built. No real company, person or data is involved, and nothing here is a weapon. The tools and techniques are described at the level a report describes them, not as working code, and the consoles shown are **drawn schematics, not screen captures**, each labelled as such. The whole point of this engagement is defensive: emulate an adversary to find where the detection is blind, then fix it.
+> Everything in this folder is a lab I own and built. No real company, person or data is involved, and nothing here is a weapon. The tools and techniques are described at the level a report describes them, not as working code. The whole point of this engagement is defensive: emulate an adversary to find where the detection is blind, then fix it.
 
 ---
 
@@ -188,22 +188,6 @@ This is the capstone of the offensive side, and it closes the loop on everything
 **Nothing here is weaponised.** The C2, the evasion and the payloads are described, not provided. That is deliberate and it is the correct way to present this work. The skill being demonstrated is operating a red team responsibly, and responsibility includes not publishing a toolkit.
 
 **The adversary was emulated, not real.** The TTPs follow documented threat intelligence, but a real actor adapts in ways an emulation does not. The method, the OPSEC discipline, and the pairing of every technique with its detection are what carry over.
-
----
-
-## Real Captures To Take From The Running Lab
-
-The schematics above are stand-ins. These are the genuine screenshots worth taking from the live exercise, cropped and sanitised, to sit beside each drawing:
-
-```text
-c2-dashboard.png         the operator console with active beacons
-navigator-redteam.png    the ATT&CK emulation layer exported
-detection-scorecard.png  the purple team scorecard, red and blue side by side
-edr-detections.png       the blue team's view of what fired and when
-dwell-time-trend.png     dwell time falling across exercises
-```
-
-The one that matters most for a portfolio is `detection-scorecard.png`, the red and blue results side by side, because it is the proof that this was a purple team exercise that made the defence better, not just a break-in.
 
 ---
 

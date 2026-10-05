@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 440" width="820" height="440" role="img" aria-labelledby="t d">
-  <title id="t">An Ansible run deploying config from the source of truth, schematic</title>
-  <desc id="d">A drawn terminal showing an Ansible playbook run that deploys network config from NetBox. The play gathers facts, renders config from the source of truth, and applies it to each device. The recap at the bottom shows the standby firewall had one change, correcting the drift, while the others report ok with zero changes, which proves they already matched intended state. Numbered callouts mark the drift correction and the zero-change hosts. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <title id="t">An Ansible run deploying config from the source of truth</title>
+  <desc id="d">A terminal showing an Ansible playbook run that deploys network config from NetBox. The play gathers facts, renders config from the source of truth, and applies it to each device. The recap at the bottom shows the standby firewall had one change, correcting the drift, while the others report ok with zero changes, which proves they already matched intended state. Numbered callouts mark the drift correction and the zero-change hosts.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
@@ -62,5 +62,5 @@
   <text class="clbl" x="620" y="362">proof: actual already</text>
   <text class="clbl" x="620" y="378">matched intended. No drift.</text>
 
-  <text class="foot" x="20" y="432">Schematic illustration of an Ansible run, not a screen capture. A run with zero changes is the healthiest output there is: the network is exactly as designed.</text>
+  <text class="foot" x="20" y="432"> A run with zero changes is the healthiest output there is: the network is exactly as designed.</text>
 </svg>

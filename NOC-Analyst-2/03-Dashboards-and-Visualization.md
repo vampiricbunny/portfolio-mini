@@ -34,9 +34,8 @@ A NOC needs different views for different moments. Build them as layers, from th
 
 The screen on the wall, or the first tab an analyst opens. It has one job: make a problem impossible to miss.
 
-![NOC wall dashboard, drawn layout](images/noc-wall-schematic.svg)
+![NOC wall dashboard](images/noc-wall.svg)
 
-*Schematic illustration of a NOC wall dashboard, not a screen capture.*
 
 ### What goes on it
 
@@ -79,7 +78,7 @@ One click down. For each service, the four golden signals, so the analyst can se
 
 ```text
 WEB01 service overview
-  Latency        a line graph, with the SLA threshold drawn on it
+  Latency        a line graph, with the SLA threshold marked on it
   Traffic        requests per second
   Errors         error rate, with baseline
   Saturation     CPU, memory, disk on one panel
@@ -187,7 +186,7 @@ If yes, the dashboard works. If they need to study it, it is too dense for its l
 - [ ] The wall is glanceable from across the room
 - [ ] You drill down by clicking, not by scrolling
 - [ ] Colour reserved for health, consistent everywhere
-- [ ] SLA thresholds drawn on the graphs
+- [ ] SLA thresholds marked on the graphs
 - [ ] Events annotated on the timeline
 - [ ] A single templated dashboard covers the whole fleet
 - [ ] Every dashboard passes the five-second test for its layer

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 530" width="780" height="530" role="img" aria-labelledby="t d">
   <title id="t">Advanced Security Settings dialog for an NTFS folder</title>
-  <desc id="d">Schematic of the Advanced Security Settings dialog for the Accounting folder. It shows the owner, a permission entries list containing SYSTEM, Administrators and the DL-Accounting-Modify group with their access levels and whether each is inherited, the Disable inheritance button, and the checkbox to replace permissions on child objects.</desc>
+  <desc id="d">The Advanced Security Settings dialog for the Accounting folder. It shows the owner, a permission entries list containing SYSTEM, Administrators and the DL-Accounting-Modify group with their access levels and whether each is inherited, the Disable inheritance button, and the checkbox to replace permissions on child objects.</desc>
 
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
@@ -153,5 +153,5 @@
   <text class="bnum" x="466" y="500" text-anchor="middle">3</text>
   <text class="legend" x="481" y="500">Effective Access answers "why can they open it"</text>
 
-  <text class="cap" x="20" y="522">Schematic illustration of the dialog layout - not a screen capture.</text>
+  <text class="cap" x="20" y="522"></text>
 </svg>

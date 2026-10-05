@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" width="860" height="480" role="img" aria-labelledby="t d">
-  <title id="t">Malware sandbox detonation report, schematic</title>
-  <desc id="d">A drawn malware sandbox report for the attachment. A verdict banner reads malicious with a high score. A left panel shows file details and the detection engines that flagged it. A behaviour panel lists the observed actions: spawns PowerShell, reads LSASS, beacons to a command-and-control address. A right panel lists the extracted indicators, a hash, a domain and an IP, with a note that these were fed back into the intel platform. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <title id="t">Malware sandbox detonation report</title>
+  <desc id="d">A malware sandbox report for the attachment. A verdict banner reads malicious with a high score. A left panel shows file details and the detection engines that flagged it. A behaviour panel lists the observed actions: spawns PowerShell, reads LSASS, beacons to a command-and-control address. A right panel lists the extracted indicators, a hash, a domain and an IP, with a note that these were fed back into the intel platform.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
@@ -72,5 +72,5 @@
   <text class="val" x="594" y="396">Incident to intel to</text>
   <text class="val" x="594" y="414">new rule, the SOC loop</text>
 
-  <text class="foot" x="20" y="464">Schematic illustration of a sandbox report, not a screen capture. Deep reverse engineering is escalated. This first pass answers the response in minutes.</text>
+  <text class="foot" x="20" y="464"> Deep reverse engineering is escalated. This first pass answers the response in minutes.</text>
 </svg>

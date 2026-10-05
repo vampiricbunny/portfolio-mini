@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 440" width="860" height="440" role="img" aria-labelledby="t d">
-  <title id="t">The detection console, what the blue team saw, schematic</title>
-  <desc id="d">A drawn endpoint detection console showing the blue team's view of the red team operation. A list of alerts in time order shows the phishing click logged, suspicious script execution alerted, LSASS access alerted with high confidence, and service creation on lateral movement alerted. Two later stages, data staging and archiving, show as not alerted, found only on hunt. A side panel summarises detected versus missed. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <title id="t">The detection console, what the blue team saw</title>
+  <desc id="d">An endpoint detection console showing the blue team's view of the red team operation. A list of alerts in time order shows the phishing click logged, suspicious script execution alerted, LSASS access alerted with high confidence, and service creation on lateral movement alerted. Two later stages, data staging and archiving, show as not alerted, found only on hunt. A side panel summarises detected versus missed.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .app { fill: #0f1117; stroke: #2b2f3a; stroke-width: 1.3; }
@@ -59,5 +59,5 @@
   <text class="lbl" x="628" y="262">Objective reached</text><text class="bad" x="808" y="262" text-anchor="end">yes</text>
   <text class="lbl" x="628" y="288">Impact caused</text><text class="good" x="808" y="288" text-anchor="end">none</text>
 
-  <text class="foot" x="20" y="430">Schematic illustration of the detection console, not a screen capture. Caught at credential access, well before the database. The four misses became new rules.</text>
+  <text class="foot" x="20" y="430"> Caught at credential access, well before the database. The four misses became new rules.</text>
 </svg>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 440" width="820" height="440" role="img" aria-labelledby="t d">
-  <title id="t">The capacity planning and forecast console, schematic</title>
-  <desc id="d">A drawn capacity planning view. A chart shows core uplink utilisation rising over months, with a solid line for measured usage and a dashed forecast line projecting forward. The forecast crosses the capacity ceiling at a marked date. A side panel lists the forecast for several links with the date each is projected to run out of headroom. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <title id="t">The capacity planning and forecast console</title>
+  <desc id="d">A capacity planning view. A chart shows core uplink utilisation rising over months, with a solid line for measured usage and a dashed forecast line projecting forward. The forecast crosses the capacity ceiling at a marked date. A side panel lists the forecast for several links with the date each is projected to run out of headroom.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .app { fill: #0d1117; stroke: #30363d; stroke-width: 1.3; }
@@ -66,5 +66,5 @@
   <text class="warn" x="604" y="320">Act on the core uplink</text>
   <text class="warn" x="604" y="338">now. Budget the upgrade.</text>
 
-  <text class="foot" x="20" y="424">Schematic illustration of a capacity view, not a screen capture. A forecast turns a trend into a date, and a date turns into a budget line before it turns into an outage.</text>
+  <text class="foot" x="20" y="424"> A forecast turns a trend into a date, and a date turns into a budget line before it turns into an outage.</text>
 </svg>

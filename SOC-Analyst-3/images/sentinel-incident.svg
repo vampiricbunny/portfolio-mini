@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" width="860" height="520" role="img" aria-labelledby="t d">
-  <title id="t">Microsoft Sentinel incident investigation graph, schematic</title>
-  <desc id="d">A drawn representation of the Microsoft Sentinel incident page. A left panel shows the incident title, high severity, status active, and the entities and tactics. The centre is the investigation graph, where the incident node connects to the patient-zero workstation, the finance user, a malicious file, a command-and-control IP, and a second workstation reached by lateral movement. A bottom strip shows the alert timeline. Numbered callouts point to the severity, the lateral movement edge, and the command-and-control connection. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <title id="t">Microsoft Sentinel incident investigation graph</title>
+  <desc id="d">The Microsoft Sentinel incident page. A left panel shows the incident title, high severity, status active, and the entities and tactics. The centre is the investigation graph, where the incident node connects to the patient-zero workstation, the finance user, a malicious file, a command-and-control IP, and a second workstation reached by lateral movement. A bottom strip shows the alert timeline. Numbered callouts point to the severity, the lateral movement edge, and the command-and-control connection.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .app { fill: #0b1b2b; stroke: #0a2540; stroke-width: 1.3; }
@@ -90,5 +90,5 @@
   <circle class="cc" cx="600" cy="225" r="11"/><text class="cnum" x="600" y="229">2</text>
   <circle class="cc" cx="680" cy="195" r="11"/><text class="cnum" x="680" y="199">3</text>
 
-  <text class="foot" x="20" y="498">1 high severity, auto-correlated from 5 alerts  2 the lateral movement edge, where it was caught  3 the C2 connection.  Schematic illustration of the Sentinel console, not a screen capture.</text>
+  <text class="foot" x="20" y="498">1 high severity, auto-correlated from 5 alerts  2 the lateral movement edge, where it was caught  3 the C2 connection.</text>
 </svg>

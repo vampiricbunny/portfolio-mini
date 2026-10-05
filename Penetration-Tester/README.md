@@ -165,7 +165,6 @@ Full detail, evidence and remediation for each is in [10-Findings-Report.md](10-
 | [09-Detection-and-OPSEC.md](09-Detection-and-OPSEC.md) | What was noisy, what the blue team caught, what went through |
 | [10-Findings-Report.md](10-Findings-Report.md) | **The deliverable.** Executive summary, 19 findings, remediation |
 | [11-Remediation-and-Retest.md](11-Remediation-and-Retest.md) | Fixes applied, and the retest that proves them |
-| [CAPTURE-LIST.md](CAPTURE-LIST.md) | Screenshot checklist for the running lab |
 
 ---
 

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 480" width="820" height="480" role="img" aria-labelledby="t d">
+  <title id="t">Terminal, recon output</title>
+  <desc id="d">A terminal window showing reconnaissance output. An nmap scan of the perimeter range returns three live hosts with their open ports, then a directory enumeration with ffuf against the web server finds the uploads and admin paths. Numbered callouts point to the three live hosts, the exposed VPN with no lockout, and the writable uploads directory.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+    .h1 { fill: #1f2328; font-size: 15px; font-weight: 600; }
+    .sub{ fill: #656d76; font-size: 11px; }
+    .term { fill: #0d1117; stroke: #30363d; stroke-width: 1.3; }
+    .bar  { fill: #161b22; stroke: #30363d; stroke-width: 1.2; }
+    .dot  { stroke-width: 0; }
+    .prompt { fill: #7ee787; font-size: 12px; }
+    .cmd  { fill: #e6edf3; font-size: 12px; }
+    .out  { fill: #c9d1d9; font-size: 11.5px; }
+    .hi   { fill: #ffa657; font-size: 11.5px; font-weight: 700; }
+    .ok   { fill: #7ee787; font-size: 11.5px; }
+    .dim  { fill: #8b949e; font-size: 11.5px; }
+    .cnum { fill: #ffffff; font-size: 11px; font-weight: 700; text-anchor: middle; }
+    .cc   { fill: #cf222e; stroke: #ffffff; stroke-width: 1.2; }
+    .clbl { fill: #a40e26; font-size: 10.5px; font-weight: 700; }
+    .foot { fill: #656d76; font-size: 10.5px; font-style: italic; }
+    @media (prefers-color-scheme: dark) {
+      .h1 { fill: #e6edf3; } .sub { fill: #8b949e; } .foot { fill: #8b949e; }
+      .clbl { fill: #ff7b72; }
+    }
+  </style>
+  <text class="h1"  x="20" y="26">Recon terminal</text>
+  <text class="sub" x="20" y="44">Service discovery and web content enumeration against the perimeter.</text>
+
+  <rect class="term" x="20" y="58" width="620" height="392" rx="7"/>
+  <rect class="bar"  x="20" y="58" width="620" height="26" rx="7"/>
+  <circle class="dot" cx="36" cy="71" r="4.5" fill="#ff5f56"/>
+  <circle class="dot" cx="52" cy="71" r="4.5" fill="#ffbd2e"/>
+  <circle class="dot" cx="68" cy="71" r="4.5" fill="#27c93f"/>
+  <text class="mono dim" x="300" y="75">kali@kali: ~</text>
+
+  <text class="mono prompt" x="34" y="108">$ <tspan class="cmd">nmap -sV 172.16.5.0/24</tspan></text>
+  <text class="mono ok"   x="34" y="130">Nmap scan report for 172.16.5.10  (VPN01)</text>
+  <text class="mono hi"   x="50" y="148">443/tcp  open  ssl/http   SSL VPN portal</text>
+  <text class="mono ok"   x="34" y="170">Nmap scan report for 172.16.5.20  (WWW01)</text>
+  <text class="mono out"  x="50" y="188">80/tcp   open  http       Storefront</text>
+  <text class="mono hi"   x="50" y="206">443/tcp  open  ssl/http   dev-shop, old build</text>
+  <text class="mono ok"   x="34" y="228">Nmap scan report for 172.16.5.30  (MAIL01)</text>
+  <text class="mono out"  x="50" y="246">443/tcp  open  ssl/http   Staff webmail</text>
+  <text class="mono dim"  x="34" y="268">3 hosts up, scanned in 22.9s</text>
+
+  <text class="mono prompt" x="34" y="300">$ <tspan class="cmd">ffuf -u https://dev-shop.harbor/FUZZ -w words.txt</tspan></text>
+  <text class="mono out"  x="34" y="322">/admin           [Status: 200]  login form</text>
+  <text class="mono hi"   x="34" y="340">/uploads         [Status: 200]  writable, browsable</text>
+  <text class="mono out"  x="34" y="358">/images          [Status: 200]</text>
+  <text class="mono dim"  x="34" y="376">:: Progress: [4614/4614]  ::  3 matches</text>
+  <text class="mono prompt" x="34" y="404">$ <tspan class="cmd">_</tspan></text>
+
+  <!-- callouts -->
+  <circle class="cc" cx="666" cy="139" r="12"/><text class="cnum" x="666" y="143">1</text>
+  <text class="clbl" x="684" y="136">Three live hosts,</text>
+  <text class="clbl" x="684" y="150">a small perimeter</text>
+
+  <circle class="cc" cx="666" cy="197" r="12"/><text class="cnum" x="666" y="201">2</text>
+  <text class="clbl" x="684" y="194">Old dev build,</text>
+  <text class="clbl" x="684" y="208">top of the list</text>
+
+  <circle class="cc" cx="666" cy="335" r="12"/><text class="cnum" x="666" y="339">3</text>
+  <text class="clbl" x="684" y="332">Writable uploads,</text>
+  <text class="clbl" x="684" y="346">the thread to pull</text>
+
+  <text class="foot" x="20" y="472"> Real command logs are retained with the engagement.</text>
+</svg>

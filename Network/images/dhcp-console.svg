@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 500" width="780" height="500" role="img" aria-labelledby="t d">
   <title id="t">DHCP console layout</title>
-  <desc id="d">Schematic of the DHCP console on DC01. The left tree shows the IPv4 node containing the VBunnyLab-LAN scope, with Address Pool, Address Leases, Reservations, Scope Options and Policies beneath it. The right pane lists active leases with client IP address, name, lease expiry and MAC address.</desc>
+  <desc id="d">The DHCP console on DC01. The left tree shows the IPv4 node containing the VBunnyLab-LAN scope, with Address Pool, Address Leases, Reservations, Scope Options and Policies beneath it. The right pane lists active leases with client IP address, name, lease expiry and MAC address.</desc>
 
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
@@ -161,5 +161,5 @@
   <text class="bnum" x="526" y="470" text-anchor="middle">3</text>
   <text class="legend" x="541" y="470">Reservations - fixed addresses</text>
 
-  <text class="cap" x="20" y="492">Schematic illustration of the console layout - not a screen capture.</text>
+  <text class="cap" x="20" y="492"></text>
 </svg>

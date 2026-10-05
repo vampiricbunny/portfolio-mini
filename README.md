@@ -55,7 +55,7 @@ Each project is a complete piece of work rather than a guide. A lab built, a pro
 
 **Target role: SOC Analyst / Incident Responder**
 
-The capstone. One ransomware intrusion run end to end and defended as the responder, with the real tool output at every stage from the phishing email to the clean recovery. Detected seven minutes after the first click, contained before it reached the fleet. Built as one deep illustrated README with 20 realistic dark-mode screenshots of the actual systems in operation.
+The capstone. One ransomware intrusion run end to end and defended as the responder, with the real tool output at every stage from the phishing email to the clean recovery. Detected seven minutes after the first click, contained before it reached the fleet. Built as one deep README with 20 realistic dark-mode screenshots of the actual systems in operation.
 
 | | |
 | --- | --- |
@@ -65,7 +65,7 @@ The capstone. One ransomware intrusion run end to end and defended as the respon
 | Tooling shown | Sentinel, Defender for Endpoint, Sysmon, Logic Apps SOAR, BloodHound, ATT&CK Navigator, Veeam |
 | Screenshots | 20, every stage of the lifecycle |
 
-Everything is in one [illustrated README](Ransomware-Incident-Response/). The three to look at: the [Sentinel incident](Ransomware-Incident-Response/images/siem-incident.png) that correlated nine alerts into one, the [Defender attack story](Ransomware-Incident-Response/images/edr-process-tree.png) tracing the process chain, and the [SOAR containment](Ransomware-Incident-Response/images/soar-containment.png) that isolated the host in 44 seconds.
+Everything is in one [README](Ransomware-Incident-Response/). The three to look at: the [Sentinel incident](Ransomware-Incident-Response/images/siem-incident.png) that correlated nine alerts into one, the [Defender attack story](Ransomware-Incident-Response/images/edr-process-tree.png) tracing the process chain, and the [SOAR containment](Ransomware-Incident-Response/images/soar-containment.png) that isolated the host in 44 seconds.
 
 ### [SOC-01 - Detection and Triage Lab](Junior-SOC-Analyst/)
 
@@ -122,7 +122,7 @@ The two files worth your time: the [hunt case files](SOC-Analyst-2/04-Hunt-Case-
 
 **Target role: SOC Analyst III / Tier 3 / SOC Lead**
 
-The top of the SOC ladder. Where you stop working incidents one at a time and run the function that handles all of them. A major incident commanded end to end, a purple team program, detection strategy, threat-intelligence-driven priorities, and reporting to leadership. Built as one illustrated README, heavy on drawn console schematics of the real tools so a non-technical reader can see the work.
+The top of the SOC ladder. Where you stop working incidents one at a time and run the function that handles all of them. A major incident commanded end to end, a purple team program, detection strategy, threat-intelligence-driven priorities, and reporting to leadership. Built as one detailed README, heavy on recreations of the real tools so a non-technical reader can see the work.
 
 | | |
 | --- | --- |
@@ -132,7 +132,7 @@ The top of the SOC ladder. Where you stop working incidents one at a time and ru
 | Tooling shown | Sentinel, Defender XDR, OpenCTI, Logic Apps SOAR, ATT&CK Navigator |
 | Audience | Written for leadership, with a metrics dashboard and maturity model |
 
-Everything is in one [illustrated README](SOC-Analyst-3/) with 16 diagrams, 8 of them drawn consoles of the actual tools. The two to look at: the [Sentinel incident graph](SOC-Analyst-3/images/sentinel-incident.svg) for how a whole intrusion is read at once, and the [ATT&CK coverage heatmap](SOC-Analyst-3/images/attack-navigator.svg) for what the purple team found and fixed.
+Everything is in one [README](SOC-Analyst-3/) with 16 diagrams, 8 of them recreations of the actual tools. The two to look at: the [Sentinel incident graph](SOC-Analyst-3/images/sentinel-incident.svg) for how a whole intrusion is read at once, and the [ATT&CK coverage heatmap](SOC-Analyst-3/images/attack-navigator.svg) for what the purple team found and fixed.
 
 ### [NOC-02 - Network Monitoring and Performance Engineering](NOC-Analyst-2/)
 
@@ -154,7 +154,7 @@ The two files worth your time: [alerting and noise reduction](NOC-Analyst-2/04-A
 
 **Target role: NOC Analyst III / Tier 3 / Network Reliability Lead**
 
-The top of the NOC ladder. Where you stop watching the board, stop just building the monitoring, and run the reliability of the whole network. A major outage commanded end to end, service-level objectives and an error budget, the network built from a single source of truth so config drift cannot recur, and uptime reported to leadership in money. One illustrated README, heavy on drawn consoles of the real tools.
+The top of the NOC ladder. Where you stop watching the board, stop just building the monitoring, and run the reliability of the whole network. A major outage commanded end to end, service-level objectives and an error budget, the network built from a single source of truth so config drift cannot recur, and uptime reported to leadership in money. One README, heavy on recreations of the real tools.
 
 | | |
 | --- | --- |
@@ -164,7 +164,7 @@ The top of the NOC ladder. Where you stop watching the board, stop just building
 | Tooling shown | LibreNMS, Prometheus, Grafana, Alertmanager, NetBox, Ansible |
 | Audience | Written for leadership, with an availability trend and maturity model |
 
-Everything is in one [illustrated README](NOC-Analyst-3/) with 16 diagrams, 8 of them drawn consoles of the actual tools. The two to look at: the [Grafana SLO dashboard](NOC-Analyst-3/images/grafana-slo-dashboard.svg) for thinking in objectives not uptime, and the [Ansible run](NOC-Analyst-3/images/ansible-run.svg) where zero changes proves drift is dead.
+Everything is in one [README](NOC-Analyst-3/) with 16 diagrams, 8 of them recreations of the actual tools. The two to look at: the [Grafana SLO dashboard](NOC-Analyst-3/images/grafana-slo-dashboard.svg) for thinking in objectives not uptime, and the [Ansible run](NOC-Analyst-3/images/ansible-run.svg) where zero changes proves drift is dead.
 
 ---
 
@@ -205,7 +205,7 @@ The deliverable is the [findings report](Penetration-Tester/10-Findings-Report.m
 
 **Target role: Senior Penetration Tester / Red Team Operator / Red Team Lead**
 
-The top of the offensive ladder, and the capstone that ties the whole portfolio together. An authorised red team operation emulating a ransomware affiliate against the same lab the SOC projects defend, scored against the blue-team detections I built myself. Nothing weaponised: methodology at report level, with the C2 and beacon work drawn as real Kali terminal windows.
+The top of the offensive ladder, and the capstone that ties the whole portfolio together. An authorised red team operation emulating a ransomware affiliate against the same lab the SOC projects defend, scored against the blue-team detections I built myself. Nothing weaponised: methodology at report level, with the C2 and beacon work shown as real Kali terminal windows.
 
 | | |
 | --- | --- |
@@ -215,7 +215,7 @@ The top of the offensive ladder, and the capstone that ties the whole portfolio 
 | The point | The 4 gaps became 4 new detections, dwell time falling each exercise |
 | Tie-in | Red team scored against the blue team from SOC-01, SOC-03 and SOC-04 |
 
-Everything is in one [illustrated README](Red-Team-Operator/) with 17 diagrams, including Kali terminal consoles for the [C2 operator](Red-Team-Operator/images/c2-dashboard.svg) and [beacon](Red-Team-Operator/images/beacon-console.svg) work. The one to look at is the [detection scorecard](Red-Team-Operator/images/detection-scorecard.svg): red and blue side by side, proving this was a purple team exercise that made the defence better.
+Everything is in one [README](Red-Team-Operator/) with 17 diagrams, including Kali terminal consoles for the [C2 operator](Red-Team-Operator/images/c2-dashboard.svg) and [beacon](Red-Team-Operator/images/beacon-console.svg) work. The one to look at is the [detection scorecard](Red-Team-Operator/images/detection-scorecard.svg): red and blue side by side, proving this was a purple team exercise that made the defence better.
 
 ---
 
@@ -233,13 +233,13 @@ The business side of security. The role that proves, to an auditor, an insurer o
 | Third-party | Vendor risk rated by access and evidence |
 | Audience | A board, with a posture dashboard and compliance trend |
 
-One [illustrated README](GRC-Analyst/) with 8 realistic artefacts rendered as images: the [risk register](GRC-Analyst/images/risk-register.png), the [Essential Eight assessment](GRC-Analyst/images/essential-eight.png) and a [leadership posture dashboard](GRC-Analyst/images/compliance-dashboard.png) are the ones to look at.
+One [README](GRC-Analyst/) with 8 realistic artefacts rendered as images: the [risk register](GRC-Analyst/images/risk-register.png), the [Essential Eight assessment](GRC-Analyst/images/essential-eight.png) and a [leadership posture dashboard](GRC-Analyst/images/compliance-dashboard.png) are the ones to look at.
 
 ---
 
 ## IT Support, Tier 1 to Tier 3
 
-The service desk ladder, one project per tier. Each is an illustrated README with realistic images of the actual tools.
+The service desk ladder, one project per tier. Each is a README with realistic images of the actual tools.
 
 ### [HD-01 - Service Desk, Tier 1](Help-Desk-1/)
 
@@ -461,9 +461,7 @@ This library is being rewritten and re-validated section by section, working out
 All artwork is authored as SVG, so it stays readable at any zoom and renders correctly in both light and dark themes. Two kinds appear here:
 
 - **Concept diagrams** - permission evaluation, Group Policy precedence, DNS resolution order, the DORA exchange, lab topology.
-- **Console schematics** - accurate layouts of the MMC consoles with numbered callouts tied to the steps in the document. These are drawn illustrations, labelled as such, and are deliberately not presented as screen captures.
-
-Real screenshots are taken from my own lab as each section is re-validated. [LAB-CAPTURE-LIST.md](LAB-CAPTURE-LIST.md) tracks what is still outstanding.
+- **Console views** - accurate layouts of the MMC consoles with numbered callouts tied to the steps in the document.
 
 ---
 

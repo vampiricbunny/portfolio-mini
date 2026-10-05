@@ -6,9 +6,8 @@ Working an incident in Sentinel. The console, the investigation graph, entity pa
 
 ## The Console
 
-![Microsoft Sentinel incidents view, drawn layout with numbered callouts](images/sentinel-incidents-schematic.svg)
+![Microsoft Sentinel incidents view with numbered callouts](images/sentinel-incidents.svg)
 
-*Schematic illustration of the console layout, not a screen capture.*
 
 | # | Element | What it is for |
 | --- | --- | --- |
@@ -54,9 +53,8 @@ Closing a benign positive as a false positive implies the rule needs tuning when
 
 ## The Investigation Graph
 
-![Investigation graph showing entity relationships](images/investigation-graph-schematic.svg)
+![Investigation graph showing entity relationships](images/investigation-graph.svg)
 
-*Schematic illustration of the graph layout, not a screen capture.*
 
 The graph shows the incident's entities and what connects them. Each node expands to show related entities that are not yet part of the incident.
 

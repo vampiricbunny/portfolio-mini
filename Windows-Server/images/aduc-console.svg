@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 500" width="780" height="500" role="img" aria-labelledby="t d">
   <title id="t">Active Directory Users and Computers console layout</title>
-  <desc id="d">Schematic of the ADUC console. A left navigation tree shows the domain vbunnylab.local with its built-in containers (Builtin, Computers, Domain Controllers, Users) and the custom VBunnyLab organisational unit selected, containing Accounting, HR, IT, Servers and Workstations. The right pane lists the contents of the selected OU with Name, Type and Description columns.</desc>
+  <desc id="d">The ADUC console. A left navigation tree shows the domain vbunnylab.local with its built-in containers (Builtin, Computers, Domain Controllers, Users) and the custom VBunnyLab organisational unit selected, containing Accounting, HR, IT, Servers and Workstations. The right pane lists the contents of the selected OU with Name, Type and Description columns.</desc>
 
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
@@ -178,5 +178,5 @@
   <text class="bnum" x="470" y="466" text-anchor="middle">3</text>
   <text class="legend" x="485" y="466">Contents of the selected OU</text>
 
-  <text class="cap" x="20" y="490">Schematic illustration of the console layout - not a screen capture.</text>
+  <text class="cap" x="20" y="490"></text>
 </svg>

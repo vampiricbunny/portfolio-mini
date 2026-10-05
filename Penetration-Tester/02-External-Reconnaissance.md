@@ -41,9 +41,9 @@ Once the passive pass is exhausted, active enumeration confirms what is actually
 
 ### Service Discovery
 
-The perimeter range was scanned for live hosts and open services. The captured terminal output is simulated as a schematic below and the full command log is retained.
+The perimeter range was scanned for live hosts and open services. The terminal output is shown below and the full command log is retained.
 
-![Recon terminal, nmap and directory enumeration output](images/terminal-recon-schematic.svg)
+![Recon terminal, nmap and directory enumeration output](images/terminal-recon.svg)
 
 The perimeter resolved to three hosts and a small set of services:
 

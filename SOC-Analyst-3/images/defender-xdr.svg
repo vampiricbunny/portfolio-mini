@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 500" width="860" height="500" role="img" aria-labelledby="t d">
-  <title id="t">Defender XDR device timeline, schematic</title>
-  <desc id="d">A drawn representation of the Microsoft Defender XDR device timeline for the patient-zero workstation. A header shows the device name, risk level high, and exposure. A vertical process tree shows Excel spawning a scripting host, which spawns PowerShell, which accesses LSASS and makes a network connection. A right panel shows the automated investigation verdict and recommended actions. Numbered callouts point to the suspicious parent-child chain, the credential theft, and the isolate-device action. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <title id="t">Defender XDR device timeline</title>
+  <desc id="d">The Microsoft Defender XDR device timeline for the patient-zero workstation. A header shows the device name, risk level high, and exposure. A vertical process tree shows Excel spawning a scripting host, which spawns PowerShell, which accesses LSASS and makes a network connection. A right panel shows the automated investigation verdict and recommended actions. Numbered callouts point to the suspicious parent-child chain, the credential theft, and the isolate-device action.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
@@ -77,5 +77,5 @@
   <circle class="cc" cx="366" cy="346" r="11"/><text class="cnum" x="366" y="350">2</text>
   <circle class="cc" cx="760" cy="325" r="11"/><text class="cnum" x="760" y="329">3</text>
 
-  <text class="foot" x="20" y="484">1 Office spawning a script host is the tell  2 the credential theft from memory  3 containment, one approval away.  Schematic illustration of the Defender console, not a screen capture.</text>
+  <text class="foot" x="20" y="484">1 Office spawning a script host is the tell  2 the credential theft from memory  3 containment, one approval away.</text>
 </svg>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 360" width="820" height="360" role="img" aria-labelledby="t d">
   <title id="t">Availability holding above target while mean time to restore falls</title>
-  <desc id="d">A line chart over four quarters. Availability stays above the 99.9 percent objective line, drawn as a dashed threshold. A second line shows mean time to restore falling from about 55 minutes to 22 minutes. The two together tell the story: reliability held and recovery got faster. A note says the headline is the trend, not any single number.</desc>
+  <desc id="d">A line chart over four quarters. Availability stays above the 99.9 percent objective line, shown as a dashed threshold. A second line shows mean time to restore falling from about 55 minutes to 22 minutes. The two together tell the story: reliability held and recovery got faster. A note says the headline is the trend, not any single number.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .h1 { fill: #1f2328; font-size: 16px; font-weight: 600; }

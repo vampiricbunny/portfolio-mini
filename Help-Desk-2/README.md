@@ -5,7 +5,7 @@
 **Environment:** Internal IT and small-client support for `vbunnylab`
 **Tools:** Microsoft Intune, PDQ Deploy, Microsoft 365 admin, Group Policy, Entra and Active Directory
 
-> Everything here is a lab I built. The devices, users and data are fictional. The images are **realistic illustrations of the consoles a Tier 2 analyst uses, labelled as illustrations, not screen captures.** Swap in your own real exports to make them evidence.
+> Everything here is a lab I built. The devices, users and data are fictional. It shows the consoles and workflows a Tier 2 analyst works in.
 
 ---
 
@@ -100,8 +100,6 @@ Device compliance is the number that predicts the others. A fleet that is patche
 ## Honest Notes
 
 **The devices and tenant are fictional.** The consoles, the workflows and the way a deployment or escalation is handled are exactly the real job. What a lab cannot reproduce is the scale and the mess of a real estate that has grown over years, with exceptions and legacy nobody documented.
-
-**The images are illustrations**, labelled as such. Your own exports from a real Intune tenant, PDQ console and Microsoft 365 admin center are the genuine evidence.
 
 Below this tier, [HD-01](../Help-Desk-1/) handles first contact. Above it, [HD-03](../Help-Desk-3/) handles root cause and automation.
 

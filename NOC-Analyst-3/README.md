@@ -5,7 +5,7 @@
 **Environment:** The same self-owned Proxmox lab as [NOC-02](../NOC-Analyst-2/), `noclab.local`, `10.60.0.0/24`, now run as a reliability function
 **Stack:** LibreNMS, Prometheus, Grafana, Alertmanager, NetBox, Ansible, a public status page
 
-> Everything in this folder is a lab I own and built. No real company, network or data is involved. The consoles shown are **drawn schematics of the real tools, not screen captures**, each labelled as such. They are here so a non-technical reader can see what the work looks like, and so a technical reader can see I know what each screen actually shows. The real captures to take from the running lab are listed at the end.
+> Everything in this folder is a lab I own and built. No real company, network or data is involved. It shows the consoles and decisions behind running network reliability, so a non-technical reader can see what the work looks like and a technical reader can see I know what each screen shows.
 
 ---
 
@@ -202,24 +202,6 @@ The after-action from the capstone outage produced three concrete changes: the s
 **The redundancy is virtualised.** The failover, the standby path and the carrier links are all modelled on one Proxmox host. A real dual-carrier, dual-hardware failover behaves in ways a lab cannot fully reproduce. The config-drift root cause and its fix, however, are exactly the same in the real world.
 
 **The outage was authored.** I built the scenario, so I knew the cause. A real major outage is against something nobody scripted. The commander's method, the restore-before-diagnose decision, and the communication are what carry over, and those hold whether the outage was authored or not.
-
----
-
-## Real Captures To Take From The Running Lab
-
-The schematics above are stand-ins. These are the genuine screenshots worth taking from the live environment, cropped and with any real addresses blurred, to sit beside each drawing:
-
-```text
-grafana-slo.png          the real SLO dashboard with the error budget
-alertmanager.png         the routing tree and an active alert
-netbox-device.png        a device page with its intended config
-ansible-run.png          a real playbook run, idempotent, no changes
-status-page.png          the status page during a real incident
-availability-trend.png   the live uptime and MTTR trend
-librenms-map.png         the auto-discovered network map
-```
-
-The two that matter most for a portfolio are `grafana-slo.png`, because the error budget proves you think in objectives, not uptime, and `ansible-run.png` showing a run with zero changes, because that is the proof that intended state equals actual state and drift is dead.
 
 ---
 

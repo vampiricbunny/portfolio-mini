@@ -62,11 +62,9 @@ Full build, including the cost controls that keep it under 5 dollars a month, is
 
 ## The Sentinel Console
 
-![Microsoft Sentinel incidents view, drawn layout with numbered callouts](images/sentinel-incidents-schematic.svg)
+![Microsoft Sentinel incidents view with numbered callouts](images/sentinel-incidents.svg)
 
-*Schematic illustration of the console layout, not a screen capture.*
-
-The numbered callouts map to the triage steps in [04-Incident-Investigation.md](04-Incident-Investigation.md). Real captures from the lab are tracked in [CAPTURE-LIST.md](CAPTURE-LIST.md).
+The numbered callouts map to the triage steps in [04-Incident-Investigation.md](04-Incident-Investigation.md).
 
 ---
 
@@ -101,7 +99,6 @@ The cost number is the one I would talk about in an interview. A SOC 1 analyst w
 | [07-Shift-Operations.md](07-Shift-Operations.md) | Queue management, handover, SLA, the metrics that matter |
 | [08-Investigation-Case-Files.md](08-Investigation-Case-Files.md) | Six investigations worked end to end |
 | [09-Workbooks-and-Reporting.md](09-Workbooks-and-Reporting.md) | Dashboards for the SOC and for management |
-| [CAPTURE-LIST.md](CAPTURE-LIST.md) | Screenshot checklist |
 
 ---
 

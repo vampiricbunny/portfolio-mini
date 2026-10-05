@@ -112,7 +112,6 @@ Coverage measured honestly, including where it is thin.
 | [07-Malware-Triage.md](07-Malware-Triage.md) | Static and dynamic analysis, safely |
 | [08-Threat-Intelligence-Operations.md](08-Threat-Intelligence-Operations.md) | Turning intelligence into detections |
 | [09-Metrics-and-Maturity.md](09-Metrics-and-Maturity.md) | Measuring the program, and where it stands |
-| [CAPTURE-LIST.md](CAPTURE-LIST.md) | Screenshot checklist |
 
 ---
 

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 540" width="820" height="540" role="img" aria-labelledby="t d">
-  <title id="t">A SOAR playbook in the Logic Apps designer, schematic</title>
-  <desc id="d">A drawn representation of the Logic Apps designer for the containment playbook. A vertical flow of connected step cards: a trigger when a high-severity incident is created, enrich the entities with intel, a condition on whether the verdict is malicious, then a human approval step, and only after approval the two destructive actions, isolate the device and disable the account, followed by notify the channel. Numbered callouts mark the enrichment, the approval gate, and the destructive actions behind it. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <title id="t">A SOAR playbook in the Logic Apps designer</title>
+  <desc id="d">The Logic Apps designer for the containment playbook. A vertical flow of connected step cards: a trigger when a high-severity incident is created, enrich the entities with intel, a condition on whether the verdict is malicious, then a human approval step, and only after approval the two destructive actions, isolate the device and disable the account, followed by notify the channel. Numbered callouts mark the enrichment, the approval gate, and the destructive actions behind it.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .app { fill: #eef1f5; stroke: #c3ccd6; stroke-width: 1.3; }
@@ -92,5 +92,5 @@
   <text class="clbl" x="548" y="440">the gate, never</text>
   <text class="clbl" x="548" y="456">before it.</text>
 
-  <text class="foot" x="20" y="516">Schematic illustration of the Logic Apps designer, not a screen capture. A SOC that automates judgement makes confident mistakes at machine speed.</text>
+  <text class="foot" x="20" y="516"> A SOC that automates judgement makes confident mistakes at machine speed.</text>
 </svg>

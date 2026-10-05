@@ -121,14 +121,6 @@ The two techniques that were not detected were domain enumeration over LDAP and 
 
 ---
 
-## Screenshots
-
-Console screenshots are captured from this lab as each section is re-validated. [CAPTURE-LIST.md](CAPTURE-LIST.md) tracks what is outstanding.
-
-The diagrams in this folder are authored SVG. The console schematics are drawn layouts with numbered callouts tied to the steps in the text, and they are labelled as illustrations rather than presented as screen captures.
-
----
-
 ## Honest Notes
 
 This is a lab. It is five machines, not five thousand, and a lab does not reproduce the thing that actually makes SOC work hard, which is volume and ambiguity at scale.
@@ -151,4 +143,3 @@ If you are reviewing this as a hiring manager, [06-Alert-Triage-Log.md](06-Alert
 | [06-Alert-Triage-Log.md](06-Alert-Triage-Log.md) | 12 alerts worked end to end |
 | [07-Incident-Report.md](07-Incident-Report.md) | Full incident writeup |
 | [08-Metrics-and-Coverage.md](08-Metrics-and-Coverage.md) | Coverage, tuning results, gap list |
-| [CAPTURE-LIST.md](CAPTURE-LIST.md) | Screenshot checklist |

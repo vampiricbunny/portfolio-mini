@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 500" width="820" height="500" role="img" aria-labelledby="t d">
-  <title id="t">The C2 operator console, a Kali terminal, schematic</title>
-  <desc id="d">A drawn Kali Linux terminal window running an open-source command-and-control client. The two-line Kali zsh prompt is shown. The operator lists active sessions, showing two beacons from compromised lab hosts with their user, hostname, last check-in and a long sleep interval. The operator then selects one session to interact with. Numbered callouts point to the long low-and-slow sleep, and the session selection. A footer states this is a schematic illustration and not a screen capture, and that no payload code is shown.</desc>
+  <title id="t">The C2 operator console, a Kali terminal</title>
+  <desc id="d">A Kali Linux terminal window running an open-source command-and-control client. The two-line Kali zsh prompt is shown. The operator lists active sessions, showing two beacons from compromised lab hosts with their user, hostname, last check-in and a long sleep interval. The operator then selects one session to interact with. Numbered callouts point to the long low-and-slow sleep, and the session selection.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
@@ -68,5 +68,5 @@
   <text class="clbl" x="662" y="370">2  Select a beacon</text>
   <text class="clbl" x="662" y="386">to interact with.</text>
 
-  <text class="foot" x="20" y="494">Schematic illustration of a C2 client, not a screen capture. No payload or exploit code is shown. The tool is an open-source red team framework.</text>
+  <text class="foot" x="20" y="494"> No payload or exploit code is shown. The tool is an open-source red team framework.</text>
 </svg>

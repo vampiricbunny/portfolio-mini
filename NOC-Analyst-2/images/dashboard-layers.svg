@@ -43,7 +43,7 @@
   <text class="q" x="316" y="152">Which service, how bad?</text>
   <text class="d" x="316" y="178">The four golden signals</text>
   <text class="d" x="316" y="196">per service.</text>
-  <text class="d" x="316" y="214">SLA drawn on the graph.</text>
+  <text class="d" x="316" y="214">SLA marked on the graph.</text>
 
   <line class="f" x1="520" y1="170" x2="558" y2="170"/>
   <text class="a" x="522" y="162">click</text>

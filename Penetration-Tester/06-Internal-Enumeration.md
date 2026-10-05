@@ -50,7 +50,7 @@ A single domain credential, however unprivileged, unlocks the most valuable tool
 
 The collector was run through the tunnel as the low-privileged user, and the data was loaded into BloodHound on Kali.
 
-![BloodHound attack path to Domain Admin](images/bloodhound-schematic.svg)
+![BloodHound attack path to Domain Admin](images/bloodhound.svg)
 
 BloodHound turned a list of accounts and machines into a graph, and the graph made two paths to Domain Admin obvious.
 

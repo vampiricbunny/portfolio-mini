@@ -194,7 +194,6 @@ Load the output into the BloodHound interface and run the built-in queries:
 
 ![BloodHound-style attack path graph](images/bloodhound-path.svg)
 
-*Drawn illustration of an attack path graph, not a screen capture.*
 
 ---
 

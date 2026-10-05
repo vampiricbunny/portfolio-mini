@@ -40,7 +40,7 @@ Using the low-privileged domain user, a certificate was requested from the vulne
 
 That certificate was then used to authenticate to the domain controller and retrieve the domain administrator's credential material. The account was now controlled.
 
-![Certipy requesting the certificate and secretsdump running](images/terminal-adcs-schematic.svg)
+![Certipy requesting the certificate and secretsdump running](images/terminal-adcs.svg)
 
 **This is finding PT2-02, the second critical.** AD CS abuse is dangerous precisely because it looks legitimate. A certificate was requested and issued through the normal process. There was no exploit of a software bug, no cracked password, nothing that a signature-based tool would flag. The certificate authority was asked to do something it was configured to allow, and it complied. That is why it is often missed, and why [09](09-Detection-and-OPSEC.md) records that Harbor had no auditing on it at all.
 

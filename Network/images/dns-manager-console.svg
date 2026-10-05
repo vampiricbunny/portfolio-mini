@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 500" width="780" height="500" role="img" aria-labelledby="t d">
   <title id="t">DNS Manager console layout</title>
-  <desc id="d">Schematic of the DNS Manager console on DC01. The left tree shows Forward Lookup Zones containing the _msdcs.vbunnylab.local and vbunnylab.local zones, and Reverse Lookup Zones containing 10.10.10.in-addr.arpa. The right pane lists the records in the selected forward zone: SOA, NS and several Host A records mapping names to addresses in the 10.10.10.0/24 range.</desc>
+  <desc id="d">The DNS Manager console on DC01. The left tree shows Forward Lookup Zones containing the _msdcs.vbunnylab.local and vbunnylab.local zones, and Reverse Lookup Zones containing 10.10.10.in-addr.arpa. The right pane lists the records in the selected forward zone: SOA, NS and several Host A records mapping names to addresses in the 10.10.10.0/24 range.</desc>
 
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
@@ -156,5 +156,5 @@
   <text class="bnum" x="606" y="470" text-anchor="middle">3</text>
   <text class="legend" x="621" y="470">Zone records</text>
 
-  <text class="cap" x="20" y="492">Schematic illustration of the console layout - not a screen capture.</text>
+  <text class="cap" x="20" y="492"></text>
 </svg>

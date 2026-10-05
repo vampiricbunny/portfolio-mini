@@ -25,9 +25,9 @@ Four findings, worked in order, each one worse than the last, ending in code exe
 
 The whole application test ran through Burp Suite as an intercepting proxy. Every request the browser made passed through Burp, where it could be read, modified and replayed. That is the core loop of web testing: see the real request, change one thing, send it again, watch what changes in the response.
 
-![Burp Suite intercepting the upload request](images/burp-schematic.svg)
+![Burp Suite intercepting the upload request](images/burp.svg)
 
-The schematic above is the file-upload request caught in Burp's Repeater, with the filename and content type being changed to smuggle a script past a check that only looked at the form field. That single request is the whole of finding PT2-01, and it is worth showing because it is what web exploitation actually looks like: not a tool firing on its own, but a person reading one request and understanding why the change works.
+The image above is the file-upload request caught in Burp's Repeater, with the filename and content type being changed to smuggle a script past a check that only looked at the form field. That single request is the whole of finding PT2-01, and it is worth showing because it is what web exploitation actually looks like: not a tool firing on its own, but a person reading one request and understanding why the change works.
 
 ---
 
@@ -71,7 +71,7 @@ The bypass was the oldest one in web testing. A script file was sent with the co
 
 Requesting the uploaded file executed it. That is code execution on `WWW01`, as the web server's user, from an ordinary customer account.
 
-![Burp Suite intercepting the upload request](images/burp-schematic.svg)
+![Burp Suite intercepting the upload request](images/burp.svg)
 
 **This is finding PT2-01, the critical that starts the attack path.** The framework running the app was two versions behind and its own advisories described exactly this class of handler weakness, which is finding PT2-16. A current framework would not have made the mistake easy.
 

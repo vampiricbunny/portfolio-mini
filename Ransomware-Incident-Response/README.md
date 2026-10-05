@@ -4,7 +4,7 @@ A single intrusion, run end to end and defended as the incident responder. An em
 
 This is the flagship project in the portfolio. It is built to show the whole lifecycle in one place, with the real tool output at every stage, so a reader can see not just that the attack was stopped but exactly how.
 
-> **This was an authorised exercise in my own lab.** The company, the users and the attacker are fictional (vbunnylab / Vbunny Media). Every image below is a drawn illustration of the console I worked in, labelled as such, not a screen capture of a real breach. The methodology, the detections and the decisions are the real part. See [Make these real](#make-these-real) for how to swap in genuine captures.
+> **This was an authorised exercise in my own lab.** The company, the users and the attacker are fictional (vbunnylab / Vbunny Media). The methodology, the detections and the decisions are the real part.
 
 ---
 
@@ -151,19 +151,6 @@ Finally, every indicator went to the block lists and threat intel feed, and the 
 - **Offensive understanding.** The attack path mapped in BloodHound, the kill chain read from the attacker's side, so the defence is informed by how the attack actually works.
 - **Recovery discipline.** Immutable, tested backups, rebuild over restore, and a validation checklist before all-clear.
 - **Communication.** An outcome summary a manager can read in thirty seconds, sitting on top of the technical detail an engineer needs.
-
-## Make these real
-
-Every image here is a drawn illustration, labelled as one. To turn this into a portfolio backed by genuine captures, run the same exercise in a lab and take real screenshots of:
-
-- the phishing email in Outlook and the Defender attack story
-- the Sysmon event and the Sentinel incident with its entity graph
-- the KQL hunt and its results
-- the credential-theft alert and the SOAR playbook run
-- the BloodHound path and the Defender device timeline
-- the canary alert, the Veeam restore and the ATT&CK Navigator layer
-
-Atomic Red Team and Caldera can safely generate most of this activity in a lab. I kept the illustrations honest on purpose: a fabricated screenshot passed off as real is a liability in a job hunt, while a clearly labelled mockup of work you can actually do is an asset.
 
 ## Tools used
 

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 400" width="860" height="400" role="img" aria-labelledby="t d">
-  <title id="t">The ATT&amp;CK coverage of the emulation, schematic</title>
-  <desc id="d">A drawn MITRE ATT&amp;CK Navigator layer for the red team emulation. Columns are tactics: Initial Access, Execution, Credential Access, Lateral Movement, Collection. Each cell is a technique the adversary used, coloured by whether the defence detected it. Green detected, red not detected. Most are green, four are red, marking the gaps the operation found. A legend explains the colours. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <title id="t">The ATT&amp;CK coverage of the emulation</title>
+  <desc id="d">A MITRE ATT&amp;CK Navigator layer for the red team emulation. Columns are tactics: Initial Access, Execution, Credential Access, Lateral Movement, Collection. Each cell is a technique the adversary used, coloured by whether the defence detected it. Green detected, red not detected. Most are green, four are red, marking the gaps the operation found. A legend explains the colours.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .app { fill: #1e1e1e; stroke: #000; stroke-width: 1.2; }
@@ -58,5 +58,5 @@
   <rect class="green" x="40" y="344" width="18" height="14"/><text class="lg" x="64" y="356">detected by the defence</text>
   <rect class="red"   x="260" y="344" width="18" height="14"/><text class="lg" x="284" y="356">not detected, a gap the operation found</text>
 
-  <text class="foot" x="20" y="384">Schematic illustration of the ATT&amp;CK Navigator, not a screen capture. The four red cells became four new detections after the exercise.</text>
+  <text class="foot" x="20" y="384"> The four red cells became four new detections after the exercise.</text>
 </svg>

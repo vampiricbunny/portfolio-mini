@@ -5,7 +5,7 @@
 **Environment:** Internal IT and systems administration for `vbunnylab`
 **Tools:** PowerShell, Active Directory and Windows Server, an RMM platform, IT Glue documentation
 
-> Everything here is a lab I built. The systems, users and data are fictional. The images are **realistic illustrations of the tools a Tier 3 engineer uses, including a Windows terminal with real commands, labelled as illustrations, not screen captures.** Swap in your own real captures to make them evidence.
+> Everything here is a lab I built. The systems, users and data are fictional. It shows the tools a Tier 3 engineer works in, including a Windows terminal with real commands.
 
 ---
 
@@ -101,7 +101,7 @@ Hours automated and repeat incidents eliminated are the two that tell the story.
 
 **The systems and data are fictional.** The scripts, the consoles, the administration and the root-cause method are exactly the real job. What a lab cannot give you is the weight of a production outage at 2am with real people waiting, which is where a Tier 3 engineer earns their keep.
 
-**The images are illustrations**, labelled as such. The PowerShell shown is realistic and non-destructive, and real runs from your own environment are the genuine evidence.
+The PowerShell shown is realistic and non-destructive.
 
 This is the top of the support ladder in this portfolio. The natural next step from here is a dedicated systems administration or cloud role, which is where several of the other projects here already point.
 

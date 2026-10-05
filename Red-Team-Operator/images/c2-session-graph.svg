@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 420" width="820" height="420" role="img" aria-labelledby="t d">
-  <title id="t">The C2 session graph across the network, schematic</title>
-  <desc id="d">A drawn command-and-control session graph. The team server links through a redirector to the first beacon on the finance workstation. From there a link shows lateral movement to a beacon on the application server, and a pivot deeper toward the database server on the protected segment. Each beacon node shows its host and sleep. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <title id="t">The C2 session graph across the network</title>
+  <desc id="d">A command-and-control session graph. The team server links through a redirector to the first beacon on the finance workstation. From there a link shows lateral movement to a beacon on the application server, and a pivot deeper toward the database server on the protected segment. Each beacon node shows its host and sleep.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .app { fill: #0c0c14; stroke: #30363d; stroke-width: 1.3; }
@@ -44,5 +44,5 @@
   <line class="edge" x1="430" y1="172" x2="532" y2="212"/><text class="el" x="452" y="186">lateral</text>
   <line class="edged" x1="588" y1="255" x2="686" y2="285"/><text class="el" x="600" y="286">pivot</text>
 
-  <text class="foot" x="20" y="396">Schematic illustration of a C2 session graph, not a screen capture. Two beacons chained to reach the objective on the protected segment.</text>
+  <text class="foot" x="20" y="396"> Two beacons chained to reach the objective on the protected segment.</text>
 </svg>

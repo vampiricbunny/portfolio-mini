@@ -115,9 +115,8 @@ Where does the program sit? The Sqrrl hunting maturity model is the standard sca
 
 A single view of program health, for the SOC lead.
 
-![Detection program health dashboard, drawn layout](images/metrics-dashboard-schematic.svg)
+![Detection program health dashboard](images/metrics-dashboard.svg)
 
-*Schematic illustration of the dashboard layout, not a screen capture.*
 
 The tiles that belong on it:
 

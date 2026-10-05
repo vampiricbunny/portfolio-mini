@@ -14,9 +14,8 @@ Different audiences need different numbers. A dashboard that tries to serve all 
 | **Detection Health** | Whoever tunes rules | What is noisy and what has gone quiet |
 | **Security Posture** | Management | Are we getting better or worse |
 
-![Detection coverage and health workbook layout](images/workbook-schematic.svg)
+![Detection coverage and health workbook layout](images/workbook.svg)
 
-*Schematic illustration of the workbook layout, not a screen capture.*
 
 ---
 

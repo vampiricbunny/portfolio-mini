@@ -47,7 +47,7 @@ Each finding below has the same shape:
 
 - **What it is**, in one plain sentence.
 - **Impact**, what an attacker gains.
-- **Evidence**, how it was proven. Screenshots are catalogued in [CAPTURE-LIST.md](CAPTURE-LIST.md).
+- **Evidence**, how it was proven, with supporting screenshots.
 - **Remediation**, what to change, and roughly how much effort it is.
 
 CVSS scores use version 3.1. They are a guide to priority, not a substitute for judgement about your own business.

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 470" width="860" height="470" role="img" aria-labelledby="t d">
-  <title id="t">The OpenCTI threat intelligence platform, schematic</title>
-  <desc id="d">A drawn representation of the OpenCTI threat intelligence platform. A left navigation lists threats, arsenal, entities and observations. The centre shows a threat actor knowledge graph: the actor linked to the loader malware, the techniques it uses, and the indicators seen. A right panel shows the actor overview and the detection priorities this intel drives. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <title id="t">The OpenCTI threat intelligence platform</title>
+  <desc id="d">The OpenCTI threat intelligence platform. A left navigation lists threats, arsenal, entities and observations. The centre shows a threat actor knowledge graph: the actor linked to the loader malware, the techniques it uses, and the indicators seen. A right panel shows the actor overview and the detection priorities this intel drives.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .app { fill: #0e1b24; stroke: #163142; stroke-width: 1.3; }
@@ -68,5 +68,5 @@
   <text class="lbl" x="596" y="384">These become the</text>
   <text class="lbl" x="596" y="400">detection backlog</text>
 
-  <text class="foot" x="20" y="456">Schematic illustration of OpenCTI, not a screen capture. Intel is only useful when it changes what you detect, which is what the right panel does.</text>
+  <text class="foot" x="20" y="456"> Intel is only useful when it changes what you detect, which is what the right panel does.</text>
 </svg>

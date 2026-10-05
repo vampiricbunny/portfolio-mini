@@ -109,7 +109,6 @@ Both worlds, because a real NOC runs both.
 | [07-Troubleshooting-Playbooks.md](07-Troubleshooting-Playbooks.md) | Five cases worked end to end |
 | [08-Capacity-and-Reporting.md](08-Capacity-and-Reporting.md) | Forecasting, SLA, availability reporting |
 | [09-Automation-and-Runbooks.md](09-Automation-and-Runbooks.md) | Automating the toil away |
-| [CAPTURE-LIST.md](CAPTURE-LIST.md) | Screenshot checklist |
 
 ---
 

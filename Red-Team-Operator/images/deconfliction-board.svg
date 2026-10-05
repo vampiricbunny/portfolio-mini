@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 420" width="860" height="420" role="img" aria-labelledby="t d">
-  <title id="t">The red and blue deconfliction board, schematic</title>
-  <desc id="d">A drawn deconfliction board with two columns. The red side logs each action with a timestamp and target. The blue side logs each detection. A middle column confirms whether a blue detection matches a red action, so the blue team can tell the exercise from a real intrusion without the red team tipping its hand. A footer states this is a schematic illustration and not a screen capture.</desc>
+  <title id="t">The red and blue deconfliction board</title>
+  <desc id="d">A deconfliction board with two columns. The red side logs each action with a timestamp and target. The blue side logs each detection. A middle column confirms whether a blue detection matches a red action, so the blue team can tell the exercise from a real intrusion without the red team tipping its hand.</desc>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .board { fill: #0f1420; stroke: #243049; stroke-width: 1.3; }
@@ -54,5 +54,5 @@
   <text class="sub" x="480" y="322" font-size="9.5">Each blue detection checked against the red log.</text>
   <text class="sub" x="480" y="338" font-size="9.5">A match means it is the exercise, stand down.</text>
 
-  <text class="foot" x="20" y="400">Schematic illustration of a deconfliction board, not a screen capture. In the lab, one person keeps both logs, so this independence is simulated.</text>
+  <text class="foot" x="20" y="400"> In the lab, one person keeps both logs, so this independence is simulated.</text>
 </svg>
